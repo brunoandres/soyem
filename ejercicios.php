@@ -107,7 +107,7 @@ include("menu.php");
 							$cierre = $data1['ejer_dia_cierre'];
 							$ejer_us = $data1['ejer_us'];
 							
-							$link = "<input type='button' id='fecha' name='fecha' value='$anio' class='openBtn'>";
+							$link = "<input type='button' id='anio' name='$anio' value='$anio' class='openBtn'>";
 						} else {
 							$estado = '<div class ="en_ejercicio">EN EJERCICIO</div>';
 							$cierre = "";
@@ -128,13 +128,18 @@ include("menu.php");
 </body>
 
 
-
+<input type="text" id="agrego">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script>
 $('.openBtn').on('click',function(){
-	alert($('input:text[name=fecha]').val());
+	var fecha = $('#anio').attr("value");
+	alert(fecha);
+    $('.modal-body').load('ver_cerrados.php?id='+{'data':fecha}){
+        $('#myModal').modal({show:true});
+    });
 });
 </script>
 <div class="modal fade" id="myModal" role="dialog">
