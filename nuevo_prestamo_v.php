@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos_viviendas';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -137,7 +138,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></option>
    <?php
    $ye =2013;

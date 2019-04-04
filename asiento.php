@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -138,7 +139,8 @@ include("menu.php");
   if (empty ($_GET['nro'])){
   ?>
    <div class="etiqueta">Fecha del asiento</div>
-  <input name="fecha" type="text" id="fecha" class="p_input" value="<?php echo $fe; ?>" />	
+   
+  <input name="fecha" type="text" id="fecha" class="p_input" value="<?php echo $fe; ?>" placeholder="Seleccione fecha desde" autocomplete="off" readonly/>	
     <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha",      // id of the input field
@@ -180,8 +182,8 @@ include("menu.php");
   }
   ?>
     </select></td>
-    <td valign="top"><input name="debe" type="text"  id="debe" value="<?php echo $data['debe']; ?>" size="15" /></td>
-    <td valign="top"> <input name="haber" type="text"  id="haber" value="<?php echo $data['haber']; ?>" size="15" /></td>
+    <td valign="top"><input name="debe" type="number"  id="debe" min="0" step="0.10" value="<?php echo $data['debe']; ?>" size="15" /></td>
+    <td valign="top"> <input name="haber" type="number"  id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" /></td>
 	 
   </tr>
 </table>	
@@ -231,7 +233,7 @@ include("menu.php");
 		<td>'.$au['detalle'].'</td>
 		<td><a href="asiento.php?id_a='.$au['id_a'].'&nro='.$au['nro'].'">Modificar</a></td>';
      echo '<td><a href="quitar_asiento.php?id_a='.$au['id_a'].'&vuelta=1&nro='.$au['nro'].'" title="Quitar este usuario" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este item?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar este item?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
 	$d=$d+$au['debe'];
@@ -256,7 +258,7 @@ include("menu.php");
   if ($sal != 0){
   ?>
   <div id="bad">
-    Atenci&oacute;n!!!! El asiento no está equilibrado
+    Atenci&oacute;n!!!! El asiento no estï¿½ equilibrado
     <br />Si sale ahora no quedara guardado
   </div>
   <?php

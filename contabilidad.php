@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -79,7 +80,7 @@ include("menu.php");
   <form action="<?php echo $PHP_SELF; ?>" method="get">
     <div class="subt">Libro diario: </div>
 	<div class="etiqueta">Libro desde:</div>
-    <input type="text" name="desde" class="p_input" id="desde">
+    <input type="text" name="desde" class="p_input" id="desde" placeholder="Seleccione fecha desde" autocomplete="off" readonly>
 	<script type="text/javascript">
     Calendar.setup({
         inputField     :    "desde",      // id of the input field
@@ -91,7 +92,7 @@ include("menu.php");
     });
 </script>
     <div class="etiqueta">Libro Hasta:</div>
-    <input tipe ="text" name="hasta" class="p_input" id="hasta">
+    <input tipe ="text" name="hasta" class="p_input" id="hasta" placeholder="Seleccione fecha hasta" autocomplete="off" readonly>
 	<script type="text/javascript">
     Calendar.setup({
         inputField     :    "hasta",      // id of the input field
@@ -103,7 +104,7 @@ include("menu.php");
     });
 </script>
 <div class="etiqueta">Buscar texto:</div>
-<input type="text" class="p_input" name="busc" id="busc" />
+<input type="text" class="p_input" name="busc" id="busc" placeholder="Ingrese texto"/>
 <input type="submit" class="boton_form" value="ver" />
   </form>
   <div id="nuevo_a"><a href="asiento.php?ac=nuevo">
@@ -161,7 +162,7 @@ include("menu.php");
 		echo '<td rowspan="'.$na.'">'.$au['detalle'].'</td>
 		<td rowspan="'.$na.'"><a href="asiento.php?nro='.$au['nro'].'">Modificar</a></td>';
      echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$nro.'" title="Quitar este asiento" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este asiento?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar este asiento?'";
 	  echo ')" >Quitar</a></td></tr>';
 	  } else {
 	  echo '<tr bgcolor="'.$fon.'"><td>'.$aa['cuenta'].'</td>

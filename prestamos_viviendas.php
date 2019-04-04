@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos_viviendas';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -171,7 +172,7 @@ if (!empty($_GET['afiliado'])){
 	   echo '<td align="right">$ '.$dat['monto'].'</td>';
 	  echo '<td><a href="detalle_prestamos_v.php?clave_prestamo='.$dat{'clave_prestamo'}.'" title="ver mas datos de '.$dat{'nombre'}.'">Ver</a></td>
 	  <td><a href="quitar_prestamo_v.php?clave_prestamo='.$dat{'clave_prestamo'}.'" title="Quitar este prestamo"onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este prestamo?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar este prestamo?'";
 	  echo ')" >Quitar Prestamo</a></td>
     </tr>'; 
 	}

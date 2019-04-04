@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos_rapidos';
 include("secure.php");
 include("conecta.php");
 include ("funciones_grales.php");

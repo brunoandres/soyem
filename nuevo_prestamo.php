@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -141,7 +142,7 @@ function tipo_op(form)
   form.origen.disabled=true;
    } 
    
-   if (form.m_pago.value == "Leñs" || form.m_pago.value == "Proveduria")
+   if (form.m_pago.value == "Leï¿½s" || form.m_pago.value == "Proveduria")
   { 
 
   form.cuenta_banco.disabled=true;
@@ -248,7 +249,7 @@ if ($nro_af == 0 ){
 <div class="etiqueta">Afiliado:</div>
 <input id="tags" name="p_afiliado" class="p_input"/>
 
-<div class="etiqueta">Tipo de Cancelación:</div>
+<div class="etiqueta">Tipo de Cancelaciï¿½n:</div>
 <select name="tipe_p" class="p_input"/>
 <option value="D">Debito por Banco</option>
 <option value="M">Descuento por Planilla</option>
@@ -419,7 +420,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $a_anio; ?>"><?php echo $a_anio; ?></option>
    <?php
    $ye =2013;
@@ -541,7 +542,7 @@ $i++;
   <option value="Cheque">Cheque</option>
   <option value="Efectivo">Efectivo</option>
   <option value="Proveduria">Proveduria</option>
-  <option value="Leña">Leña</option>
+  <option value="Leï¿½a">Leï¿½a</option>
   <option value="Turismo">Turismo</option>
   </select>
   
@@ -603,7 +604,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $a_anio; ?>"><?php echo $a_anio; ?></option>
    <?php
    $ye =2013;
@@ -709,7 +710,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $a_ani; ?>"><?php echo $a_ani; ?></option>
    <?php
    $ye =2013;

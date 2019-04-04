@@ -1,4 +1,5 @@
 <?php
+$page = 'empresas';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -82,8 +83,8 @@ include("menu.php");
       <th>Nombre</th>
 	  <th>Tipo</th>
 	    <th>Localidad</th>
-	  <th>Dirección</th>
-	 <th>Teléfono</th>
+	  <th>Direcciï¿½n</th>
+	 <th>Telï¿½fono</th>
 	 <th>Para<br />Prestamos</th>
 	 <th>Para<br />Salud</th>
 	 

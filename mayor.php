@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];

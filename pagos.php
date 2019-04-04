@@ -1,4 +1,5 @@
 <?php
+$page = 'pagos';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -219,7 +220,7 @@ $inicio = ($pagina - 1) * $tam;
 		echo '<td>'.$forma.'</td>';
 		echo '<td><a href="nuevo_pago.php?id_pagos='.$au['id_pagos'].'" class="example6">Modificar</a></td>';
 		echo '<td><a href="quitar_pagos.php?id_pagos='.$au['id_pagos'].'&nro_as='.$au['nro_as'].'" title="Quitar este pago" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este pago?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar este pago?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
 	

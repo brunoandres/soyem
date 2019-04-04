@@ -1,4 +1,5 @@
 <?php
+$page = 'ingresos';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -169,7 +170,7 @@ include("menu.php");
 <div class="etiqueta">Afiliado:</div>
 <input id="tags" name="p_afiliado" class="p_input" onblur="Calcula(this.form)"/>
 
-<div class="etiqueta">Señor:</div>
+<div class="etiqueta">Seï¿½or:</div>
 <input type="text" name="rec_nombre" class="p_input"/>
 <input type="hidden" name="rec_legajo"/>
 

@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -133,7 +134,7 @@ include("menu.php");
 	    <td>'.$au['titulo'].'</td>
 		<td><a href="modificar_rubro.php?id_rubro='.$au['id_rubro'].'" class="example6">Modificar</a></td>';
      echo '<td><a href="quitar_rubro.php?id_rubro='.$au['id_rubro'].'" title="Quitar este usuario" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este rubro?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar este rubro?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
 	}
@@ -180,7 +181,7 @@ include("menu.php");
 	    <td>'.$auu['titulo'].'</td>
 		<td><a href="#">Modificar</a></td>';
      echo '<td><a href="quitar_cuenta.php?id_cuentas='.$auu['id_cuentas'].'" title="Quitar esta cuenta" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar esta cuenta?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar esta cuenta?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
 	}

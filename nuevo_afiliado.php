@@ -1,4 +1,5 @@
 <?php
+$page = 'afiliados';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -132,9 +133,9 @@ include("menu.php");
 
 <div class="etiqueta">Obra social del esposa/o:</div>
   <input name="nom_os_esposa" type="text" class="p_input" id="nom_os_esposa" value="<?php echo $dat['nom_os_esposa']; ?>" />
-  <div class="etiqueta">Teléfono Fijo:</div>
+  <div class="etiqueta">Telï¿½fono Fijo:</div>
   <input name="telefono" type="text" class="p_input" id="telefono" />
-   <div class="etiqueta">Teléfono Celular:</div>
+   <div class="etiqueta">Telï¿½fono Celular:</div>
   <input name="celular" type="text" class="p_input" id="celular" value="<?php echo $dat['celular']; ?>" />
   <div class="etiqueta">Correo electronico:</div>
   <input name="correo" type="text" class="p_input" id="correo" />
@@ -144,7 +145,7 @@ include("menu.php");
   <input name="sector" type="text" class="p_input" id="sector" value="<?php echo $dat['sector']; ?>" />
 <div class="etiqueta">Categoria:</div>
   <input name="categoria" type="text" class="p_input" id="categoria" value="<?php echo $dat['categoria']; ?>" />
-  <div class="etiqueta">Antiqüedad:</div>
+  <div class="etiqueta">Antiqï¿½edad:</div>
   <input name="antiquedad" type="text" class="p_input" id="antiquedad" value="<?php echo $dat['antiquedad']; ?>" />
   
    <div class="etiqueta">Afiliado al coseguro:</div>
@@ -217,7 +218,7 @@ include("menu.php");
   <textarea name="sugerencias" rows="4" class="p_input" id="sugerencias"><?php echo $dat['sugerencias']; ?></textarea>
   <div class="etiqueta">Observaciones:</div>
   <textarea name="observaciones" rows="4" class="p_input" id="observaciones"></textarea>
-   <div class="etiqueta">Fecha de Actualización:</div>
+   <div class="etiqueta">Fecha de Actualizaciï¿½n:</div>
   <input name="f_actualiza" type="text" class="p_input" id="f_actualiza" />
   <script type="text/javascript">
     Calendar.setup({

@@ -1,4 +1,5 @@
 <?php
+$page = 'afiliados';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];

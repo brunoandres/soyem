@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos_viviendas';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -52,7 +53,7 @@ include("menu.php");
   <h1>Preparar listado  de Prestamos para Vivienda </h1>
   <div id="datos_af">
   <form action="expo.php" method="post">
-  Mes y Año a listar: 
+  Mes y Aï¿½o a listar: 
   <select name="mes">
   <option selected="selected" value="<?php echo date("m"); ?>"><?php echo date("m"); ?></option>
   <?php
@@ -95,7 +96,7 @@ include("menu.php");
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
 	 <th>Mes</th>
-      <th>Año</th>
+      <th>Aï¿½o</th>
 	  <th>Archivo</th>
     
     </tr>

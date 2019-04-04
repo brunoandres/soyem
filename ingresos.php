@@ -1,4 +1,5 @@
 <?php
+$page = 'ingresos';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -112,7 +113,7 @@ while ($dat = mysql_fetch_array($query)){
 	   echo '<td align="right">$ '.$dat['rec_importe'].'</td>';
 	  echo '<td><a href="detalle_recibo.php?rec_id='.$dat{'rec_id'}.'" title="ver detalles del recibo '.$dat{'rec_nro'}.'" class="ver">Ver</a></td>
 	  <td><a href="anular_recibo.php?rec_id='.$dat{'rec_id'}.'&vuelta=ingresos.php" title="Anular este Recibo" class="anular" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea anular eate recibo? Esta operacion no se puede deshacer'";
+	   echo "'ï¿½Estï¿½ seguro que desea anular eate recibo? Esta operacion no se puede deshacer'";
 	  echo ')" >';
 	  if($dat['rec_anulado']=='N'){
 	  echo 'Anular';

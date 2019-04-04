@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -85,7 +86,7 @@ include("menu.php");
 
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-		<th>Año</th>
+		<th>Aï¿½o</th>
       <th>Estado</th>
 	  <th>Cierre</th>
 	  <th>Usuario</th>

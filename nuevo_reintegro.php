@@ -1,4 +1,5 @@
 <?php
+$page = 'reintegros';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -132,7 +133,7 @@ if ($nro_af == 0 ){
 <form method="get" action="nuevo_reintegro.php">
 <div class="subt"> Nuevo Reintegro: </div>
 <div class="etiqueta">Afiliado:</div>
-<input id="tags" name="p_afiliado" class="p_input"/><input type="submit" name ="cont" value="Elegir" />
+<input id="tags" name="p_afiliado" class="p_input" placeholder="Ingrese el nombre de un afiliado"/><input type="submit" name ="cont" value="Elegir" />
 
 
 </form>

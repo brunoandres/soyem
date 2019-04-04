@@ -1,4 +1,5 @@
 <?php
+$page = 'reintegros';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];

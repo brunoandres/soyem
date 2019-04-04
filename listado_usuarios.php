@@ -1,4 +1,5 @@
 <?php
+$page = 'usuarios';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -25,14 +26,14 @@ function Validar(form)
   */
   
    if (form.pass.value == "")
-  { alert("Por favor ingrese la contraseña"); form.pass.focus(); return; }
+  { alert("Por favor ingrese la contraseï¿½a"); form.pass.focus(); return; }
   
  
    if (form.pass1.value == "")
-  { alert("Por favor ingrese la confirmación de la contraseña"); form.pass1.focus(); return; }
+  { alert("Por favor ingrese la confirmaciï¿½n de la contraseï¿½a"); form.pass1.focus(); return; }
   
    if (form.pass.value != form.pass1.value)
-  { alert("Las contraseñas no coinciden"); form.pass1.focus(); return; }
+  { alert("Las contraseï¿½as no coinciden"); form.pass1.focus(); return; }
   
    if (form.funcion.value == "")
   { alert("Por favor defina la funcion del usuario"); form.funcion.focus(); return; }
@@ -155,7 +156,7 @@ while($rseg=mysql_fetch_row($qseg))
 		<td>'.$au['seccion'].'</td>
 		<td><a href="modificar_usuario.php?id_us='.$au['id_us'].'" class="example6">Modificar</a></td>';
      echo '<td><a href="quitar_usuario.php?id_us='.$au['id_us'].'" title="Quitar este usuario" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este usuario?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar este usuario?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
 	}

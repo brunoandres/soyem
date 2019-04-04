@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos';
 include("secure1.php");
 include("conecta.php");
 include("funciones_grales.php");
@@ -77,7 +78,7 @@ include("menu.php");
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $aanio; ?>"><?php echo $aanio; ?></option>
    <?php
    $ye =2013;
@@ -113,7 +114,7 @@ include("menu.php");
 if ($_POST['act']=="si"){
 	
 	//Creamos el archivo datos.txt
-//ponemos tipo 'a' para añadir lineas sin borrar
+//ponemos tipo 'a' para aï¿½adir lineas sin borrar
 $ruta = "archivos_txt/".$_POST['mes']."-".$_POST['ano']."-banco-soyem.txt";
 $tx12 = "insert into historial_expo_banco (exp_banc_mes, exp_banc_anio) values ('".$_POST['mes']."','".$_POST['ano']."')";
 mysql_query ($tx12);
@@ -121,7 +122,7 @@ mysql_query ($tx12);
 		unlink($ruta);
 	}
 $file=fopen($ruta,"a") or die("Problemas");
-  //vamos añadiendo el contenido
+  //vamos aï¿½adiendo el contenido
   if ($_POST['mes'] < 10){
 	  $meso = '0'.$_POST['mes'];
   } else {

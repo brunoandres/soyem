@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -76,7 +77,7 @@ include("menu.php");
 
 
 <?php include("recortes/menu_cont.php"); ?>
-<h1>Deuda por prestamos por planilla a un Año especifico </h1>
+<h1>Deuda por prestamos por planilla a un Aï¿½o especifico </h1>
   <form action="<?php echo $PHP_SELF; ?>" method="post">
 	<div class="etiqueta">Fecha de Corte:</div>
     <input type="text" name="corte" class="p_input" id="corte">

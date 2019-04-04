@@ -286,6 +286,25 @@ body {
 	float: left;
 	margin-left: 10px;
 }
+
+#menu .active{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: tomato;
+	background-color: rgb(226, 51, 21);
+	padding: 0px;
+	float: left;
+	margin-left: 10px;
+}
+
+#menu .active a {
+	color: #000000;
+	text-decoration: none;
+	display: block;
+	padding: 5px;
+}
+
 #menu .item a {
 	color: #000000;
 	text-decoration: none;

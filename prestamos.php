@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos';
 include("secure3.php");
 include("conecta.php");
 include ("funciones_grales.php");

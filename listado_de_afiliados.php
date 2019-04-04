@@ -1,4 +1,5 @@
 <?php
+$page = 'afiliados';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -133,10 +134,10 @@ include("menu.php");
 		   <input name="nombre" type="checkbox" value="si" checked="checked" />Nombre 
 		   <input name="documento" type="checkbox" value="si" checked="checked" />Documento 
 		   <input name="domicilio" type="checkbox" value="si" />Domicilio 
-		   <input name="telefono" type="checkbox" value="si" />Teléfono 
+		   <input name="telefono" type="checkbox" value="si" />Telï¿½fono 
 		   <input name="correo" type="checkbox" value="si" />Correo 
 		   <input name="nacimiento" type="checkbox" value="si" />Fecha de Nacimiento 
-		   <input name="afiliacion" type="checkbox" value="si" />Fecha de Afiliación 
+		   <input name="afiliacion" type="checkbox" value="si" />Fecha de Afiliaciï¿½n 
 		   <input name="socioos" type="checkbox" value="si" />Socio de OS 
 		   <input name="ipross" type="checkbox" value="si" />Nro IPROSS 
 		   <input name="sector" type="checkbox" value="si" />Sector 
