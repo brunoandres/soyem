@@ -107,7 +107,8 @@ include("menu.php");
 							$cierre = $data1['ejer_dia_cierre'];
 							$ejer_us = $data1['ejer_us'];
 							
-							$link = "<input type='button' id='anio' name='$anio' value='$anio' class='openBtn'>";
+							$link = '<button type="button" name="view" id='.$anio.' class="view_data">Ver</button>';
+							
 						} else {
 							$estado = '<div class ="en_ejercicio">EN EJERCICIO</div>';
 							$cierre = "";
@@ -128,37 +129,65 @@ include("menu.php");
 </body>
 
 
-<input type="text" id="agrego">
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-$('.openBtn').on('click',function(){
-	var fecha = $('#anio').attr("value");
-	alert(fecha);
-    $('.modal-body').load('ver_cerrados.php?id='+{'data':fecha}){
-        $('#myModal').modal({show:true});
-    });
-});
-</script>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Modal with Dynamic Content</h4>
-            </div>
-            <div class="modal-body">
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+$(document).ready(function(){
+	$(document).on('click', '.view_data', function(){
+           var employee_id = $(this).attr("id");
+           if(employee_id != '')
+           {
+                $.ajax({
+                     url:"ver_cerrados.php",
+                     method:"POST",
+                     data:{employee_id:employee_id},
+                     success:function(data){
+                          $('#detalles').html(data);
+                          $('#dataModal').modal('show');
+                     }
+                });
+           }
+      });
+});
+
+
+
+</script>
+
+<script>
+
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+
+</script>
+
+<div class="row">
+<div class="col-lg-12">
+<div id="dataModal" class="modal fade">
+      <div class="modal-dialog">
+           <div class="modal-content">
+                <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Detalles de Asientos</h4>
+                </div>
+                <div class="modal-body" id="detalles">
+                </div>
+                <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+           </div>
+      </div>
+ </div>
+ </div>
+ </div>
+ 
+
 
 </html>
 
