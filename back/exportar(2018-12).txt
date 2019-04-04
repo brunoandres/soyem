@@ -1,0 +1,2 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+260   	LOPEZ MIGUEL ANTONIO               		60    	60       	500.00  

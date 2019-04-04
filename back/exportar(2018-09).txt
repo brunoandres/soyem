@@ -1,0 +1,3 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+475   	QUINTRIQUEO LUCIO                  		60    	60       	500.00  
+260   	LOPEZ MIGUEL ANTONIO               		60    	57       	500.00  

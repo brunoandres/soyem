@@ -1,0 +1,414 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+824   	ADORNO PATRICIA SUSANA             		1     	1        	183     
+11372 	AGUILA MARIA EUGENIA               		1     	1        	31      
+541   	AGUILAR JORGE RICARDO              		1     	1        	1513    
+621   	AGUILERA RAUL NIEVES-127           		1     	1        	290     
+12405 	AGUIRRE VIVIANA ANDREA             		1     	1        	81      
+12317 	ALARCON JOAQUIN MIGUEL             		1     	1        	1968    
+816   	ALARCON MIGUEL ANGEL               		1     	1        	1191    
+21263 	ALCA VERONICA EUDOSIA              		1     	1        	183     
+1258  	ALEMAN MIGUEL ANGEL                		1     	1        	181     
+13862 	ALVARADO MARIA FERNANDA            		4     	3        	371     
+1155  	ALVAREZ ROBERTO                    		2     	1        	850     
+14300 	ANCAVIL LEONARDO                   		4     	4        	837     
+20984 	ANCAVIL MONICA VIVIANA             		1     	1        	1356    
+20563 	ANDRADE CARLOS MARCELO             		1     	1        	634     
+11361 	ANDRADE STELLA MARIS               		1     	1        	567     
+1049  	ANFUSO PABLO MIGUEL                		4     	4        	425     
+1800  	ANGULO ANA MARIA                   		6     	4        	1000    
+729   	ANTENAO JUAN CONSTANTINO           		1     	1        	2710    
+11210 	ANTIMAN TERESA GRACIELA            		2     	2        	253     
+20007 	ANTIMIL. RODRIGO EZEQUIEL          		3     	3        	550     
+632   	ANTIPAN NESTOR JAVIER              		2     	2        	500     
+11343 	ANTIVERO LUIS ALBERTO              		3     	1        	328     
+21723 	ANTUNAO LUIS ALBERTO               		1     	1        	1131    
+11487 	ARABALES LAUREANO                  		1     	1        	1376    
+11665 	ARABALES VICTOR                    		1     	1        	868     
+707   	ARIAS LORENA YANET                 		1     	1        	49      
+8631  	ARISMENDI ADRIANA SELVIA           		1     	1        	214     
+11251 	AROCA HUGO JAVIER                  		4     	4        	470     
+21066 	AROS NEGRON CYNTHIA ALEJANDRA      		2     	1        	219     
+11039 	ARPIRES MERCEDES LUCRECIA          		1     	1        	1692    
+20063 	ARROYO ADRIAN A.                   		20    	6        	4271    
+686   	ARROYO FERNANDO ISIDORO            		2     	2        	386     
+843   	ARTEAGA CATALAN MIRTA ORIANA       		1     	1        	983     
+846   	AVILA SONIA DE LOS ANGELES         		2     	1        	180     
+451   	AYALA SANDRA PATRICIA              		6     	4        	1463    
+270   	AYALEF FELIPE                      		4     	2        	300     
+11918 	AZOCAR MARGOT                      		1     	1        	2202    
+637   	BAEZ JULIO                         		3     	1        	307     
+12581 	BARGIELA FACUNDO                   		1     	1        	259     
+12558 	BARGIELA, ERMINDO RAFAEL           		1     	1        	169     
+11772 	BARRIA DESIDERIO                   		2     	2        	280     
+240   	BARRIA ERICA MABEL                 		1     	1        	718     
+12116 	BARRIOS, MIRIAM BEATRIZ            		1     	1        	274     
+13715 	BASCUR BORQUEZ HERALDO JOAQUIN     		1     	1        	543     
+11141 	BASCUR EDUARDO                     		2     	1        	143     
+1775  	BASCURT ARTURO                     		3     	3        	619     
+14084 	BECERRA MAXIMILIANO                		2     	2        	324     
+11472 	BECERRA REINALDO MANUEL            		2     	2        	252     
+12257 	BEREAU ROMINA                      		1     	1        	240     
+11760 	BONNEFOY ERNESTO                   		1     	1        	2524    
+21578 	BORQUEZ YAÑEZ GLORIA DEL CARME     		2     	1        	2820    
+14415 	BRECA DIEGO                        		3     	1        	1000    
+11286 	CABRERA FRANCISCO ISMAEL           		1     	1        	762     
+11349 	CALFIN VIVIANA                     		2     	2        	306     
+1148  	CALFULEO ADRIANA ELIZABETH         		4     	3        	361     
+12230 	CALFUNAO JORGE                     		1     	1        	1035    
+11923 	CALIL ALBERTO ELIAS                		5     	1        	1000    
+11176 	CALVO JULIA NOEMI                  		1     	1        	480     
+13867 	CANDIA LEANDRO GABRIEL             		3     	3        	294     
+10881 	CANIUPAN ADELAIDA LAURA            		1     	1        	652     
+11366 	CANO ANABEL ALEJANDRA              		1     	1        	312     
+699   	CAÑUPAN AVELINA                    		2     	1        	276     
+12552 	CARDENAS DIEGO ARTURO              		1     	1        	1420    
+382   	CARDENAS JORGE ALEJANDRO           		1     	1        	383     
+11920 	CARDENAS MAURO ARIEL               		2     	1        	350     
+11139 	CARDENAS WALTER DANIEL             		2     	1        	770     
+11232 	CARRANZA EDGARDO ALEJANDRO         		1     	1        	254     
+12801 	CARRIQUEO DANIELA                  		3     	3        	817     
+11172 	CARRIZO ALBERTO                    		1     	1        	960     
+11363 	CASTAÑO ROQUE HECTOR               		4     	3        	602     
+21491 	CASTILLO ARAUZ NERIDA JULEX        		1     	1        	2464    
+11758 	CASTILLO GLADYS DE LAS NIEVES      		1     	1        	1200    
+21598 	CASTRO ANDREA FABIANA              		6     	6        	890     
+8570  	CASTRO LILIANA                     		1     	1        	916     
+870   	CATRILEF EUSEBIO A.                		1     	1        	752     
+518   	CAYUMAN GERMAN NATALIO             		1     	1        	3390    
+20400 	CAYUNAO LUCRECIA ERMELINDA         		1     	1        	1369    
+811   	CEBALLOS MARISA ELENA              		3     	1        	2307    
+11379 	CENTURION MARIA CRISTINA           		1     	1        	30      
+14108 	CHAMORRO MOL GUADALUPE             		1     	1        	720     
+12652 	CHAVEZ ANCALAO HERNAN              		1     	1        	2189    
+13388 	CHAVEZ ANCALAO ROBERTO ENRIQUE     		1     	1        	1652    
+14302 	CIFUENTES JOSE LUIS                		1     	1        	733     
+440   	COLILAF CARLOS FEDERICO            		1     	1        	1440    
+21730 	COLINAMON ANDRES AVELINO           		3     	1        	552     
+13685 	COLIPI NESTOR HUGO                 		1     	1        	133     
+485   	COLIPI REMIGIO                     		4     	3        	500     
+11869 	COLLIO BERNARDO FABIAN             		1     	1        	662     
+1092  	CONDE ADRIANA BEATRIZ              		1     	1        	254     
+8180  	CONTRERAS ALICIA CLARA             		2     	2        	2200    
+11330 	CONTRERAS MARIA ALICIA             		1     	1        	1622    
+1529  	CORNEJO SARA BEATRIZ               		1     	1        	1680    
+12387 	CORONEL CARLOS ALBERTO             		5     	1        	587     
+11166 	COTARO LEANDRO DANIEL              		2     	1        	340     
+11358 	CUEVAS ADRIANA ELIZABETH           		2     	1        	230     
+11297 	CUEVAS ELVIRA ALEJANDRA            		1     	1        	492     
+849   	CURAQUEO CARMEN BEATRIZ            		6     	2        	2581.82 
+21861 	CURIQUEO CELESTINA                 		6     	4        	1056    
+14110 	CUYUL  MARIA EUGENIA               		1     	1        	2127    
+20321 	DA SILVA EVORA LUIS                		2     	1        	366     
+11530 	DEL CASTILLO FABIANA               		6     	1        	657     
+11604 	DEL PUGLIA WALTER                  		1     	1        	82      
+13722 	DEZOTTI MARISA                     		2     	1        	260     
+370   	DIAZ ANIBAL                        		1     	1        	971     
+11100 	DIAZ GUSTAVO                       		1     	1        	612     
+20398 	DIAZ MARTHA                        		1     	1        	920     
+12530 	DIAZ MIRTA                         		5     	2        	1549    
+992   	DIXON MARIA A.                     		1     	1        	31      
+12580 	DOMINGUEZ LUIS GERARDO             		1     	1        	974     
+554   	EPULLAN MARIA ANGELICA             		1     	1        	571     
+11077 	EPULLAN ORLANDO                    		1     	1        	122     
+20292 	ERASO GRISELDA                     		4     	4        	584     
+196   	ESPECHE MIRYAM CLAUDIA             		1     	1        	1174    
+21592 	ESPINOZA MARIA ELENA               		1     	1        	829     
+12190 	FERNANDEZ RICARDO                  		1     	1        	92      
+11393 	FIGUEROA LIDIA ELENA               		1     	1        	389     
+888   	FIGUEROA LIDIA ROSA                		3     	3        	674     
+11169 	FONTE LEONARDO JAVIER              		1     	1        	91      
+11161 	FONTE PABLO NICOLAS                		3     	3        	460     
+11880 	FRANCO RICARDO AVELINO             		1     	1        	204     
+971   	FUENTES ALFREDO                    		1     	1        	112     
+12417 	FUENTES GONZALO RUBEN              		3     	3        	1525    
+183   	FUENTES JUAN ISIDRO                		4     	4        	1400    
+11969 	FUENTES SANTIAGO                   		3     	1        	484     
+11699 	FUENTES SILVIA ELIZABETH           		5     	1        	840     
+12341 	GALLARDO MIGUEL ANGEL              		4     	4        	854     
+582   	GARCES LUIS ENRRIQUE               		1     	1        	1134    
+718   	GARCIA JOSE VICTOR                 		2     	1        	312     
+11714 	GARCIA ROGEL ARIEL EDUARDO         		1     	1        	718     
+134   	GARCIA RUBEN HORACIO               		5     	1        	1120    
+12261 	GASPERINI. GUSTAVO FABIAN          		3     	2        	503     
+801   	GAVINI RICHARD DANIEL              		1     	1        	240     
+985   	GELVEZ NORMA ISABEL                		1     	1        	213     
+21657 	GELVEZ SANDRA ELIZABETH            		1     	1        	720     
+11559 	GEREZ PABLO ROBERTO                		1     	1        	1675    
+20583 	GHISLA AMBROSIO                    		1     	1        	524     
+11125 	GINGINS ESTELA MARY                		3     	3        	294     
+381   	GOMEZ OSCAR A.                     		3     	3        	342     
+11621 	GONZALEZ ALBERTO GABRIEL           		4     	4        	1875    
+532   	GONZALEZ ALICIA                    		1     	1        	251     
+8274  	GONZALEZ CANCINO MARIA ADELINA     		1     	1        	61      
+20506 	GONZALEZ FABIANA                   		4     	4        	565     
+11533 	GONZALEZ FUSTER SILVIA LAURA       		1     	1        	285     
+21858 	GONZALEZ MARIELA DEL VALLE         		1     	1        	194     
+11807 	GRANDE LUIS GABRIEL                		6     	3        	2481    
+8492  	GUAJARDO ADA MABEL                 		1     	1        	597     
+694   	GUAJARDO EDUARDO                   		3     	3        	353     
+11062 	GUAJARDO MIGUEL ADRIAN             		4     	1        	302     
+501   	GUAJARDO NESTOR FABIAN             		2     	2        	2410    
+1135  	GUERRERO LUIS ANTONIO              		1     	1        	794     
+189   	HERNANDEZ LORENA VIVIANA           		1     	1        	203     
+839   	HERNANDEZ ROXANA VALERIA           		3     	1        	519     
+8624  	HERRERA ROSA ALCIRA                		1     	1        	200     
+11043 	HUENCHUL GUILLERMINA DEL CARME     		1     	1        	1199    
+11044 	HUENCHULAO CARMEN DE LAS NIEVE     		2     	1        	480     
+11142 	HUENCHULLAN DOMINGO ALFREDO        		1     	1        	259     
+104   	HUENCHULLAN ROBERTO                		1     	1        	305     
+11616 	HUENCHULLAN, EZEQUIEL              		4     	4        	700     
+241   	HUENCHUPAN IRMA GRACIELA           		1     	1        	429     
+21629 	HUENOMAN OMAR ANTONIO              		6     	1        	1823    
+187   	HUIRCAIN MARIA DEL PILAR           		1     	1        	3106    
+20585 	IGNACIO WALTER DANIEL              		2     	1        	492     
+12348 	INOSTROZA ABRAHAM ISAAC            		6     	6        	300     
+11133 	INOSTROZA DIEGO SEBASTIAN          		4     	1        	907     
+201   	INOSTROZA ISABEL                   		1     	1        	1291    
+12539 	INOSTROZA JUAN CARLOS              		1     	1        	500     
+20586 	ISPIERTO ANTONIO ROLDAN            		2     	2        	393     
+12274 	ITURRA NANCY                       		1     	1        	500     
+461   	JARA ORLANDO                       		2     	1        	571     
+12655 	JONES JUAN PABLO                   		1     	1        	1000    
+864   	KRZYSLOWSKI PABLO                  		2     	1        	359     
+11046 	LAGOS JUANA ESTHER                 		3     	3        	423     
+113   	LATORRE GREGORIO                   		2     	2        	215     
+11782 	LAVAYEN ALEJANDRA A.               		1     	1        	720     
+12678 	LEFEMEL TOMAS AGUSTIN              		1     	1        	567     
+11388 	LEIVA GLORIA                       		1     	1        	200     
+943   	LEMA IRIO                          		1     	1        	2113    
+11370 	LEMUNAO BLANCA DEL CARMEN          		1     	1        	133     
+666   	LICANQUEO LUIS C.                  		2     	2        	300     
+21492 	LINARES ELIZABETH                  		1     	1        	717     
+11158 	LIZANA GONZALEZ SAMUEL A.          		1     	1        	2138    
+12053 	LOBOS KARINA                       		4     	4        	1348    
+1758  	LONCON MONICA ELIZABETH            		1     	1        	139     
+1194  	LOPEZ ECHEVARRI MARIA GABRIELA     		1     	1        	635     
+11048 	LOPEZ INES                         		1     	1        	82      
+1171  	LOPEZ JUAN CARLOS                  		1     	1        	1335    
+11137 	LOPEZ PASCUAL                      		2     	1        	174     
+853   	LOZANO KARINA ALEJANDRA            		1     	1        	912     
+21408 	MACEDO MARTA GRACIELA              		1     	1        	82      
+1176  	MALDONADO ALBERTO FRANCISCO        		4     	3        	538     
+13078 	MANCILLA NESTOR FERNANDO           		1     	1        	200     
+21011 	MANSILLA AGUILAR YOLA DEL CARM     		10    	4        	923     
+20216 	MANSILLA CESAR HERIBERTO           		2     	2        	275     
+21402 	MANSILLA LESPAI MARIANELLA DE      		1     	1        	1256    
+13806 	MARABOLI ARTURO NICOLAS            		1     	1        	948     
+1551  	MARIN CLAUDIA ESTHER               		8     	6        	420     
+12635 	MARIN GABINO                       		2     	2        	1258    
+20389 	MARIN MARIA BEATRIZ                		2     	1        	400     
+13691 	MARIN NADIA                        		1     	1        	183     
+219   	MARIN SONIA LETICIA                		1     	1        	451     
+20590 	MARQUEZ JESUS ALEJANDRO            		2     	1        	178     
+21536 	MARTIN RICARDO                     		2     	1        	375     
+11706 	MARTINEZ DANIEL ALBERTO            		1     	1        	42      
+861   	MARTINEZ ESTELA                    		1     	1        	732     
+11505 	MARTINEZ JOSE BERNARDO             		4     	1        	695     
+20591 	MARTINEZ JUAN ALBERTO              		1     	1        	56      
+21559 	MARTINEZ SANDRA SILVIA             		1     	1        	470     
+809   	MESA GUILLERMO OSCAR               		8     	6        	1500    
+8455  	MESA RUBEN OSCAR                   		6     	1        	1963    
+12874 	MIGUEL HUGO AMERICO                		4     	4        	1855    
+21773 	MIGUEL VERONICA ELSA               		6     	2        	1763    
+365   	MILLAHUAL CEFERINO                 		5     	4        	756     
+682   	MITRI VIRGILIO A.                  		1     	1        	102     
+11438 	MONTENEGRO CESAR DANIEL            		1     	1        	735     
+1535  	MONTENEGRO CRISTINA MABEL          		1     	1        	964     
+1538  	MONTENEGRO MARTHA AZUCENA          		1     	1        	275     
+857   	MONTI BLANCA ELENA                 		4     	4        	2490    
+860   	MONTI MIRNA AMANDA                 		3     	2        	841     
+11182 	MOÑOZ MARIA CRISTINA               		1     	1        	183     
+21433 	MORALES SILVIA MARIELA             		1     	1        	550     
+11244 	MORI GRACIELA BEATRIZ              		2     	1        	441     
+11532 	MUNCH FABIAN SANTIAGO              		3     	1        	356     
+11333 	MUÑOS ALICIA                       		1     	1        	1816    
+11260 	MUÑOZ ELIDORO                      		1     	1        	828     
+1550  	MUÑOZ MARIA ANGELICA               		1     	1        	503     
+21434 	MUÑOZ ROSA BEATRIZ                 		1     	1        	996     
+2     	NAHUEL ERNESTO                     		1     	1        	508     
+293   	NAHUELPAN FEDERICO                 		1     	1        	952     
+1114  	NAHUELPAN OMAR ALEJANDRO           		1     	1        	312     
+13693 	NATALIO GRACIELA BELEN             		3     	1        	200     
+21328 	NAVARRO ALEJANDRO WALTER           		1     	1        	1334    
+414   	NAVARRO VICTOR OSMAR               		1     	1        	4170    
+8166  	NILIAN NILIAN GISELA IRENE         		1     	1        	183     
+21436 	NUÑEZ ALTAMIRANO VANESA DEL PI     		1     	1        	449     
+14112 	NUÑEZ JUAN ALBERTO                 		1     	1        	251     
+21602 	ÑANCO NELLI ROXANA                 		2     	2        	428     
+21563 	ÑANCUCHEO  FLAVIO OMAR             		4     	4        	1021    
+622   	ÑANCUCHEO RAUL                     		1     	1        	389     
+13782 	ÑANCUFIL ALDO GERONIMO             		1     	1        	1473    
+11159 	ÑANCUFIL MARIO DANIEL              		2     	2        	512     
+11658 	OBANDO RICARDO DAVID               		4     	4        	363     
+1297  	OJEDA  JOSE                        		4     	2        	675     
+11662 	OJEDA IVAN OSCAR                   		4     	4        	475     
+11657 	OJEDA MARCOS ARIEL                 		1     	1        	1054    
+993   	OJEDA MIGUEL ANGEL                 		1     	1        	352     
+11350 	OLIVIERI VALENTINA                 		5     	4        	2617    
+11570 	OSES ANDRES OSVALDO                		1     	1        	165     
+11692 	OYARZO ANTONIO                     		1     	1        	1092    
+348   	OYARZO OSCAR ARMANDO               		2     	1        	144     
+884   	OYARZO PABLO                       		5     	4        	1100    
+23    	OYARZO VICTOR                      		1     	1        	1221    
+89    	PACHECO NILDA                      		5     	1        	1440    
+11203 	PACHECO OLGA STEFANIA              		6     	1        	369     
+156   	PAILLALEF JOSE E.                  		5     	4        	642     
+14275 	PAINEFIL EZEQUIEL EDUARDO          		1     	1        	1500    
+20598 	PAINEFIL LUIS ALBERTO              		5     	2        	989     
+11051 	PAINEFIL MARIA ROSA                		1     	1        	368     
+11875 	PAINEFIL RAUL                      		1     	1        	284     
+11150 	PAINEFILU MIGUEL AMGEL             		1     	1        	268     
+523   	PAINEPE JUANA EVA                  		1     	1        	82      
+251   	PALMA AMELIA MONICA                		1     	1        	303     
+13707 	PALMA FEDERICO                     		3     	3        	473     
+493   	PALMA HECTOR DANIEL                		4     	4        	320     
+8569  	PALMA MARIA ANGELA                 		1     	1        	1054    
+395   	PALMA MIRIAM DE LAS NIEVES         		1     	1        	1486    
+363   	PAPA RICARDO OSCAR                 		1     	1        	224     
+11287 	PARDO ARIEL MARTIN                 		1     	1        	2066    
+12320 	PARDO JORGE MANUEL                 		1     	1        	858     
+247   	PARDO NORA ELOISA                  		1     	1        	2400    
+12234 	PAREDES JUAN JOSE                  		1     	1        	1981    
+13076 	PARRA CARLOS                       		2     	1        	270     
+423   	PARRA DELIA ROSA                   		3     	3        	413     
+13777 	PARRA JOAN                         		1     	1        	183     
+11374 	PAZ EUGENIA JAQUELINA              		1     	1        	1200    
+832   	PAZ MARIA ROMINA                   		1     	1        	750     
+13189 	PELLEGRINI MATIAS daniel           		1     	1        	365     
+8436  	PERALTA GABRIELA FERNANDA          		1     	1        	253     
+1056  	PERALTA JOSE MIGUEL                		2     	2        	400     
+8414  	PEREYRA GRISELDA BEATRIZ           		1     	1        	924     
+13192 	PEREZ CELESTE                      		1     	1        	480     
+21876 	PEREZ DORA DEL CARMEN              		3     	2        	1851    
+12326 	PEREZ LUCAS                        		1     	1        	5336    
+11590 	PICHUMAN DIEGO OSCAR               		3     	2        	354     
+457   	PICHUNLEF RUBEN NORBERTO           		4     	4        	1472    
+610   	PICUNTUREO ROLANDO                 		3     	3        	574     
+1272  	PILQUIMAN AGUSTIN ARMANDO          		4     	4        	1919    
+11313 	PILQUIMAN JORGE RAUL               		1     	1        	973     
+13370 	PINCHEIRA JAVIER                   		2     	1        	300     
+648   	PINEDA GLADYS NOEMI                		4     	4        	858     
+11589 	PINILLA CARINA ELISABETH           		1     	1        	264     
+11501 	POMPHILE MARIO IGNACIO             		1     	1        	408     
+820   	POZZI MIGUEL HECTOR                		1     	1        	643     
+11174 	PRAFIL CARMELO                     		4     	4        	1580    
+8168  	PRAFIL ISABEL BEATRIZ              		1     	1        	1233    
+13354 	QUESADA LUIS ALBERTO               		1     	1        	672     
+464   	QUIDELAF JOSE O.                   		1     	1        	55      
+20600 	QUILALEO ERNESTO FABIAN            		1     	1        	1026    
+11909 	QUILALEO FACUNDO FABIAN            		1     	1        	383     
+1080  	QUILALEO JORGE ANIBAL              		3     	3        	867     
+14305 	QUILODRAN ANDRES HUMBERTO          		1     	1        	917     
+643   	QUINTANA ANGEL                     		1     	1        	2440    
+11704 	QUINTERO MIRIAN NILDA              		6     	6        	2458    
+11612 	QUINTRIQUEO FELIX MAXIMILIANO      		1     	1        	2249    
+561   	QUIÑEHUAL MANUEL                   		3     	3        	425     
+1839  	QUIÑEHUAL MARIA DEL CARMEN         		10    	6        	1442    
+228   	QUIÑEHUAL SANDRA FELISA            		1     	1        	1663    
+12194 	QUIÑELEN ANDRES VICTORIANO         		1     	1        	979     
+11389 	QUIÑELEN DAVID SANTIAGO            		1     	1        	150     
+11312 	QUIÑENAO ANDRES IRENE              		1     	1        	2036    
+11206 	REPOSSINI, CLAUDIA                 		1     	1        	304     
+22    	REYES HECTOR IVAN                  		1     	1        	1361    
+11613 	REYES JOSE IVAN                    		1     	1        	669     
+871   	REYES JULIA ALCIRA                 		1     	1        	815     
+11968 	RIFFO HORACIO NICOLAS              		1     	1        	1726    
+608   	RIQUELME NESTOR JOSE               		1     	1        	920     
+11666 	RIVAS CARLOS BENIGNO               		4     	1        	550     
+874   	RIVAS CRISTINA HAYDEE              		1     	1        	203     
+13085 	RIVAS MARIO                        		4     	4        	1488    
+21493 	RIVAS PATRICIA DE LAS NIEVES       		4     	4        	2287    
+20606 	RIVERA RAUL FLORENTINO             		1     	1        	576     
+766   	RODRIGUEZ NICOLAS                  		2     	1        	269     
+13438 	RODRIGUEZ SALDIVIA CECIA MAGDA     		3     	3        	2416    
+618   	RODRIGUEZ TOMAS SANTOS             		2     	1        	500     
+166   	ROGEL NORBERTO                     		5     	4        	520     
+11006 	ROJAS MIGUEL ANGEL                 		1     	1        	1853    
+13512 	ROJAS NORMA BEATRIZ                		1     	1        	384     
+1251  	ROJAS ROGELIO ANDRES               		1     	1        	51      
+21594 	ROJAS VILLEGAS YALENA BEATRIZ      		1     	1        	3040    
+83    	ROSALES GUSTAVO                    		4     	1        	625     
+21206 	ROSALES MARIA DELIA                		2     	1        	375     
+946   	ROSAS ARRIAGADA RONALD             		4     	4        	741     
+20608 	RUIZ BARRIENTOS JUAN MANUEL        		3     	1        	546     
+13943 	RUIZ MARCELO                       		2     	2        	550     
+408   	RUIZ VICTOR HUGO                   		1     	1        	768     
+1806  	SALAS MARIA PAULA                  		1     	1        	1920    
+11087 	SALCEDO MARIANA EMILIA             		1     	1        	82      
+20953 	SAN MARTIN ETELVINA DEL CARMEN     		1     	1        	71      
+413   	SAN MARTIN JORGE                   		6     	2        	4288    
+593   	SANCHEZ BEATRIZ                    		3     	3        	407     
+514   	SANCHEZ HECTOR GREGORIO            		4     	2        	2549    
+366   	SANCHEZ JORGE LEONEL               		2     	1        	290     
+11360 	SANCHEZ MALDONADO MONICA CANDE     		2     	1        	163     
+12542 	SANCHEZ MARIA ELIZABETH            		1     	1        	407     
+13180 	SANCHEZ NANCY NOEMI                		1     	1        	1619    
+11276 	SANCHEZ RAFAEL OMAR                		4     	4        	2315    
+657   	SANDOVAL JULIAN                    		6     	1        	371     
+20217 	SANDOVAL MARCELA ANDREA            		3     	3        	270     
+12805 	SANDOVAL ROBERTO  ARIEL            		1     	1        	626     
+640   	SANDOVAL SEGUNDO                   		2     	2        	900     
+12700 	SANDOVAL SINDY LORENA              		1     	1        	303     
+11694 	SANDOVAL, CESAR FACUNDO            		3     	1        	200     
+12185 	SANDOVAL, JORGE                    		4     	1        	523     
+12632 	SANTIBAÑEZ EDGARDO ADAN            		4     	4        	1319    
+877   	SANTIBAÑEZ ZULMA BEATRIZ           		3     	3        	1266    
+11546 	SARLANGUE PABLO FABIAN             		4     	2        	2291    
+11394 	SAVASTA VICENTE ROBERTO            		3     	2        	494     
+21071 	SCHWITZGABELE WALTER GUILLERMO     		6     	2        	1650    
+12656 	SEGUEL JORGE ORLANDO               		6     	6        	1625    
+359   	SEPULVEDA ENRIQUE OMAR             		1     	1        	153     
+12310 	SILVA CRISTIAN                     		2     	1        	350     
+781   	SILVA DECIDERIO                    		2     	1        	199     
+20611 	SILVA FABIAN ABEL                  		1     	1        	2190    
+21301 	SILVA LILIANA MABEL                		1     	1        	1235    
+9     	SILVA MIGUEL ANGEL                 		1     	1        	1413    
+1014  	SLUPSKI CAROLINA                   		4     	1        	391     
+494   	SOBARZO  BERNARDO ARIEL            		1     	1        	200     
+755   	SOSA BENJAMIN G.                   		1     	1        	2205    
+11299 	SOTO MARIA DE LAS NIEVES           		3     	3        	1470    
+21429 	SOTO MOLINA JAQUELINA              		2     	2        	643     
+11235 	SUEZ GLORIA DANIELA                		1     	1        	999     
+8627  	TARIFEÑO TELMA IRIS                		1     	1        	528     
+1123  	TAVELLA CINTIA VANESSA             		1     	1        	720     
+1469  	TEJADA LUCIO ISMAEL                		2     	1        	300     
+13373 	TELLEZ MARIA SILVANA               		1     	1        	69      
+20951 	THUMANN ERICA MARIANA              		1     	1        	575     
+11365 	TOLEDO LILIAN KARINA               		4     	1        	400     
+21776 	TOMASINI OMAR MIGUEL               		1     	1        	610     
+20419 	TORO IDALINDA                      		2     	1        	202     
+1539  	TORRES RIOS SONIA MARGOT           		1     	1        	303     
+11627 	TRANAMIL MARIA DE LAS NIEVES       		1     	1        	3551    
+1269  	TREUQUE GERMAN ORLANDO             		1     	1        	700     
+417   	TRONCOSO JOSE ROSA                 		2     	1        	202     
+11873 	URRUTIA DIEGO NICOLAS              		2     	2        	323     
+20615 	VALDEBENITO RODOLFO ALEJANDRO      		2     	2        	321     
+823   	VALLE CESAR G.                     		3     	3        	2464    
+8193  	VALLE EDITH BEATRIZ                		1     	1        	501     
+550   	VALLE JULIO OMAR                   		4     	4        	1038    
+20391 	VARGAS BLANCA                      		4     	3        	815     
+11381 	VARGAS MIGUEL ANGEL                		3     	1        	200     
+21593 	VASQUEZ AGUILA SONIA DEL CARME     		1     	1        	369     
+11813 	VAZQUEZ JAVIER TEOFILO             		6     	4        	1333    
+8625  	VEGA INES AURORA                   		1     	1        	960     
+965   	VELAZQUEZ PEDRO                    		1     	1        	2368    
+339   	VELAZQUEZ RAUL                     		4     	4        	2098    
+20616 	VERA ALBERTO                       		2     	2        	460     
+11492 	VERA CRISTIAN javier               		4     	4        	613     
+20617 	VERA DANIEL OSCAR                  		1     	1        	509     
+379   	VERA GLADYS NOEMI                  		4     	4        	600     
+368   	VERA JORGE JOSE                    		3     	3        	400     
+111   	VERA OSVALDO RENE                  		1     	1        	547     
+12576 	VERA, OSVALDO DANIEL               		5     	4        	3854    
+615   	VICTORIANO DELIA                   		1     	1        	679     
+1167  	VICTORIANO HUGO                    		3     	1        	891     
+21440 	VIDAL GONZALEZ JUANITA ELIZABE     		1     	1        	960     
+13725 	VILDOSOLA LAUTARO PABLO            		2     	2        	350     
+11876 	VILLANUEVA LUIS                    		2     	1        	1560    
+1803  	VILLANUEVA SANDRA NOEMI            		1     	1        	1410    
+11307 	VILLARROEL MARIA ELENA             		1     	1        	376     
+705   	WODICKA ALBECIA CLORINDA-J.IGL     		1     	1        	388     
+982   	WODICKA ENRIQUE                    		1     	1        	921     
+479   	ZAMBRANO MIRTA GRACIELA            		4     	2        	1123    
+12551 	ZAPATA RAUL                        		5     	4        	347     
+Total: 356440.82

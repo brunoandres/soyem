@@ -1,0 +1,83 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+11211 	ASENJO ROSA UBELINDA               		60    	48       	500.00  
+1535  	MONTENEGRO CRISTINA MABEL          		60    	48       	500.00  
+21102 	MORA AURORA NOEMI                  		60    	48       	500.00  
+632   	ANTIPAN NESTOR JAVIER              		60    	48       	500.00  
+11338 	FERNANDEZ YANINA VALERIA           		60    	48       	500.00  
+876   	VALENZUELA RAMON                   		60    	48       	500.00  
+785   	CABRERA SILVIA EVANGELINA          		60    	48       	500.00  
+11999 	PEREYRA NESTOR EDGARDO             		60    	48       	500.00  
+11161 	FONTE PABLO NICOLAS                		60    	48       	500.00  
+21297 	GALLARDO LETICIA                   		60    	48       	500.00  
+493   	PALMA HECTOR DANIEL                		60    	48       	500.00  
+857   	MONTI BLANCA ELENA                 		60    	48       	500.00  
+11169 	FONTE LEONARDO JAVIER              		60    	48       	500.00  
+1042  	VEGA DANIELA                       		60    	48       	500.00  
+20569 	ARO,JORGE FABIAN                   		60    	48       	500.00  
+364   	PILQUIMAN GUILLERMO CESAR          		60    	48       	500.00  
+1389  	SOTO MANUEL GUILLERMO              		60    	48       	500.00  
+11103 	MELLA PAREDES MARIA ELIZABETH      		60    	48       	500.00  
+11213 	HUENTEQUEO MARIA VERONICA          		60    	48       	500.00  
+21618 	LOPEZ VERONICA ANDREA              		60    	48       	500.00  
+1114  	NAHUELPAN OMAR ALEJANDRO           		60    	48       	500.00  
+370   	DIAZ ANIBAL                        		60    	48       	500.00  
+232   	DINARDO GUSTAVO ALBERTO            		60    	48       	500.00  
+11364 	GONZALEZ IRENE                     		60    	48       	500.00  
+11108 	MAMONDE MIGUEL ANGEL               		60    	48       	500.00  
+11131 	OPORTO HORACIO JOSE                		60    	48       	500.00  
+21298 	MIRANDA ANDREA ROXANA              		60    	48       	500.00  
+11387 	HUENTENAO GLADYS BEATRIZ           		60    	48       	500.00  
+1010  	LOPEZ JULIO VICENTE                		60    	48       	500.00  
+1125  	ORTIZ DANIELA AGUSTINA             		60    	48       	500.00  
+20583 	GHISLA AMBROSIO                    		60    	48       	500.00  
+20615 	VALDEBENITO RODOLFO ALEJANDRO      		60    	48       	500.00  
+864   	KRZYSLOWSKI PABLO                  		60    	48       	500.00  
+21595 	CIFUENTES GABRIELA JUDITH          		60    	48       	500.00  
+21559 	MARTINEZ SANDRA SILVIA             		60    	48       	500.00  
+11366 	CANO ANABEL ALEJANDRA              		60    	48       	500.00  
+1045  	CAHUIMPAN ZULEMA BENITA            		60    	48       	500.00  
+89    	PACHECO NILDA                      		60    	48       	500.00  
+11394 	SAVASTA VICENTE ROBERTO            		60    	48       	500.00  
+20460 	AGUILERA JORGE ALEJANDRO           		60    	48       	500.00  
+8538  	VARGAS BURGOS SANDRA IVONNE        		60    	48       	500.00  
+1775  	BASCURT ARTURO                     		60    	48       	500.00  
+11156 	PAINEFIL SERGIO MARIO              		60    	48       	500.00  
+20577 	CUYA CELSO GABRIEL                 		60    	48       	500.00  
+21509 	GARCIA ANTONIA VIVIANA             		60    	48       	500.00  
+1138  	NAVARRO PABLO ESTEBAN              		60    	48       	500.00  
+11141 	BASCUR EDUARDO                     		60    	48       	500.00  
+11694 	SANDOVAL, CESAR FACUNDO            		60    	48       	500.00  
+1046  	DESUTTER MELINA HEBE               		60    	48       	500.00  
+11664 	ROGEL DAMIAN ENRIQUE               		60    	48       	500.00  
+66    	ANCALAO AMERICO                    		60    	48       	500.00  
+11171 	SAMBUEZA LUIS A                    		60    	48       	500.00  
+680   	GAETAN GRACIELA M.                 		60    	48       	500.00  
+879   	EPULEF ESTELA                      		60    	48       	500.00  
+11286 	CABRERA FRANCISCO ISMAEL           		60    	48       	500.00  
+21271 	PELLEJERO SERGIO BRAULIO           		60    	48       	500.00  
+1129  	ORTIZ DE ELGUEA SERGIO D.          		60    	48       	500.00  
+1551  	MARIN CLAUDIA ESTHER               		60    	48       	500.00  
+11365 	TOLEDO LILIAN KARINA               		60    	48       	500.00  
+21658 	RODRIGUEZ AMANDA                   		60    	48       	500.00  
+162   	BARRERA LUIS CESAR                 		60    	48       	500.00  
+843   	ARTEAGA CATALAN MIRTA ORIANA       		60    	48       	500.00  
+1167  	VICTORIANO HUGO                    		60    	48       	500.00  
+1123  	TAVELLA CINTIA VANESSA             		60    	48       	500.00  
+11133 	INOSTROZA DIEGO SEBASTIAN          		60    	48       	500.00  
+395   	PALMA MIRIAM DE LAS NIEVES         		60    	48       	500.00  
+11125 	GINGINS ESTELA MARY                		60    	48       	500.00  
+21066 	AROS NEGRON CYNTHIA ALEJANDRA      		60    	48       	500.00  
+21294 	COLITRIPAY NOEMI                   		60    	48       	500.00  
+11057 	DANDLIKER ADOLFO                   		60    	48       	500.00  
+1466  	HUENCHUPAN RAUL.E.                 		60    	48       	500.00  
+220   	STOJACOVICH VANINA DE LOS ANGE     		60    	48       	500.00  
+219   	MARIN SONIA LETICIA                		60    	48       	500.00  
+21526 	MARIN AZUCENA ELIZABETH            		60    	48       	500.00  
+21564 	MORALES DIOCARES BRENDA            		60    	48       	500.00  
+11758 	CASTILLO GLADYS DE LAS NIEVES      		60    	48       	500.00  
+821   	REO PAMELA BEATRIZ                 		60    	48       	500.00  
+1048  	NICOLE ANDREA CAROLINA             		60    	48       	500.00  
+1805  	LINCONIR ANDREA FABIANA            		60    	48       	500.00  
+740   	PAINE JULIAN SEBASTIAN             		60    	48       	500.00  
+475   	QUINTRIQUEO LUCIO                  		60    	47       	500.00  
+260   	LOPEZ MIGUEL ANTONIO               		60    	44       	500.00  
