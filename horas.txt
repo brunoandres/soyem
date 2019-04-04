@@ -1,0 +1,11 @@
+horas:
+
+Especificar el label activo: ejemplo estoy parado en Contabilidad y que me pueda dar cuenta, se resalte.
+
+Quitar autocompletar de los campos calendario fecha , así no podemos poner cualquier dato (lo vio Fernando en las fechas). Problema que no deja ver bien
+
+(2 horas )
+
+En contabilidad, impedir que el usuario tesorero u otro que no sea administrador, puedan eliminar un asiento. Solo el administrador del sistema puede hacerlo. (Pidio Fernando). Ejemplo ir a contabilidad libre diario, un desde hasta y en el buscar cuando arroja el listado permite quitar. 
+
+(2 horas)

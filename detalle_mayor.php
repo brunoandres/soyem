@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -78,9 +79,14 @@ include("menu.php");
   echo 'Total Debe = $ '.$d;
   echo '<br>';
   echo 'Total Haber = $ '.$h;
-   echo '<br>';
-   $sal = $h - $d;
-  echo 'Saldo = $ '.$sal;
+  echo '<br>';
+
+  if($d!=$h){
+    echo '<h3 style="color:red;">Los importes no coinciden</h3>';
+  }
+   
+  $sal = $h - $d;
+  echo '<h3 style="color:red;">Saldo = $ '.$sal.'</h3>';
   ?>
   </div>
   <div class = "resumen">

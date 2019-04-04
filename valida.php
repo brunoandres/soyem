@@ -15,6 +15,7 @@ exit();
 		$dat=mysql_fetch_array($uv);
 		$funcion=$dat['funcion'];
 		$seccion=$dat['seccion'];
+		$rol = $dat['tu_name'];
 		session_start();
 		$_SESSION["autenticado"] = 'si';
 		$_SESSION["usuario"] = $usuario; 

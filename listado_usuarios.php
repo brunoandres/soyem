@@ -95,13 +95,13 @@ include("menu.php");
   <form action="agrega_usuario.php" method="post">
     <div class="subt"> Agregar Usuario: </div>
 	<div class="etiqueta">Usuario:</div>
-    <input name="usuario" type="text" class="p_input" id="usuario" />
-	recomendado apellido.nombre
+    <input name="usuario" type="text" class="p_input" id="usuario" autocomplete="off" placeholder="recomendado apellido.nombre"/>
+	
 	<div class="etiqueta">Contrase&ntilde;a:</div>
-    <input name="pass" type="password" class="p_input" id="pass" />
-    minimo seis caracteres
+    <input name="pass" type="password" class="p_input" id="pass" placeholder="minimo seis caracteres"/>
+    
 	<div class="etiqueta">Confirme Contrase&ntilde;a:</div>
-    <input name="pass1" type="password" class="p_input" id="pass1" />
+    <input name="pass1" type="password" class="p_input" id="pass1" placeholder="minimo seis caracteres" />
     <div class="etiqueta">Tipo:</div>
         <select name="funcion" class="p_input" id="funcion">
   <option selected="selected"></option>

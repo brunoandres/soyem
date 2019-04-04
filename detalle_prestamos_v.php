@@ -1,4 +1,5 @@
 <?php
+$page = 'prestamos_viviendas';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -101,7 +102,7 @@ echo '<td>'.substr($a['vencimiento'],8,2).'-'.substr($a['vencimiento'],5,2).'-'.
 echo '<td>$ '.$a['monto'].'</td>';
 echo '<td align="center"><a href="mod_cuota_v.php?clave_prestamo='.$a{'clave_prestamo'}.'" class="example6">Modificar</a></td>';
 echo '<td align="center"><a href="quitar_cuota_v.php?clave_prestamo='.$a{'clave_prestamo'}.'&vuelve='.$clave_prestamo.'" title="Quitar esta cuota del prestamo" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar esta cuota del prestamo?'";
+	   echo "'ï¿½Estï¿½ seguro que desea quitar esta cuota del prestamo?'";
 	  echo ')" >Quitar Cuota</a></td>';
 echo '</tr>';
 }

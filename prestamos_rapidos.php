@@ -97,7 +97,7 @@ include("menu.php");
 		Nombre <input id="nombre_afiliado" type="text" class="p_input" disabled>
 		<input id="clave" name="clave" type="hidden">
 		<input id="empresa" name="empresa" type="hidden" value="<?php echo $_GET['empre']; ?>">
-		Importe <input type="text" name="monto" class="p_input_corto"></p>
+		Importe <input type="number" name="monto" class="p_input_corto" min="0" step="0.10" autocomplete="off"></p>
 		<p> Cuotas <select name="cuotas" class="p_input_corto" id="cuotas" >
 <option value="<?php echo $_GET['cuotas']; ?>" selected="selected"><?php echo $_GET['cuotas']; ?></option>
 <?php

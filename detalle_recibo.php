@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -170,7 +171,7 @@ if($data_rec['rec_anulado']=='S'){
 <b><?php echo $data_rec['rec_fecha']; ?></b>
 
 
-<div class="etiqueta">Señor:</div>
+<div class="etiqueta">Seï¿½or:</div>
 <b><?php echo $data_rec['rec_nombre']; ?></b>
 
 <div class="etiqueta">Domicilio</div>
@@ -206,7 +207,7 @@ if($data_rec['rec_anulado']=='S'){
 <tr>
 <?php
  echo '<td><a href="anular_recibo.php?rec_id='.$rec_id.'&vuelta=detalle_recibo.php?rec_id='.$rec_id.'" title="Anular este Recibo" class="anular" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea anular eate recibo? Esta operacion no se puede deshacer'";
+	   echo "'ï¿½Estï¿½ seguro que desea anular eate recibo? Esta operacion no se puede deshacer'";
 	  echo ')" >';
 	  if($data_rec['rec_anulado']=='N'){
 	  echo 'Anular';

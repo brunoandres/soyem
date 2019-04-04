@@ -17,6 +17,9 @@ return confirm( mensaje );
 } 
 </script>
 
+
+
+
  <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
 		<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="colorbox/jquery.colorbox1.js"></script>
@@ -86,7 +89,7 @@ include("menu.php");
 
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-		<th>A�o</th>
+		<th>Año</th>
       <th>Estado</th>
 	  <th>Cierre</th>
 	  <th>Usuario</th>
@@ -96,13 +99,15 @@ include("menu.php");
     	$txt1 = "SELECT * FROM cont_ejercicios order by ejer_year";
 		$query1 = mysql_query($txt1);
 			while ($data1 = mysql_fetch_array($query1)) {
+				$anio = $data1['ejer_year'];
 				echo '<tr>';
 					echo '<td>'.$data1['ejer_year'].'</td>';
 						if($data1['ejer_estado']==0){
 							$estado = '<div class ="ejercicio_cerrado">CERRADO</div>';
 							$cierre = $data1['ejer_dia_cierre'];
 							$ejer_us = $data1['ejer_us'];
-							$link = "";
+							
+							$link = "<input type='button' id='fecha' name='fecha' value='$anio' class='openBtn'>";
 						} else {
 							$estado = '<div class ="en_ejercicio">EN EJERCICIO</div>';
 							$cierre = "";
@@ -121,4 +126,37 @@ include("menu.php");
   </div>
 </div>
 </body>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$('.openBtn').on('click',function(){
+	alert($('input:text[name=fecha]').val());
+});
+</script>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Modal with Dynamic Content</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </html>
+
+
+
+

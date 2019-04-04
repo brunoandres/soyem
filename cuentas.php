@@ -132,11 +132,16 @@ include("menu.php");
     echo'<tr>
       <td>'.$au['rubro'].'</td>
 	    <td>'.$au['titulo'].'</td>
-		<td><a href="modificar_rubro.php?id_rubro='.$au['id_rubro'].'" class="example6">Modificar</a></td>';
-     echo '<td><a href="quitar_rubro.php?id_rubro='.$au['id_rubro'].'" title="Quitar este usuario" onclick="return confirmar(';
+    <td><a href="modificar_rubro.php?id_rubro='.$au['id_rubro'].'" class="example6">Modificar</a></td>';
+    if($_SESSION["seccion"]=='administrador'){
+      echo '<td><a href="quitar_rubro.php?id_rubro='.$au['id_rubro'].'" title="Quitar este usuario" onclick="return confirmar(';
 	   echo "'�Est� seguro que desea quitar este rubro?'";
-	  echo ')" >Quitar</a></td>
-    </tr>';
+	  echo ')" >Quitar</a></td></tr>';
+    }else{
+      echo '<td>Sin permisos</td></tr>';
+    } 
+     
+
 	}
 	?>
   </table>
@@ -179,11 +184,19 @@ include("menu.php");
 	<td>'.$auu['cuenta'].'</td>
       <td>'.$auu['rubro'].'</td>
 	    <td>'.$auu['titulo'].'</td>
-		<td><a href="#">Modificar</a></td>';
-     echo '<td><a href="quitar_cuenta.php?id_cuentas='.$auu['id_cuentas'].'" title="Quitar esta cuenta" onclick="return confirmar(';
+    <td><a href="#">Modificar</a></td>';
+    if($_SESSION["seccion"]=='administrador'){
+
+      echo '<td><a href="quitar_cuenta.php?id_cuentas='.$auu['id_cuentas'].'" title="Quitar esta cuenta" onclick="return confirmar(';
 	   echo "'�Est� seguro que desea quitar esta cuenta?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
+    }else{
+
+      echo '<td>Sin permisos</td></tr>';
+
+    }
+     
 	}
 	?>
   </table>

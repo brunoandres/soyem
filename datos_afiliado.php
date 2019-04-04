@@ -1,4 +1,5 @@
 <?php
+$page = 'afiliados';
 include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -85,10 +86,10 @@ echo 'Obra social de esposo/a: <b>'.$data['os_esposa'].'</b> ';
 	} 
 } 
 echo '<br>';
-echo 'Teléfono: <b>'.$data['telefono'].'</b> Celular: <b>'.$data['celular'].'</b><br>';
+echo 'Telï¿½fono: <b>'.$data['telefono'].'</b> Celular: <b>'.$data['celular'].'</b><br>';
 echo 'Correo: <b>'.$data['correo'].'</b><br>';
 echo 'Sector en el que trabaja: <b>'.$data['sector'].'</b><br>';
-echo 'Categoria: <b>'.$data['categoria'].'</b> Antigüedad: <b>'.$data['antiguedad'].'</b><br>';
+echo 'Categoria: <b>'.$data['categoria'].'</b> Antigï¿½edad: <b>'.$data['antiguedad'].'</b><br>';
 echo 'Coseguro: <b>'.$data['coseguro'].'</b>  ';
 if ($data['coseguro']=='no'){
 echo 'Motivo: <b>'.$data['motivo_coseguro'].'</b> ';
@@ -120,11 +121,11 @@ echo '<b>Actualizado el '.substr($data['f_actualiza'],8,2).'/'.substr($data['f_a
 <?php
 if ($data['activo']=='si'){
 	?>
-<a href="baja_afiliado.php?clave=<?php echo $clave; ?>" onclick="return confirmar('¿Está seguro que desea dar de baja a este afiliado?')">Dar de Baja a este afiliado</a>
+<a href="baja_afiliado.php?clave=<?php echo $clave; ?>" onclick="return confirmar('ï¿½Estï¿½ seguro que desea dar de baja a este afiliado?')">Dar de Baja a este afiliado</a>
 <?php
 } else {
 ?>
-<a href="baja_afiliado.php?clave=<?php echo $clave; ?>" onclick="return confirmar('¿Está seguro que desea Activar a este afiliado?')">Activar a este afiliado</a>
+<a href="baja_afiliado.php?clave=<?php echo $clave; ?>" onclick="return confirmar('ï¿½Estï¿½ seguro que desea Activar a este afiliado?')">Activar a este afiliado</a>
 <?php
 }
 ?>
@@ -198,7 +199,7 @@ echo '<b>Sin familiares asociados</b>';
 	}
 	echo 'Nombre: '.$af['nombre'].'<br>';
 	echo 'Numero asociado: '.$af['nro'].'<br>';
-	echo 'Relación: '.$af['tipo'].'<br>';
+	echo 'Relaciï¿½n: '.$af['tipo'].'<br>';
 	echo 'Documento: '.$af['documento'].'<br>';
 	echo 'Nacimiento: '.substr($af['nacimiento'],8,2).'/'.substr($af['nacimiento'],5,2).'/'.substr($af['nacimiento'],0,4).' - Edad: <b>';
 	if (substr($af['nacimiento'],5,2) < date("m")){
@@ -243,7 +244,7 @@ echo '</b><br>';
 	if ($af['activo'] =='si'){
 	echo '<p><a href="modifica_familiar.php?id_fam='.$af['id_fam'].'&clave='.$clave.'" class="example6" title="Modificar datos de este familiar">Modificar datos</a> - ';
 	echo '<a href="baja_familiar.php?id_fam='.$af['id_fam'].'&clave='.$clave.'" title="dar de baja e este familiar" onclick="return confirmar(';
-	echo "'¿Está seguro que desea dar de baja a este familiar?'";
+	echo "'ï¿½Estï¿½ seguro que desea dar de baja a este familiar?'";
 	  echo ')" >Dar de Baja a este familiar</a>';
 	echo '</p>';
 	} else {

@@ -1,4 +1,5 @@
 <?php
+$page = 'contabilidad';
 include("secure2.php");
 include("conecta.php");
 include("funciones_grales.php");
@@ -145,9 +146,12 @@ include("menu.php");
   echo 'Total Debe = $ '.number_format($d,2,",",".");
   echo '<br>';
   echo 'Total Haber = $ '.number_format($h,2,",",".");
-   echo '<br>';
-   $sal = $h - $d;
-  echo 'Saldo = $ '.number_format($sal,2,",",".");
+
+  $sal = $h - $d;
+   if($d!=$h){
+    echo '<h3 style="color:red;">Los importes no coinciden</h3>';
+  }
+  echo '<h3 style="color:red;">Saldo = $ '.number_format($sal,2,",",".").'</h3>';
   ?>
   </div>
   <div class = "resumen">

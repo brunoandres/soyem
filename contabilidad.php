@@ -161,9 +161,16 @@ include("menu.php");
 		<td> $ '.$aa['haber'].'</td>';
 		echo '<td rowspan="'.$na.'">'.$au['detalle'].'</td>
 		<td rowspan="'.$na.'"><a href="asiento.php?nro='.$au['nro'].'">Modificar</a></td>';
-     echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$nro.'" title="Quitar este asiento" onclick="return confirmar(';
-	   echo "'�Est� seguro que desea quitar este asiento?'";
-	  echo ')" >Quitar</a></td></tr>';
+			if($_SESSION["seccion"]=='administrador'){
+
+				echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$nro.'" title="Quitar este asiento" onclick="return confirmar(';
+				echo "'¿Está seguro que desea quitar este asiento?'";
+				echo ')" >Quitar</a></td></tr>';
+
+			}else{
+				echo '<td>Sin permisos</td>';
+			} 
+	 
 	  } else {
 	  echo '<tr bgcolor="'.$fon.'"><td>'.$aa['cuenta'].'</td>
 		<td> $ '.$aa['debe'].'</td>

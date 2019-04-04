@@ -111,7 +111,7 @@ if (!empty($_GET['afiliado'])){
 <form method="post" action="agrega_prestamo_v.php">
 <input type="hidden" name="afiliado" value="<?php echo $_GET['afiliado']; ?>">
 <div class="etiqueta">Monto Cuota:</div>
-  <input name="monto_cuota" type="text" class="p_input" id="monto_cuota" />
+  <input name="monto_cuota" type="number" class="p_input" id="monto_cuota" min="0" step="0.10" autocomplete="off" />
   <div class="etiqueta">Cuotas:</div>
 <select name="cuotas" class="p_input" id="cuotas" onChange="Calcula(this.form)">
 <option value=""></option>

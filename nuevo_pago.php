@@ -93,7 +93,7 @@ function banco(form)
 	$fe = substr($data['fecha_pago'],8,2).'/'.substr($data['fecha_pago'],5,2).'/'.substr($data['fecha_pago'],0,4);
 	}
 	?>
- <input name="fecha" type="text" class="p_input" id="fecha" value="<?php echo $fe; ?>" size="12" />	
+ <input name="fecha" type="text" class="p_input" id="fecha" value="<?php echo $fe; ?>" size="12" placeholder="Seleccione una fecha" autocomplete="off" readonly />	
     <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha",      // id of the input field
@@ -120,7 +120,7 @@ function banco(form)
   ?>
   </select>
   <div class="etiqueta">Importe:</div>
-    <input name="importe" type="text" class="p_input"  id="importe" value="<?php echo $data['importe_pago']; ?>" />
+    <input name="importe" type="number" class="p_input"  id="importe" min="0" step="0.1" value="<?php echo $data['importe_pago']; ?>" />
 	 <div class="etiqueta">Factura:</div>
     <input name="factura" type="text" class="p_input"  id="factura" value="<?php echo $data['factura_pago']; ?>" />
 	 <div class="etiqueta">Detalle:</div>
