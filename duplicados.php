@@ -10,6 +10,16 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Duplicados</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+		<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+	$('#example').DataTable();
+} );
+
+
+	</script>
 </head>
 
 <body>
@@ -28,7 +38,8 @@ include("menu.php");
 
 
 <h1>Legajos duplicados en el Sistema: </h1>
-<table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+<table id="example" class="display" cellspacing="0" width="100%">
+	<thead>
     <tr>
 		
       <th>Legajos</th>
@@ -36,6 +47,8 @@ include("menu.php");
 	  <th>Juntar</th>
       
     </tr>
+    </thead>
+    <tbody>
  <?php
  	$query = mysql_query("SELECT legajo, nombre, clave, COUNT(legajo) as tot  FROM afiliado GROUP BY legajo");
  	while($data = mysql_fetch_array($query)){
@@ -55,6 +68,7 @@ include("menu.php");
  	}
  	
  ?>
+</tbody>
 </div>
 </div>
 </body>

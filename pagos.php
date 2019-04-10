@@ -10,6 +10,7 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Pagos</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -141,7 +142,8 @@ include("menu.php");
   </div>
   
   
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+<table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
     <tr>
 		
       <th>Fecha</th>
@@ -154,6 +156,7 @@ include("menu.php");
       <th>Modificar</th>
       <th>Quitar</th>
     </tr>
+    </thead>
 	<?php
 	
 $tam = 25; 
@@ -260,5 +263,19 @@ $pagina = $_GET['pagina'] + 1;
 </form>
   </div>
 </div>
+
+
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  $('#example').DataTable();
+} );
+
+
+  </script>
+
+
+
 </body>
 </html>

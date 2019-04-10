@@ -7,9 +7,19 @@ $funcion_r=$_SESSION['funcion'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8"/>
 <title>Sistema Administrativo - Empresas</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+	$('#empresas').DataTable();
+} );
+</script>
+
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -27,8 +37,8 @@ return confirm( mensaje );
 </SCRIPT>';
   }
   ?>
- <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
-		<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
+ <!--<link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />-->
+		<!--<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>-->
 		<script type="text/javascript" src="colorbox/jquery.colorbox.js"></script>
 	<script type="text/javascript">
 			$(document).ready(function(){
@@ -77,20 +87,22 @@ include("menu.php");
   <div id="nuevo_a"><a href="nueva_empresa.php?ac=nuevo" class="example6">
  Nueva Empresa
   </a></div>
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+<table id="empresas" class="display" cellspacing="0" width="100%">
+	<thead>
     <tr>
 		
       <th>Nombre</th>
 	  <th>Tipo</th>
 	    <th>Localidad</th>
-	  <th>Direcci�n</th>
-	 <th>Tel�fono</th>
+	  <th>Dirección</th>
+	 <th>Teléfono</th>
 	 <th>Para<br />Prestamos</th>
 	 <th>Para<br />Salud</th>
 	 
       <th></th>
       
     </tr>
+    </thead>
 	<?php
 	
 	

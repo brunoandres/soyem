@@ -11,7 +11,7 @@ $funcion_r=$_SESSION['funcion'];
 <title>Sistema Administrativo - Ingresos</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-	<link rel="stylesheet" type="text/css" href="css/shCore.css">
+<link rel="stylesheet" type="text/css" href="css/shCore.css">
 <script language="JavaScript" type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 
@@ -42,7 +42,7 @@ $funcion_r=$_SESSION['funcion'];
 	<script type="text/javascript" language="javascript" src="js/demo.js"></script>
 	<script type="text/javascript" language="javascript" class="init">
 	$(document).ready(function() {
-	$('#example').DataTable();
+	$('#ingresos').DataTable();
 } );
 
 
@@ -80,7 +80,7 @@ include("menu.php");
 
 
 
-	<table id="example" class="display" cellspacing="0" width="100%">
+	<table id="ingresos" class="display" cellspacing="0" width="100%">
 				<thead>
 	 <th>Nro Recibo</th>
       <th>Fecha</th>

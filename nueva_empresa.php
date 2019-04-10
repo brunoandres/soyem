@@ -54,18 +54,18 @@ function Validar(form)
  <form action="modifica_empresa.php" method="post">  
  <div class="etiqueta">Nombre:</div>
 
- <input name="nombre" type="text" class="p_input" id="nombre" value="<?php echo $data['nombre']; ?>" />	
+ <input name="nombre" type="text" class="p_input" id="nombre" value="<?php echo $data['nombre']; ?>" autocomplete="off" />	
    
 <div class="etiqueta">Domicilio:</div>
-		 <input name="domicilio" type="text" class="p_input"  id="domicilio" value="<?php echo $data['domicilio']; ?>" />
+		 <input name="domicilio" type="text" class="p_input"  id="domicilio" value="<?php echo $data['domicilio']; ?>" autocomplete="off"/>
   <div class="etiqueta">Localidad:</div>
-    <input name="localidad" type="text" class="p_input"  id="localidad" value="<?php echo $data['localidad']; ?>" />
+    <input name="localidad" type="text" class="p_input"  id="localidad" value="<?php echo $data['localidad']; ?>" autocomplete="off"/>
 	 <div class="etiqueta">Telefono:</div>
-    <input name="telefono" type="text" class="p_input"  id="telefono" value="<?php echo $data['telefono']; ?>" />
+    <input name="telefono" type="text" class="p_input"  id="telefono" value="<?php echo $data['telefono']; ?>" autocomplete="off" />
 	 <div class="etiqueta">Cuit:</div>
-	<input name="cuit" type="text" class="p_input"  id="cuit" value="<?php echo $data['cuit']; ?>" />
+	<input name="cuit" type="text" class="p_input"  id="cuit" value="<?php echo $data['cuit']; ?>" autocomplete="off"/>
 	<div class="etiqueta">Tipo de servicio:</div>
-	<input name="tipo" type="text" class="p_input"  id="tipo" value="<?php echo $data['tipo']; ?>" />
+	<input name="tipo" type="text" class="p_input"  id="tipo" value="<?php echo $data['tipo']; ?>" autocomplete="off" />
         <div><label>
 	<input type="button" name="Submit" value="Guardar Empresa" onClick="Validar(this.form)"/>
 	</label></div>
