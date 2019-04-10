@@ -4,13 +4,19 @@ include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
 mysql_query("delete from asientos where activo='no'");
+if(!isset($_GET['fecha'])){
+	header('location:ejercicios.php');
+}else{
+	$fecha = $_GET['fecha'];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" charset="utf-8"/>
-<title>Sistema Administrativo - Ejercicios Contables</title>
+<title>Sistema Administrativo - Detalle Ejercicios Contables</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -69,66 +75,50 @@ include("menu.php");
 
 
 <?php include("recortes/menu_cont.php"); ?>
- <h3>Ejercicios Contables</h3>
+ <h3>Detalle de Ejercicios Contables</h3>
 	
-	<?php
-		$txt = "SELECT YEAR(fecha) FROM asientos group by YEAR(fecha) order by YEAR(fecha)";
-		$query = mysql_query($txt);
-			while ($data = mysql_fetch_array($query)) {
-				$year = $data['YEAR(fecha)'];
-				$nn = mysql_num_rows(mysql_query("select * from cont_ejercicios where ejer_year = '$year'"));
-				if($nn == 0){
-					mysql_query("insert into cont_ejercicios (ejer_year) values ('$year')");
-				}
-			}
-	?>
 
-
-
-
-
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+<table id="example" class="display" cellspacing="0" width="100%">
+	<thead>
     <tr>
-		<th>Año</th>
-      <th>Estado</th>
-	  <th>Cierre</th>
-	  <th>Usuario</th>
-	  <th>Cerrar</th>
+		<th>Nro</th>
+      <th>Fecha</th>
+	  <th>Cuenta</th>
+	  <th>Debe</th>
+	  <th>Haber</th>
+	  <th>Activo</th>
     </tr>
+    </thead>
     <?php
-    	$txt1 = "SELECT * FROM cont_ejercicios order by ejer_year";
-		$query1 = mysql_query($txt1);
-			while ($data1 = mysql_fetch_array($query1)) {
-				$anio = $data1['ejer_year'];
+    	$sql = "select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas where (asientos.fecha >='".$fecha."-01-01' and asientos.fecha <= '".$fecha."-31-12') group by asientos.nro order by asientos.id_a asc";
+		$query = mysql_query($sql);
+			while ($data1 = mysql_fetch_array($query)) {
+				
 				echo '<tr>';
-					echo '<td>'.$anio.'</td>';
-						if($data1['ejer_estado']==0){
-							$estado = '<div class ="ejercicio_cerrado">CERRADO</div>';
-							$cierre = $data1['ejer_dia_cierre'];
-							$ejer_us = $data1['ejer_us'];
-							
-							$link = '<a href="detalle_ejercicios.php?fecha='.$anio.'"><button>Ver detalle</button></a>';
-							
-						} else {
-							$estado = '<div class ="en_ejercicio">EN EJERCICIO</div>';
-							$cierre = "";
-							$ejer_us = "";
-							$link ='<a href="recortes/cerrar_ejercicio.php?ejer_year='.$data1['ejer_year'].'&us='.$_SESSION['usuario'].'" class="example6" id="cerrarejercicio">Cerrar Ejercicio</a>';
-						}
-						echo '<td>'.$estado.'</td>';
-						echo '<td>'.$cierre.'</td>';
-					echo '<td>'.$ejer_us.'</td>';
-					echo '<td align="center">'.$link.'</td>';
+					echo '<td>'.$data1['nro'].'</td>';
+					echo '<td>'.$data1['fecha'].'</td>';
+					echo '<td>'.$data1['cuenta'].'</td>';
+					echo '<td>'.$data1['debe'].'</td>';
+					echo '<td>'.$data1['haber'].'</td>';
+					echo '<td>'.$data1['activo'].'</td>';
 				echo '</tr>';
 			}
+
 			?>
+
 	</table>
 	
   </div>
 </div>
+
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  $('#example').DataTable();
+} );
+
+
+  </script>
 </body>
 </html>
-
-
-
-
