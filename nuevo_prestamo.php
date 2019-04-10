@@ -8,7 +8,7 @@ include ("funciones_grales.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Nuevo Afiliado</title>
 <link rel="stylesheet" href="jquery/jquery.ui.all.css">
 
@@ -249,7 +249,7 @@ if ($nro_af == 0 ){
 <div class="etiqueta">Afiliado:</div>
 <input id="tags" name="p_afiliado" class="p_input"/>
 
-<div class="etiqueta">Tipo de Cancelaci�n:</div>
+<div class="etiqueta">Tipo de Cancelación:</div>
 <select name="tipe_p" class="p_input"/>
 <option value="D">Debito por Banco</option>
 <option value="M">Descuento por Planilla</option>

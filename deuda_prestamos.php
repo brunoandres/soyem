@@ -8,7 +8,7 @@ mysql_query("delete from asientos where activo='no'");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Contabilidad</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript">
@@ -77,10 +77,10 @@ include("menu.php");
 
 
 <?php include("recortes/menu_cont.php"); ?>
-<h1>Deuda por prestamos por planilla a un A�o especifico </h1>
+<h1>Deuda por prestamos por planilla a un Año especifico </h1>
   <form action="<?php echo $PHP_SELF; ?>" method="post">
 	<div class="etiqueta">Fecha de Corte:</div>
-    <input type="text" name="corte" class="p_input" id="corte">
+    <input type="text" name="corte" class="p_input" id="corte" autocomplete="off" readonly="" placeholder="Seleccione una fecha">
 	<script type="text/javascript">
     Calendar.setup({
         inputField     :    "corte",      // id of the input field

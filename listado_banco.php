@@ -8,7 +8,7 @@ $funcion_r=$_SESSION['funcion'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Listado para Banco</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
  <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -78,7 +78,7 @@ include("menu.php");
 	}
 	?>
   </select>
-   A�o: <select name="ano" id="ano" class="p_input_corto">
+   Año: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $aanio; ?>"><?php echo $aanio; ?></option>
    <?php
    $ye =2013;
@@ -89,7 +89,7 @@ include("menu.php");
 	?>
   </select>
 <div class="etiqueta">Fecha de d&eacute;bito:</div>
-  <input name="fecha_deb" type="text" class="p_input" id="fecha_deb" />
+  <input name="fecha_deb" type="text" class="p_input" id="fecha_deb" autocomplete="off" readonly=""/>
     <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha_deb",      // id of the input field
