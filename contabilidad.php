@@ -11,6 +11,7 @@ mysql_query("delete from asientos where activo='no'");
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Contabilidad</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -110,9 +111,10 @@ include("menu.php");
   <div id="nuevo_a"><a href="asiento.php?ac=nuevo">
  Nuevo asiento
   </a></div>
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+  <table id="example" class="display" cellspacing="0" width="100%">
+  	<thead>
     <tr>
-		<th>Fecha</th>
+	  <th>Fecha</th>
       <th>Nro</th>
 	  <th>Cuenta</th>
 	  <th>Debe</th>
@@ -121,6 +123,7 @@ include("menu.php");
       <th>Modificar</th>
       <th>Quitar</th>
     </tr>
+    </thead>
 	<?php
 	if (empty($_GET['desde']) and empty($_GET['busc'])){
 	$desde = date("Y/m/d");
@@ -168,7 +171,7 @@ include("menu.php");
 				echo ')" >Quitar</a></td></tr>';
 
 			}else{
-				echo '<td>Sin permisos</td>';
+				echo '<td style="color:red;">Sin permisos</td>';
 			} 
 	 
 	  } else {
@@ -188,5 +191,19 @@ include("menu.php");
     <a href="print_caja.php?desde=<?php echo $desde; ?>&hasta=<?php echo $hasta; ?>" target="_blank">Preparar este libro para imprimir</a>  </div>
   </div>
 </div>
+
+
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#example').DataTable({
+			"language": {
+            "url": "spanish.json"
+        	}
+		});
+	} );
+</script>
+
 </body>
 </html>

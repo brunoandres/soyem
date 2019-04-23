@@ -9,7 +9,7 @@ $data_rec = mysql_fetch_array(mysql_query("select * from recibos INNER JOIN conc
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Detalle del Recibo</title>
 <link rel="stylesheet" href="jquery/jquery.ui.all.css">
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -171,7 +171,7 @@ if($data_rec['rec_anulado']=='S'){
 <b><?php echo $data_rec['rec_fecha']; ?></b>
 
 
-<div class="etiqueta">Se�or:</div>
+<div class="etiqueta">Señor:</div>
 <b><?php echo $data_rec['rec_nombre']; ?></b>
 
 <div class="etiqueta">Domicilio</div>
@@ -207,7 +207,7 @@ if($data_rec['rec_anulado']=='S'){
 <tr>
 <?php
  echo '<td><a href="anular_recibo.php?rec_id='.$rec_id.'&vuelta=detalle_recibo.php?rec_id='.$rec_id.'" title="Anular este Recibo" class="anular" onclick="return confirmar(';
-	   echo "'�Est� seguro que desea anular eate recibo? Esta operacion no se puede deshacer'";
+	   echo "'¿Está seguro que desea anular este recibo? Esta operación no se puede deshacer'";
 	  echo ')" >';
 	  if($data_rec['rec_anulado']=='N'){
 	  echo 'Anular';

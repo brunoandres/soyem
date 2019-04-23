@@ -9,7 +9,7 @@ $data =  mysql_fetch_array(mysql_query("select * from asientos where id_a = '$id
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Contabilidad</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
@@ -232,10 +232,17 @@ include("menu.php");
 		<td> $ '.$au['haber'].'</td>
 		<td>'.$au['detalle'].'</td>
 		<td><a href="asiento.php?id_a='.$au['id_a'].'&nro='.$au['nro'].'">Modificar</a></td>';
-     echo '<td><a href="quitar_asiento.php?id_a='.$au['id_a'].'&vuelta=1&nro='.$au['nro'].'" title="Quitar este usuario" onclick="return confirmar(';
-	   echo "'�Est� seguro que desea quitar este item?'";
-	  echo ')" >Quitar</a></td>
-    </tr>';
+    if($_SESSION["seccion"]=='administrador'){
+
+        echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$nro.'" title="Quitar este asiento" onclick="return confirmar(';
+        echo "'¿Está seguro que desea quitar este asiento?'";
+        echo ')" >Quitar</a></td></tr>';
+
+      }else{
+        echo '<td style="color:red;">Sin permisos</td></tr>';
+      }
+
+    
 	$d=$d+$au['debe'];
 	$h=$h+$au['haber'];
 	}
@@ -251,21 +258,28 @@ include("menu.php");
    if ( $sal < 0.009 and $sal > -0.009){
    $sal = 0;
    }
-  echo 'Saldo = $ '.$sal;
+
+   if ($sal==0) {
+     $saldo = '<div>Saldo = $ '.$sal.'</div>';
+   } else {
+     $saldo = '<div style="color:red;">Saldo = $ '.$sal.'</div>';
+   }
+   
+  echo $saldo;
   ?>
   </div>
   <?php
   if ($sal != 0){
   ?>
   <div id="bad">
-    Atenci&oacute;n!!!! El asiento no est� equilibrado
+    Atenci&oacute;n!!!! El asiento no está equilibrado
     <br />Si sale ahora no quedara guardado
   </div>
   <?php
   } else {
   ?>
   <div id="bien">
-   El asiento se equilibro correctamente
+   El asiento se equilibró correctamente
   </div>
   </div> 
 <div id="nuevo_a"><a href="verifica.php?nro=<?php echo $_GET['nro']; ?>&accion=nuevo">Guardar y Nuevo asiento</a> - <a href="verifica.php?nro=<?php echo $_GET['nro']; ?>&accion=mayor">Guardar e Ir al libro diario</a></div>

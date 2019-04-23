@@ -7,7 +7,7 @@ $funcion_r=$_SESSION['funcion'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Nuevo Recibo</title>
 <link rel="stylesheet" href="jquery/jquery.ui.all.css">
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -154,9 +154,9 @@ include("menu.php");
 <form method="post" action="add_recibo.php">
 <div class="subt"> Nuevo Recibo: </div>
 <div class="etiqueta">Numero de Recibo:</div>
-<input type="text" name="rec_nro_01" class="p_input_corto"/> - <input type="text" name="rec_nro_02" class="p_input_corto"/> Solo cifras significativas
+<input type="text" name="rec_nro_01" class="p_input_corto"/> - <input type="text" name="rec_nro_02" class="p_input_corto" autocomplete="off" /> Solo cifras significativas
 <div class="etiqueta">Fecha:</div>
-<input type="text" name="rec_fecha" class="p_input" id="rec_fecha" value="<?php echo date("d/m/Y"); ?>"/>
+<input type="text" name="rec_fecha" class="p_input" id="rec_fecha" value="<?php echo date("d/m/Y"); ?>" readonly/>
  <script type="text/javascript">
     Calendar.setup({
         inputField     :    "rec_fecha",      // id of the input field
@@ -170,8 +170,8 @@ include("menu.php");
 <div class="etiqueta">Afiliado:</div>
 <input id="tags" name="p_afiliado" class="p_input" onblur="Calcula(this.form)"/>
 
-<div class="etiqueta">Se�or:</div>
-<input type="text" name="rec_nombre" class="p_input"/>
+<div class="etiqueta">Señor:</div>
+<input type="text" name="rec_nombre" class="p_input" autocomplete="off" />
 <input type="hidden" name="rec_legajo"/>
 
 <div class="etiqueta">Domicilio</div>
@@ -191,9 +191,9 @@ Responsable Inscripto: <input type="radio" name="rec_iva" value="Responsable Ins
 | Consumidor Final: <input type="radio" name="rec_iva" value="Consumidor Final" />
 
 <div class="etiqueta">Importe en Efectivo:</div>
-<input type="text" name="rec_importe_efectivo" class="p_input"/> Ingresar solo los valores sin signo pesos
+<input type="number" step="0.1" name="rec_importe_efectivo" class="p_input"/> Ingresar solo los valores sin signo pesos
 <div class="etiqueta">Importe en Cheque:</div>
-<input type="text" name="rec_importe_cheque" class="p_input" onchange="tipo_op(this.form)"/> Ingresar solo los valores sin signo pesos
+<input type="number" step="0.1" name="rec_importe_cheque" class="p_input" onchange="tipo_op(this.form)"/> Ingresar solo los valores sin signo pesos
 <div class="etiqueta">Banco:</div>
 <input type="text" name="rec_banco" class="p_input" disabled="disabled"/>
 <div class="etiqueta">Nro de Cheque:</div>
