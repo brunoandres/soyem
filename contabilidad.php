@@ -89,7 +89,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1  ,
+        singleClick    :    " true"                   // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
     <div class="etiqueta">Libro Hasta:</div>
@@ -101,7 +102,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1      ,
+        singleClick    :    " true"          // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <div class="etiqueta">Buscar texto:</div>
@@ -111,8 +113,8 @@ include("menu.php");
   <div id="nuevo_a"><a href="asiento.php?ac=nuevo">
  Nuevo asiento
   </a></div>
-  <table id="example" class="display" cellspacing="0" width="100%">
-  	<thead>
+  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+  	
     <tr>
 	  <th>Fecha</th>
       <th>Nro</th>
@@ -123,7 +125,7 @@ include("menu.php");
       <th>Modificar</th>
       <th>Quitar</th>
     </tr>
-    </thead>
+    
 	<?php
 	if (empty($_GET['desde']) and empty($_GET['busc'])){
 	$desde = date("Y/m/d");
@@ -192,18 +194,6 @@ include("menu.php");
   </div>
 </div>
 
-
-<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-<script>
-	$(document).ready(function() {
-		$('#example').DataTable({
-			"language": {
-            "url": "spanish.json"
-        	}
-		});
-	} );
-</script>
 
 </body>
 </html>

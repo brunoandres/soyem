@@ -11,11 +11,15 @@ $funcion_r=$_SESSION['funcion'];
 <title>Sistema Administrativo - Reintegros</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-		<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
-		<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-	<script type="text/javascript" language="javascript" class="init">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
 	$(document).ready(function() {
-	$('#example').DataTable();
+	$('#example').DataTable({
+		"language": {
+            "url": "spanish.json"
+        	}
+	});
 } );
 
 

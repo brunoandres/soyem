@@ -107,7 +107,7 @@ include("menu.php");
    if (!empty($_GET['fecha_desde'])){
    echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="'.$_GET['fecha_desde'].'" />';
    } else {
-   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" />';
+   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" autocomplete="off" readonly />';
    }
    ?>
     <script type="text/javascript">
@@ -117,7 +117,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1       ,
+        singleClick    :" true"         // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
    Hasta: 
@@ -125,7 +126,7 @@ include("menu.php");
    if ($_GET['fecha_hasta']>0){
    echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" />';
    } else {
-   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" />';
+   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" autocomplete="off" readonly />';
    }
    ?>
     <script type="text/javascript">
@@ -135,7 +136,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1          ,
+        singleClick    :" true"      // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
    <input name="aplicar" type="submit" class="apli" value="Aplicar" />
@@ -223,7 +225,7 @@ $inicio = ($pagina - 1) * $tam;
 		echo '<td>'.$forma.'</td>';
 		echo '<td><a href="nuevo_pago.php?id_pagos='.$au['id_pagos'].'" class="example6">Modificar</a></td>';
 		echo '<td><a href="quitar_pagos.php?id_pagos='.$au['id_pagos'].'&nro_as='.$au['nro_as'].'" title="Quitar este pago" onclick="return confirmar(';
-	   echo "'�Est� seguro que desea quitar este pago?'";
+	   echo "'¿Está seguro que desea quitar este pago?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
 	
@@ -266,14 +268,18 @@ $pagina = $_GET['pagina'] + 1;
 
 
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-  <script type="text/javascript" language="javascript" class="init">
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
   $(document).ready(function() {
-  $('#example').DataTable();
+    $('#example').DataTable({
+      "language": {
+          "url": "spanish.json"
+        }
+    });
 } );
 
 
-  </script>
+</script>
 
 
 

@@ -100,7 +100,7 @@ include("menu.php");
 <div class="subt"> Caja Diaria: </div> 
 <form action="" method="get">
 <div class="etiqueta">Fecha de la Caja</div>
-<input type="text" name="fecha_caja" placeholder="elija la fecha de la caja" id="fecha_caja" class="p_input" />
+<input type="text" name="fecha_caja" placeholder="Elija la fecha de la caja" id="fecha_caja" class="p_input" autocomplete="off" />
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha_caja",      // id of the input field
@@ -108,7 +108,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1        ,
+        singleClick    :" true"        // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <div style="padding:5px"><input type="submit" name="enviar" value="ver caja" /></div>

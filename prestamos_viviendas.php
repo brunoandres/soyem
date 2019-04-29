@@ -10,6 +10,20 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Listado de Afiliados</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  $('#example').DataTable({
+    "language": {
+            "url": "spanish.json"
+          }
+  });
+} );
+
+
+  </script>
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -74,7 +88,7 @@ include("menu.php");
 <br />
 
 Fecha Desde:  
-<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="<?php echo $fecha_desde; ?>" />
+<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="<?php echo $fecha_desde; ?>" autocomplete="off" readonly />
   
     <script type="text/javascript">
     Calendar.setup({
@@ -83,7 +97,8 @@ Fecha Desde:
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1     ,
+        singleClick    :    " true"           // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
    Hasta: 
@@ -91,7 +106,7 @@ Fecha Desde:
    if ($_GET['fecha_hasta']>0){
    echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" />';
    } else {
-   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" />';
+   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" autocomplete="off" readonly/>';
    }
    ?>
     <script type="text/javascript">
@@ -101,7 +116,8 @@ Fecha Desde:
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1     ,
+        singleClick    :    " true"           // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
    <input name="aplicar" type="submit" class="apli" value="Aplicar" />
@@ -111,17 +127,19 @@ Fecha Desde:
 
 
 
-<table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+<table id="example" class="display" cellspacing="0" width="100%">
+  <thead>
     <tr>
-	 <th>Prox Vencimiento</th>
-	 <th>Cuota</th>
+      <th>Prox Vencimiento</th>
+      <th>Cuota</th>
       <th>Nombre</th>
-	  <th>Documento</th>
+      <th>Documento</th>
       <th>Cuotas</th>
-	   <th>Importe</th>
+      <th>Importe</th>
       <th>Ver</th>
 	   <th>Quitar</th>
     </tr>
+    </thead>
 	<?php
 	$tam = 50; 
 
@@ -172,7 +190,7 @@ if (!empty($_GET['afiliado'])){
 	   echo '<td align="right">$ '.$dat['monto'].'</td>';
 	  echo '<td><a href="detalle_prestamos_v.php?clave_prestamo='.$dat{'clave_prestamo'}.'" title="ver mas datos de '.$dat{'nombre'}.'">Ver</a></td>
 	  <td><a href="quitar_prestamo_v.php?clave_prestamo='.$dat{'clave_prestamo'}.'" title="Quitar este prestamo"onclick="return confirmar(';
-	   echo "'�Est� seguro que desea quitar este prestamo?'";
+	   echo "'¿Está seguro que desea quitar este prestamo?'";
 	  echo ')" >Quitar Prestamo</a></td>
     </tr>'; 
 	}

@@ -16,7 +16,11 @@ $funcion_r=$_SESSION['funcion'];
 		<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" class="init">
 	$(document).ready(function() {
-	$('#example').DataTable();
+	$('#example').DataTable({
+    "language": {
+          "url": "spanish.json"
+        }
+  });
 } );
 
 
@@ -45,7 +49,7 @@ include("menu.php");
 <br clear="all" />
 </div>
 <h1>Registro de errores en Prestamos</h1>
-<table width="100%" cellpadding="5" cellspacing="0" border="1">
+<table id="example" class="display" cellspacing="0" width="100%">
 	<thead bgcolor="dddddd">
 		<tr>
 			<th>Legajo</th>

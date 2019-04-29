@@ -15,7 +15,11 @@ $funcion_r=$_SESSION['funcion'];
 		<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" class="init">
 	$(document).ready(function() {
-	$('#example').DataTable();
+	$('#example').DataTable({
+		"language": {
+          "url": "spanish.json"
+        }
+	});
 } );
 	</script>
     

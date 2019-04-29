@@ -93,7 +93,7 @@ include("menu.php");
  		?>
 		<form id="rapido" method="post" action="agrega_rapido.php"style="padding:10px;">
 		<h3> Nuevo prestamo de la empresa <?php echo $ae['nombre']; ?></h3>
-		<p>Legajo <input id = "legajo" type="text" class="p_input_corto">
+		<p>Legajo <input id = "legajo" type="text" class="p_input_corto" autocomplete="off">
 		Nombre <input id="nombre_afiliado" type="text" class="p_input" disabled>
 		<input id="clave" name="clave" type="hidden">
 		<input id="empresa" name="empresa" type="hidden" value="<?php echo $_GET['empre']; ?>">

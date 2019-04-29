@@ -272,7 +272,7 @@ if ($nro_af == 0 ){
 	?>
 <form method="post" action="agrega_prestamo.php">
 <div class="etiqueta">Cuit:</div>
- <input name="cuit" type="text" class="p_input" id="cuit" value="<?php echo $dat_af['cuil']; ?>" maxlength="11" />
+ <input name="cuit" type="text" class="p_input" id="cuit" value="<?php echo $dat_af['cuil']; ?>" maxlength="11" autocomplete="off" />
 
 <div class="etiqueta">Banco:</div>
  <select name="banco" class="p_input" id="banco" >
@@ -288,7 +288,7 @@ if ($nro_af == 0 ){
 <input type="hidden" name="afiliado" value="<?php echo $clave; ?>">
 <input type="hidden" name="tipe_p" value="D">
 <div class="etiqueta">Monto:</div>
-  <input name="monto" type="text" class="p_input" id="monto" value="<?php echo $_GET['monto']; ?>" />
+  <input name="monto" type="number" step="0.1" class="p_input" id="monto" value="<?php echo $_GET['monto']; ?>" />
   <div class="etiqueta">Cuotas:</div>
 <select name="cuotas" class="p_input" id="cuotas" onChange="Calcula(this.form)" >
 <option value="<?php echo $_GET['cuotas']; ?>" selected="selected"><?php echo $_GET['cuotas']; ?></option>
@@ -420,7 +420,7 @@ $i++;
 	}
 	?>
   </select>
-   A�o: <select name="ano" id="ano" class="p_input_corto">
+   Año: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $a_anio; ?>"><?php echo $a_anio; ?></option>
    <?php
    $ye =2013;
