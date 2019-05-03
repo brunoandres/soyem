@@ -44,7 +44,7 @@ function Validar(form)
   <form method="post" action="agrega_seguimiento.php">
 <div class="subt"> Nuevo Seguimiento de <?php echo $dat['nombre']; ?>: </div>
 <div class="etiqueta">Asunto:</div>
-  <input name="asunto" type="text" class="p_input" id="asunto" />
+  <input name="asunto" type="text" class="p_input" id="asunto" autocomplete="off" />
   <div class="etiqueta">Comentario:</div>
   <textarea name="comentario" rows="4" class="p_input" id="comentario"></textarea>
   

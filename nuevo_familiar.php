@@ -48,11 +48,11 @@ function Validar(form)
   <form method="post" action="agrega_familiar.php">
 <div class="subt"> Nuevo Familiar de <?php echo $dat['nombre']; ?>: </div>
 <div class="etiqueta">Apellido y Nombre:</div>
-  <input name="nombre" type="text" class="p_input" id="nombre" />
+  <input name="nombre" type="text" class="p_input" id="nombre" autocomplete="off" />
   <div class="etiqueta">Nro de Documento:</div>
-  <input name="documento" type="text" class="p_input" id="documento" />
+  <input name="documento" type="text" class="p_input" id="documento" autocomplete="off" />
    <div class="etiqueta">Fecha de Nacimiento:</div>
-  <input name="nacimiento" type="text" class="p_input" id="nacimiento" />
+  <input name="nacimiento" type="text" class="p_input" id="nacimiento" autocomplete="off" readonly="" />
   <script type="text/javascript">
     Calendar.setup({
         inputField     :    "nacimiento",      // id of the input field
@@ -60,7 +60,8 @@ function Validar(form)
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1    ,
+        singleClick    :" true"             // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <div class="etiqueta">Estudios que cursa:</div>

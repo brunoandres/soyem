@@ -9,7 +9,7 @@ $data = mysql_fetch_array(mysql_query("select * from afiliado where clave='$clav
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sistema Administrativo - Datos del Afiliado</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
  <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
@@ -86,10 +86,10 @@ echo 'Obra social de esposo/a: <b>'.$data['os_esposa'].'</b> ';
 	} 
 } 
 echo '<br>';
-echo 'Tel�fono: <b>'.$data['telefono'].'</b> Celular: <b>'.$data['celular'].'</b><br>';
+echo 'Teléfono: <b>'.$data['telefono'].'</b> Celular: <b>'.$data['celular'].'</b><br>';
 echo 'Correo: <b>'.$data['correo'].'</b><br>';
 echo 'Sector en el que trabaja: <b>'.$data['sector'].'</b><br>';
-echo 'Categoria: <b>'.$data['categoria'].'</b> Antig�edad: <b>'.$data['antiguedad'].'</b><br>';
+echo 'Categoria: <b>'.$data['categoria'].'</b> Antigüedad: <b>'.$data['antiguedad'].'</b><br>';
 echo 'Coseguro: <b>'.$data['coseguro'].'</b>  ';
 if ($data['coseguro']=='no'){
 echo 'Motivo: <b>'.$data['motivo_coseguro'].'</b> ';
@@ -199,7 +199,7 @@ echo '<b>Sin familiares asociados</b>';
 	}
 	echo 'Nombre: '.$af['nombre'].'<br>';
 	echo 'Numero asociado: '.$af['nro'].'<br>';
-	echo 'Relaci�n: '.$af['tipo'].'<br>';
+	echo 'Relación: '.$af['tipo'].'<br>';
 	echo 'Documento: '.$af['documento'].'<br>';
 	echo 'Nacimiento: '.substr($af['nacimiento'],8,2).'/'.substr($af['nacimiento'],5,2).'/'.substr($af['nacimiento'],0,4).' - Edad: <b>';
 	if (substr($af['nacimiento'],5,2) < date("m")){
@@ -244,7 +244,7 @@ echo '</b><br>';
 	if ($af['activo'] =='si'){
 	echo '<p><a href="modifica_familiar.php?id_fam='.$af['id_fam'].'&clave='.$clave.'" class="example6" title="Modificar datos de este familiar">Modificar datos</a> - ';
 	echo '<a href="baja_familiar.php?id_fam='.$af['id_fam'].'&clave='.$clave.'" title="dar de baja e este familiar" onclick="return confirmar(';
-	echo "'�Est� seguro que desea dar de baja a este familiar?'";
+	echo "'¿Está seguro que desea dar de baja a este familiar?'";
 	  echo ')" >Dar de Baja a este familiar</a>';
 	echo '</p>';
 	} else {

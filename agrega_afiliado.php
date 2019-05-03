@@ -90,21 +90,8 @@ if ( mysql_num_rows(mysql_query("SHOW COLUMNS FROM afiliado LIKE 'f_actualiza' "
 mysql_query("ALTER TABLE afiliado ADD f_actualiza DATE ");
 }
 
-
-$existe_afiliado = mysql_num_rows(mysql_query("select legajo from afiliado where legajo = '$legajo'"));
-
-if (!$existe_afiliado>1) {
-	mysql_query("insert into afiliado (legajo, nombre, documento, domicilio, telefono, correo, nacimiento, afiliacion, vencimiento, ipross, sector, sueldo, jubilado, socioos, observaciones, cuil, estado_civil, os_esposa, nom_os_esposa, celular, categoria, coseguro, motivo_coseguro, dona_sangre, tipo_sangre, sugerencias, f_actualiza) values ('$legajo', '$nombre', '$documento', '$domicilio', '$telefono', '$correo', '$nacimiento', '$afiliacion', '$vencimiento', '$ipross', '$sector', '$sueldo', '$jubilado', '$socioos', '$observaciones', '$cuil', '$estado_civil', '$os_esposa', '$nom_os_esposa', '$celular', '$categoria', '$coseguro', '$motivo_coseguro', '$dona_sangre', '$tipo_sangre', '$sugerencias', '$f_actualiza')");
-
-		$ult = mysql_fetch_array(mysql_query("select * from afiliado where (nombre = '$nombre' and documento='$documento' and legajo='$legajo')"));
-		header ("Location:datos_afiliado.php?clave=".$ult['clave']);
-		exit();
-}else{
-	header("Location: nuevo.php?legajo=".$legajo);
-}
-
-
-
-
-
+mysql_query("insert into afiliado (legajo, nombre, documento, domicilio, telefono, correo, nacimiento, afiliacion, vencimiento, ipross, sector, sueldo, jubilado, socioos, observaciones, cuil, estado_civil, os_esposa, nom_os_esposa, celular, categoria, coseguro, motivo_coseguro, dona_sangre, tipo_sangre, sugerencias, f_actualiza) values ('$legajo', '$nombre', '$documento', '$domicilio', '$telefono', '$correo', '$nacimiento', '$afiliacion', '$vencimiento', '$ipross', '$sector', '$sueldo', '$jubilado', '$socioos', '$observaciones', '$cuil', '$estado_civil', '$os_esposa', '$nom_os_esposa', '$celular', '$categoria', '$coseguro', '$motivo_coseguro', '$dona_sangre', '$tipo_sangre', '$sugerencias', '$f_actualiza')");
+$ult = mysql_fetch_array(mysql_query("select * from afiliado where (nombre = '$nombre' and documento='$documento' and legajo='$legajo')"));
+header ("Location:datos_afiliado.php?clave=".$ult['clave']);
+exit();
 ?>
