@@ -24,7 +24,9 @@ $dat = mysql_fetch_array(mysql_query("select * from afiliado where clave='$clave
   <script type="text/javascript" src="calendar-setup.js"></script>
  <script LANGUAGE="JavaScript">
 function Validar(form)
-{
+{ 
+  
+
   if (form.legajo.value == "")
   { alert("Por favor ingrese el legajo"); form.legajo.focus(); return; }
 
@@ -32,13 +34,25 @@ function Validar(form)
    if (form.nombre.value == "")
   { alert("Por favor ingrese el nombre"); form.nombre.focus(); return; }
   
- 
+  if (form.sexo.value == "")
+  { alert("Por favor seleccione una opción."); form.sexo.focus(); return; }
+  
+  if (form.cuil.value == "")
+  { alert("Por favor ingrese el cuil"); form.cuil.focus(); return; }
+
    if (form.documento.value == "")
   { alert("Por favor ingrese el documento"); form.documento.focus(); return; }
   
+  //valido al menos un telefono de contacto
+  if ((form.telefono.value == "" && form.celular.value == "")) {
+    alert("Por favor ingrese al menos un teléfono de contacto, puede ser un fijo o un celular."); form.telefono.focus(); return;
+  }
   
    if (form.domicilio.value == "")
   { alert("Por favor defina el domicilio"); form.domicilio.focus(); return; }
+
+if (form.sector.value == "")
+    { alert("Por favor defina el sector donde trabaja."); form.sector.focus(); return; }
   
  form.submit();
 }
@@ -85,14 +99,27 @@ function Validar(form)
   <form method="post" action="mod_afiliado.php">
 <div class="subt"> Modificando datos de  <?php echo $dat['nombre']; ?>: </div>
 <div class="etiqueta">Legajo:</div>
-  <input name="legajo" type="text" class="p_input" id="legajo" value="<?php echo $dat['legajo']; ?>" />
+  <input name="legajo" type="text" class="p_input" id="legajo" value="<?php echo $dat['legajo']; ?>" autocomplete="off"/>
 <div class="etiqueta">Apellido y Nombre:</div>
-  <input name="nombre" type="text" class="p_input" id="nombre" value="<?php echo $dat['nombre']; ?>" />
+  <input name="nombre" type="text" class="p_input" id="nombre" value="<?php echo $dat['nombre']; ?>" autocomplete="off"/>
+
+  <div class="etiqueta">Sexo:</div>
+  <select name="sexo" class="p_input" id="sexo">
+  <option value="M" <?php if ($dat['sexo']=='M') {
+      echo "selected";
+    } ?>>Masculino</option>
+  <option value="F" <?php if ($dat['sexo']=='F') {
+      echo "selected";
+    } ?>>Femenino</option>
+  <option value="Otro" <?php if ($dat['sexo']=='Otro') {
+      echo "selected";
+    } ?>>Sin especificar</option>
+  </select>
   
   <div class="etiqueta">CUIL:</div>
-  <input name="cuil" type="text" class="p_input" id="cuil" value="<?php echo $dat['cuil']; ?>" />
+  <input name="cuil" type="number" class="p_input" id="cuil" value="<?php echo $dat['cuil']; ?>" autocomplete="off"/>
    <div class="etiqueta">Fecha de Nacimiento:</div>
-  <input name="nacimiento" type="text" class="p_input" id="nacimiento" value="<?php echo substr($dat['nacimiento'],8,2).'/'.substr($dat['nacimiento'],5,2).'/'.substr($dat['nacimiento'],0,4); ?>" />
+  <input name="nacimiento" type="text" class="p_input" id="nacimiento" value="<?php echo substr($dat['nacimiento'],8,2).'/'.substr($dat['nacimiento'],5,2).'/'.substr($dat['nacimiento'],0,4); ?>"/>
   <script type="text/javascript">
     Calendar.setup({
         inputField     :    "nacimiento",      // id of the input field
@@ -100,43 +127,48 @@ function Validar(form)
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1     ,
+        singleClick    :" true"              // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <div class="etiqueta">Domicilio:</div>
-  <input name="domicilio" type="text" class="p_input" id="domicilio" value="<?php echo $dat['domicilio']; ?>" />
+  <input name="domicilio" type="text" class="p_input" id="domicilio" value="<?php echo $dat['domicilio']; ?>" autocomplete="off"/>
   <div class="etiqueta">Nro de Documento:</div>
-  <input name="documento" type="text" class="p_input" id="documento" value="<?php echo $dat['documento']; ?>" />
+  <input name="documento" type="number" class="p_input" id="documento" value="<?php echo $dat['documento']; ?>" autocomplete="off"/>
   <div class="etiqueta">Estado Civil:</div>
   <select name="estado_civil" class="p_input" id="estado_civil" onchange="casado1()">
   <option value="<?php echo $dat['estado_civil']; ?>" selected="selected"><?php echo $dat['estado_civil']; ?></option>
-  <option value="soltero">soltero</option>
-  <option value="casado">casado</option>
-  <option value="viudo">viudo</option>
-  <option value="divorciado">divorciado</option>
+  <option value="soltero">Soltero</option>
+  <option value="casado">Casado</option>
+  <option value="viudo">Viudo</option>
+  <option value="divorciado">Divorciado</option>
   </select>
   <div class="etiqueta">Su esposa/o tiene obra social?:</div>
   <select name="os_esposa" class="p_input" id="os_esposa" onchange="casado2()">
-  <option value="<?php echo $dat['os_esposa']; ?>" selected="selected"><?php echo $dat['os_esposa']; ?></option>
-  <option value="si">si</option>
-  <option value="no">no</option>
+  
+  <option value="si" <?php if ($_POST['os_esposa']=='si') {
+      echo "selected";
+    } ?>>si</option>
+  <option value="no" <?php if ($_POST['os_esposa']=='no') {
+      echo "selected";
+    } ?>>no</option>
   </select>
 
 <div class="etiqueta">Obra social del esposa/o:</div>
-  <input name="nom_os_esposa" type="text" class="p_input" id="nom_os_esposa" value="<?php echo $dat['nom_os_esposa']; ?>" />
+  <input name="nom_os_esposa" type="text" class="p_input" id="nom_os_esposa" value="<?php echo $dat['nom_os_esposa']; ?>" autocomplete="off"/>
 
   <div class="etiqueta">Teléfono fijo:</div>
-  <input name="telefono" type="text" class="p_input" id="telefono" value="<?php echo $dat['telefono']; ?>" />
+  <input name="telefono" type="number" class="p_input" id="telefono" value="<?php echo $dat['telefono']; ?>" autocomplete="off" placeholder="Ingrese un teléfono fijo válido"/>
   <div class="etiqueta">Teléfono Celular:</div>
-  <input name="celular" type="text" class="p_input" id="celular" value="<?php echo $dat['celular']; ?>" />
+  <input name="celular" type="number" class="p_input" id="celular" value="<?php echo $dat['celular']; ?>" autocomplete="off" placeholder="Ingrese un celular válido"/>
   <div class="etiqueta">Correo Electronico:</div>
-  <input name="correo" type="text" class="p_input" id="correo" value="<?php echo $dat['correo']; ?>" />
+  <input name="correo" type="email" class="p_input" id="correo" value="<?php echo $dat['correo']; ?>" autocomplete="off"/>
  <div class="etiqueta">Sector donde trabaja:</div>
-  <input name="sector" type="text" class="p_input" id="sector" value="<?php echo $dat['sector']; ?>" />
+  <input name="sector" type="text" class="p_input" id="sector" value="<?php echo $dat['sector']; ?>" autocomplete="off"/>
 <div class="etiqueta">Categoria:</div>
-  <input name="categoria" type="text" class="p_input" id="categoria" value="<?php echo $dat['categoria']; ?>" />
-  <div class="etiqueta">Antiqüedad:</div>
-  <input name="antiquedad" type="text" class="p_input" id="antiquedad" value="<?php echo $dat['antiquedad']; ?>" />
+  <input name="categoria" type="text" class="p_input" id="categoria" value="<?php echo $dat['categoria']; ?>" autocomplete="off"/>
+  <div class="etiqueta">Antigüedad:</div>
+  <input name="antiquedad" type="text" class="p_input" id="antiquedad" value="<?php echo $dat['antiquedad']; ?>" autocomplete="off"/>
   
    <div class="etiqueta">Afiliado al coseguro:</div>
   <select name="coseguro" class="p_input" id="coseguro" onchange="casado3()">
@@ -168,7 +200,8 @@ function Validar(form)
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1     ,
+        singleClick    :" true"             // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 
@@ -181,15 +214,16 @@ function Validar(form)
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1        ,
+        singleClick    :" true"          // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 
   <div class="etiqueta">Nro de IPROSS:</div>
-  <input name="ipross" type="text" class="p_input" id="ipross" value="<?php echo $dat['ipross']; ?>" />
+  <input name="ipross" type="text" class="p_input" id="ipross" value="<?php echo $dat['ipross']; ?>" autocomplete="off"/>
   
   <div class="etiqueta">Sueldo:</div>
-<input name="sueldo" type="text" class="p_input" id="sueldo" value="<?php echo $dat['sueldo']; ?>" />
+<input name="sueldo" type="text" class="p_input" id="sueldo" value="<?php echo $dat['sueldo']; ?>" autocomplete="off"/>
   <div class="etiqueta">Es Jubilado:</div>
   <label>
   <select name="jubilado" class="p_input" id="jubilado">
@@ -213,7 +247,7 @@ function Validar(form)
   <textarea name="observaciones" rows="4" class="p_input" id="observaciones"><?php echo $dat['observaciones']; ?></textarea>
 <div>
  <div class="etiqueta">Fecha de Actualización:</div>
-  <input name="f_actualiza" type="text" class="p_input" id="f_actualiza" value="<?php echo substr($dat['f_actualiza'],8,2).'/'.substr($dat['f_actualiza'],5,2).'/'.substr($dat['f_actualiza'],0,4); ?>" />
+  <input name="f_actualiza" type="text" class="p_input" id="f_actualiza" value="<?php echo substr($dat['f_actualiza'],8,2).'/'.substr($dat['f_actualiza'],5,2).'/'.substr($dat['f_actualiza'],0,4); ?>" readonly/>
   <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_actualiza",      // id of the input field
@@ -221,11 +255,12 @@ function Validar(form)
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1       ,
+        singleClick    :" true"           // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <div>
-        <label>
+        <label><br>
 	<input type="button" name="Submit" value="Modificar" onClick="Validar(this.form)"/>
 	</label>
 	</div>

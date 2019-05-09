@@ -6,7 +6,7 @@ $funcion_r=$_SESSION['funcion'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sistema Administrativo - Nuevo Familiar</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -37,6 +37,15 @@ echo "El datos del afiliado se modificaron con exito";
 }
 if($_GET['es']==4){
 echo "El seguimiento se agrego con exito";
+}
+if($_GET['es']==5){
+echo "<h2 style='color:red;'>ERROR! El legajo ya existe</h2>";
+}
+if($_GET['es']==6){
+echo "<h2 style='color:blue;'>Legajo no encontrado, deberia dar de alta al nuevo afiliado.</h2>";
+}
+if($_GET['es']==7){
+echo "<h2 style='color:red;'>El documento ya está asociado al afiliado.</h2>";
 }
 ?>
 </div>

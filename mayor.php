@@ -78,7 +78,7 @@ include("menu.php");
 <?php include("recortes/menu_cont.php"); ?>
   <h1>Libro Mayor </h1>
   <form method="post" action="" style="background:#EEEEEE; padding:10px; margin-bottom:10px">
-  Desde: <input type="text" name="desde" id="desde" class="p_input_corto" value="<?php echo $_POST['desde']; ?>" />
+  Desde: <input type="text" name="desde" id="desde" class="p_input_corto" value="<?php echo $_POST['desde']; ?>" autocomplete="off"/>
    <script type="text/javascript">
     Calendar.setup({
         inputField     :    "desde",      // id of the input field
@@ -86,10 +86,11 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1    ,
+        singleClick    :" true"            // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
-  Hasta: <input type="text" name="hasta" id="hasta" class="p_input_corto" value="<?php echo $_POST['hasta']; ?>"/>
+  Hasta: <input type="text" name="hasta" id="hasta" class="p_input_corto" value="<?php echo $_POST['hasta']; ?>" autocomplete="off"/>
   <script type="text/javascript">
     Calendar.setup({
         inputField     :    "hasta",      // id of the input field
@@ -97,7 +98,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1     ,
+        singleClick    :" true"           // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
   <input type="submit" name="enviar" value="filtrar" />

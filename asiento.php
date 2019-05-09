@@ -240,7 +240,7 @@ include("menu.php");
         echo ')" >Quitar</a></td></tr>';
 
       }else{
-        echo '<td style="color:red;">Sin permisos</td></tr>';
+        echo '<td style="color:red;"> -- </td></tr>';
       }
 
     

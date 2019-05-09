@@ -56,6 +56,18 @@ include("menu.php");
 <div id="datos_af">
 <?php
 echo 'Nombre: <b>'.$data['nombre'].'</b><br>';
+
+if ($data['sexo']=="M") {
+	$sexo = "Masculino";
+}elseif ($data['sexo']=="F") {
+	$sexo = "Femenino";
+}elseif ($data['sexo']=="Otro") {
+	$sexo = "Sin especificar";
+}else{
+	$sexo = "-";
+}
+
+echo 'Sexo: <b>'.$sexo.'</b><br>';
 echo 'Legajo: <b>'.$data['legajo'].'</b><br>';
 echo 'CUIL: <b>'.$data['cuil'].'</b><br>';
 echo 'Fecha de Nacimiento: <b>'.substr($data['nacimiento'],8,2).'/'.substr($data['nacimiento'],5,2).'/'.substr($data['nacimiento'],0,4).'</b><br>';
@@ -89,7 +101,7 @@ echo '<br>';
 echo 'Teléfono: <b>'.$data['telefono'].'</b> Celular: <b>'.$data['celular'].'</b><br>';
 echo 'Correo: <b>'.$data['correo'].'</b><br>';
 echo 'Sector en el que trabaja: <b>'.$data['sector'].'</b><br>';
-echo 'Categoria: <b>'.$data['categoria'].'</b> Antigüedad: <b>'.$data['antiguedad'].'</b><br>';
+echo 'Categoria: <b>'.$data['categoria'].'</b> Antigüedad: <b>'.$data['antiquedad'].'</b><br>';
 echo 'Coseguro: <b>'.$data['coseguro'].'</b>  ';
 if ($data['coseguro']=='no'){
 echo 'Motivo: <b>'.$data['motivo_coseguro'].'</b> ';
@@ -107,10 +119,10 @@ echo 'Nro IPROSS: <b>'.$data['ipross'].'</b><br>';
 echo 'Activo: <b>'.$data['activo'].'</b><br>';
 echo '<div style="background:#FFF; ">';
 echo 'Banco: <b>'.$data['banco'].'</b><br>';
-echo 'CBU Bsnco Nacion: <b>'.$data['cbu_bn'].'</b><br>';
+echo 'CBU Banco Nacion: <b>'.$data['cbu_bn'].'</b><br>';
 echo 'CBU Banco de Destino: <b>'.$data['cbu_bd'].'</b><br>';
 echo '</div>';
-echo 'Sueldo que percibe: <b>'.$data['sueldo'].'</b><br>';
+echo 'Sueldo que percibe: $ <b>'.$data['sueldo'].'</b><br>';
 echo 'Vencimiento del carnet: <b>'.substr($data['vencimiento'],8,2).'/'.substr($data['vencimiento'],5,2).'/'.substr($data['vencimiento'],0,4).'</b><br>';
 echo 'Sugerencias: <br><font color="009900">'.$data['sugerencias'].'</font><br>';
 echo 'Observaciones: <br><font color="009900">'.$data['observaciones'].'</font><br>';
@@ -199,7 +211,24 @@ echo '<b>Sin familiares asociados</b>';
 	}
 	echo 'Nombre: '.$af['nombre'].'<br>';
 	echo 'Numero asociado: '.$af['nro'].'<br>';
-	echo 'Relación: '.$af['tipo'].'<br>';
+
+	if ($af['tipo']=="Otro") {
+		$relacion = "Otro";
+	}elseif ($af['tipo']=="H") {
+		$relacion = "Hijo/a";
+	}elseif ($af['tipo']=="C") {
+		$relacion = "Cónyuge";
+	}
+
+	if ($af['sexo']=="M") {
+		$sexo = "Masculino";
+	}elseif ($af['sexo']=="F") {
+		$sexo = "Femenino";
+	}elseif ($af['sexo']=="Otro") {
+		$sexo = "Sin especificar";
+	}
+
+	echo 'Relación: '.$relacion.'<br>';
 	echo 'Documento: '.$af['documento'].'<br>';
 	echo 'Nacimiento: '.substr($af['nacimiento'],8,2).'/'.substr($af['nacimiento'],5,2).'/'.substr($af['nacimiento'],0,4).' - Edad: <b>';
 	if (substr($af['nacimiento'],5,2) < date("m")){
@@ -216,6 +245,7 @@ echo '<b>Sin familiares asociados</b>';
 	}
 	}
 	echo '</b><br>';
+	echo 'Sexo: '.$sexo.'<br>';
 	if (!empty($af['estudio'])){
 	echo 'Estudios que cursa: <b>';
 	   switch ($af['estudio']) {

@@ -47,7 +47,7 @@ include("menu.php");
    <form action="<?php echo $PHP_SELF; ?>" method="post">
    
 	<div class="etiqueta">Desde:</div>
-    <input type="text" name="desde" class="p_input" id="desde">
+    <input type="text" name="desde" class="p_input" id="desde" autocomplete="off">
 	<script type="text/javascript">
     Calendar.setup({
         inputField     :    "desde",      // id of the input field
@@ -55,11 +55,12 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1       ,
+        singleClick    :" true"           // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
     <div class="etiqueta">Hasta:</div>
-    <input tipe ="text" name="hasta" class="p_input" id="hasta">
+    <input tipe ="text" name="hasta" class="p_input" id="hasta" autocomplete="off">
 	<script type="text/javascript">
     Calendar.setup({
         inputField     :    "hasta",      // id of the input field
@@ -67,7 +68,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1    ,
+        singleClick    :" true"              // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <br>

@@ -173,7 +173,7 @@ include("menu.php");
 				echo ')" >Quitar</a></td></tr>';
 
 			}else{
-				echo '<td style="color:red;">Sin permisos</td>';
+				echo '<td rowspan="'.$na.'"> -- </td>';
 			} 
 	 
 	  } else {

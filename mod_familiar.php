@@ -1,6 +1,7 @@
 <?php
 include("conecta.php");
 $nombre = $_POST['nombre'];
+$sexo = $_POST['sexo'];
 $documento = $_POST['documento'];
 $nacimiento = substr($_POST['nacimiento'],6,4).'-'.substr($_POST['nacimiento'],3,2).'-'.substr($_POST['nacimiento'],0,2);
 $tipo = $_POST['tipo'];
@@ -9,6 +10,7 @@ mysql_query("update familiares set nombre = '$nombre' where id_fam='$id_fam'");
 mysql_query("update familiares set documento = '$documento' where id_fam='$id_fam'");
 mysql_query("update familiares set nacimiento = '$nacimiento' where id_fam='$id_fam'");
 mysql_query("update familiares set tipo = '$tipo' where id_fam='$id_fam'");
+mysql_query("update familiares set sexo = '$sexo' where id_fam='$id_fam'");
 
 $estudio = $_POST['estudio'];
 if ( mysql_num_rows(mysql_query("SHOW COLUMNS FROM familiares LIKE 'estudio' ")) != 1 ) {

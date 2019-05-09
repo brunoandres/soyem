@@ -11,6 +11,7 @@ if (isset($_POST['enviar'])) {
 
   if (!$existe>0) {
     $nombre = $_POST['nombre'];
+    $sexo = $_POST['sexo'];
   $documento = $_POST['documento'];
   $domicilio = $_POST['domicilio'];
   $telefono = $_POST['telefono'];
@@ -99,7 +100,7 @@ if (isset($_POST['enviar'])) {
   mysql_query("ALTER TABLE afiliado ADD f_actualiza DATE ");
 }
 
-  mysql_query("insert into afiliado (legajo, nombre, documento, domicilio, telefono, correo, nacimiento, afiliacion, vencimiento, ipross, sector, sueldo, jubilado, socioos, observaciones, cuil, estado_civil, os_esposa, nom_os_esposa, celular, categoria, coseguro, motivo_coseguro, dona_sangre, tipo_sangre, sugerencias, f_actualiza) values ('$legajo', '$nombre', '$documento', '$domicilio', '$telefono', '$correo', '$nacimiento', '$afiliacion', '$vencimiento', '$ipross', '$sector', '$sueldo', '$jubilado', '$socioos', '$observaciones', '$cuil', '$estado_civil', '$os_esposa', '$nom_os_esposa', '$celular', '$categoria', '$coseguro', '$motivo_coseguro', '$dona_sangre', '$tipo_sangre', '$sugerencias', '$f_actualiza')");
+  mysql_query("insert into afiliado (legajo, nombre, documento, domicilio, telefono, correo, nacimiento, afiliacion, vencimiento, ipross, sector, sueldo, jubilado, socioos, observaciones, cuil, estado_civil, os_esposa, nom_os_esposa, celular, categoria, coseguro, motivo_coseguro, dona_sangre, tipo_sangre, sugerencias, f_actualiza, sexo) values ('$legajo', '$nombre', '$documento', '$domicilio', '$telefono', '$correo', '$nacimiento', '$afiliacion', '$vencimiento', '$ipross', '$sector', '$sueldo', '$jubilado', '$socioos', '$observaciones', '$cuil', '$estado_civil', '$os_esposa', '$nom_os_esposa', '$celular', '$categoria', '$coseguro', '$motivo_coseguro', '$dona_sangre', '$tipo_sangre', '$sugerencias', '$f_actualiza', '$sexo')");
   $ult = mysql_fetch_array(mysql_query("select * from afiliado where (nombre = '$nombre' and documento='$documento' and legajo='$legajo')"));
   header ("Location:datos_afiliado.php?clave=".$ult['clave']);
   exit();
@@ -138,20 +139,35 @@ if (isset($_POST['enviar'])) {
 <script type="text/javascript" src="calendar-setup.js"></script>
 <script LANGUAGE="JavaScript">
   function Validar(form){
+
+    
+
     if (form.legajo.value == "")
-    { alert("Por favor ingrese el legajo"); form.legajo.focus(); return; }
+    { alert("Por favor ingrese el legajo."); form.legajo.focus(); return; }
 
     
      if (form.nombre.value == "")
-    { alert("Por favor ingrese el nombre"); form.nombre.focus(); return; }
+    { alert("Por favor ingrese el nombre."); form.nombre.focus(); return; }
     
-   
+    if (form.sexo.value == "")
+    { alert("Por favor seleccione una opción."); form.sexo.focus(); return; }
+
+    if (form.cuil.value == "")
+  { alert("Por favor ingrese el cuil"); form.cuil.focus(); return; }
+
      if (form.documento.value == "")
-    { alert("Por favor ingrese el documento"); form.documento.focus(); return; }
+    { alert("Por favor ingrese el documento."); form.documento.focus(); return; }
     
+    //valido al menos un telefono de contacto
+    if ((form.telefono.value == "" && form.celular.value == "")) {
+      alert("Por favor ingrese al menos un teléfono de contacto, puede ser un fijo o un celular."); form.telefono.focus(); return;
+    }
     
      if (form.domicilio.value == "")
-    { alert("Por favor defina el domicilio"); form.domicilio.focus(); return; }
+    { alert("Por favor defina el domicilio."); form.domicilio.focus(); return; }
+
+    if (form.sector.value == "")
+    { alert("Por favor defina el sector donde trabaja."); form.sector.focus(); return; }
     
    form.submit();
   }
@@ -208,13 +224,25 @@ include("menu.php");
 <form method="post">
 <div class="subt"> Nuevo Afiliado: </div>
 <div class="etiqueta">Legajo:</div>
-  <input name="legajo" type="text" class="p_input" id="legajo" value="<?php echo $_POST['legajo']; ?>" autocomplete="off" />
+  <input name="legajo" type="number" class="p_input" id="legajo" value="<?php echo $_POST['legajo']; ?>" autocomplete="off" />
 <div class="etiqueta">Apellido y Nombre:</div>
   <input name="nombre" type="text" class="p_input" id="nombre" value="<?php echo $_POST['nombre']; ?>" autocomplete="off"  />
+  <div class="etiqueta">Sexo:</div>
+  <select name="sexo" class="p_input" id="sexo">
+  <option value="M" <?php if ($_POST['sexo']=='M') {
+      echo "selected";
+    } ?>>Masculino</option>
+  <option value="F" <?php if ($_POST['sexo']=='F') {
+      echo "selected";
+    } ?>>Femenino</option>
+  <option value="Otro" <?php if ($_POST['sexo']=='Otro') {
+      echo "selected";
+    } ?>>Sin especificar</option>
+  </select>
   <div class="etiqueta">CUIL:</div>
-  <input name="cuil" type="text" class="p_input" id="cuil" value="<?php echo $_POST['cuil']; ?>" autocomplete="off" />
+  <input name="cuil" type="number" class="p_input" id="cuil" value="<?php echo $_POST['cuil']; ?>" autocomplete="off" />
   <div class="etiqueta">Fecha de Nacimiento:</div>
-  <input name="nacimiento" type="text" class="p_input" id="nacimiento" autocomplete="off" value="<?php echo $_POST['nacimiento']; ?>" readonly />
+  <input name="nacimiento" type="text" class="p_input" id="nacimiento" autocomplete="off" value="<?php echo $_POST['nacimiento']; ?>" />
   <script type="text/javascript">
     Calendar.setup({
         inputField     :    "nacimiento",      // id of the input field
@@ -231,7 +259,7 @@ include("menu.php");
   <div class="etiqueta">Domicilio:</div>
   <input name="domicilio" type="text" class="p_input" id="domicilio" value="<?php echo $_POST['domicilio']; ?>" autocomplete="off" />
    <div class="etiqueta">Nro de Documento:</div>
-  <input name="documento" type="text" class="p_input" id="documento" value="<?php echo $_POST['documento']; ?>" autocomplete="off" />
+  <input name="documento" type="number" class="p_input" id="documento" value="<?php echo $_POST['documento']; ?>" autocomplete="off" />
    <div class="etiqueta">Estado Civil:</div>
   <select name="estado_civil" class="p_input" id="estado_civil" onchange="casado1()">
   <!--<option value="<?php //echo $dat['estado_civil']; ?>" selected="selected"><?php //echo $dat['estado_civil']; ?></option>-->
@@ -260,13 +288,13 @@ include("menu.php");
   </select>
 
 <div class="etiqueta">Obra social del esposa/o:</div>
-  <input name="nom_os_esposa" type="text" class="p_input" id="nom_os_esposa" value="<?php echo $_POST['nom_os_esposa']; ?>" />
+  <input name="nom_os_esposa" type="text" class="p_input" id="nom_os_esposa" value="<?php echo $_POST['nom_os_esposa']; ?>" autocomplete="off"/>
   <div class="etiqueta">Teléfono Fijo:</div>
-  <input name="telefono" type="text" class="p_input" id="telefono" value="<?php echo $_POST['telefono']; ?>" />
+  <input name="telefono" type="text" class="p_input" id="telefono" value="<?php echo $_POST['telefono']; ?>" autocomplete="off" placeholder="Ingrese un teléfono fijo válido"/>
    <div class="etiqueta">Teléfono Celular:</div>
-  <input name="celular" type="text" class="p_input" id="celular" value="<?php echo $_POST['celular']; ?>" />
+  <input name="celular" type="text" class="p_input" id="celular" value="<?php echo $_POST['celular']; ?>" autocomplete="off" placeholder="Ingrese un celular válido"/>
   <div class="etiqueta">Correo electronico:</div>
-  <input name="correo" type="text" class="p_input" id="correo" value="<?php echo $_POST['correo']; ?>" />
+  <input name="correo" type="email" class="p_input" id="correo" value="<?php echo $_POST['correo']; ?>" />
   
   
   <div class="etiqueta">Sector donde trabaja:</div>
@@ -301,7 +329,7 @@ include("menu.php");
     } ?>>no</option>
   </select>
   <div class="etiqueta">Grupo y Factor:</div>
-  <input name="tipo_sangre" type="text" class="p_input" id="tipo_sangre" value="<?php echo $_POST['tipo_sangre']; ?>" />
+  <input name="tipo_sangre" type="text" class="p_input" id="tipo_sangre" value="<?php echo $_POST['tipo_sangre']; ?>" autocomplete="off"/>
   
   
   <div class="etiqueta">Fecha de afiliacion:</div>
@@ -335,7 +363,7 @@ include("menu.php");
   <div class="etiqueta">Nro de IPROSS:</div>
   <input name="ipross" type="text" class="p_input" id="ipross" value="<?php echo $_POST['ipross'] ?>" autocomplete="off"/>
   <div class="etiqueta">Sueldo:</div>
-<input name="sueldo" type="text" class="p_input" id="sueldo" value="<?php echo $_POST['sueldo'] ?>" autocomplete="off"/>
+<input name="sueldo" type="number" class="p_input" id="sueldo" value="<?php echo $_POST['sueldo'] ?>" autocomplete="off" step="0.1"/>
   <div class="etiqueta">Es Jubilado:</div>
   <label>
   <select name="jubilado" class="p_input" id="jubilado">
