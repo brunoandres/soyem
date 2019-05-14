@@ -169,14 +169,14 @@ include("menu.php");
     });
 </script>
 <div class="etiqueta">Afiliado:</div>
-<input id="tags" name="p_afiliado" class="p_input" onblur="Calcula(this.form)"/>
+<input id="tags" name="p_afiliado" class="p_input" onblur="Calcula(this.form)" placeholder="Ingrese una o más palabras para autocompletar..." />
 
 <div class="etiqueta">Señor:</div>
-<input type="text" name="rec_nombre" class="p_input" autocomplete="off" />
+<input type="text" name="rec_nombre" class="p_input" autocomplete="off" placeholder="Ingrese nombre..." />
 <input type="hidden" name="rec_legajo"/>
 
 <div class="etiqueta">Domicilio</div>
-<input type="text" name="rec_domicilio" class="p_input"/>
+<input type="text" name="rec_domicilio" class="p_input" placeholder="Ingrese el domicilio..." />
 
 <div class="etiqueta">Localidad</div>
 <input type="text" name="rec_localidad" class="p_input" value="San Carlos de Bariloche"/>

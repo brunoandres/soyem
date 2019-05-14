@@ -1,5 +1,6 @@
 <?php
 $page = 'contabilidad';
+$subpage = 'diario';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];

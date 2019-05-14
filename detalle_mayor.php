@@ -24,6 +24,21 @@ $data =  mysql_fetch_array(mysql_query("select * from cuentas where id_cuentas =
   <!-- the following script defines the Calendar.setup helper function, which makes
        adding a calendar a matter of 1 or 2 lines of code. -->
   <script type="text/javascript" src="calendar-setup.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  
+    $('#detalle_mayor').DataTable({
+      "language": {
+          "url": "spanish.json"
+        },
+        "pageLength": 100
+    });
+} );
+</script>
 </head>
 
 <body>
@@ -44,16 +59,18 @@ include("menu.php");
   echo 'Detalle de cuenta: '.$data['cuenta'];
   ?> </h1>
  
-<table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+<table id="detalle_mayor" class="display" cellspacing="0" width="100%">
+  <thead>
     <tr>
 		
       <th>Fecha</th>
-	  <th>Asiento</th>
-	  <th>Debe</th>
-	  <th>Haber</th>
-      <th>Detalle</th>
-      
+      <th>Asiento</th>
+	    <th>Debe</th>
+	    <th>Haber</th>
+      <th>Nro Cheque</th>
+      <th>Detalle</th>   
     </tr>
+    </thead>
 	<?php
   $d=0;
   $h=0;
@@ -66,8 +83,9 @@ include("menu.php");
       <td>'.substr($au['fecha'],8,2).'/'.substr($au['fecha'],5,2).'/'.substr($au['fecha'],0,4).'</td>';
 	    echo '<td>'.$au['nro'].'</td>
 		<td> $ '.$au['debe'].'</td>
-		<td> $ '.$au['haber'].'</td>
-		<td>'.$au['detalle'].'</td>
+		<td> $ '.$au['haber'].'</td>	
+    <td>'.$au['cheque'].'</td>
+    <td>'.$au['detalle'].'</td>
     </tr>';
 	$d=$d+$au['debe'];
 	$h=$h+$au['haber'];

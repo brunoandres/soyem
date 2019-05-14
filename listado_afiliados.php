@@ -32,6 +32,8 @@ include("menu.php");
   <input name="busc" type="text" class="p_input" id="busc" placeholder="Ingreso un nombre o apellido" autocomplete="off"/>
 <div class="etiqueta">o Nro de Legajo:</div>
   <input name="leg" type="text" class="p_input" id="leg" placeholder="Ingrese un número de legajo" autocomplete="off"/>
+  <div class="etiqueta">o Nro de Documento:</div>
+  <input name="dni" type="text" class="p_input" id="dni" placeholder="Ingrese un número de documento" autocomplete="off"/>
 <div>
         <label><br>
 	<input type="submit" name="Submit" value="Buscar Datos"/>
@@ -40,7 +42,7 @@ include("menu.php");
 </form>
 <hr />
 <?php
-if ($_POST['act']=="si" and (!empty($_POST['busc']) or !empty($_POST['leg']))){
+if ($_POST['act']=="si" and (!empty($_POST['busc']) or !empty($_POST['leg']) or !empty($_POST['dni']))){
 	if (!empty($_POST['busc'])){
 	$busq = $_POST['busc'];
 	$filtro = '(nombre like ("%'.$busq.'%"))';
@@ -48,6 +50,13 @@ if ($_POST['act']=="si" and (!empty($_POST['busc']) or !empty($_POST['leg']))){
 	$que = mysql_query($sql);
 	$nn = mysql_num_rows($que);
 	echo "Se encontraron ".$nn." coincidencias con la búsqueda <font color='ff0000'>".$busq."</font>"; 
+ 	} elseif (!empty($_POST['dni'])) {
+ 		$busq = $_POST['dni'];
+		$filtro = '(documento like ("%'.$busq.'%"))';
+		$sql = "select * from afiliado where ".$filtro." order by nombre asc";
+		$que = mysql_query($sql);
+		$nn = mysql_num_rows($que);
+		echo "Se encontraron ".$nn." coincidencias con la búsqueda <font color='ff0000'>".$busq."</font>";
  	} else {
 	$busq = $_POST['leg'];
 	$filtro = '(legajo = '.$busq.')';

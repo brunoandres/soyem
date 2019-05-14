@@ -1,5 +1,6 @@
 <?php
 $page = 'contabilidad';
+$subpage = 'ejercicios';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -11,6 +12,19 @@ mysql_query("delete from asientos where activo='no'");
 <meta http-equiv="Content-Type" charset="utf-8"/>
 <title>Sistema Administrativo - Ejercicios Contables</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  
+    $('#ejercicios').DataTable({
+      "language": {
+          "url": "spanish.json"
+        }
+    });
+} );
+</script>
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -19,7 +33,7 @@ return confirm( mensaje );
 
 
 
-
+<!--
  <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
 		<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="colorbox/jquery.colorbox1.js"></script>
@@ -40,7 +54,7 @@ return confirm( mensaje );
 				});
 			});
 		</script>
-		<link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
+		<link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />-->
 
   <!-- main calendar program -->
   <script type="text/javascript" src="calendar.js"></script>
@@ -87,14 +101,16 @@ include("menu.php");
 
 
 
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+  <table id="ejercicios" class="display" cellspacing="0" width="100%">
+  	<thead>
     <tr>
-		<th>Año</th>
+	  <th>Año</th>
       <th>Estado</th>
 	  <th>Cierre</th>
 	  <th>Usuario</th>
 	  <th>Cerrar</th>
     </tr>
+    </thead>
     <?php
     	$txt1 = "SELECT * FROM cont_ejercicios order by ejer_year";
 		$query1 = mysql_query($txt1);
@@ -107,7 +123,7 @@ include("menu.php");
 							$cierre = $data1['ejer_dia_cierre'];
 							$ejer_us = $data1['ejer_us'];
 							
-							$link = '<a href="detalle_ejercicios.php?fecha='.$anio.'"><button>Ver detalle</button></a>';
+							$link = '<a href="detalle.php?fecha='.$anio.'"><button>Ver detalle</button></a>';
 							
 						} else {
 							$estado = '<div class ="en_ejercicio">EN EJERCICIO</div>';

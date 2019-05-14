@@ -140,7 +140,7 @@ echo $preg;
 ?>
 </div>
 <div class="etiqueta">Cuit:</div>
- <input name="cuit" type="text" class="p_input" id="cuit" value="<?php echo $dat['cuil']; ?>" maxlength="11" />
+ <input name="cuit" type="text" class="p_input" id="cuit" value="<?php echo $dat['cuil']; ?>" maxlength="11" autocomplete="off" />
 
 <div class="etiqueta">Banco:</div>
  <select name="banco" class="p_input" id="banco" >
@@ -151,7 +151,7 @@ echo $preg;
  </select>
  
  <div class="etiqueta">CBU:</div>
- <input name="cbu_bd" type="text" class="p_input" id="cbu_bd" value="<?php echo $dat['cbu_bd']; ?>" maxlength="22" />
+ <input name="cbu_bd" type="text" class="p_input" id="cbu_bd" value="<?php echo $dat['cbu_bd']; ?>" maxlength="22" autocomplete="off"/>
 
 
 

@@ -10,7 +10,6 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Pagos</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -18,26 +17,26 @@ return confirm( mensaje );
 </script>
 
  <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
-		<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
-		<script type="text/javascript" src="colorbox/jquery.colorbox.js"></script>
-	<script type="text/javascript">
-			$(document).ready(function(){
-				//Examples of how to assign the ColorBox event to elements
-				
-				$(".example6").colorbox({iframe:true, innerWidth:750, innerHeight:700});
-				
-				  $().bind('cbox_closed',function() {  
+    <script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="colorbox/jquery.colorbox.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+        //Examples of how to assign the ColorBox event to elements
+        
+        $(".example6").colorbox({iframe:true, innerWidth:750, innerHeight:700});
+        
+          $().bind('cbox_closed',function() {  
       location.reload(true); 
    }); 
-				
-				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
-					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
-					return false;
-				});
-			});
-		</script>
-		<link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
+        
+        //Example of preserving a JavaScript event for inline calls.
+        $("#click").click(function(){ 
+          $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+          return false;
+        });
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
 
   <!-- main calendar program -->
   <script type="text/javascript" src="calendar.js"></script>
@@ -81,7 +80,7 @@ include("menu.php");
   <option value="caja chica">caja chica</option>
    <option value="cheque">cheque</option>
     <option value="pendiente">pendiente</option>
-	<option value="">Todos</option>
+  <option value="">Todos</option>
   </select>
   
    Empresa:
@@ -107,7 +106,7 @@ include("menu.php");
    if (!empty($_GET['fecha_desde'])){
    echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="'.$_GET['fecha_desde'].'" />';
    } else {
-   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" autocomplete="off" readonly />';
+   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" />';
    }
    ?>
     <script type="text/javascript">
@@ -117,8 +116,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1       ,
-        singleClick    :" true"         // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1     ,
+        singleClick    :" true"             // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
    Hasta: 
@@ -126,7 +125,7 @@ include("menu.php");
    if ($_GET['fecha_hasta']>0){
    echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" />';
    } else {
-   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" autocomplete="off" readonly />';
+   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" />';
    }
    ?>
     <script type="text/javascript">
@@ -136,31 +135,29 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1          ,
-        singleClick    :" true"      // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1    ,
+        singleClick    :" true"              // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
    <input name="aplicar" type="submit" class="apli" value="Aplicar" />
   </div>
   
   
-<table id="example" class="display" cellspacing="0" width="100%">
-    <thead>
+  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-		
+    
       <th>Fecha</th>
-	  <th>Empresa</th>
-	  <th>Importe</th>
-	 <th>Factura</th>
+    <th>Empresa</th>
+    <th>Importe</th>
+   <th>Factura</th>
       <th>Detalle</th>
       
       <th>Forma</th>
       <th>Modificar</th>
       <th>Quitar</th>
     </tr>
-    </thead>
-	<?php
-	
+  <?php
+  
 $tam = 25; 
 
 
@@ -169,68 +166,68 @@ $inicio = 0;
 $pagina=1; 
 } 
 else { 
-	$pagina=$_GET['pagina'];
+  $pagina=$_GET['pagina'];
 $inicio = ($pagina - 1) * $tam; 
 }
 
-	if (empty($_GET['forma_pago']) and empty($_GET['empresa_pago']) and empty($_GET['fecha_desde']) and empty($_GET['fecha_hasta'])){
-	
-	$sq = "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa order by id_pagos desc limit " . $inicio . "," . $tam;
-	
-	$sq1 = "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa order by id_pagos desc ";
-	
-	} else {
-	$sq .= "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa where ( ";
-	$sq1 .= "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa where ( ";
-		if (!empty($_GET['forma_pago'])){
-		$sq .= "forma_pago='".$_GET['forma_pago']."' and ";
-		$sq1 .= "forma_pago='".$_GET['forma_pago']."' and ";
-		}
-		if (!empty($_GET['empresa_pago'])){
-		$sq .= "empresa_pago='".$_GET['empresa_pago']."' and ";
-		$sq1 .= "empresa_pago='".$_GET['empresa_pago']."' and ";
-		}
-		if (!empty($_GET['fecha_desde'])){
-		$sq .= "fecha_pago >= '".substr($_GET['fecha_desde'],6,4).'-'.substr($_GET['fecha_desde'],3,2).'-'.substr($_GET['fecha_desde'],0,2)."' and ";
-		$sq1 .= "fecha_pago >= '".substr($_GET['fecha_desde'],6,4).'-'.substr($_GET['fecha_desde'],3,2).'-'.substr($_GET['fecha_desde'],0,2)."' and ";
-		}
-		if (!empty($_GET['fecha_hasta'])){
-		$sq .= "fecha_pago <= '".substr($_GET['fecha_hasta'],6,4).'-'.substr($_GET['fecha_hasta'],3,2).'-'.substr($_GET['fecha_hasta'],0,2)."' and ";
-		$sq1 .= "fecha_pago <= '".substr($_GET['fecha_hasta'],6,4).'-'.substr($_GET['fecha_hasta'],3,2).'-'.substr($_GET['fecha_hasta'],0,2)."' and ";
-		}
-	$sq .= " nro_as >0 ) order by id_pagos desc limit " . $inicio . "," . $tam;
-	$sq1 .= " nro_as >0 ) order by id_pagos desc";
-	}
-	$u=mysql_query($sq);
-	$d=0;
-	$h=0;
-	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
-	$au=mysql_fetch_array($u);
+  if (empty($_GET['forma_pago']) and empty($_GET['empresa_pago']) and empty($_GET['fecha_desde']) and empty($_GET['fecha_hasta'])){
+  
+  $sq = "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa order by id_pagos desc limit " . $inicio . "," . $tam;
+  
+  $sq1 = "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa order by id_pagos desc ";
+  
+  } else {
+  $sq .= "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa where ( ";
+  $sq1 .= "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa where ( ";
+    if (!empty($_GET['forma_pago'])){
+    $sq .= "forma_pago='".$_GET['forma_pago']."' and ";
+    $sq1 .= "forma_pago='".$_GET['forma_pago']."' and ";
+    }
+    if (!empty($_GET['empresa_pago'])){
+    $sq .= "empresa_pago='".$_GET['empresa_pago']."' and ";
+    $sq1 .= "empresa_pago='".$_GET['empresa_pago']."' and ";
+    }
+    if (!empty($_GET['fecha_desde'])){
+    $sq .= "fecha_pago >= '".substr($_GET['fecha_desde'],6,4).'-'.substr($_GET['fecha_desde'],3,2).'-'.substr($_GET['fecha_desde'],0,2)."' and ";
+    $sq1 .= "fecha_pago >= '".substr($_GET['fecha_desde'],6,4).'-'.substr($_GET['fecha_desde'],3,2).'-'.substr($_GET['fecha_desde'],0,2)."' and ";
+    }
+    if (!empty($_GET['fecha_hasta'])){
+    $sq .= "fecha_pago <= '".substr($_GET['fecha_hasta'],6,4).'-'.substr($_GET['fecha_hasta'],3,2).'-'.substr($_GET['fecha_hasta'],0,2)."' and ";
+    $sq1 .= "fecha_pago <= '".substr($_GET['fecha_hasta'],6,4).'-'.substr($_GET['fecha_hasta'],3,2).'-'.substr($_GET['fecha_hasta'],0,2)."' and ";
+    }
+  $sq .= " nro_as >0 ) order by id_pagos desc limit " . $inicio . "," . $tam;
+  $sq1 .= " nro_as >0 ) order by id_pagos desc";
+  }
+  $u=mysql_query($sq);
+  $d=0;
+  $h=0;
+  for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
+  $au=mysql_fetch_array($u);
     echo'<tr>';
       
-	    echo '<td>'.substr($au['fecha_pago'],8,2).'/'.substr($au['fecha_pago'],5,2).'/'.substr($au['fecha_pago'],0,4).'</td>';
-		echo '<td>'.$au['nombre'].'</td>';
-		echo '<td>$ '.$au['importe_pago'].'</td>';
-		echo '<td>'.$au['factura_pago'].'</td>';
-		echo '<td>'.$au['detalle_pago'].'</td>';
-		if ($au['forma_pago']=='cheque'){
-		$forma = $au['forma_pago'].' '.$au['cheque_pago'].' - '.$au['cuenta_banco'];
-		} else {
-			if ($au['forma_pago']=='pendiente'){
-			$forma = $au['forma_pago'].' <a href="nuevo_pago1.php?id_pagos='.$au['id_pagos'].'" class="example6">Pagar</a>';
-			} else {
-		$forma = $au['forma_pago'];
-		}
-		}
-		echo '<td>'.$forma.'</td>';
-		echo '<td><a href="nuevo_pago.php?id_pagos='.$au['id_pagos'].'" class="example6">Modificar</a></td>';
-		echo '<td><a href="quitar_pagos.php?id_pagos='.$au['id_pagos'].'&nro_as='.$au['nro_as'].'" title="Quitar este pago" onclick="return confirmar(';
-	   echo "'¿Está seguro que desea quitar este pago?'";
-	  echo ')" >Quitar</a></td>
+      echo '<td>'.substr($au['fecha_pago'],8,2).'/'.substr($au['fecha_pago'],5,2).'/'.substr($au['fecha_pago'],0,4).'</td>';
+    echo '<td>'.$au['nombre'].'</td>';
+    echo '<td>$ '.$au['importe_pago'].'</td>';
+    echo '<td>'.$au['factura_pago'].'</td>';
+    echo '<td>'.$au['detalle_pago'].'</td>';
+    if ($au['forma_pago']=='cheque'){
+    $forma = $au['forma_pago'].' '.$au['cheque_pago'].' - '.$au['cuenta_banco'];
+    } else {
+      if ($au['forma_pago']=='pendiente'){
+      $forma = $au['forma_pago'].' <a href="nuevo_pago1.php?id_pagos='.$au['id_pagos'].'" class="example6">Pagar</a>';
+      } else {
+    $forma = $au['forma_pago'];
+    }
+    }
+    echo '<td>'.$forma.'</td>';
+    echo '<td><a href="nuevo_pago.php?id_pagos='.$au['id_pagos'].'" class="example6">Modificar</a></td>';
+    echo '<td><a href="quitar_pagos.php?id_pagos='.$au['id_pagos'].'&nro_as='.$au['nro_as'].'" title="Quitar este pago" onclick="return confirmar(';
+     echo "'¿Está seguro que desea quitar este pago?'";
+    echo ')" >Quitar</a></td>
     </tr>';
-	
-	}
-	?>
+  
+  }
+  ?>
   </table>
   
   <div id="nave">
@@ -265,23 +262,5 @@ $pagina = $_GET['pagina'] + 1;
 </form>
   </div>
 </div>
-
-
-<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" class="init">
-  $(document).ready(function() {
-    $('#example').DataTable({
-      "language": {
-          "url": "spanish.json"
-        }
-    });
-} );
-
-
-</script>
-
-
-
 </body>
 </html>

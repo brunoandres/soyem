@@ -1,5 +1,6 @@
 <?php
 $page = 'contabilidad';
+$subpage = 'deuda_prestamo';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -11,6 +12,21 @@ mysql_query("delete from asientos where activo='no'");
 <meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Contabilidad</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  
+    $('#deuda_prestamos').DataTable({
+      "language": {
+          "url": "spanish.json"
+        }
+    });
+} );
+</script>
+
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -28,9 +44,7 @@ return confirm( mensaje );
 </SCRIPT>';
   }
   ?>
- <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
-		<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
-		<script type="text/javascript" src="colorbox/jquery.colorbox1.js"></script>
+ 
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
@@ -88,7 +102,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1        ,
+        singleClick    :    " true"         // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <br>
@@ -101,16 +116,17 @@ include("menu.php");
 	if(isset($_POST['corte']) and !empty($_POST['corte'])){
 		$corte = substr($_POST['corte'],6,4).'-'.substr($_POST['corte'],3,2).'-'.substr($_POST['corte'],0,2);
 		?>
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
+  <table id="deuda_prestamos" class="display" cellspacing="0" width="100%">
+  	<thead>
     <tr>
-		<th>Fecha Prestamo</th>
-		
+	  <th>Fecha Prestamo</th>	
       <th>Afiliado</th>
 	  <th>Vencimiento</th>
 	  <th>Importe</th>
 	  <th>Deudor</th>
 	  <th>Ver</th>
     </tr>
+    </thead>
 	<?php
 	$query = mysql_query("SELECT * FROM prestamos where (fecha_prestamo <= '$corte' and tipe_p = 'M' and vencimiento > '$corte')");
 	$tot_muni = 0;

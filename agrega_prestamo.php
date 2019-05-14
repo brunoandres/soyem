@@ -36,7 +36,7 @@ $vale_pro="";
 	$lena = "";
 	$cuenta_banco = "";
 	$cheque_nro = "";
-	$cuenta_motivo = $_POST['origen'];	
+	$cuenta_motivo = $_POST['origen'];
 	}
 	if ($_POST['m_pago']=='Cheque'){
 	$efectivo = "";
@@ -45,7 +45,7 @@ $vale_pro="";
 	$lena = "";
 	$turismo = "";
 	$cuenta_banco = $_POST['cuenta_banco'];
-	$cheque_nro = $_POST['nro_cheque'];	
+	$cheque_nro = $_POST['nro_cheque'];
 	}
 	if ($_POST['m_pago']=='Proveduria'){
 	$efectivo = "";
@@ -68,7 +68,7 @@ $vale_pro="";
 	$lena = "";
 	$turismo = "X";
 	}
-	
+
 }
 if ($_POST['tipo']=='Salud'){
 $proveedor=$_POST['proveedor_sal'];
@@ -159,7 +159,7 @@ if($_POST['tipe_p']!="P"){
 if ($_POST['tipo']=='Salud'){
 		$dat_pro = mysql_fetch_array(mysql_query("select * from empresas where clave_empresa='$proveedor'"));
 		$detalle1 = "Prestamo al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto." del proveedor de salud ".$dat_pro['nombre'];
-		
+
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '36', '$montot', '$detalle1', '$id_us', 'si')");
 		}
@@ -167,52 +167,52 @@ if ($_POST['tipo']=='Salud'){
 if ($_POST['tipo']=='Proveedor'){
 		$dat_pro = mysql_fetch_array(mysql_query("select * from empresas where clave_empresa='$proveedor'"));
 		$detalle1 = "Prestamo al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto." del proveedor ".$dat_pro['nombre'];
-		
+
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '36', '$montot', '$detalle1', '$id_us', 'si')");
 }
 
 if ($_POST['tipo']=='Soyem'){
-	
+
 	if ($_POST['m_pago']=='Proveduria'){
 	$detalle1 = "Prestamo de Proveduria al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto;
 	mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 	mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '180', '$montot', '$detalle1', '$id_us', 'si')");
 	}
-	
+
 	if ($_POST['m_pago']=='Leña'){
 	$detalle1 = "Prestamo de Leña al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto;
 	mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 	mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '95', '$montot', '$detalle1', '$id_us', 'si')");
 	}
-	
+
 	if ($_POST['m_pago']=='Efectivo'){
-	
+
 	if ($_POST['origen']==1){
 		$detalle1 = "Prestamo en efectivo (Tesoreria) al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto;
-		
+
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '1', '$montot', '$detalle1', '$id_us', 'si')");
 		}
 	if ($_POST['origen']==2){
 		$detalle1 = "Prestamo en efectivo (Caja Chica) al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto;
-		
+
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '2', '$montot', '$detalle1', '$id_us', 'si')");
 		}
-		
-		
+
+
 	}
 	if ($_POST['m_pago']=='Cheque'){
 		if($_POST['cuenta_banco']=='G'){
 			$detalle1 = "Prestamo en cheque al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto." cuenta del Banco Credicoop cheque nro ".$_POST['nro_cheque'];
-		
-		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
-		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '5', '$montot', '$detalle1', '$id_us', 'si')");
+
+		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo, cheque) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si','$cheque_nro')");
+		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo, cheque) values ('$nro', '$fecha_prestamo', '5', '$montot', '$detalle1', '$id_us', 'si','$cheque_nro')");
 		}
 		if($_POST['cuenta_banco']=='A'){
 		$detalle1 = "Prestamo en cheque al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto." cuenta del Banco Patagonia cheque nro ".$_POST['nro_cheque'];
-		
+
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '6', '$montot', '$detalle1', '$id_us', 'si')");
 		}
@@ -225,23 +225,23 @@ if ($_POST['tipo']=='Soyem'){
 }
 
 } else {
-	
+
 	$dat_pro = mysql_fetch_array(mysql_query("select * from empresas where clave_empresa='$proveedor'"));
 		$detalle1 = "Prestamo al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto." del proveedor de salud ".$dat_pro['nombre'];
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '159', '$montot', '$detalle1', '$id_us', 'si')");
-		
-		
+
+
 		$nro1 = $nro+1;
-		
+
 		$fecha_prestamo1 = date("Y-m-d");
-		
+
 		$detalle11 = "Coseguro del afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " de $ ".$_POST['monto_coseguro']." del proveedor de salud ".$dat_pro['nombre'];
 		$m_c = $_POST['monto_coseguro'];
-		
+
 		mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro1', '$fecha_prestamo1', '75', '$m_c', '$detalle11', '$id_us', 'si')");
 		mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro1', '$fecha_prestamo1', '159', '$m_c', '$detalle11', '$id_us', 'si')");
-		
+
 }
 }
 /* fin a agregar contabilidad*/

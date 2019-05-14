@@ -1,5 +1,6 @@
 <?php
 $page = 'contabilidad';
+$subpage = 'ejercicios';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -76,53 +77,47 @@ include("menu.php");
 
 <?php include("recortes/menu_cont.php"); ?>
  <h3>Detalle de Ejercicios Contables</h3>
-	
+ <input type="hidden" id="valor" value="<?php echo $fecha; ?>" />
 
 <table id="example" class="display" cellspacing="0" width="100%">
 	<thead>
     <tr>
-		<th>Nro</th>
+  		<th>Nro</th>
       <th>Fecha</th>
-	  <th>Cuenta</th>
-	  <th>Debe</th>
-	  <th>Haber</th>
-	  <th>Activo</th>
+  	  <th>Cuenta</th>
+  	  <th>Debe</th>
+  	  <th>Haber</th>
+  	  <th>Activo</th>
     </tr>
-    </thead>
-    <?php
-    	$sql = "select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas where (asientos.fecha >='".$fecha."-01-01' and asientos.fecha <= '".$fecha."-31-12') group by asientos.nro order by asientos.id_a asc";
-		$query = mysql_query($sql);
-			while ($data1 = mysql_fetch_array($query)) {
-				
-				echo '<tr>';
-					echo '<td>'.$data1['nro'].'</td>';
-					echo '<td>'.$data1['fecha'].'</td>';
-					echo '<td>'.$data1['cuenta'].'</td>';
-					echo '<td>'.$data1['debe'].'</td>';
-					echo '<td>'.$data1['haber'].'</td>';
-					echo '<td>'.$data1['activo'].'</td>';
-				echo '</tr>';
-			}
+  </thead>
 
-			?>
-
-	</table>
+</table>
 	
   </div>
 </div>
 
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-  <script type="text/javascript" language="javascript" class="init">
-  $(document).ready(function() {
-  $('#example').DataTable({
-  	"language": {
+  <script>
+	//Script server side processing
+    $(document).ready(function(){
+    	var valor = $("#valor").val();
+        var dataTable = $('#example').DataTable({
+            "processing": true,
+            "serverSide":true,
+            "ajax":{
+                url:"fetch_detalle_ejercicios.php",
+                type:"post",
+                data:{
+                	valor : valor
+                }
+            },
+            "order": [[ 1, "desc" ]],
+            "language": {
             "url": "spanish.json"
         	}
-  });
-} );
-
-
-  </script>
+        });
+    });
+</script>
 </body>
 </html>

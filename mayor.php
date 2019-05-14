@@ -1,5 +1,6 @@
 <?php
 $page = 'contabilidad';
+$subpage = 'mayor';
 include("secure2.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -58,6 +59,20 @@ return confirm( mensaje );
   <!-- the following script defines the Calendar.setup helper function, which makes
        adding a calendar a matter of 1 or 2 lines of code. -->
   <script type="text/javascript" src="calendar-setup.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  
+    $('#mayor').DataTable({
+      "language": {
+          "url": "spanish.json"
+        }
+    });
+} );
+</script>
 </head>
 
 <body>
@@ -104,17 +119,17 @@ include("menu.php");
 </script>
   <input type="submit" name="enviar" value="filtrar" />
   </form>
-  <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
-    <tr>
-		
-      <th>Cuenta</th>
-	  <th>Debe</th>
-	  <th>Haber</th>
-	 <th>Saldo</th>
-      <th>Ver</th>
-	   <th>Historial</th>
-      
-    </tr>
+  <table id="mayor" class="display" cellspacing="0" width="100%">
+  	<thead>
+    	<tr>
+	      <th>Cuenta</th>
+		  <th>Debe</th>
+		  <th>Haber</th>
+	 	  <th>Saldo</th>
+	      <th>Ver</th>
+	      <th>Historial</th>    
+    	</tr>
+    </thead>
 	<?php
 	
 	

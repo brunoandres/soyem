@@ -384,7 +384,7 @@ $i++;
   </select>
   
     <div class="etiqueta">Nro de cheque:</div>
-  <input name="nro_cheque" type="text" class="p_input" id="nro_cheque" disabled="disabled" />
+  <input name="nro_cheque" type="text" class="p_input" id="nro_cheque" disabled="disabled" autocomplete="off" />
   </div>
   
 </div>
@@ -604,7 +604,7 @@ $i++;
 	}
 	?>
   </select>
-   A�o: <select name="ano" id="ano" class="p_input_corto">
+   Año: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $a_anio; ?>"><?php echo $a_anio; ?></option>
    <?php
    $ye =2013;
@@ -646,7 +646,7 @@ $i++;
 <input type="hidden" name="afiliado" value="<?php echo $clave; ?>">
 <input type="hidden" name="tipe_p" value="P">
 <div class="etiqueta">Monto del Prestamo:</div>
-  <input name="monto" type="text" class="p_input" id="monto" value="<?php echo $_GET['monto']; ?>" />
+  <input name="monto" type="number" step="0.1" class="p_input" id="monto" value="<?php echo $_GET['monto']; ?>" placeholder="Ingrese el monto..."/>
   <div class="etiqueta">Cuotas:</div>
 <select name="cuotas" class="p_input" id="cuotas" onChange="Calcula(this.form)" >
 <option value="<?php echo $_GET['cuotas']; ?>" selected="selected"><?php echo $_GET['cuotas']; ?></option>
@@ -710,7 +710,7 @@ $i++;
 	}
 	?>
   </select>
-   A�o: <select name="ano" id="ano" class="p_input_corto">
+   Año: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo $a_ani; ?>"><?php echo $a_ani; ?></option>
    <?php
    $ye =2013;
@@ -721,7 +721,7 @@ $i++;
 	?>
   </select>
   <div class="etiqueta">Monto del Coseguro:</div>
-  <input name="monto_coseguro" type="text" class="p_input" id="monto_coseguro" value="<?php echo $_GET['monto']; ?>" />
+  <input name="monto_coseguro" type="number" step="0.1" class="p_input" id="monto_coseguro" value="<?php echo $_GET['monto']; ?>" placeholder="Ingrese el monto..." />
 
   <div class="etiqueta">Observaciones:</div>
   <textarea name="observaciones" rows="4" class="p_input" id="observaciones"></textarea>

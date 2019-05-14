@@ -1,5 +1,6 @@
 <?php
 $page = 'ingresos';
+$subpage = 'cajas_diarias';
 include("secure3.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
@@ -56,8 +57,7 @@ if (empty($_GET['p_afiliado'])){
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 		
-		<script language="JavaScript">
-
+	
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
 
   <!-- main calendar program -->
@@ -94,7 +94,9 @@ include("menu.php");
 <div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
 <div id="contanido">
 <div id="cuerpo">
-<div class="barri"><b><a href="ingresos.php" title="listado de recibos">Recibos</a> - <a href="cajas_diarias.php" title="Caja diaria">Caja Diaria</a></b></div>
+<div class="barri">
+  <b>
+    <a href="ingresos.php" title="listado de recibos">Recibos</a> - <a href="cajas_diarias.php" title="Caja diaria" <?php if($subpage=='cajas_diarias'){echo 'style="color:red;"';} ?>>Caja Diaria</a></b></div>
 
 
 <div class="subt"> Caja Diaria: </div> 

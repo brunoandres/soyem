@@ -97,7 +97,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1      ,
+        singleClick    :" true"          // show all years in drop-down boxes (instead of every other year as default)
     });
 </script> 
   

@@ -15,7 +15,7 @@ $funcion_r=$_SESSION['funcion'];
 	<script src="jquery/jquery.ui.widget.js"></script>
 	<script src="jquery/jquery.ui.position.js"></script>
 	<script src="jquery/jquery.ui.autocomplete.js"></script>
-	
+
 	<script>
 	$(function() {
 		var availableTags = [
@@ -26,9 +26,9 @@ $funcion_r=$_SESSION['funcion'];
   $afa = mysql_fetch_array($qfa);
   echo '"'.$afa['nombre'].' ('.$afa['legajo'].') ('.$afa['documento'].') ['.$afa['clave'].']",';
   }
-  
+
   ?>
-			
+
 		];
 		$( "#tags" ).autocomplete({
 			source: availableTags
@@ -40,7 +40,7 @@ $funcion_r=$_SESSION['funcion'];
 
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
-		
+
 		<script language="JavaScript">
 			function pagoOnChange(sel) {
       if (sel.value=="Proveedor"){
@@ -59,9 +59,9 @@ $funcion_r=$_SESSION['funcion'];
 		    $("#soye").show();
       }
 }
-		
+
 		</script>
-		
+
 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
 
@@ -79,45 +79,45 @@ function Validar(form)
 {
 	 if (form.cuit.value == "")
   { alert("Por favor ingrese el cuit"); form.cuit.focus(); return; }
-  
+
    if (form.banco.value == "")
   { alert("Por favor ingrese el banco"); form.banco.focus(); return; }
-  
+
    if (form.cbu_bd.value == "")
   { alert("Por favor ingrese el CBU del afiliado"); form.cbu_bd.focus(); return; }
-  
+
   if (form.cbu_bd.value.length < 22)
   { alert("Faltan numeros en el CBU del afiliado"); form.cbu_bd.focus(); return; }
-  
+
    if (form.monto.value == "")
   { alert("Por favor ingrese el monto del prestamo"); form.monto.focus(); return; }
-  
- 
+
+
    if (form.cuotas.value == "")
   { alert("Por favor ingrese la cantidad de cuotas del prestamo"); form.cuotas.focus(); return; }
-  
-  
+
+
    if (form.tipo.value == "")
   { alert("Por favor defina tipo de prestamo a otorgar"); form.tipo.focus(); return; }
-  
+
   if (form.tipo.value == "Proveedor" && form.proveedor_pro.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor_pro.focus(); return; }
-  
+
     if (form.tipo.value == "Salud" && form.proveedor_sal.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor_sal.focus(); return; }
-  
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "")
   { alert("Por favor ingrese el modo de pago"); form.m_pago.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Efectivo" && form.origen.value == "")
   { alert("Por favor ingrese el origen de los fondos del prestamo"); form.origen.focus(); return; }
-  
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.cuenta_banco.value=="")
   { alert("Por favor ingrese la cuenta bancaria del cheque"); form.cuenta_banco.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.nro_cheque.value=="")
   { alert("Por favor ingrese el nro de cheque"); form.nro_cheque.focus(); return; }
-  
+
  form.submit();
 }
 function Calcula(form){
@@ -126,77 +126,77 @@ form.importe_cuota.value = form.monto.value / form.cuotas.value;
 function tipo_op(form)
 {
   if (form.m_pago.value == "Efectivo")
-  { 
+  {
 
   form.cuenta_banco.disabled=true;
   form.nro_cheque.disabled=true;
   form.origen.disabled=false;
-   } 
+   }
    if (form.m_pago.value == "Cheque")
-  { 
+  {
 
   form.cuenta_banco.disabled=false;
   form.nro_cheque.disabled=false;
   form.origen.disabled=true;
-   } 
-   
+   }
+
 }
 
 
 function Validar1(form)
 {
-  
+
    if (form.monto.value == "")
   { alert("Por favor ingrese el monto del prestamo"); form.monto.focus(); return; }
-  
- 
+
+
    if (form.cuotas.value == "")
   { alert("Por favor ingrese la cantidad de cuotas del prestamo"); form.cuotas.focus(); return; }
-  
-  
+
+
    if (form.tipo.value == "")
   { alert("Por favor defina tipo de prestamo a otorgar"); form.tipo.focus(); return; }
-  
+
   if (form.tipo.value == "Proveedor" && form.proveedor_pro.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor_pro.focus(); return; }
-  
+
     if (form.tipo.value == "Salud" && form.proveedor_sal.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor_sal.focus(); return; }
-  
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "")
   { alert("Por favor ingrese el modo de pago"); form.m_pago.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Efectivo" && form.origen.value == "")
   { alert("Por favor ingrese el origen de los fondos del prestamo"); form.origen.focus(); return; }
-  
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.cuenta_banco.value=="")
   { alert("Por favor ingrese la cuenta bancaria del cheque"); form.cuenta_banco.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.nro_cheque.value=="")
   { alert("Por favor ingrese el nro de cheque"); form.nro_cheque.focus(); return; }
-  
+
  form.submit();
 }
 
 function Validar2(form)
 {
-  
+
    if (form.monto.value == "")
   { alert("Por favor ingrese el monto del prestamo"); form.monto.focus(); return; }
-  
- 
+
+
    if (form.cuotas.value == "")
   { alert("Por favor ingrese la cantidad de cuotas del prestamo"); form.cuotas.focus(); return; }
-  
-  
+
+
    if (form.monto_coseguro.value == "")
   { alert("Por favor ingrese el monto del coseguro"); form.monto_coseguro.focus(); return; }
-  
- 
+
+
     if (form.proveedor_sal.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor_sal.focus(); return; }
-  
-  
+
+
  form.submit();
 }
 
@@ -239,7 +239,7 @@ if ($nro_af == 0 ){
 <div class="etiqueta">Afiliado:</div>
 <input id="tags" name="p_afiliado" class="p_input"/>
 
-<div class="etiqueta">Tipo de Cancelación:</div>
+<div class="etiqueta">Tipo de CancelaciÃ³n:</div>
 <select name="tipe_p" class="p_input"/>
 <option value="D">Debito por Banco</option>
 <option value="M">Descuento por Planilla</option>
@@ -266,7 +266,7 @@ if ($nro_af == 0 ){
 		if (mysql_num_rows(mysql_query("select * from prestamos where (afiliado='$clave' and fecha_prestamo < '$hoy' and pagado ='I')")) > 0){
 		?>
         <div class="veraza">Este Afiliado tiene prestamos impagos</div>
-        <?php	
+        <?php
 		}
 	}
 	?>
@@ -281,7 +281,7 @@ if ($nro_af == 0 ){
  <option>BANCO PATAGONIA</option>
  <option>DE LA NACION ARGENTINA</option>
  </select>
- 
+
  <div class="etiqueta">CBU:</div>
  <input name="cbu_bd" type="text" class="p_input" id="cbu_bd" value="<?php echo $dat_af['cbu_bd']; ?>" maxlength="22" />
 
@@ -299,7 +299,7 @@ echo '<option value="'.$i.'">'.$i.'</option>';
 $i++;
 }
 ?>
-</select> 
+</select>
   <div class="etiqueta">Importe cuota:</div>
   <input name="importe_cuota" type="text" class="p_input" id="importe_cuota" disabled="disabled" value="<?php if ($_GET['cuotas']>0) echo ($_GET['monto']/$_GET['cuotas']); ?>" />
   <div class="etiqueta">Tipo:</div>
@@ -310,12 +310,12 @@ $i++;
   <option value="Salud">Salud</option>
   </select>
   <input type="hidden" name="p_afiliado" value="<?php echo $_GET['p_afiliado']; ?>">
- 
-  
-  
-  
-  
-  
+
+
+
+
+
+
   <div id="prove" style="display:none">
 
 
@@ -330,14 +330,14 @@ $i++;
   $afp = mysql_fetch_array($qfp);
   echo '<option value="'.$afp['clave_empresa'].'">'.$afp['nombre'].'</option>';
   }
-  
+
   ?>
   </select>
-  
+
  </div>
-  
+
  <div id="salu" style="display:none">
- 
+
   <div class="etiqueta">Proveedor:</div>
   <select name="proveedor_sal" class="p_input">
 
@@ -349,23 +349,23 @@ $i++;
   $afp = mysql_fetch_array($qfp);
   echo '<option value="'.$afp['clave_empresa'].'">'.$afp['nombre'].'</option>';
   }
-  
+
   ?>
   </select>
-  
+
   </div>
-  
+
  <div id="soye" style="display:none">
- 
+
   <div class="etiqueta">Forma de entrega pres:</div>
   <select name="m_pago" class="p_input" onChange="tipo_op(this.form)">
   <option value=""></option>
   <option value="Cheque">Cheque</option>
   <option value="Efectivo">Efectivo</option>
   <option value="Proveduria">Proveduria</option>
-  <option value="Leña">Leña</option>
+  <option value="Leï¿½a">Leï¿½a</option>
   </select>
-  
+
   <div id="efecto">
 
   <div class="etiqueta">Origen:</div>
@@ -382,30 +382,30 @@ $i++;
   <option value="G">Banco Credicoop</option>
 	<option value="A">Banco Patagonia</option>
   </select>
-  
+
     <div class="etiqueta">Nro de cheque:</div>
   <input name="nro_cheque" type="text" class="p_input" id="nro_cheque" disabled="disabled" />
   </div>
-  
+
 </div>
 
   <div class="etiqueta">Comienza a cancelar:</div>
  Mes: <select name="mes" id="mes" class="p_input_corto">
  <?php
- 
+
  $a_meses = mysql_fetch_array(mysql_query("select * from historial_expo_banco order by exp_banc_id desc"));
 
 	 $es_mes = $a_meses['exp_banc_mes'];
- 
- 
- 
- 
+
+
+
+
 	if ($es_mes<12){
 		$mmes = $es_mes+1;
 	} else {
 		if ($es_mes==12){
 			$mmes = 1;
-		} 
+		}
 	}
 	?>
    <option selected="selected" value="<?php echo $mmes; ?>"><?php echo $mmes; ?></option>
@@ -417,7 +417,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></option>
    <?php
    $ye =2013;
@@ -456,7 +456,7 @@ $i++;
 
 <input type="hidden" name="afiliado" value="<?php echo $clave; ?>">
 <input type="hidden" name="tipe_p" value="M">
-<input name="ant_2015" type="checkbox" value="si"/> Iniciado antes del 2015 
+<input name="ant_2015" type="checkbox" value="si"/> Iniciado antes del 2015
 <div class="etiqueta">Monto:</div>
   <input name="monto" type="text" class="p_input" id="monto" value="<?php echo $_GET['monto']; ?>" />
   <div class="etiqueta">Cuotas:</div>
@@ -469,7 +469,7 @@ echo '<option value="'.$i.'">'.$i.'</option>';
 $i++;
 }
 ?>
-</select> 
+</select>
   <div class="etiqueta">Importe cuota:</div>
   <input name="importe_cuota" type="text" class="p_input" id="importe_cuota" disabled="disabled" value="<?php if ($_GET['cuotas']>0) echo ($_GET['monto']/$_GET['cuotas']); ?>" />
   <div class="etiqueta">Tipo:</div>
@@ -480,12 +480,12 @@ $i++;
   <option value="Salud">Salud</option>
   </select>
   <input type="hidden" name="p_afiliado" value="<?php echo $_GET['p_afiliado']; ?>">
- 
-  
-  
-  
-  
-  
+
+
+
+
+
+
   <div id="prove" style="display:none">
 
 
@@ -500,14 +500,14 @@ $i++;
   $afp = mysql_fetch_array($qfp);
   echo '<option value="'.$afp['clave_empresa'].'">'.$afp['nombre'].'</option>';
   }
-  
+
   ?>
   </select>
-  
+
  </div>
-  
+
  <div id="salu" style="display:none">
- 
+
   <div class="etiqueta">Proveedor:</div>
   <select name="proveedor_sal" class="p_input">
 
@@ -519,21 +519,21 @@ $i++;
   $afp = mysql_fetch_array($qfp);
   echo '<option value="'.$afp['clave_empresa'].'">'.$afp['nombre'].'</option>';
   }
-  
+
   ?>
   </select>
-  
+
   </div>
-  
+
  <div id="soye" style="display:none">
- 
+
   <div class="etiqueta">Forma de entrega:</div>
   <select name="m_pago" class="p_input" onChange="tipo_op(this.form)">
   <option value=""></option>
   <option value="Cheque">Cheque</option>
   <option value="Efectivo">Efectivo</option>
   </select>
-  
+
   <div id="efecto">
 
   <div class="etiqueta">Origen:</div>
@@ -550,11 +550,11 @@ $i++;
   <option value="G">Banco Credicoop</option>
 	<option value="A">Banco Patagonia</option>
   </select>
-  
+
     <div class="etiqueta">Nro de cheque:</div>
   <input name="nro_cheque" type="text" class="p_input" id="nro_cheque" disabled="disabled" />
   </div>
-  
+
 </div>
 
 
@@ -565,22 +565,22 @@ $i++;
    $a_meses_o = mysql_fetch_array(mysql_query("select * from historial_expo_muni order by id_ex desc"));
 
 	 $es_mes_o = $a_meses_o['mes'];
- 
- 
- 
- 
+
+
+
+
 	if ($es_mes_o<12){
 		$mmes_o = $es_mes_o+1;
 	} else {
 		if ($es_mes_o==12){
 			$mmes_o = 1;
-		} 
+		}
 	}
    ?>
       <option selected="selected" value="<?php echo $mmes_o; ?>"><?php echo $mmes_o; ?></option>
-   
-   
-   
+
+
+
    <?php
    $me =1;
    while ($me<13){
@@ -589,7 +589,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></option>
    <?php
    $ye =2013;
@@ -636,17 +636,17 @@ echo '<option value="'.$i.'">'.$i.'</option>';
 $i++;
 }
 ?>
-</select> 
+</select>
   <div class="etiqueta">Importe cuota:</div>
   <input name="importe_cuota" type="text" class="p_input" id="importe_cuota" disabled="disabled" value="<?php if ($_GET['cuotas']>0) echo ($_GET['monto']/$_GET['cuotas']); ?>" />
-  
-  
-  
-  
-  
-  
 
- 
+
+
+
+
+
+
+
   <div class="etiqueta">Proveedor:</div>
   <select name="proveedor_sal" class="p_input">
 
@@ -658,14 +658,14 @@ $i++;
   $afp = mysql_fetch_array($qfp);
   echo '<option value="'.$afp['clave_empresa'].'">'.$afp['nombre'].'</option>';
   }
-  
+
   ?>
   </select>
-  
 
-  
- 
-  
+
+
+
+
 
 
 
@@ -680,7 +680,7 @@ $i++;
 	}
 	?>
   </select>
-   Año: <select name="ano" id="ano" class="p_input_corto">
+   Aï¿½o: <select name="ano" id="ano" class="p_input_corto">
    <option selected="selected" value="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></option>
    <?php
    $ye =2013;
