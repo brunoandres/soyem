@@ -3,7 +3,7 @@ include ("conecta.php");
 $id_us = $_POST['id_us'];
 $id_a = $_POST['id_a'];
 $fecha = substr($_POST['fecha'],6,4).'-'.substr($_POST['fecha'],3,2).'-'.substr($_POST['fecha'],0,2);
-
+$cheque = $_POST['cheque'];
 $cuenta = ($_POST['cuenta']);
 $debe = $_POST['debe'];
 $haber = $_POST['haber'];
@@ -24,7 +24,7 @@ if (empty($id_a)){
 		$nro = $nnro['nro'] + 1;
 		}	
 	}
-mysql_query("insert into asientos (fecha,cuenta,debe,haber,detalle,id_us,nro) values ('$fecha','$cuenta','$debe','$haber','$detalle','$id_us','$nro')");
+mysql_query("insert into asientos (fecha,cuenta,debe,haber,detalle,id_us,nro,cheque) values ('$fecha','$cuenta','$debe','$haber','$detalle','$id_us','$nro','$cheque')");
 header ("location: asiento.php?nro=$nro&ac=nuevo");
 } else {
 mysql_query("update asientos set fecha='$fecha' where id_a='$id_a'");

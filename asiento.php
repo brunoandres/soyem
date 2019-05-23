@@ -183,20 +183,41 @@ include("menu.php");
   }
   ?>
     </select></td>
-    <td valign="top"><input name="debe" type="number"  id="debe" min="0" step="0.10" value="<?php echo $data['debe']; ?>" size="15" /></td>
-    <td valign="top"> <input name="haber" type="number"  id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" /></td>
+    <td valign="top"><input name="debe" type="number" id="debe" min="0" step="0.10" value="<?php echo $data['debe']; ?>" size="15" /></td>
+    <td valign="top"> <input name="haber" type="number" id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" /></td>
+    <div class="">N° de cheque</div>
+ <input type="text" class="" name="cheque" id="cheque" placeholder="Ingrese el N° de cheque" autocomplete="off" /><br><br>
 	 
   </tr>
 </table>	
+
+<script>
+  $(document).ready(function(){     
+    $('#debe').click(function(){     
+      $('#debe').css("border-color", "red");
+      $("#haber").attr('disabled','disabled'); 
+      $("#debe").attr('placeholder','Ingrese el monto...'); 
+           
+    });
+
+    $('#haber').click(function(){
+      $('#haber').css("border-color", "red");
+      $("#debe").attr('disabled','disabled'); 
+      $("#haber").attr('placeholder','Ingrese el monto...'); 
+    });
+});
+</script>
 
   <?php
   if (empty ($_GET['nro'])){
   ?> <div class="etiqueta">Detalle del asiento</div>
  <textarea name="detalle" class="p_input" rows="3" id=""><?php echo $data['detalle']; ?></textarea>
+  <br><br>
+ 
   <?php
   }
   ?>
-        <div>
+        <div><br>
 	<input name="Submit" type="button" class="boton_form" onClick="Validar(this.form)" value="Guardar Item" id="boton_envia"/>
 	</div>
 	    <input name="id_us" type="hidden" id="id_us" value="<?php echo $_SESSION['usuario']; ?>" />
