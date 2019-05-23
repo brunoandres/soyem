@@ -7,6 +7,14 @@ $cheque = $_POST['cheque'];
 $cuenta = ($_POST['cuenta']);
 $debe = $_POST['debe'];
 $haber = $_POST['haber'];
+
+if (empty($debe)) {
+	$debe = '0.00';
+}
+elseif (empty($haber)) {
+	$haber = '0.00';
+}
+
 $detalle = $_POST['detalle'];
 $nro = $_POST['nro'];
 if (empty($_POST['fecha']) and empty($_POST['detalle'])){
@@ -24,7 +32,9 @@ if (empty($id_a)){
 		$nro = $nnro['nro'] + 1;
 		}	
 	}
-mysql_query("insert into asientos (fecha,cuenta,debe,haber,detalle,id_us,nro,cheque) values ('$fecha','$cuenta','$debe','$haber','$detalle','$id_us','$nro','$cheque')");
+	$query = "insert into asientos (fecha,cuenta,debe,haber,detalle,id_us,nro,cheque) values ('$fecha','$cuenta','$debe','$haber','$detalle','$id_us','$nro','$cheque')";
+mysql_query($query);
+
 header ("location: asiento.php?nro=$nro&ac=nuevo");
 } else {
 mysql_query("update asientos set fecha='$fecha' where id_a='$id_a'");
@@ -32,6 +42,7 @@ mysql_query("update asientos set cuenta='$cuenta' where id_a='$id_a'");
 mysql_query("update asientos set debe='$debe' where id_a='$id_a'");
 mysql_query("update asientos set haber='$haber' where id_a='$id_a'");
 mysql_query("update asientos set detalle='$detalle' where id_a='$id_a'");
+mysql_query("update asientos set cheque='$cheque' where id_a='$id_a'");
 header ("location: asiento.php?nro=$nro");
 }
 exit();

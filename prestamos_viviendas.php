@@ -10,6 +10,7 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Listado de Afiliados</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/select2.css">
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
@@ -61,7 +62,7 @@ include("menu.php");
     <strong>  Filtrar por:</strong>
   <hr />
   Afiliado:
-<select name="afiliado" onchange="submit()">
+<select name="afiliado" onchange="submit()" class="select2">
 <?php
   $pfa_tx = "select * from afiliado where clave = ".$_GET['afiliado'];
   $pfa = mysql_fetch_array(mysql_query($pfa_tx));
@@ -77,7 +78,7 @@ include("menu.php");
   }
   
   ?>
-</select>
+</select><br>
 <?php
   if(empty($_GET['fecha_desde'])){
   $fecha_desde = '01/'.date("m").'/'.date("Y");
@@ -228,5 +229,13 @@ $pagina = $_GET['pagina'] + 1;
 </div>
 </form>
 </div>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
+<script src="js/select2.full.min.js"></script>
 </body>
 </html>

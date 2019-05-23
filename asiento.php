@@ -12,6 +12,7 @@ $data =  mysql_fetch_array(mysql_query("select * from asientos where id_a = '$id
 <meta http-equiv="Content-Type" charset="utf-8" />
 <title>Sistema Administrativo - Contabilidad</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/select2.css">
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
 
 <script language="JavaScript">
@@ -169,24 +170,32 @@ include("menu.php");
 	}
 	?>
   <tr>
-    <td valign="top"> <select name="cuenta" id="cuenta">
-		<?php
-		$cc = $data['cuenta'];
-		$ccu = mysql_fetch_array(mysql_query("select * from cuentas where id_cuentas='$cc'"));
-		?>
-  <option selected="selected" value="<?php echo $data['cuenta']; ?>"><?php echo $ccu['cuenta']; ?></option>
-  <?php
-  $qc = mysql_query("select * from cuentas order by cuenta asc");
-  for ($z=0; $z<mysql_num_rows($qc);$z++){
-  $ac = mysql_fetch_array($qc);
-  echo '<option value="'.$ac['id_cuentas'].'">'.$ac['cuenta'].'</option>';
-  }
-  ?>
-    </select></td>
-    <td valign="top"><input name="debe" type="number" id="debe" min="0" step="0.10" value="<?php echo $data['debe']; ?>" size="15" /></td>
-    <td valign="top"> <input name="haber" type="number" id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" /></td>
-    <div class="">N° de cheque</div>
- <input type="text" class="" name="cheque" id="cheque" placeholder="Ingrese el N° de cheque" autocomplete="off" /><br><br>
+  <td valign="top"> 
+
+    <select name="cuenta" id="cuenta" class="select2">
+  		<?php
+  		$cc = $data['cuenta'];
+  		$ccu = mysql_fetch_array(mysql_query("select * from cuentas where id_cuentas='$cc'"));
+  		?>
+      <option selected="selected" value="<?php echo $data['cuenta']; ?>"><?php echo $ccu['cuenta']; ?></option>
+      <?php
+      $qc = mysql_query("select * from cuentas order by cuenta asc");
+      for ($z=0; $z<mysql_num_rows($qc);$z++){
+      $ac = mysql_fetch_array($qc);
+      echo '<option value="'.$ac['id_cuentas'].'">'.$ac['cuenta'].'</option>';
+      }
+      ?>
+    </select>
+  </td>
+    
+  <td valign="top"><input name="debe" type="number" id="debe" min="0" step="0.10" value="<?php echo $data['debe']; ?>" size="15" <?php if ($data['debe']=='0.00') {
+      echo "disabled";
+    } ?> /></td>
+    <td valign="top"> <input name="haber" type="number" id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" <?php if ($data['haber']=='0.00') {
+      echo "disabled";
+    } ?> /></td>
+    <div class="">N° de cheque</div><br>
+ <input type="text" class="" name="cheque" id="cheque" value="<?php echo $data['cheque']; ?>" placeholder="Ingrese el N° de cheque" autocomplete="off"/><br><br>
 	 
   </tr>
 </table>	
@@ -196,8 +205,7 @@ include("menu.php");
     $('#debe').click(function(){     
       $('#debe').css("border-color", "red");
       $("#haber").attr('disabled','disabled'); 
-      $("#debe").attr('placeholder','Ingrese el monto...'); 
-           
+      $("#debe").attr('placeholder','Ingrese el monto...');        
     });
 
     $('#haber').click(function(){
@@ -312,5 +320,13 @@ include("menu.php");
 
   
 </div>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
+<script src="js/select2.full.min.js"></script>
 </body>
 </html>

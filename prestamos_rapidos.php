@@ -11,6 +11,7 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Listado de Afiliados</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/select2.css">
 		<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript" language="javascript">
 		$(document).ready(function(){
@@ -72,7 +73,7 @@ include("menu.php");
 </div>
 <h1>Prestamos Rapidos</h1>
 <form method="get" action="">
- Seleccione la empresa a listar: <select name="empre" id="divbusc" class="p_input" onchange="this.form.submit()">
+ Seleccione la empresa a listar: <select name="empre" id="divbusc" class="p_input select2" onchange="this.form.submit()">
  	<option></option>
 	<?php
 		$qe = mysql_query("select * from empresas where ru_salud != '' order by nombre asc");
@@ -196,5 +197,13 @@ Mes: <select name="mes" id="mes" class="p_input_corto">
  
 </div>
 </div>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
+<script src="js/select2.full.min.js"></script>
 </body>
 </html>
