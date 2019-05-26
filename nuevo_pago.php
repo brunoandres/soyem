@@ -10,6 +10,7 @@ $data =  mysql_fetch_array(mysql_query("select * from pagos where id_pagos = '$i
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Documento sin t&iacute;tulo</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/select2.css">
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -106,7 +107,7 @@ function banco(form)
     });
 </script> 
 <div class="etiqueta">Destinatario:</div>
-<select name="empresa" class="p_input" id="empresa">
+<select name="empresa" class="p_input select2" id="empresa">
 		<?php
 		$cc = $data['empresa_pago'];
 		$ccu = mysql_fetch_array(mysql_query("select * from empresas where clave_empresa='$cc'"));
@@ -174,5 +175,14 @@ function banco(form)
   </div>
 
 </div>
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
+<script src="js/select2.full.min.js"></script>
 </body>
 </html>

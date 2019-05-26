@@ -84,7 +84,7 @@ function Validar(form)
         singleClick    :" true"             // show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
-<div class="etiqueta">Estudios que cursa:</div>
+<div class="etiqueta">Estudios cursados:</div>
   <label>
   <select name="estudio" class="p_input" id="estudio">
    <option selected="selected" value="<?php echo $data['estudio']; ?>">
@@ -114,6 +114,14 @@ function Validar(form)
 	<option value="5">Universitario</option>
   </select>
   </label>
+  <div class="etiqueta">¿Cursando actualmente?
+    <label>
+      <select name="cursando_actualmente" id="cursando_actualmente">
+        <option value="1">Si</option>
+        <option value="0">No</option>
+      </select>
+    </label>
+  </div>
   <div class="etiqueta">Capacidad diferente:</div>
   <label>
   <select name="discapacitado" class="p_input" id="discapacitado">

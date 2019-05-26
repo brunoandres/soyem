@@ -132,14 +132,16 @@ include("menu.php");
 	$au=mysql_fetch_array($u);
     echo'<tr>
       <td>'.$au['rubro'].'</td>
-	    <td>'.$au['titulo'].'</td>
+	    <td>'.$au['titulo'].'</td>';
+if($_SESSION["seccion"]=='administrador'){
+  echo '
     <td><a href="modificar_rubro.php?id_rubro='.$au['id_rubro'].'" class="example6">Modificar</a></td>';
-    if($_SESSION["seccion"]=='administrador'){
+    
       echo '<td><a href="quitar_rubro.php?id_rubro='.$au['id_rubro'].'" title="Quitar este usuario" onclick="return confirmar(';
-	   echo "'�Est� seguro que desea quitar este rubro?'";
+	   echo "'¿Está seguro que desea quitar este rubro?'";
 	  echo ')" >Quitar</a></td></tr>';
     }else{
-      echo '<td>Sin permisos</td></tr>';
+      echo '<td>--</td></tr>';
     } 
      
 
@@ -171,9 +173,9 @@ include("menu.php");
   </form>
     <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-	<th>Cuenta</th>
+      <th>Cuenta</th>
       <th>Rubro</th>
-	  <th>Titulo</th>
+	    <th>Titulo</th>
       <th>modificar</th>
       <th>quitar</th>
     </tr>
@@ -184,17 +186,20 @@ include("menu.php");
     echo'<tr>
 	<td>'.$auu['cuenta'].'</td>
       <td>'.$auu['rubro'].'</td>
-	    <td>'.$auu['titulo'].'</td>
+	    <td>'.$auu['titulo'].'</td>';
+      if($_SESSION["seccion"]=='administrador'){
+        echo '
     <td><a href="#">Modificar</a></td>';
-    if($_SESSION["seccion"]=='administrador'){
+    
 
       echo '<td><a href="quitar_cuenta.php?id_cuentas='.$auu['id_cuentas'].'" title="Quitar esta cuenta" onclick="return confirmar(';
-	   echo "'�Est� seguro que desea quitar esta cuenta?'";
+	   echo "'¿Está seguro que desea quitar esta cuenta?'";
 	  echo ')" >Quitar</a></td>
     </tr>';
     }else{
 
-      echo '<td>Sin permisos</td></tr>';
+      echo '<td>--</td></tr>';
+      
 
     }
      

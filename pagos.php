@@ -10,6 +10,7 @@ $funcion_r=$_SESSION['funcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Sistema Administrativo - Pagos</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/select2.css">
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
@@ -84,7 +85,7 @@ include("menu.php");
   </select>
   
    Empresa:
-   <select name="empresa_pago" onchange="submit()">
+   <select name="empresa_pago" class="select2" onchange="submit()">
   <?php
   $pfp_tx = "select * from empresas where clave_empresa = ".$_GET['empresa_pago'];
   $pfp = mysql_fetch_array(mysql_query($pfp_tx));
@@ -104,9 +105,9 @@ include("menu.php");
   
 <br />Fecha Desde:  <?php
    if (!empty($_GET['fecha_desde'])){
-   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="'.$_GET['fecha_desde'].'" />';
+   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="'.$_GET['fecha_desde'].'" autocomplete="off" />';
    } else {
-   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" />';
+   echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" autocomplete="off"/>';
    }
    ?>
     <script type="text/javascript">
@@ -123,9 +124,9 @@ include("menu.php");
    Hasta: 
       <?php
    if ($_GET['fecha_hasta']>0){
-   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" />';
+   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" autocomplete="off" />';
    } else {
-   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" />';
+   echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" autocomplete="off"/>';
    }
    ?>
     <script type="text/javascript">
@@ -144,14 +145,12 @@ include("menu.php");
   
   
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
-    <tr>
-    
+    <tr>   
       <th>Fecha</th>
-    <th>Empresa</th>
-    <th>Importe</th>
-   <th>Factura</th>
-      <th>Detalle</th>
-      
+      <th>Empresa</th>
+      <th>Importe</th>
+      <th>Factura</th>
+      <th>Detalle</th>    
       <th>Forma</th>
       <th>Modificar</th>
       <th>Quitar</th>
@@ -262,5 +261,14 @@ $pagina = $_GET['pagina'] + 1;
 </form>
   </div>
 </div>
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
+<script src="js/select2.full.min.js"></script>
 </body>
 </html>

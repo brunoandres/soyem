@@ -247,7 +247,7 @@ echo '<b>Sin familiares asociados</b>';
 	echo '</b><br>';
 	echo 'Sexo: '.$sexo.'<br>';
 	if (!empty($af['estudio'])){
-	echo 'Estudios que cursa: <b>';
+	echo 'Estudios cursados: <b>';
 	   switch ($af['estudio']) {
     case 1:
         echo "Prescolar";
@@ -264,9 +264,20 @@ echo '<b>Sin familiares asociados</b>';
 	case 5:
         echo "Universitario";
         break;
+
 }
+echo "<br>Cursando actualmente?: ";
+	if ($af['cursando_actualmente']==1) {
+		echo "<b>Si</br>";
+	}elseif ($af['cursando_actualmente']==NULL) {
+		echo "--";
+	}
+	else{
+		echo "<b>No</b>";
+	}
 echo '</b><br>';
 	}
+	
 	if ($af['discapacitado']=='si'){
 	echo '<b>Con Capacidades Diferentes</b><br>';
 	
