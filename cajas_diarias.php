@@ -57,7 +57,8 @@ if (empty($_GET['p_afiliado'])){
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 		
-	
+		<script language="JavaScript">
+
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
 
   <!-- main calendar program -->
@@ -94,15 +95,13 @@ include("menu.php");
 <div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
 <div id="contanido">
 <div id="cuerpo">
-<div class="barri">
-  <b>
-    <a href="ingresos.php" title="listado de recibos">Recibos</a> - <a href="cajas_diarias.php" title="Caja diaria" <?php if($subpage=='cajas_diarias'){echo 'style="color:red;"';} ?>>Caja Diaria</a></b></div>
+<div class="barri"><b><a href="ingresos.php" title="listado de recibos">Recibos</a> - <a href="cajas_diarias.php" title="Caja diaria">Caja Diaria</a></b></div>
 
 
 <div class="subt"> Caja Diaria: </div> 
 <form action="" method="get">
 <div class="etiqueta">Fecha de la Caja</div>
-<input type="text" name="fecha_caja" placeholder="Elija la fecha de la caja" id="fecha_caja" class="p_input" autocomplete="off" />
+<input type="text" name="fecha_caja" placeholder="elija la fecha de la caja" id="fecha_caja" class="p_input" autocomplete="off" />
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha_caja",      // id of the input field
@@ -110,8 +109,8 @@ include("menu.php");
         showsTime      :    true,            // will display a time selector
         button         :    "f_trigger_b",   // trigger for the calendar (button ID)
         singleClick    :    false,           // double-click mode
-        step           :    1        ,
-        singleClick    :" true"        // show all years in drop-down boxes (instead of every other year as default)
+        step           :    1   ,
+		singleClick    :" true"  		// show all years in drop-down boxes (instead of every other year as default)
     });
 </script>
 <div style="padding:5px"><input type="submit" name="enviar" value="ver caja" /></div>
