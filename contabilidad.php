@@ -167,7 +167,7 @@ include("menu.php");
 		<td> $ '.$aa['haber'].'</td>';
 		echo '<td rowspan="'.$na.'">'.$au['detalle'].'</td>
 		<td rowspan="'.$na.'"><a href="asiento.php?nro='.$au['nro'].'">Modificar</a></td>';
-			if($_SESSION["seccion"]=='administrador'){
+			if($_SESSION["seccion"]=='administrador' || $_SESSION["usuario"]=='graciela.huen' || $_SESSION["usuario"]=='fernando.franze'){
 
 				echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$nro.'" title="Quitar este asiento" onclick="return confirmar(';
 				echo "'¿Está seguro que desea quitar este asiento?'";
