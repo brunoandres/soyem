@@ -9,7 +9,7 @@ $funcion_r=$_SESSION['funcion'];
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Sistema Administrativo - Empresas</title>
+<title>Sistema Administrativo Soyem - Mayor</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript">
 function confirmar ( mensaje ) {
@@ -197,6 +197,9 @@ include("menu.php");
   $(document).ready(function() {
     $('#mayor').DataTable( {
         dom: 'Bfrtip',
+        "language": {
+          "url": "spanish.json"
+        },
         buttons: [
             {
                 extend: 'copyHtml5',
