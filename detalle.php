@@ -98,21 +98,32 @@ include("menu.php");
 
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js"></script>
+
   <script>
+
 	//Script server side processing
     $(document).ready(function(){
+      
     	var valor = $("#valor").val();
+      $.fn.dataTable.moment( 'DD/MM/YYYY' );
+        $.fn.dataTable.moment('L');
         var dataTable = $('#example').DataTable({
+            "pageLength":100,
             "processing": true,
             "serverSide":true,
             "ajax":{
-                url:"fetch_detalle_ejercicios.php",
-                type:"post",
-                data:{
-                	valor : valor
-                }
+              url:"fetch_detalle_ejercicios.php",
+              type:"post",
+              data:{
+              	valor : valor
+              }
             },
-            "order": [[ 1, "desc" ]],
+            "order": [[ 1, "asc" ]],
+            "ordering": true, 
             "language": {
             "url": "spanish.json"
         	}

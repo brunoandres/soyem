@@ -26,19 +26,7 @@ $data =  mysql_fetch_array(mysql_query("select * from cuentas where id_cuentas =
   <script type="text/javascript" src="calendar-setup.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" class="init">
-  $(document).ready(function() {
-  
-    $('#detalle_mayor').DataTable({
-      "language": {
-          "url": "spanish.json"
-        },
-        "pageLength": 100
-    });
-} );
-</script>
+
 </head>
 
 <body>
@@ -113,4 +101,25 @@ include("menu.php");
 
 </div>
 </body>
+
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js"></script>
+
+
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+    $.fn.dataTable.moment( 'DD/MM/YYYY' );
+    $('#detalle_mayor').DataTable({
+      "language": {
+          "url": "spanish.json"
+        },
+        "order": [[ 1, "asc" ]],
+        "ordering": true, 
+        "pageLength": 100
+    });
+} );
+</script>
 </html>

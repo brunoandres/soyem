@@ -61,18 +61,7 @@ return confirm( mensaje );
   <script type="text/javascript" src="calendar-setup.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" class="init">
-  $(document).ready(function() {
-  
-    $('#mayor').DataTable({
-      "language": {
-          "url": "spanish.json"
-        }
-    });
-} );
-</script>
+
 </head>
 
 <body>
@@ -194,5 +183,18 @@ include("menu.php");
   </div>
  
 </div>
+<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+  $(document).ready(function() {
+  
+    $('#mayor').DataTable({
+    	"pageLength":50,
+      	"language": {
+          "url": "spanish.json"
+        }
+    });
+} );
+</script>
 </body>
 </html>
