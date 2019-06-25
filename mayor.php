@@ -135,20 +135,29 @@ include("menu.php");
 		$debe_c = 0;
 		$haber_c = 0;
 		if (empty($_POST['desde']) and empty($_POST['hasta'])){
-		$qcc = mysql_query("select * from asientos where cuenta ='$id_cuentas'");
+
+    $query="select * from asientos where cuenta ='$id_cuentas'";
+		$qcc = mysql_query($query);
 		}
 		if (!empty($_POST['desde']) and empty($_POST['hasta'])){
 		$desde = substr($_POST['desde'],6,4).'/'.substr($_POST['desde'],3,2).'/'.substr($_POST['desde'],0,2);
-		$qcc = mysql_query("select * from asientos where (cuenta ='$id_cuentas' and fecha >= '$desde')");
+
+    $query="select * from asientos where (cuenta ='$id_cuentas' and fecha >= '$desde')";
+		$qcc = mysql_query($query);
 		}
 		if (empty($_POST['desde']) and !empty($_POST['hasta'])){
 		$hasta = substr($_POST['hasta'],6,4).'/'.substr($_POST['hasta'],3,2).'/'.substr($_POST['hasta'],0,2);
-		$qcc = mysql_query("select * from asientos where (cuenta ='$id_cuentas' and fecha <= '$hasta')");
+
+    $query="select * from asientos where (cuenta ='$id_cuentas' and fecha <= '$hasta')";
+		$qcc = mysql_query($query);
+
 		}
 		if (!empty($_POST['desde']) and !empty($_POST['hasta'])){
 		$hasta = substr($_POST['hasta'],6,4).'/'.substr($_POST['hasta'],3,2).'/'.substr($_POST['hasta'],0,2);
 		$desde = substr($_POST['desde'],6,4).'/'.substr($_POST['desde'],3,2).'/'.substr($_POST['desde'],0,2);
-		$qcc = mysql_query("select * from asientos where (cuenta ='$id_cuentas' and fecha <= '$hasta' and fecha >= '$desde')");
+
+    $query = "select * from asientos where (cuenta ='$id_cuentas' and fecha <= '$hasta' and fecha >= '$desde')";
+		$qcc = mysql_query($query);
 		}
 		
 		for ($a=0; $a<mysql_num_rows($qcc); $a++){
@@ -168,6 +177,7 @@ include("menu.php");
 	$d=$d+$au['debe'];
 	$h=$h+$au['haber'];
 	}
+
 	?>
   </table>
   <div class = "resumen">

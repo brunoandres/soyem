@@ -54,7 +54,7 @@ include("menu.php");
       <th>Fecha</th>
       <th>Asiento</th>
 	    <th>Debe</th>
-	    <th>Haber</th>
+	    <th width="10%">Haber</th>
       <th>Nro Cheque</th>
       <th>Detalle</th>   
     </tr>
@@ -105,21 +105,56 @@ include("menu.php");
 <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js"></script>
+<script src="js/buttons/jquery-3.3.1.js"></script>
+<script src="js/buttons/jquery.dataTables.min.js"></script>
+<script src="js/buttons/dataTables.buttons.min.js"></script>
+<script src="js/buttons/jszip.min.js"></script>
+<script src="js/buttons/pdfmake.min.js"></script>
+<script src="js/buttons/vfs_fonts.js"></script>
+<script src="js/buttons/buttons.html5.min.js"></script>
 
+<script type="text/javascript" src="jquery/moment.min.js"></script>
+<script type="text/javascript" src="jquery/datetime-moment.js"></script>
 
 <script type="text/javascript" language="javascript" class="init">
+  
   $(document).ready(function() {
     $.fn.dataTable.moment( 'DD/MM/YYYY' );
-    $('#detalle_mayor').DataTable({
-      "language": {
+    $('#detalle_mayor').DataTable( {
+        dom: 'Bfrtip',
+        "language": {
           "url": "spanish.json"
         },
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                }
+            },
+            {
+                extend: 'csvHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                }
+            }
+        ],
         "order": [[ 1, "asc" ]],
         "ordering": true, 
         "pageLength": 100
-    });
+    } );
 } );
 </script>
 </html>
