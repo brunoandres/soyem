@@ -46,23 +46,23 @@ include("menu.php");
   <?php
   echo 'Detalle de cuenta: '.$data['cuenta'];
   ?> </h1>
- 
+
 <table id="detalle_mayor" class="display" cellspacing="0" width="100%">
   <thead>
     <tr>
-		
+
       <th>Fecha</th>
       <th>Asiento</th>
-	    <th>Debe</th>
+	    <th width="10%">Debe</th>
 	    <th width="10%">Haber</th>
       <th>Nro Cheque</th>
-      <th>Detalle</th>   
+      <th>Detalle</th>
     </tr>
     </thead>
 	<?php
   $d=0;
   $h=0;
-  
+
  	$sq = "select * from asientos where (cuenta =".$id_cuentas .") order by fecha desc";
 	$u=mysql_query($sq);
 	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
@@ -71,7 +71,7 @@ include("menu.php");
       <td>'.substr($au['fecha'],8,2).'/'.substr($au['fecha'],5,2).'/'.substr($au['fecha'],0,4).'</td>';
 	    echo '<td>'.$au['nro'].'</td>
 		<td> $ '.$au['debe'].'</td>
-		<td> $ '.$au['haber'].'</td>	
+		<td> $ '.$au['haber'].'</td>
     <td>'.$au['cheque'].'</td>
     <td>'.$au['detalle'].'</td>
     </tr>';
@@ -90,13 +90,13 @@ include("menu.php");
   if($d!=$h){
     echo '<h3 style="color:red;">Los importes no coinciden</h3>';
   }
-   
+
   $sal = $h - $d;
   echo '<h3 style="color:red;">Saldo = $ '.$sal.'</h3>';
   ?>
   </div>
   <div class = "resumen">
-    <a href="print_libro.php?id_cuentas=<?php echo $id_cuentas; ?>" target="_blank">Preparar este libro para imprimir</a>  </div> 
+    <a href="print_libro.php?id_cuentas=<?php echo $id_cuentas; ?>" target="_blank">Preparar este libro para imprimir</a>  </div>
 </div>
 
 </div>
@@ -117,7 +117,7 @@ include("menu.php");
 <script type="text/javascript" src="jquery/datetime-moment.js"></script>
 
 <script type="text/javascript" language="javascript" class="init">
-  
+
   $(document).ready(function() {
     $.fn.dataTable.moment( 'DD/MM/YYYY' );
     $('#detalle_mayor').DataTable( {
@@ -152,7 +152,7 @@ include("menu.php");
             }
         ],
         "order": [[ 1, "asc" ]],
-        "ordering": true, 
+        "ordering": true,
         "pageLength": 100
     } );
 } );
