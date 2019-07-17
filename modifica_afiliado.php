@@ -134,7 +134,7 @@ if (form.sector.value == "")
 <div class="etiqueta">Domicilio:</div>
   <input name="domicilio" type="text" class="p_input" id="domicilio" value="<?php echo $dat['domicilio']; ?>" autocomplete="off"/>
   <div class="etiqueta">Nro de Documento:</div>
-  <input name="documento" type="number" class="p_input" id="documento" value="<?php echo $dat['documento']; ?>" autocomplete="off"/>
+  <input name="documento" type="text" class="p_input" id="documento" value="<?php echo $dat['documento']; ?>" autocomplete="off"/>
   <div class="etiqueta">Estado Civil:</div>
   <select name="estado_civil" class="p_input" id="estado_civil" onchange="casado1()">
   <option value="<?php echo $dat['estado_civil']; ?>" selected="selected"><?php echo $dat['estado_civil']; ?></option>

@@ -47,6 +47,9 @@ echo "<h2 style='color:blue;'>Legajo no encontrado, deberia dar de alta al nuevo
 if($_GET['es']==7){
 echo "<h2 style='color:red;'>El documento ya está asociado al afiliado.</h2>";
 }
+if($_GET['es']==8){
+echo "<h2 style='color:red;'>Error al modificar afiliado.</h2>";
+}
 ?>
 </div>
 </div>
