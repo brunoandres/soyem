@@ -3,7 +3,7 @@ include("conecta.php");
 $clave = $_POST['clave'];
 $legajo = $_POST['legajo'];
 
-$flag_modificar = false;
+$flag_modificar = 0;
 $existe = mysql_num_rows(mysql_query("select legajo from afiliado where legajo=".$legajo));
 $afiliado = mysql_fetch_array(mysql_query("select legajo from afiliado where clave=".$clave));
 $legajo_existente = $afiliado['legajo'];
@@ -11,19 +11,19 @@ $legajo_existente = $afiliado['legajo'];
 
 if ($legajo_existente==$legajo) {
 
-	$flag_modificar = true;
+	$flag_modificar = 1;
 
 }else{
 
 	if ($existe>0) {
-		$flag_modificar = false;
+		$flag_modificar = 2;
 	}else{
-		$flag_modificar = true;
+		$flag_modificar = 0;
 	}
 
 }
 
-if ($flag_modificar==true) {
+if ($flag_modificar==1) {
 		
 	$nombre = $_POST['nombre'];
 	$sexo = $_POST['sexo'];
@@ -150,8 +150,14 @@ if ($flag_modificar==true) {
 
 }else{
 
-	header ("Location:confirmado.php?es=8");
-	exit();
+	if ($flag_modificar=2) {
+		header ("Location:confirmado.php?es=5");
+		exit();
+	}else{
+		header ("Location:confirmado.php?es=8");
+		exit();
+	}
+	
 	
 }
 
