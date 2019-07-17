@@ -44,7 +44,17 @@ include("menu.php");
 <div id="cuerpo">
   <h1>
   <?php
-  echo 'Detalle de cuenta: '.$data['cuenta'];
+  if (!empty($_GET['fecha_desde']) && !empty($_GET['fecha_hasta'])) {
+    $desde = date('d/m/Y', strtotime($_GET['fecha_desde']));
+    $hasta = date('d/m/Y', strtotime($_GET['fecha_hasta']));
+    $msj = '<h3>Filtrando desde el '.$desde.' hasta el '.$hasta.'</h3>';
+  }else{
+    $desde = NULL;
+    $hasta = NULL;
+    $msj='<h3> Sin filtros de fechas!</h3>';
+  }
+
+  echo 'Detalle de cuenta: '.$data['cuenta'].$msj;
   ?> </h1>
 
 <table id="detalle_mayor" class="display" cellspacing="0" width="100%">
@@ -63,14 +73,14 @@ include("menu.php");
   $d=0;
   $h=0;
 
-  if (isset($_GET['fecha_desde']) && isset($_GET['fecha_hasta'])) {
-    $fecha_desde = date('Y/m/d', strtotime($_GET['fecha_desde']));
-    $fecha_hasta = date('Y/m/d', strtotime($_GET['fecha_hasta']));
+  if (!empty($_GET['fecha_desde']) && !empty($_GET['fecha_hasta'])) {
+    $fecha_desde = date('Y-m-d', strtotime($_GET['fecha_desde']));
+    $fecha_hasta = date('Y-m-d', strtotime($_GET['fecha_hasta']));
     $sq = "select * from asientos where (cuenta =".$id_cuentas ." and fecha >= '$fecha_desde' and fecha <= '$fecha_hasta') order by fecha desc";
   }else{
     $sq = "select * from asientos where (cuenta =".$id_cuentas .") order by fecha desc";
   }
-  echo  $sq;
+
 	$u=mysql_query($sq);
 	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
 	$au=mysql_fetch_array($u);
