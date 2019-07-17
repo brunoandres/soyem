@@ -171,7 +171,7 @@ include("menu.php");
 		$h = $h + $haber_c;
 		$ssa = $haber_c - $debe_c;
 		echo '<td> $ '.$ssa.'</td>
-		<td><a href="detalle_mayor.php?id_cuentas='.$au['id_cuentas'].'">Ver Detalles</a></td>
+		<td><a href="detalle_mayor.php?id_cuentas='.$au['id_cuentas'].'&fecha_desde='.$desde.'&fecha_hasta='.$hasta.'">Ver Detalles</a></td>
 		<td><a href="historico_mayor.php?id_cuentas='.$au['id_cuentas'].'">Ver Historico</a></td>
     </tr>';
 	$d=$d+$au['debe'];

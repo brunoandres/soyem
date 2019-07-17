@@ -63,7 +63,14 @@ include("menu.php");
   $d=0;
   $h=0;
 
- 	$sq = "select * from asientos where (cuenta =".$id_cuentas .") order by fecha desc";
+  if (isset($_GET['fecha_desde']) && isset($_GET['fecha_hasta'])) {
+    $fecha_desde = date('Y/m/d', strtotime($_GET['fecha_desde']));
+    $fecha_hasta = date('Y/m/d', strtotime($_GET['fecha_hasta']));
+    $sq = "select * from asientos where (cuenta =".$id_cuentas ." and fecha >= '$fecha_desde' and fecha <= '$fecha_hasta') order by fecha desc";
+  }else{
+    $sq = "select * from asientos where (cuenta =".$id_cuentas .") order by fecha desc";
+  }
+  echo  $sq;
 	$u=mysql_query($sq);
 	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
 	$au=mysql_fetch_array($u);
