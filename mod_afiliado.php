@@ -18,7 +18,7 @@ if ($legajo_existente==$legajo) {
 	if ($existe>0) {
 		$flag_modificar = 2;
 	}else{
-		$flag_modificar = 0;
+		$flag_modificar = 1;
 	}
 
 }
@@ -150,7 +150,7 @@ if ($flag_modificar==1) {
 
 }else{
 
-	if ($flag_modificar=2) {
+	if ($flag_modificar==2) {
 		header ("Location:confirmado.php?es=5");
 		exit();
 	}else{
