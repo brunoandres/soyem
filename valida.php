@@ -16,11 +16,12 @@ exit();
 		$funcion=$dat['funcion'];
 		$seccion=$dat['seccion'];
 		$rol = $dat['tu_name'];
+		$usuario = $dat['usuario'];
 		session_start();
 		$_SESSION["autenticado"] = 'si';
-		$_SESSION["usuario"] = $usuario; 
-		$_SESSION["funcion"] = $funcion; 
-		$_SESSION["seccion"] = $seccion; 
+		$_SESSION["usuario"] = $usuario;
+		$_SESSION["funcion"] = $funcion;
+		$_SESSION["seccion"] = $seccion;
 		switch ($funcion) {
 			case 1:
 				header("Location:listado_afiliados.php");
