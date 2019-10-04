@@ -1,6 +1,7 @@
 <?php
 include("conecta.php");
 include("funciones_grales.php");
+include ("auditoria.php");
 $txt = "select *, SUM(prestamos.monto) as tot_monto from prestamos INNER JOIN afiliado ON prestamos.afiliado = afiliado.clave where (prestamos.vencimiento = '".$_POST['anio']."-".$_POST['mes']."-01' and prestamos.banc='no' and prestamos.pagado = 'I') group by prestamos.afiliado order by afiliado.nombre asc";
 $qr= mysql_query($txt);
 $txt1 = "select * from prestamos where (vencimiento = '".$_POST['anio']."-".$_POST['mes']."-01' and banc='no' and pagado = 'I')";
@@ -65,11 +66,13 @@ $nro = $nnro['nro'];
 	
 	$txtx = "insert into historial_expo_muni (mes, anio, archivo, total) values (".$_POST['mes'].",".$_POST['anio'].",'exportar(".$_POST['anio']."-".$_POST['mes'].").dat','".$t_tot."')";
 	mysql_query($txtx);
+	auditar($txtx);
 	
 	} else {
 		
 		$txtx = "update historial_expo_muni set archivo = 'exportar(".$_POST['anio']."-".$_POST['mes'].").dat' where (mes = ".$_POST['mes']." and  anio = ".$_POST['anio'].")";
 	mysql_query($txtx);
+	auditar($txtx);
 		
 	}
 	
@@ -107,9 +110,11 @@ $nro = $nnro['nro'];
 	if (mysql_num_rows(mysql_query($txttxtx))==0){
 	$txtx = "insert into historial_expo_muni (mes, anio, borrador, total) values (".$_POST['mes'].",".$_POST['anio'].",'borrador(".$_POST['anio']."-".$_POST['mes'].").txt','".$t_tot."')";
 	mysql_query($txtx);
+	auditar($txtx);
 	} else {
 		$txtx = "update historial_expo_muni set borrador = 'borrador(".$_POST['anio']."-".$_POST['mes'].").txt' where (mes = ".$_POST['mes']." and  anio = ".$_POST['anio'].")";
 	mysql_query($txtx);
+	auditar($txtx);
 		
 	}
 	
