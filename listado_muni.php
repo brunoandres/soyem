@@ -96,7 +96,7 @@ include("menu.php");
    <input type="submit" name="listar" value="Crear" />
 
   </form>
-  <div id="atencion">Solo puede generarse un unico listado a la municipalidad por mes.</div>
+  <div id="atencion">Solo se puede generar un único listado a la municipalidad por mes.</div>
   </div>
   
   
@@ -104,7 +104,7 @@ include("menu.php");
   <p></p>
    <?php
   if($_GET['error']=='1'){
-  echo '<b> el mes solicitado ya fue listado anteriormente</b>';
+  echo '<b> El mes solicitado ya fue listado anteriormente.</b>';
 	}
   ?>
   <p> </p>
@@ -112,8 +112,8 @@ include("menu.php");
     <tr>
 	 <th>Mes</th>
       <th>Año</th>
-	  <th>Listado</th>
-	  <th>Borrador</th>
+	  <th>Archivo definitivo</th>
+	  <th>Archivo borrador</th>
 	  <th>Total</th>
     
     </tr>
@@ -128,12 +128,12 @@ echo '<td>'.$a['anio'].'</td>';
 
 echo '<td>';
 if ($a['archivo'] != ""){
-echo '<a href="back_muni/'.$a['archivo'].'">Descargar definitivo</a>';
+echo '<a href="back_muni/'.$a['archivo'].'" target="_blank">Descargar archivo</a>';
 }
 echo '</td>';
 echo '<td>';
 if ($a['borrador']!= ""){
-echo '<a href="back_muni/'.$a['borrador'].'">Descargar borrador</a>';
+echo '<a href="back_muni/'.$a['borrador'].'" target="_blank">Descargar archivo</a>';
 }
 echo '</td>';
 echo '<td> $ '.$a['total'].'</td>';

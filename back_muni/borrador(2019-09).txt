@@ -1,0 +1,2 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+Total: 0
