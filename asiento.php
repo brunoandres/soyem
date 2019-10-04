@@ -264,7 +264,7 @@ include("menu.php");
 		<td><a href="asiento.php?id_a='.$au['id_a'].'&nro='.$au['nro'].'">Modificar</a></td>';
     if($_SESSION["seccion"]=='administrador'){
 
-        echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$nro.'" title="Quitar este asiento" onclick="return confirmar(';
+        echo '<td rowspan="'.$na.'"><a href="quitar_asiento1.php?nro='.$au['nro'].'" title="Quitar este asiento" onclick="return confirmar(';
         echo "'¿Está seguro que desea quitar este asiento?'";
         echo ')" >Quitar</a></td></tr>';
 

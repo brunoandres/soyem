@@ -114,7 +114,7 @@ include("menu.php");
       <th>Año</th>
 	  <th>Listado</th>
 	  <th>Borrador</th>
-	  <th>Toral</th>
+	  <th>Total</th>
     
     </tr>
 <?php
@@ -128,12 +128,12 @@ echo '<td>'.$a['anio'].'</td>';
 
 echo '<td>';
 if ($a['archivo'] != ""){
-echo '<a href="back_muni/'.$a['archivo'].'">Bajar</a>';
+echo '<a href="back_muni/'.$a['archivo'].'">Descargar definitivo</a>';
 }
 echo '</td>';
 echo '<td>';
 if ($a['borrador']!= ""){
-echo '<a href="back_muni/'.$a['borrador'].'">Bajar</a>';
+echo '<a href="back_muni/'.$a['borrador'].'">Descargar borrador</a>';
 }
 echo '</td>';
 echo '<td> $ '.$a['total'].'</td>';
