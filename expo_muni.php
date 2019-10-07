@@ -17,7 +17,8 @@ if($_POST['tipo']=="Listado definitivo"){
 		header("location: listado_muni.php?error=1");
 		exit();
 	} else {
-$f = fopen("back_muni/exportar(".$_POST['anio']."-".$_POST['mes'].")_prueba.dat","w"); 
+//$f = fopen("back_muni/exportar(".$_POST['anio']."-".$_POST['mes'].")_prueba.dat","w"); 
+$f = fopen("back_muni/exportar(".$_POST['anio']."-".$_POST['mes'].").dat","w");
 
 $contenido .= "Legajo"."\t".str_pad("Nombre",35," ",STR_PAD_RIGHT)."\t\t"."Cuotas"."\t"."Nro_Cuota"."\t"."Importe"."\r\n";
 

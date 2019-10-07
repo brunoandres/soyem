@@ -104,7 +104,7 @@ include("menu.php");
   <p></p>
    <?php
   if($_GET['error']=='1'){
-  echo '<b> El mes solicitado ya fue listado anteriormente.</b>';
+  echo '<script>alert("Atención: el mes solicitado ya fue listado anteriormente.");</script>';
 	}
   ?>
   <p> </p>
