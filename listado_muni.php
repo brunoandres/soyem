@@ -105,7 +105,9 @@ include("menu.php");
    <?php
   if($_GET['error']=='1'){
   echo '<script>alert("Atención: el mes solicitado ya fue listado anteriormente.");</script>';
-	}
+	}elseif ($_GET['error']=='2') {
+    echo '<script>alert("Atención: error al abrir liquidación.");</script>';
+  }
   ?>
   <p> </p>
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
@@ -115,7 +117,7 @@ include("menu.php");
 	  <th>Archivo definitivo</th>
 	  <th>Archivo borrador</th>
 	  <th>Total</th>
-    
+    <th>Opciones</th>
     </tr>
 <?php
 $txt = "select * from historial_expo_muni order by id_ex desc";
@@ -137,6 +139,13 @@ echo '<a href="back_muni/'.$a['borrador'].'" target="_blank">Descargar archivo</
 }
 echo '</td>';
 echo '<td> $ '.$a['total'].'</td>';
+echo "<td>
+<form action='abrir_liquidacion_prestamos.php' method='POST'>
+  <input type='hidden' name='mes' value='".$a['mes']."' />
+  <input type='hidden' name='anio' value='".$a['anio']."' />
+  <input type='submit' name='btnForm' value='Abrir Liquidación' onclick='return confirm(\"Confirma abrir liquidación?\");'>
+</form>
+</td>";
 echo '</tr>';
 }
 ?>
