@@ -26,9 +26,6 @@ if (isset($_POST['btnForm'])) {
 			exit();
 		}
 
-		echo $query;
-		echo "<br>";
-		echo $query_delete;
 	}
 
 }
