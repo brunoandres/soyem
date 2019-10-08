@@ -139,13 +139,18 @@ echo '<a href="back_muni/'.$a['borrador'].'" target="_blank">Descargar archivo</
 }
 echo '</td>';
 echo '<td> $ '.$a['total'].'</td>';
-echo "<td>
+if ($_SESSION["seccion"]=='administrador' || $_SESSION["usuario"]=='cenergon') {
+  echo "<td>
 <form action='abrir_liquidacion_prestamos.php' method='POST'>
   <input type='hidden' name='mes' value='".$a['mes']."' />
   <input type='hidden' name='anio' value='".$a['anio']."' />
   <input type='submit' name='btnForm' value='Abrir Liquidación' onclick='return confirm(\"Confirma abrir liquidación?\");'>
 </form>
-</td>";
+</td>"
+}else{
+  echo "<td></td>";
+}
+;
 echo '</tr>';
 }
 ?>
