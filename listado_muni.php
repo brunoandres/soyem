@@ -130,27 +130,17 @@ echo '<td>'.$a['anio'].'</td>';
 
 echo '<td>';
 if ($a['archivo'] != ""){
-echo '<a href="back_muni/'.$a['archivo'].'" target="_blank">Descargar archivo</a>';
+echo '<a href="descargar_archivo.php?archivo='.$a['archivo'].'">Descargar archivo</a>';
 }
 echo '</td>';
 echo '<td>';
 if ($a['borrador']!= ""){
-echo '<a href="back_muni/'.$a['borrador'].'" target="_blank">Descargar archivo</a>';
+echo '<a href="descargar_archivo.php?archivo='.$a['borrador'].'">Descargar archivo</a>';
 }
 echo '</td>';
 echo '<td> $ '.$a['total'].'</td>';
-if ($_SESSION["seccion"]=='administrador' || $_SESSION["usuario"]=='cenergon') {
-  echo "<td>
-<form action='abrir_liquidacion_prestamos.php' method='POST'>
-  <input type='hidden' name='mes' value='".$a['mes']."' />
-  <input type='hidden' name='anio' value='".$a['anio']."' />
-  <input type='submit' name='btnForm' value='Abrir Liquidación' onclick='return confirm(\"Confirma abrir liquidación?\");'>
-</form>
-</td>"
-}else{
-  echo "<td></td>";
-}
-;
+
+
 echo '</tr>';
 }
 ?>
