@@ -8,6 +8,8 @@ $cheque = $_POST['cheque'];
 $cuenta = ($_POST['cuenta']);
 $debe = $_POST['debe'];
 $haber = $_POST['haber'];
+$id_tipo_comprobante = $_POST['tipo_comprobante'];
+$comprobante = $_POST['comprobante'];
 
 if (empty($debe)) {
 	$debe = '0.00';
@@ -33,19 +35,22 @@ if (empty($id_a)){
 		$nro = $nnro['nro'] + 1;
 		}
 	}
-	$query = "insert into asientos (fecha,cuenta,debe,haber,detalle,id_us,nro,cheque) values ('$fecha','$cuenta','$debe','$haber','$detalle','$id_us','$nro','$cheque')";
+	$query = "insert into asientos (fecha,cuenta,debe,haber,detalle,id_us,nro,cheque,id_tipo_comprobante,comprobante) values ('$fecha','$cuenta','$debe','$haber','$detalle','$id_us','$nro','$cheque',$id_tipo_comprobante,'$comprobante')";
 mysql_query($query);
 auditar($query);
 
 header ("location: asiento.php?nro=$nro&ac=nuevo");
 } else {
-$query="update asientos set fecha='$fecha', cuenta='$cuenta',debe='$debe', haber='$haber', detalle='$detalle', cheque='$cheque' where id_a='$id_a'";
+//query para auditar asiento
+$query="update asientos set fecha='$fecha', cuenta='$cuenta',debe='$debe', haber='$haber', detalle='$detalle', cheque='$cheque',id_tipo_comprobante=$id_tipo_comprobante, comprobante='$comprobante' where id_a='$id_a'";
 mysql_query("update asientos set fecha='$fecha' where id_a='$id_a'");
 mysql_query("update asientos set cuenta='$cuenta' where id_a='$id_a'");
 mysql_query("update asientos set debe='$debe' where id_a='$id_a'");
 mysql_query("update asientos set haber='$haber' where id_a='$id_a'");
 mysql_query("update asientos set detalle='$detalle' where id_a='$id_a'");
 mysql_query("update asientos set cheque='$cheque' where id_a='$id_a'");
+mysql_query("update asientos set id_tipo_comprobante=$id_tipo_comprobante where id_a='$id_a'");
+mysql_query("update asientos set comprobante='$comprobante' where id_a='$id_a'");
 auditar($query);
 header ("location: asiento.php?nro=$nro");
 }

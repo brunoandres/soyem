@@ -60,18 +60,41 @@ return confirm( mensaje );
 
 function Validar(form)
 {
-  if (form.fecha.value == "")
-  { alert("Por favor la fecha del asiento"); form.fecha.focus(); return; }
-   
-   if (form.cuenta.value == "")
-  { alert("Por favor ingrese la cuenta del asiento"); form.cuenta.focus(); return; }
+  if (form.fecha.value == ""){ 
+    alert("Por favor la fecha del asiento"); 
+    form.fecha.focus(); 
+    return; 
+  }
+
+  if (form.tipo_comprobante.value == ""){ 
+    alert("Por favor ingrese el tipo de comprobante"); 
+    form.tipo_comprobante.focus(); 
+    return; 
+  }  
+
+  if (form.comprobante.value == ""){ 
+    alert("Por favor ingrese el número de comprobante"); 
+    form.comprobante.focus(); 
+    return; 
+  }
+
+  if (form.cuenta.value == ""){ 
+    alert("Por favor ingrese la cuenta del asiento"); 
+    form.cuenta.focus(); 
+    return; 
+  }
   
- 
-   if (form.debe.value == "" & form.haber.value == "")
-  { alert("Por favor ingrese el importe en el debe o haber"); form.debe.focus(); return; }
+  if (form.debe.value == "" & form.haber.value == ""){ 
+    alert("Por favor ingrese el importe en el debe o haber"); 
+    form.debe.focus(); 
+    return; 
+  }
   
-   if (form.detalle.value == "")
-  { alert("Por favor ingrese el detalle del siento"); form.detalle.focus(); return; }
+  if (form.detalle.value == ""){ 
+    alert("Por favor ingrese el detalle del siento"); 
+    form.detalle.focus(); 
+    return; 
+  }
   
  form.submit();
 }
@@ -82,18 +105,34 @@ function Validar(form)
 ?>
   <script LANGUAGE="JavaScript">
 
-function Validar(form)
-{
-   
-   if (form.cuenta.value == "")
-  { alert("Por favor ingrese la cuenta del asiento"); form.cuenta.focus(); return; }
+function Validar(form){
   
- 
-   if (form.debe.value == "" & form.haber.value == "")
-  { alert("Por favor ingrese el importe en el debe o haber"); form.debe.focus(); return; }
+
+  if (form.tipo_comprobante.value == ""){ 
+    alert("Por favor ingrese el tipo de comprobante"); 
+    form.tipo_comprobante.focus(); 
+    return; 
+  }  
+
+  if (form.comprobante.value == ""){ 
+    alert("Por favor ingrese el número de comprobante"); 
+    form.comprobante.focus(); 
+    return; 
+  }
+
+  if (form.cuenta.value == ""){ 
+    alert("Por favor ingrese la cuenta del asiento"); 
+    form.cuenta.focus(); 
+    return; 
+  }
   
+  if (form.debe.value == "" & form.haber.value == ""){ 
+    alert("Por favor ingrese el importe en el debe o haber"); 
+    form.debe.focus(); 
+    return; 
+  }
   
- form.submit();
+  form.submit();
 }
 
 </script>
@@ -139,7 +178,7 @@ include("menu.php");
    <?php
   if (empty ($_GET['nro'])){
   ?>
-   <div class="etiqueta">Fecha del asiento</div>
+   <div class="etiqueta"><strong>Fecha del Asiento</strong></div>
    
   <input name="fecha" type="text" id="fecha" class="p_input" value="<?php echo $fe; ?>" placeholder="Seleccione fecha desde" autocomplete="off" readonly/>	
     <script type="text/javascript">
@@ -194,9 +233,26 @@ include("menu.php");
     <td valign="top"> <input name="haber" type="number" id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" <?php if ($data['haber']=='0.00') {
       echo "disabled";
     } ?> /></td>
-    <div class="">N° de cheque</div><br>
+    
+  <div><strong>Tipo Comprobante</strong></div>
+	 <select name="tipo_comprobante" id="tipo_comprobante" class="select2">
+      <?php
+      $cc = $data['id_tipo_comprobante'];
+      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes where id='$cc'"));
+      ?>
+      <option selected="selected" value="<?php echo $data['id_tipo_comprobante']; ?>"><?php echo $ccu['descripcion']; ?></option>
+      <?php
+      $qc = mysql_query("select * from tipos_comprobantes order by descripcion asc");
+      for ($z=0; $z<mysql_num_rows($qc);$z++){
+      $ac = mysql_fetch_array($qc);
+      echo '<option value="'.$ac['id'].'">'.$ac['descripcion'].'</option>';
+      }
+      ?>
+    </select><br><br>
+    <div class=""><strong>N° de Comprobante/ Transacción</strong></div>
+    <input type="text" class="" name="comprobante" id="comprobante" value="<?php echo $data['comprobante']; ?>" placeholder="Ingrese el N° de comprobante" autocomplete="off"/><br><br>
+    <div class=""><strong>N° de Cheque</strong></div>
  <input type="text" class="" name="cheque" id="cheque" value="<?php echo $data['cheque']; ?>" placeholder="Ingrese el N° de cheque" autocomplete="off"/><br><br>
-	 
   </tr>
 </table>	
 
@@ -218,7 +274,7 @@ include("menu.php");
 
   <?php
   if (empty ($_GET['nro'])){
-  ?> <div class="etiqueta">Detalle del asiento</div>
+  ?> <div class="etiqueta"><strong>Detalle del Asiento</strong></div>
  <textarea name="detalle" class="p_input" rows="3" id=""><?php echo $data['detalle']; ?></textarea>
   <br><br>
  
