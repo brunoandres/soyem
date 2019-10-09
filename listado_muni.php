@@ -11,26 +11,26 @@ $funcion_r=$_SESSION['funcion'];
 <title>Sistema Administrativo - lidtado Muni</title>
 <link href="estilos.css" rel="stylesheet" type="text/css" />
  <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
-		<script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
-		<script type="text/javascript" src="colorbox/jquery.colorbox.js"></script>
-	<script type="text/javascript">
-			$(document).ready(function(){
-				//Examples of how to assign the ColorBox event to elements
-				
-				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:420});
-				
-				  $().bind('cbox_closed',function() {  
+    <script type="text/javascript" src="colorbox/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="colorbox/jquery.colorbox.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+        //Examples of how to assign the ColorBox event to elements
+        
+        $(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:420});
+        
+          $().bind('cbox_closed',function() {  
       location.reload(true); 
    }); 
-				
-				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
-					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
-					return false;
-				});
-			});
-		</script>
-		<script language="JavaScript">
+        
+        //Example of preserving a JavaScript event for inline calls.
+        $("#click").click(function(){ 
+          $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+          return false;
+        });
+      });
+    </script>
+    <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
 } 
@@ -67,10 +67,10 @@ include("menu.php");
   <?php
   $m=1;
   while($m<13){
-  	if($m < 10){
-	echo '<option value="0'.$m.'">0'.$m.'</option>';
-	} else {
-  	echo '<option value="'.$m.'">'.$m.'</option>';
+    if($m < 10){
+  echo '<option value="0'.$m.'">0'.$m.'</option>';
+  } else {
+    echo '<option value="'.$m.'">'.$m.'</option>';
   }
   $m++;
   }
@@ -82,8 +82,8 @@ include("menu.php");
   $a_actual = date("Y");
   $a_tope = $a_actual + 20;
   while($a_actual<$a_tope){
-  	
-  	echo '<option value="'.$a_actual.'">'.$a_actual.'</option>';
+    
+    echo '<option value="'.$a_actual.'">'.$a_actual.'</option>';
   $a_actual++;
   }
   ?>
@@ -105,19 +105,18 @@ include("menu.php");
    <?php
   if($_GET['error']=='1'){
   echo '<script>alert("Atención: el mes solicitado ya fue listado anteriormente.");</script>';
-	}elseif ($_GET['error']=='2') {
+  }elseif ($_GET['error']=='2') {
     echo '<script>alert("Atención: error al abrir liquidación.");</script>';
   }
   ?>
   <p> </p>
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-	 <th>Mes</th>
+   <th>Mes</th>
       <th>Año</th>
-	  <th>Archivo definitivo</th>
-	  <th>Archivo borrador</th>
-	  <th>Total</th>
-    <th>Opciones</th>
+    <th>Archivo definitivo</th>
+    <th>Archivo borrador</th>
+    <th>Total</th>
     </tr>
 <?php
 $txt = "select * from historial_expo_muni order by id_ex desc";
@@ -130,12 +129,12 @@ echo '<td>'.$a['anio'].'</td>';
 
 echo '<td>';
 if ($a['archivo'] != ""){
-echo '<a href="descargar_archivo.php?archivo='.$a['archivo'].'">Descargar archivo</a>';
+echo '<a href="descargar_archivo.php?archivo='.$a['archivo'].'">Descargar definitivo</a>';
 }
 echo '</td>';
 echo '<td>';
 if ($a['borrador']!= ""){
-echo '<a href="descargar_archivo.php?archivo='.$a['borrador'].'">Descargar archivo</a>';
+echo '<a href="back_muni/'.$a['borrador'].'" target="_blank">Ver borrador</a>';
 }
 echo '</td>';
 echo '<td> $ '.$a['total'].'</td>';
