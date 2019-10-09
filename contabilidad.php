@@ -122,6 +122,8 @@ include("menu.php");
 	  <th>Cuenta</th>
 	  <th>Debe</th>
 	  <th>Haber</th>
+	  <th>Tipo Comprobante</th>
+	  <th>Comprobante</th>
 	  <th width=200>Detalle</th>
       <th>Modificar</th>
       <th>Quitar</th>
@@ -154,7 +156,7 @@ include("menu.php");
 		} else {
 		$fon ="#EAF7C1";
 		}
-	$qa  = mysql_query("select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas where (asientos.nro ='$nro') order by asientos.id_a asc");
+	$qa  = mysql_query("select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas INNER JOIN tipos_comprobantes on asientos.id_tipo_comprobante = tipos_comprobantes.id where (asientos.nro ='$nro') order by asientos.id_a asc");
 	$na = mysql_num_rows($qa);
     
 		for($t=0; $t<$na; $t++){
@@ -165,6 +167,8 @@ include("menu.php");
 		echo '<td>'.$aa['cuenta'].'</td>
 		<td> $ '.$aa['debe'].'</td>
 		<td> $ '.$aa['haber'].'</td>';
+		echo '<td>'.$aa['descripcion'].'</td>';
+		echo '<td>'.$aa['comprobante'].'</td>';
 		echo '<td rowspan="'.$na.'">'.$au['detalle'].'</td>
 		<td rowspan="'.$na.'"><a href="asiento.php?nro='.$au['nro'].'">Modificar</a></td>';
 			if($_SESSION["seccion"]=='administrador' || $_SESSION["usuario"]=='graciela.huen' || $_SESSION["usuario"]=='fernando.franze'){
