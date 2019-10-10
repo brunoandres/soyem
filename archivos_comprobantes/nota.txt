@@ -1,0 +1,18 @@
+numero_comprobante_banco
+lista
+
+archivos
+mes, año, saldo segun extracto a la fecha, archivo.
+
+archivos a subir soyem
+
+contabilidad.php
+asiento.php
+modifica_asiento.php
+estilos.css
+agregar campo id_tipo_comprobante y comprobante tabla asientos
+importar table tipos_comprobantes
+recortes/menu_cont.php
+subir_comprobante.php
+procesa_comprobante.php
+archivos_comprobantes*

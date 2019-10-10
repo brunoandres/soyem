@@ -7,7 +7,7 @@
 <h1>Leer Archivo Excel</h1>
 <?php
 require_once 'PHPExcel/Classes/PHPExcel.php';
-$archivo = "libro1.xlsx";
+$archivo = "000019522-MOVCTA-01370115035-20190809-144933.CSV";
 $inputFileType = PHPExcel_IOFactory::identify($archivo);
 $objReader = PHPExcel_IOFactory::createReader($inputFileType);
 $objPHPExcel = $objReader->load($archivo);

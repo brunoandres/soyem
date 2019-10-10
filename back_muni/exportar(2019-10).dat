@@ -1,4 +1,5 @@
 Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+9200  	 | Montenegro  Olga                  		 |1     	 |1        	 |180     
 14846 	 | RIO HERNANDEZ ,MARIA SOLEDAD      		 |1     	 |1        	 |4225    
 20005 	 |ABURTO AGUILAR KAREN ALEJANDRA     		 |1     	 |1        	 |5066    
 842   	 |AGUERO JORGE EDUARDO               		 |5     	 |5        	 |8164    
@@ -54,6 +55,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 12323 	 |ARIAS SERGIO RAMON                 		 |3     	 |1        	 |1890    
 9631  	 |ARISMENDI ADRIANA SELVIA           		 |3     	 |3        	 |822     
 11251 	 |AROCA HUGO JAVIER                  		 |1     	 |1        	 |914     
+9422  	 |ARPAJOU LINDOR                     		 |3     	 |3        	 |1682    
 11039 	 |ARPIRES MERCEDES LUCRECIA          		 |3     	 |3        	 |10615   
 8381  	 |ARRATIA CELIA VERONICA             		 |1     	 |1        	 |196     
 11242 	 |ARRIAGADA JOSE ERNESTO             		 |6     	 |5        	 |1590    
@@ -111,6 +113,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11989 	 |CACERES JOSE LUIS                  		 |6     	 |2        	 |2145    
 11547 	 |CAFRUNI JORGE HERNAN               		 |1     	 |1        	 |636     
 11966 	 |CALDERON JOSE HUGO                 		 |1     	 |1        	 |744     
+91452 	 |CALFIN CAROLINA VERONICA           		 |26    	 |15       	 |0       
 11349 	 |CALFIN VIVIANA                     		 |26    	 |15       	 |3050    
 759   	 |CALFIN, HUGO CELSO                 		 |3     	 |2        	 |872     
 12230 	 |CALFUNAO JORGE                     		 |2     	 |2        	 |7217    
@@ -126,9 +129,10 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 699   	 |CAÑUPAN AVELINA                   		 |2     	 |1        	 |519     
 14129 	 |CARBALLO , JORGE ANTONIO           		 |1     	 |1        	 |3537    
 8626  	 |CARCAMO AGUILAR, NERY MARISOL      		 |26    	 |15       	 |500     
-14734 	 |CARCAMO ARAUJO JOANA               		 |6     	 |3        	 |3074    
+14734 	 |CARCAMO ARAUJO JOANA               		 |6     	 |3        	 |5408    
 402   	 |CARDENAS CESAR ALBERTO             		 |5     	 |3        	 |11060   
 12552 	 |CARDENAS DIEGO ARTURO              		 |6     	 |4        	 |6085    
+20118 	 |CARDENAS HECTOR TEODORO            		 |26    	 |14       	 |0       
 14081 	 |CARDENAS JAVIER                    		 |3     	 |2        	 |3209    
 382   	 |CARDENAS JORGE ALEJANDRO           		 |4     	 |4        	 |700     
 11139 	 |CARDENAS WALTER DANIEL             		 |5     	 |4        	 |2379    
@@ -176,7 +180,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 15123 	 |Contreras Fabiana Beatriz          		 |2     	 |1        	 |898     
 11330 	 |CONTRERAS MARIA ALICIA             		 |1     	 |1        	 |6409    
 11292 	 |CONTRERAS PATRICIA DEL CARMEN      		 |1     	 |1        	 |383     
-11332 	 |COÑA JUANA FLORINDA               		 |1     	 |1        	 |1330    
+11332 	 |COÑA JUANA FLORINDA               		 |6     	 |3        	 |1330    
 1529  	 |CORNEJO SARA BEATRIZ               		 |1     	 |1        	 |484     
 12630 	 |CORNELIO JESSICA GABRIELA          		 |2     	 |1        	 |672     
 13598 	 |CORNELIO MARINA DE LAS NIEVES      		 |1     	 |1        	 |500     
@@ -258,8 +262,8 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 12261 	 |GASPERINI GUSTAVO FABIAN           		 |2     	 |1        	 |260     
 21480 	 |GELVES JUAN CARLOS                 		 |1     	 |1        	 |1840    
 985   	 |GELVEZ NORMA ISABEL                		 |2     	 |2        	 |1382    
-14629 	 |GELVEZ SANDRA                      		 |1     	 |1        	 |200     
 21657 	 |GELVEZ SANDRA ELIZABETH            		 |5     	 |5        	 |6057    
+14629 	 |GELVEZ SILVIA                      		 |1     	 |1        	 |200     
 11559 	 |GEREZ PABLO ROBERTO                		 |8     	 |7        	 |5487    
 20583 	 |GHISLA AMBROSIO                    		 |1     	 |1        	 |4645    
 506   	 |GHISLA PABLO AMBROSINO             		 |6     	 |6        	 |1176    
@@ -460,6 +464,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 622   	 |ÑANCUCHEO RAUL                    		 |26    	 |15       	 |2126    
 14843 	 |ÑANCUFIL , PATRICIA ALEJANDRA     		 |1     	 |1        	 |578     
 13782 	 |ÑANCUFIL ALDO GERONIMO            		 |1     	 |1        	 |1494    
+11159 	 |ÑANCUFIL MARIO DANIEL             		 |6     	 |3        	 |0       
 896   	 |OBANDO NORMA HAYDEE                		 |6     	 |5        	 |1550    
 11658 	 |OBANDO RICARDO DAVID               		 |1     	 |1        	 |1758    
 11657 	 |OJEDA MARCOS ARIEL                 		 |6     	 |5        	 |8616    
@@ -484,7 +489,6 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 12596 	 |PADILLA MATIAS ALBERTO             		 |6     	 |5        	 |434     
 20132 	 |PAEZ JUAN CARLOS                   		 |2     	 |1        	 |565     
 13016 	 |PAILLALEF NOEMI DEL CARMEN         		 |1     	 |1        	 |766     
-200   	 |PAINE JUAN                         		 |1     	 |1        	 |180     
 740   	 |PAINE JULIAN SEBASTIAN             		 |3     	 |3        	 |1529    
 14275 	 |PAINEFIL EZEQUIEL EDUARDO          		 |6     	 |3        	 |6649    
 12651 	 |PAINEFIL GUSTAVO                   		 |6     	 |3        	 |7281    
@@ -501,7 +505,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 14151 	 |PARRA GALLARDO JESSICA ROMINA      		 |6     	 |1        	 |1799    
 13777 	 |PARRA JOAN ISSAC                   		 |1     	 |1        	 |520     
 805   	 |PARRA PATRICIA ELIZABETH           		 |1     	 |1        	 |1000    
-11374 	 |PAZ EUGENIA JAQUELINA              		 |2     	 |2        	 |550     
+11374 	 |PAZ EUGENIA JAQUELINA              		 |5     	 |5        	 |1230    
 832   	 |PAZ MARIA ROMINA                   		 |26    	 |15       	 |1944    
 14908 	 |PAZ OSCAR SERGIO                   		 |6     	 |5        	 |514     
 14528 	 |PAZ PEREZ EZEQUIEL                 		 |1     	 |1        	 |4088    
@@ -715,4 +719,4 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 300   	 |ZAPATA MIGUEL ANGEL                		 |2     	 |2        	 |2539    
 12551 	 |ZAPATA RAUL                        		 |1     	 |1        	 |307     
 11116 	 |ZIMMERMANN MARIELA ESTHER          		 |5     	 |3        	 |1244    
-Total: 1856893
+Total: 1861589
