@@ -43,49 +43,58 @@ if (isset($_POST['btnForm'])) {
 
       	//Inserto mi comprobante
       	$query = "INSERT INTO `comprobantes`(`mes`, `anio`, `fecha`, `saldo`, `archivo`) VALUES ('$mes_comprobante','$anio_comprobante','$fecha','$saldo_comprobante','$file_name')";
+
       	mysql_query("START TRANSACTION");
 
-      	if (mysql_query($query)) {
+      	$ejecuto_insert_comprobante = mysql_query($query);
       		//Recupero el id insertado para guardar en mi tabla de archivos
-      		$id_comprobante = mysql_insert_id();
-      		
-      		$archivo = "archivos_comprobantes/".$file_name;
-			$inputFileType = PHPExcel_IOFactory::identify($archivo);
-			$objReader = PHPExcel_IOFactory::createReader($inputFileType);
-			$objPHPExcel = $objReader->load($archivo);
-			$sheet = $objPHPExcel->getSheet(0); 
-			$highestRow = $sheet->getHighestRow(); 
-			$highestColumn = $sheet->getHighestColumn();
+  		$id_comprobante = mysql_insert_id();
+  		
+  		$archivo = "archivos_comprobantes/".$file_name;
+		$inputFileType = PHPExcel_IOFactory::identify($archivo);
+		$objReader = PHPExcel_IOFactory::createReader($inputFileType);
+		$objPHPExcel = $objReader->load($archivo);
+		$sheet = $objPHPExcel->getSheet(0); 
+		$highestRow = $sheet->getHighestRow(); 
+		$highestColumn = $sheet->getHighestColumn();
 
-			for ($row = 2; $row <= 2; $row++){ 
+		for ($row = 2; $row <= $highestRow; $row++){ 
 
-				$fecha = $sheet->getCell("A".$row)->getValue();
-				$descripcion = $sheet->getCell("B".$row)->getValue();
-				$comprobante = $sheet->getCell("C".$row)->getValue();
-				$debito = $sheet->getCell("D".$row)->getValue();
-				$credito = $sheet->getCell("E".$row)->getValue();
-				$saldo = $sheet->getCell("F".$row)->getValue();
-				$codigo = $sheet->getCell("G".$row)->getValue();
+			$fecha_texto = $sheet->getCell("A".$row)->getValue();
+			$strtotime = strtotime($fecha_texto);
+			$fecha_insert = getDate($strtotime);
+			$fecha_comprobante = $fecha_insert['year'].'-'.$fecha_insert['mon'].'-'.$fecha_insert['mday'];
+			$descripcion = $sheet->getCell("B".$row)->getValue();
+			$comprobante = $sheet->getCell("C".$row)->getValue();
+			$debito = $sheet->getCell("D".$row)->getValue();
+			$credito = $sheet->getCell("E".$row)->getValue();
+			$saldo = $sheet->getCell("F".$row)->getValue();
+			$codigo = $sheet->getCell("G".$row)->getValue();
 
-				$sql = "INSERT INTO `comprobantes_archivos`(`id_comprobante`, `fecha`, `descripcion`, `comprobante`, `debito`, `credito`, `saldo`, `codigo`) VALUES ($id_comprobante,'$fecha','$descripcion','$comprobante','$debito','$credito','$saldo','$codigo')";
-				echo $sql;
-				if (mysql_query($sql)) {
-					echo "OK";
-					//mysql_query("COMMIT");
-				}else{
-					/*mysql_query("ROLLBACK");
-					exit();*/
-					echo "error";
-				}
-				
+			if (empty($debito)) {
+				$debito = '0.00';
+			}
+			if (empty($credito)) {
+				$credito = '0.00';
+			}
+			if (empty($saldo)) {
+				$saldo = '0.00';
 			}
 
-      	}else{
-      		echo "Error";
-	      	//mysql_query("ROLLBACK");
-      	}
+			$sql = "INSERT INTO `comprobantes_archivos`(`id_comprobante`, `fecha`, `descripcion`, `comprobante`, `debito`, `credito`, `saldo`, `codigo`) VALUES ($id_comprobante,'$fecha_comprobante','$descripcion','$comprobante','$debito','$credito','$saldo','$codigo')";
+			$ejecuto_archivo = mysql_query($sql);
+
+		}
+
+		if ($ejecuto_insert_comprobante && $ejecuto_archivo) {
+			mysql_query("COMMIT");
+			header("location:subir_comprobante.php?estado=ok");
+		}else{
+			mysql_query("ROLLBACK");
+			header("location:subir_comprobante.php?estado=error");
+		}
 	}else{
-		echo "No file";
+		header("location:subir_comprobante.php?estado=error_archivo");
 	}
 }
 

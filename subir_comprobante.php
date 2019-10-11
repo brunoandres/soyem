@@ -78,26 +78,41 @@ include("menu.php");
 		<?php include("recortes/menu_cont.php"); ?>
   		<form action="procesa_comprobante.php" method="POST" enctype="multipart/form-data">
     		<div class="subt">Cargar archivo de comprobantes</div>
-				
+    		<?php 
+    		if (isset($_GET['estado'])) {
+    			$estado = $_GET['estado'];
+    			if ($estado == "ok") {
+    				echo "<h2 style='color:green;'>Archivo procesado correctamente!</h2>";
+	    		}
+	    		if ($estado == "error"){
+	    			echo "<h2 style='color:red;'>Error al procesar archivo excel.</h2>";
+	    		}
+    		}
+		 ?>
+		
 				<div class="etiqueta"><strong>Mes Comprobante</strong></div>
 					<select name="mes">
 					<?php 
-					$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+					$meses = array(1=>"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 					foreach ($meses as $key => $value) {?>
 		
 
-						<option value="<?php echo $key+1; ?>"><?php echo $value; ?></option>
+						<option value="<?php echo $key; ?>" <?php if (date("m")==$key) {
+							echo "selected";
+						} ?>><?php echo $value; ?></option>
 					<?php } ?>
 					</select>
-	
+		
 				<div class="etiqueta"><strong>Año Comprobante</strong></div>
 					<select name="anio">
 					<?php 
-					
+					;
 					for ($i=2019; $i <= 2020 ; $i++) { ?>
 		
 
-						<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+						<option value="<?php echo $i; ?>" <?php if (date("Y")==$i) {
+							echo "selected";
+						} ?>><?php echo $i; ?></option>
 					<?php } ?>
 					</select>
 
