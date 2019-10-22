@@ -305,6 +305,7 @@ include("menu.php");
   ?>
         <div><br>
 	<input name="Submit" type="button" class="boton_form" onClick="Validar(this.form)" value="Guardar Item" id="boton_envia"/>
+  <input name="reset" type="reset" value="Borrar datos"/>
 	</div>
 	    <input name="id_us" type="hidden" id="id_us" value="<?php echo $_SESSION['usuario']; ?>" />
 	    <input name="id_a" type="hidden" id="id_a" value="<?php echo $id_a; ?>" />
