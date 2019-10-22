@@ -11,8 +11,11 @@ asiento.php
 modifica_asiento.php
 estilos.css
 agregar campo id_tipo_comprobante y comprobante tabla asientos
-importar table tipos_comprobantes
+importar tabla tipos_comprobantes_conciliacion
+importar tabla tipos_comprobantes
 recortes/menu_cont.php
 subir_comprobante.php
 procesa_comprobante.php
 archivos_comprobantes*
+
+en la tabla asientos, agregar campo : id_tipo_comprobante, id_tipo_comprobante_varios, comprobante
