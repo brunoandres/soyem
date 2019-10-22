@@ -66,7 +66,7 @@ function Validar(form)
     return; 
   }
 
-  if (form.tipo_comprobante.value == ""){ 
+  if (form.tipo_comprobante.value == "" && form.tipo_comprobante_varios.value == ""){ 
     alert("Por favor ingrese el tipo de comprobante"); 
     form.tipo_comprobante.focus(); 
     return; 
@@ -114,9 +114,9 @@ function Validar(form){
     return; 
   }  
 
-  if (form.comprobante.value == ""){ 
-    alert("Por favor ingrese el número de comprobante"); 
-    form.comprobante.focus(); 
+  if (form.tipo_comprobante.value == "" && form.tipo_comprobante_varios.value == ""){ 
+    alert("Por favor ingrese el tipo de comprobante"); 
+    form.tipo_comprobante.focus(); 
     return; 
   }
 
@@ -234,15 +234,30 @@ include("menu.php");
       echo "disabled";
     } ?> /></td>
     
-  <div><strong>Tipo Comprobante</strong></div>
+  <div><strong>Tipo Comprobante Conciliacion</strong></div>
 	 <select name="tipo_comprobante" id="tipo_comprobante" class="select2">
       <?php
       $cc = $data['id_tipo_comprobante'];
-      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes where id='$cc'"));
+      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes_conciliacion where id='$cc'"));
       ?>
       <option selected="selected" value="<?php echo $data['id_tipo_comprobante']; ?>"><?php echo $ccu['descripcion']; ?></option>
       <?php
-      $qc = mysql_query("select * from tipos_comprobantes order by descripcion asc");
+      $qc = mysql_query("select * from tipos_comprobantes_conciliacion order by descripcion asc");
+      for ($z=0; $z<mysql_num_rows($qc);$z++){
+      $ac = mysql_fetch_array($qc);
+      echo '<option value="'.$ac['id'].'">'.$ac['descripcion'].'</option>';
+      }
+      ?>
+    </select><br><br>
+    <div><strong>Tipo Comprobante Varios</strong></div>
+   <select name="tipo_comprobante_varios" id="tipo_comprobante_varios" class="select2">
+      <?php
+      $cc = $data['id_tipo_comprobante_varios'];
+      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes_varios where id='$cc'"));
+      ?>
+      <option selected="selected" value="<?php echo $data['id_tipo_comprobante']; ?>"><?php echo $ccu['descripcion']; ?></option>
+      <?php
+      $qc = mysql_query("select * from tipos_comprobantes_varios order by descripcion asc");
       for ($z=0; $z<mysql_num_rows($qc);$z++){
       $ac = mysql_fetch_array($qc);
       echo '<option value="'.$ac['id'].'">'.$ac['descripcion'].'</option>';
@@ -269,6 +284,19 @@ include("menu.php");
       $("#debe").attr('disabled','disabled'); 
       $("#haber").attr('placeholder','Ingrese el monto...'); 
     });
+
+    //Compruebo que elija un solo combo, deshabilitandi el otro
+    $("#tipo_comprobante").change(function(){
+      $('#tipo_comprobante_varios').css("border-color", "red");
+      $("#tipo_comprobante_varios").attr('disabled','disabled'); 
+    }); 
+
+    $("#tipo_comprobante_varios").change(function(){
+      $('#tipo_comprobante').css("border-color", "red");
+      $("#tipo_comprobante").attr('disabled','disabled'); 
+    }); 
+      
+
 });
 </script>
 

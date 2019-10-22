@@ -87,38 +87,18 @@ include("menu.php");
 	    		if ($estado == "error"){
 	    			echo "<h2 style='color:red;'>Error al procesar archivo excel.</h2>";
 	    		}
+	    		if ($estado == "error_formato"){
+	    			echo "<h2 style='color:red;'>Error al procesar archivo, formato no válido.</h2>";
+	    		}
     		}
 		 ?>
 		
-				<div class="etiqueta"><strong>Mes Comprobante</strong></div>
-					<select name="mes">
-					<?php 
-					$meses = array(1=>"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-					foreach ($meses as $key => $value) {?>
-		
-
-						<option value="<?php echo $key; ?>" <?php if (date("m")==$key) {
-							echo "selected";
-						} ?>><?php echo $value; ?></option>
-					<?php } ?>
-					</select>
-		
-				<div class="etiqueta"><strong>Año Comprobante</strong></div>
-					<select name="anio">
-					<?php 
-					;
-					for ($i=2019; $i <= 2020 ; $i++) { ?>
-		
-
-						<option value="<?php echo $i; ?>" <?php if (date("Y")==$i) {
-							echo "selected";
-						} ?>><?php echo $i; ?></option>
-					<?php } ?>
-					</select>
-
+				<div class="etiqueta"><strong>Descripción archivo comprobante</strong></div>
+    				<input type="text" name="nombre_comprobante" class="p_input" id="fecha_comprobante" placeholder="Ingrese alguna descripción del archivo de comprobante" autocomplete="off">
+					
 				<div class="etiqueta"><strong>Fecha Comprobante</strong></div>
-    				<input type="text" name="fecha_comprobante" class="p_input" id="fecha_comprobante" placeholder="Seleccione fecha comprobante" autocomplete="off" readonly>
-						<script type="text/javascript">
+    				<input type="text" name="fecha_comprobante" class="p_input" id="fecha_comprobante" placeholder="Seleccione fecha comprobante" value="<?php echo date("d/m/Y"); ?>" autocomplete="off" readonly>
+						<!--<script type="text/javascript">
 						    Calendar.setup({
 						        inputField     :    "fecha_comprobante",      // id of the input field
 						        ifFormat       :    "%d/%m/%Y",       // format of the input field
@@ -128,7 +108,7 @@ include("menu.php");
 						        step           :    1  ,
 						        singleClick    :    " true"                   // show all years in drop-down boxes (instead of every other year as default)
 						    });
-						</script>
+						</script>-->
 				<div class="etiqueta"><strong>Saldo a la fecha</strong></div>
     				<input type ="number" step="0.01" name="saldo" class="p_input" id="saldo" placeholder="Ingrese el saldo a la fecha seleccionada">
     			<div class="etiqueta"><strong>Archivo Excel</strong></div>
