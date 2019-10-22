@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-10-2019 a las 02:20:24
+-- Tiempo de generación: 22-10-2019 a las 17:25:56
 -- Versión del servidor: 5.7.26
 -- Versión de PHP: 5.6.40
 
@@ -31,22 +31,12 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `comprobantes`;
 CREATE TABLE IF NOT EXISTS `comprobantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `mes` int(11) NOT NULL,
-  `anio` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `fecha` date NOT NULL,
   `saldo` decimal(10,2) NOT NULL,
   `archivo` varchar(250) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `comprobantes`
---
-
-INSERT INTO `comprobantes` (`id`, `mes`, `anio`, `fecha`, `saldo`, `archivo`) VALUES
-(1, 1, 2019, '2019-10-09', '1999.00', '000019522-MOVCTA-01370115035-20190809-144933.xlsx'),
-(2, 1, 2019, '2019-10-09', '1999.00', '000019522-MOVCTA-01370115035-20190809-144933.xlsx'),
-(3, 1, 2019, '2019-10-09', '1999.00', '000019522-MOVCTA-01370115035-20190809-144933.xlsx');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

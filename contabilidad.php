@@ -156,7 +156,7 @@ include("menu.php");
 		} else {
 		$fon ="#EAF7C1";
 		}
-	$qa  = mysql_query("select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas INNER JOIN tipos_comprobantes on asientos.id_tipo_comprobante = tipos_comprobantes.id where (asientos.nro ='$nro') order by asientos.id_a asc");
+	$qa  = mysql_query("select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas INNER JOIN tipos_comprobantes_conciliacion on asientos.id_tipo_comprobante_conciliacion = tipos_comprobantes_conciliacion.id where (asientos.nro ='$nro') order by asientos.id_a asc");
 	$na = mysql_num_rows($qa);
     
 		for($t=0; $t<$na; $t++){
