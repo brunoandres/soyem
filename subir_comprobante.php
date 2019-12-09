@@ -109,8 +109,8 @@ include("menu.php");
 						        singleClick    :    " true"                   // show all years in drop-down boxes (instead of every other year as default)
 						    });
 						</script>-->
-				<div class="etiqueta"><strong>Saldo a la fecha</strong></div>
-    				<input type ="number" step="0.01" name="saldo" class="p_input" id="saldo" placeholder="Ingrese el saldo a la fecha seleccionada">
+				<!--<div class="etiqueta"><strong>Saldo a la fecha</strong></div>
+    				<input type ="number" step="0.01" name="saldo" class="p_input" id="saldo" placeholder="Ingrese el saldo a la fecha seleccionada">-->
     			<div class="etiqueta"><strong>Archivo Excel</strong></div>
     				<input type ="file" name="archivo" placeholder="Seleccione el archivo..."><br><br />
 					<input type="submit" name="btnForm" value="Subir comprobante" />
