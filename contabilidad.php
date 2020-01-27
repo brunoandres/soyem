@@ -16,7 +16,7 @@ mysql_query("delete from asientos where activo='no'");
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -36,15 +36,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:950, innerHeight:520});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -115,7 +115,7 @@ include("menu.php");
  Nuevo asiento
   </a></div>
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
-  	
+
     <tr>
 	  <th>Fecha</th>
       <th>Nro</th>
@@ -128,7 +128,7 @@ include("menu.php");
       <th>Modificar</th>
       <th>Quitar</th>
     </tr>
-    
+
 	<?php
 	if (empty($_GET['desde']) and empty($_GET['busc'])){
 	$desde = date("Y/m/d");
@@ -146,6 +146,7 @@ include("menu.php");
 	$sq = "select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas where (asientos.detalle LIKE '%".$_GET['busc']."%' or asientos.detalle LIKE '%".strtoupper($_GET['busc'])."%') group by asientos.nro order by asientos.id_a asc";
 	}
 	$u=mysql_query($sq);
+
 	$d=0;
 	$h=0;
 	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
@@ -156,9 +157,9 @@ include("menu.php");
 		} else {
 		$fon ="#EAF7C1";
 		}
-	$qa  = mysql_query("select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas INNER JOIN tipos_comprobantes_conciliacion on asientos.id_tipo_comprobante_conciliacion = tipos_comprobantes_conciliacion.id where (asientos.nro ='$nro') order by asientos.id_a asc");
+	$qa  = mysql_query("select * from asientos INNER JOIN cuentas on asientos.cuenta = cuentas.id_cuentas LEFT JOIN tipos_comprobantes_conciliacion on asientos.id_tipo_comprobante = tipos_comprobantes_conciliacion.id where (asientos.nro ='$nro') order by asientos.id_a asc");
 	$na = mysql_num_rows($qa);
-    
+
 		for($t=0; $t<$na; $t++){
 		$aa = mysql_fetch_array($qa);
 		if ($t==0){
@@ -179,16 +180,16 @@ include("menu.php");
 
 			}else{
 				echo '<td rowspan="'.$na.'"> -- </td>';
-			} 
-	 
+			}
+
 	  } else {
 	  echo '<tr bgcolor="'.$fon.'"><td>'.$aa['cuenta'].'</td>
 		<td> $ '.$aa['debe'].'</td>
 		<td> $ '.$aa['haber'].'</td></tr>';
 	  }
 		}
-		
-  
+
+
 	$d=$d+$au['debe'];
 	$h=$h+$au['haber'];
 	}

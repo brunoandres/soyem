@@ -6,16 +6,15 @@ mes, año, saldo segun extracto a la fecha, archivo.
 
 archivos a subir soyem
 
-contabilidad.php
-asiento.php
-modifica_asiento.php
+contabilidad.php pendiente
+asiento.php ok
+modifica_asiento.php ok
 estilos.css
-agregar campo id_tipo_comprobante y comprobante tabla asientos
-importar tabla tipos_comprobantes_conciliacion
+importar tabla tipos_comprobantes_conciliacion ok
 importar tabla tipos_comprobantes
-recortes/menu_cont.php
-subir_comprobante.php
-procesa_comprobante.php
-archivos_comprobantes*
+recortes/menu_cont.php pendiente
+subir_comprobante.php ok
+procesa_comprobante.php ok
+archivos_comprobantes* OK
 
-en la tabla asientos, agregar campo : id_tipo_comprobante, id_tipo_comprobante_varios, comprobante
+en la tabla asientos, agregar campo : id_tipo_comprobante, id_tipo_comprobante_varios, comprobante OK

@@ -18,7 +18,7 @@ $data =  mysql_fetch_array(mysql_query("select * from asientos where id_a = '$id
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if (empty ($_GET['nro'])){
@@ -36,7 +36,7 @@ return confirm( mensaje );
             if($("#fecha").val() != ""){
             var es_fecha = $("#fecha").val();
             $.get("recortes/comprobar_ejercicio.php",{fecha_busca: es_fecha}, function(htmlexterno){
-            
+
                       if(htmlexterno == 1 || htmlexterno == 2){
                           $("#alerta_fecha").show();
                           $("#boton_envia").attr('disabled', 'disabled');
@@ -50,8 +50,8 @@ return confirm( mensaje );
                           $("#boton_envia").removeAttr("disabled");
                       }
                   });
-          }    
-         
+          }
+
       };
 
     });
@@ -59,43 +59,43 @@ return confirm( mensaje );
   <script LANGUAGE="JavaScript">
 
 function Validar(form)
+//VALIDA CARGA DE NUEVO ASIENTO
 {
-  if (form.fecha.value == ""){ 
-    alert("Por favor la fecha del asiento"); 
-    form.fecha.focus(); 
-    return; 
+  if (form.fecha.value == ""){
+    alert("Por favor la fecha del asiento");
+    form.fecha.focus();
+    return;
   }
 
-  if (form.tipo_comprobante_conciliacion.value == "" && form.tipo_comprobante_varios.value == ""){ 
-    alert("Por favor ingrese el tipo de comprobante"); 
-    form.tipo_comprobante_conciliacion.focus(); 
-    return; 
-  }  
-
-  if (form.comprobante.value == ""){ 
-    alert("Por favor ingrese el número de comprobante"); 
-    form.comprobante.focus(); 
-    return; 
+  if (form.tipo_conciliacion.value != ""){
+    /*alert("Por favor ingrese el tipo de comprobante");
+    form.tipo_conciliacion.focus();
+    return;*/
+    if (form.comprobante.value == "") {
+      alert("Por favor ingrese el número de comprobante");
+      form.comprobante.focus();
+      return;
+    }
   }
 
-  if (form.cuenta.value == ""){ 
-    alert("Por favor ingrese la cuenta del asiento"); 
-    form.cuenta.focus(); 
-    return; 
+  if (form.cuenta.value == ""){
+    alert("Por favor ingrese la cuenta del asiento");
+    form.cuenta.focus();
+    return;
   }
-  
-  if (form.debe.value == "" & form.haber.value == ""){ 
-    alert("Por favor ingrese el importe en el debe o haber"); 
-    form.debe.focus(); 
-    return; 
+
+  if (form.debe.value == "" & form.haber.value == ""){
+    alert("Por favor ingrese el importe en el debe o haber");
+    form.debe.focus();
+    return;
   }
-  
-  if (form.detalle.value == ""){ 
-    alert("Por favor ingrese el detalle del siento"); 
-    form.detalle.focus(); 
-    return; 
+
+  if (form.detalle.value == ""){
+    alert("Por favor ingrese el detalle del siento");
+    form.detalle.focus();
+    return;
   }
-  
+
  form.submit();
 }
 
@@ -106,26 +106,31 @@ function Validar(form)
   <script LANGUAGE="JavaScript">
 
 function Validar(form){
-  
+//VALIDA EDICION DE UN ASIENTO
 
-  if (form.tipo_comprobante_conciliacion.value == "" && form.tipo_comprobante_varios.value == ""){ 
-    alert("Por favor ingrese el tipo de comprobante"); 
-    form.tipo_comprobante_conciliacion.focus(); 
-    return; 
+  if (form.tipo_conciliacion.value != ""){
+    /*alert("Por favor ingrese el tipo de comprobante");
+    form.tipo_conciliacion.focus();
+    return;*/
+    if (form.comprobante.value == "") {
+      alert("Por favor ingrese el número de comprobante");
+      form.comprobante.focus();
+      return;
+    }
   }
 
-  if (form.cuenta.value == ""){ 
-    alert("Por favor ingrese la cuenta del asiento"); 
-    form.cuenta.focus(); 
-    return; 
+  if (form.cuenta.value == ""){
+    alert("Por favor ingrese la cuenta del asiento");
+    form.cuenta.focus();
+    return;
   }
-  
-  if (form.debe.value == "" && form.haber.value == ""){ 
-    alert("Por favor ingrese el importe en el debe o haber"); 
-    form.debe.focus(); 
-    return; 
+
+  if (form.debe.value == "" && form.haber.value == ""){
+    alert("Por favor ingrese el importe en el debe o haber");
+    form.debe.focus();
+    return;
   }
-  
+
   form.submit();
 }
 
@@ -168,13 +173,13 @@ include("menu.php");
    echo 'Modificando Item del Asiento:';
   }
   ?> </h1>
-   <form action="modifica_asiento.php" method="post"> 
+   <form action="modifica_asiento.php" method="post">
    <?php
   if (empty ($_GET['nro'])){
   ?>
    <div class="etiqueta"><strong>Fecha del Asiento</strong></div>
-   
-  <input name="fecha" type="text" id="fecha" class="p_input" value="<?php echo $fe; ?>" placeholder="Seleccione fecha desde" autocomplete="off" readonly/>	
+
+  <input name="fecha" type="text" id="fecha" class="p_input" value="<?php echo $fe; ?>" placeholder="Seleccione fecha desde" autocomplete="off" readonly/>
     <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha",      // id of the input field
@@ -196,14 +201,14 @@ include("menu.php");
     <th width="7%">Cuenta:</th>
     <th width="12%">Debe:</th>
     <th width="12%">Haber:</th>
-	
+
   </tr><?php
 	if (!empty($data['fecha'])){
 	$fe = substr($data['fecha'],8,2).'/'.substr($data['fecha'],5,2).'/'.substr($data['fecha'],0,4);
 	}
 	?>
   <tr>
-  <td valign="top"> 
+  <td valign="top">
 
     <select name="cuenta" id="cuenta" class="select2">
   		<?php
@@ -220,19 +225,19 @@ include("menu.php");
       ?>
     </select>
   </td>
-    
+
   <td valign="top"><input name="debe" type="number" id="debe" min="0" step="0.10" value="<?php echo $data['debe']; ?>" size="15" <?php if ($data['debe']=='0.00') {
       echo "disabled";
     } ?> /></td>
     <td valign="top"> <input name="haber" type="number" id="haber" min="0" step="0.10" value="<?php echo $data['haber']; ?>" size="15" <?php if ($data['haber']=='0.00') {
       echo "disabled";
     } ?> /></td>
-    
+
   <div><strong>Tipo Comprobante Conciliacion</strong></div>
-	 <select name="tipo_comprobante_conciliacion" id="tipo_comprobante_conciliacion" class="select2">
+	 <select name="tipo_conciliacion" id="tipo_conciliacion" class="select2">
       <?php
-      $cc = $data['id_tipo_comprobante_conciliacion'];
-      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes_conciliacion where id='$cc'"));
+      $cc = $data['id_tipo_comprobante'];
+      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes_conciliacion where id='$cc' order by descripcion asc"));
       ?>
       <option selected="selected" value="<?php echo $data['id_tipo_comprobante']; ?>"><?php echo $ccu['descripcion']; ?></option>
       <?php
@@ -243,54 +248,27 @@ include("menu.php");
       }
       ?>
     </select><br><br>
-    <div><strong>Tipo Comprobante Varios</strong></div>
-   <select name="tipo_comprobante_varios" id="tipo_comprobante_varios" class="select2">
-      <?php
-      $cc = $data['id_tipo_comprobante_varios'];
-      $ccu = mysql_fetch_array(mysql_query("select * from tipos_comprobantes_varios where id='$cc'"));
-      ?>
-      <option selected="selected" value="<?php echo $data['id_tipo_comprobante_varios']; ?>"><?php echo $ccu['descripcion']; ?></option>
-      <?php
-      $qc = mysql_query("select * from tipos_comprobantes_varios order by descripcion asc");
-      for ($z=0; $z<mysql_num_rows($qc);$z++){
-      $ac = mysql_fetch_array($qc);
-      echo '<option value="'.$ac['id'].'">'.$ac['descripcion'].'</option>';
-      }
-      ?>
-    </select><br><br>
+
     <div class=""><strong>N° de Comprobante/ Transacción</strong></div>
-    <input type="text" class="" name="comprobante" id="comprobante" value="<?php echo $data['comprobante']; ?>" placeholder="Ingrese el N° de comprobante" autocomplete="off"/><br><br>
+    <input type="text" class="" name="comprobante" value="<?php echo $data['comprobante']; ?>" placeholder="Ingrese el N° de comprobante" autocomplete="off"/><br><br>
     <div class=""><strong>N° de Cheque</strong></div>
  <input type="text" class="" name="cheque" id="cheque" value="<?php echo $data['cheque']; ?>" placeholder="Ingrese el N° de cheque" autocomplete="off"/><br><br>
   </tr>
-</table>	
+</table>
 
 <script>
-  $(document).ready(function(){     
-    $('#debe').click(function(){     
+  $(document).ready(function(){
+    $('#debe').click(function(){
       $('#debe').css("border-color", "red");
-      $("#haber").attr('disabled','disabled'); 
-      $("#debe").attr('placeholder','Ingrese el monto...');        
+      $("#haber").attr('disabled','disabled');
+      $("#debe").attr('placeholder','Ingrese el monto...');
     });
 
     $('#haber').click(function(){
       $('#haber').css("border-color", "red");
-      $("#debe").attr('disabled','disabled'); 
-      $("#haber").attr('placeholder','Ingrese el monto...'); 
+      $("#debe").attr('disabled','disabled');
+      $("#haber").attr('placeholder','Ingrese el monto...');
     });
-
-    //Compruebo que elija un solo combo, deshabilitandi el otro
-    $("#tipo_comprobante_conciliacion").change(function(){
-      $('#tipo_comprobante_varios').css("border-color", "red");
-      $("#tipo_comprobante_varios").attr('disabled','disabled'); 
-    }); 
-
-    $("#tipo_comprobante_varios").change(function(){
-      $('#tipo_comprobante_conciliacion').css("border-color", "red");
-      $("#tipo_comprobante_conciliacion").attr('disabled','disabled'); 
-    }); 
-      
-
 });
 </script>
 
@@ -299,7 +277,7 @@ include("menu.php");
   ?> <div class="etiqueta"><strong>Detalle del Asiento</strong></div>
  <textarea name="detalle" class="p_input" rows="3" id=""><?php echo $data['detalle']; ?></textarea>
   <br><br>
- 
+
   <?php
   }
   ?>
@@ -351,7 +329,7 @@ include("menu.php");
         echo '<td style="color:red;"> -- </td></tr>';
       }
 
-    
+
 	$d=$d+$au['debe'];
 	$h=$h+$au['haber'];
 	}
@@ -373,7 +351,7 @@ include("menu.php");
    } else {
      $saldo = '<div style="color:red;">Saldo = $ '.$sal.'</div>';
    }
-   
+
   echo $saldo;
   ?>
   </div>
@@ -390,14 +368,14 @@ include("menu.php");
   <div id="bien">
    El asiento se equilibró correctamente
   </div>
-  </div> 
+  </div>
 <div id="nuevo_a"><a href="verifica.php?nro=<?php echo $_GET['nro']; ?>&accion=nuevo">Guardar y Nuevo asiento</a> - <a href="verifica.php?nro=<?php echo $_GET['nro']; ?>&accion=mayor">Guardar e Ir al libro diario</a></div>
   <?php
   }}
   ?>
 
 
-  
+
 </div>
 <script>
   $(function () {
