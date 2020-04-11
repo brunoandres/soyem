@@ -1,0 +1,13 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+1     	TORRES HECTOR                      		2     	1        	344     
+22    	REYES HECTOR IVAN                  		1     	1        	372.5   
+78    	HUENCHUAL BERNABE                  		4     	1        	440     
+116   	LAGOS IGNACIO                      		1     	1        	225     
+183   	FUENTES JUAN ISIDRO                		5     	1        	200     
+196   	ESPECHE MIRYAM CLAUDIA             		1     	1        	170.26  
+300   	ZAPATA MIGUEL ANGEL                		2     	1        	200.24  
+300   	ZAPATA MIGUEL ANGEL                		1     	1        	406.77  
+332   	ARANDA GLADYS ESTER                		1     	1        	308.33  
+339   	VELAZQUEZ RAUL                     		1     	1        	324.5   
+339   	VELAZQUEZ RAUL                     		1     	1        	350     
+379   	VERA GLADYS NOEMI                  		1     	1        	305.25  

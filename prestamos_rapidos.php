@@ -15,23 +15,23 @@ $funcion_r=$_SESSION['funcion'];
 		<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript" language="javascript">
 		$(document).ready(function(){
-			
+
 
 				   $("#divbusc").on("keyup",Buscaloc);
-   					
-               
-            
+
+
+
    function Buscaloc (){
-   
+
         if($("#divbusc").val().length>2){
 						$("#ver_listado").show();
                   $.get("listado_prestamos.php",{busca: $("#divbusc").val()}, function(htmlexterno){
                       $("#ver_listado").html(htmlexterno);
-                  });	
+                  });
 					} else {
 						$("#ver_listado").hide();
-					}         
-         
+					}
+
       };
 // ajax busca nombre y clave
 		$("#legajo").keyup(function() {
@@ -45,7 +45,7 @@ $funcion_r=$_SESSION['funcion'];
     	});
 			}
 		});
-	  
+
 			});
 		</script>
 </head>
@@ -59,7 +59,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri">
@@ -82,8 +82,8 @@ include("menu.php");
 			}
 	?>
  	</select>
-	
-	
+
+
  </form>
  <?php
  	if(isset($_GET['empre'])){
@@ -108,18 +108,18 @@ echo '<option value="'.$i.'">'.$i.'</option>';
 $i++;
 }
 ?>
-</select> 
+</select>
    Comienza a pagar el
 Mes: <select name="mes" id="mes" class="p_input_corto">
  <?php
- 
+
  $a_meses = mysql_fetch_array(mysql_query("select * from historial_expo_banco order by exp_banc_id desc"));
 
 	 $es_mes = date("m");
- 
- 
- 
- 
+
+
+
+
 	if ($es_mes<12){
 		$mmes = $es_mes+1;
 		$a_anio = date("Y");
@@ -127,9 +127,9 @@ Mes: <select name="mes" id="mes" class="p_input_corto">
 		if ($es_mes==12){
 			$mmes = 1;
 			$a_anio = date("Y")+1;
-		} 
+		}
 	}
-	
+
 	?>
    <option selected="selected" value="<?php echo $mmes; ?>"><?php echo $mmes; ?></option>
    <?php
@@ -155,7 +155,7 @@ Mes: <select name="mes" id="mes" class="p_input_corto">
 		</form>
 <div id="listado_vales">
 	<h2> Ingresar los vales de <?php echo $ae['nombre']; ?></h2>
-	
+
 	<table cellpadding="5" cellspacing="0" border="1" width="100%">
 	<thead>
 		<tr bgcolor="eeeeee">
@@ -194,7 +194,7 @@ Mes: <select name="mes" id="mes" class="p_input_corto">
 
 
  </div>
- 
+
 </div>
 </div>
 <script>

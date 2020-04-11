@@ -17,7 +17,7 @@ mysql_query("delete from asientos where activo='no'");
 <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
 <script type="text/javascript" language="javascript" class="init">
   $(document).ready(function() {
-  
+
     $('#ejercicios').DataTable({
       "language": {
           "url": "spanish.json"
@@ -28,7 +28,7 @@ mysql_query("delete from asientos where activo='no'");
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 
 
@@ -40,15 +40,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:950, innerHeight:520});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -76,7 +76,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -84,7 +84,7 @@ include("menu.php");
 
 <?php include("recortes/menu_cont.php"); ?>
  <h3>Ejercicios Contables</h3>
-	
+
 	<?php
 		$txt = "SELECT YEAR(fecha) FROM asientos group by YEAR(fecha) order by YEAR(fecha)";
 		$query = mysql_query($txt);
@@ -122,9 +122,9 @@ include("menu.php");
 							$estado = '<div class ="ejercicio_cerrado">CERRADO</div>';
 							$cierre = $data1['ejer_dia_cierre'];
 							$ejer_us = $data1['ejer_us'];
-							
+
 							$link = '<a href="detalle.php?fecha='.$anio.'"><button>Ver detalle</button></a>';
-							
+
 						} else {
 							$estado = '<div class ="en_ejercicio">EN EJERCICIO</div>';
 							$cierre = "";
@@ -139,12 +139,8 @@ include("menu.php");
 			}
 			?>
 	</table>
-	
+
   </div>
 </div>
 </body>
 </html>
-
-
-
-

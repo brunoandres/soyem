@@ -41,9 +41,9 @@ if (empty($_GET['p_afiliado'])){
   $afa = mysql_fetch_array($qfa);
   echo '"'.$afa['legajo'].' - '.$afa['nombre'].'",';
   }
-  
+
   ?>
-			
+
 		];
 		$( "#tags" ).autocomplete({
 			source: availableTags
@@ -57,7 +57,7 @@ if (empty($_GET['p_afiliado'])){
 
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
-		
+
 		<script language="JavaScript">
 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -76,35 +76,35 @@ function Validar(form)
 {
    if (form.rec_nro_02.value == "")
   { alert("Por favor ingrese el nro de recibo"); form.rec_nro_02.focus(); return; }
-  
+
   if (form.rec_nombre.value == "")
   { alert("Por favor ingrese el nombre"); form.rec_nombre.focus(); return; }
 
    if (form.rec_iva.value == "")
   { alert("Por favor ingrese el tipo de IVA"); form.rec_iva.focus(); return; }
- 
-  
+
+
    if (form.rec_importe_efectivo.value == "" && form.rec_importe_cheque.value == "")
   { alert("Por favor ingrese el importe"); form.rec_importe_efectivo.focus(); return; }
-  
+
    if (form.rec_concepto.value == "")
   { alert("Por favor ingrese el concepto asociado al recibo"); form.rec_concepto.focus(); return; }
- 
+
    if (form.rec_importe_cheque.value != "" && (form.rec_banco.value == "" || form.rec_cheque_nro.value == ""))
   { alert("Ingrese el nro de cheque y el Banco correspondiente"); form.rec_banco.focus(); return; }
    /*
   if (form.tipo.value == "Proveedor" && form.proveedor.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor.focus(); return; }
- 
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "")
   { alert("Por favor ingrese el modo de pago"); form.m_pago.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Efectivo" && form.origen.value == "")
   { alert("Por favor ingrese el origen de los fondos del prestamo"); form.origen.focus(); return; }
-  
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.cuenta_banco.value=="")
   { alert("Por favor ingrese la cuenta bancaria del cheque"); form.cuenta_banco.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.nro_cheque.value=="")
   { alert("Por favor ingrese el nro de cheque"); form.nro_cheque.focus(); return; }
   */
@@ -121,24 +121,24 @@ form.rec_legajo.value = form.p_afiliado.value.substring(0,pri_pos);
 function tipo_op(form)
 {
   if (form.rec_importe_cheque.value == "")
-  { 
+  {
 
   form.rec_banco.disabled=true;
   form.rec_cheque_nro.disabled=true;
-   } 
+   }
    if (form.rec_importe_cheque.value != "")
-  { 
+  {
  form.rec_banco.disabled=false;
   form.rec_cheque_nro.disabled=false;
-   } 
-   
+   }
+
 }
 
 </script>
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 
 </head>
@@ -152,13 +152,13 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="ingresos.php" title="Buscar un afiliado">Recibos</a> - <a href="cajas_diarias.php" title="Caja diaria">Caja Diaria</a></b></div>
 
 
-<div class="subt"> Detalle del Recibo: </div> 
+<div class="subt"> Detalle del Recibo: </div>
 <?php
 if($data_rec['rec_anulado']=='S'){
 	  echo '<div class="anular">Anulado</div>';
@@ -213,7 +213,7 @@ if($data_rec['rec_anulado']=='S'){
 	  echo 'Anular';
 	  }
 	  echo '</a></td>';
-	  echo '<td><a href="pdf/recibo.php?rec_id='.$rec_id.'" target="blank" title="Imprimir este Recibo" class="imprimir" >'; 
+	  echo '<td><a href="pdf/recibo.php?rec_id='.$rec_id.'" target="blank" title="Imprimir este Recibo" class="imprimir" >';
 	  if($data_rec['rec_anulado']=='N'){
 	  echo 'Imprimir';
 	  }

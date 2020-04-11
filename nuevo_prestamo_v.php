@@ -16,15 +16,15 @@ $funcion_r=$_SESSION['funcion'];
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:800, innerHeight:600});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -49,15 +49,15 @@ function Validar(form)
   if (form.afiliado.value == "")
   { alert("Por favor ingrese el afiliado"); form.afiliado.focus(); return; }
 
-  
+
    if (form.monto_cuota.value == "")
   { alert("Por favor ingrese el monto del prestamo"); form.monto.focus(); return; }
-  
- 
+
+
    if (form.cuotas.value == "")
   { alert("Por favor ingrese la cantidad de cuotas del prestamo"); form.cuotas.focus(); return; }
-  
-    
+
+
  form.submit();
 }
 function Calcula(form){
@@ -77,7 +77,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="prestamos.php" title="Buscar un afiliado">Prestamos</a> - <a href="listado_prestamos_v.php" title="Armar listado de afiliados">Armar listados</a></b></div>
@@ -97,7 +97,7 @@ include("menu.php");
   $afa = mysql_fetch_array($qfa);
   echo '<option value="'.$afa['clave'].'">'.$afa['nombre'].'</option>';
   }
-  
+
   ?>
 </select>
 </form>
@@ -122,7 +122,7 @@ echo '<option value="'.$i.'">'.$i.'</option>';
 $i++;
 }
 ?>
-</select> 
+</select>
   <div class="etiqueta">Importe Total:</div>
   <input name="importe_total" type="text" class="p_input" id="importe_total" disabled="disabled" />
    <div class="etiqueta">Nro de Vale:</div>

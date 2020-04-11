@@ -27,15 +27,15 @@ $clave = $data['afiliado'];
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:420});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -44,7 +44,7 @@ $clave = $data['afiliado'];
 		<script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 </head>
 
@@ -57,7 +57,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
   <div class="barri"><b><a href="nuevo_prestamo_v.php" title="Agregar un nuevo afiliado">Nuevo Prestamo </a> - <a href="#" title="armar listados de afiliados">Armar listados</a></b></div>
@@ -82,11 +82,11 @@ echo 'Observaciones: <br><font color="009900">'.$data['observaciones'].'</font><
 	 <th>Cuota</th>
       <th>Total Cuotas</th>
 	  <th>Vencimiento</th>
-  
+
 	   <th>Importe</th>
 	   <th>Modificar</th>
 	   <th>Quitar cuota</th>
-    
+
     </tr>
 <?php
 $cuo1 =  $clave_prestamo - $data['cuota'];

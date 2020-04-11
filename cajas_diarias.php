@@ -40,9 +40,9 @@ if (empty($_GET['p_afiliado'])){
   $afa = mysql_fetch_array($qfa);
   echo '"'.$afa['legajo'].' - '.$afa['nombre'].'",';
   }
-  
+
   ?>
-			
+
 		];
 		$( "#tags" ).autocomplete({
 			source: availableTags
@@ -56,7 +56,7 @@ if (empty($_GET['p_afiliado'])){
 
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
-		
+
 		<script language="JavaScript">
 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -92,13 +92,13 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="ingresos.php" title="listado de recibos">Recibos</a> - <a href="cajas_diarias.php" title="Caja diaria">Caja Diaria</a></b></div>
 
 
-<div class="subt"> Caja Diaria: </div> 
+<div class="subt"> Caja Diaria: </div>
 <form action="" method="get">
 <div class="etiqueta">Fecha de la Caja</div>
 <input type="text" name="fecha_caja" placeholder="elija la fecha de la caja" id="fecha_caja" class="p_input" autocomplete="off" />

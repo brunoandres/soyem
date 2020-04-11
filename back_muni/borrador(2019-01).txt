@@ -1,7 +1,7 @@
 Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 0     	                                   		4     	2        	337.5   
 14846 	 RIO HERNANDEZ ,MARIA SOLEDAD      		1     	1        	1164    
-331   	ACUÃ‘A HECTOR GABRIEL              		1     	1        	347     
+331   	ACUÑA HECTOR GABRIEL               		1     	1        	347     
 842   	AGUERO JORGE EDUARDO               		8     	4        	4603    
 541   	AGUILAR JORGE RICARDO              		10    	3        	1744    
 20460 	AGUILERA JORGE ALEJANDRO           		3     	2        	4624    
@@ -14,7 +14,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 13862 	ALVARADO MARIA FERNANDA            		2     	2        	3241    
 13992 	ALVAREZ RAUL ISMAEL                		6     	5        	7114    
 1081  	AMADO FACUNDO                      		2     	2        	3109    
-11005 	AMUÃ‘ANCO NELIDA ROSANA            		2     	2        	3731    
+11005 	AMUÑANCO NELIDA ROSANA             		2     	2        	3731    
 14083 	ANAYA LEONARDO FAVIO               		8     	1        	5375    
 14300 	ANCAVIL LEONARDO                   		1     	1        	1128    
 631   	ANCAVIL NESTOR                     		2     	2        	659     
@@ -23,7 +23,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 14577 	ANDRADE SANDRO SEBASTIAN           		1     	1        	1902    
 11361 	ANDRADE STELLA MARIS               		6     	5        	1334    
 1049  	ANFUSO PABLO MIGUEL                		2     	2        	450     
-14855 	ANGUITA GABRIELA ELIZABETH         		1     	1        	1039    
+14855 	anguita ,gabriela elizabeth        		1     	1        	1039    
 1800  	ANGULO ANA MARIA                   		2     	2        	541     
 729   	ANTENAO JUAN CONSTANTINO           		1     	1        	4253    
 11592 	ANTIFIL KARINA ALEJANDRA           		2     	2        	395     
@@ -48,18 +48,18 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11625 	ARAVENA ERWIN CRISTIAN             		6     	3        	3334    
 12969 	ARAVENA. GABRIEL ALEJANDRO         		1     	1        	595     
 12323 	ARIAS SERGIO RAMON                 		2     	2        	255     
-9631  	ARISMENDI ADRIANA SELVIA           		1     	1        	206     
+8631  	ARISMENDI ADRIANA SELVIA           		1     	1        	206     
 12633 	ARO VICTOR ALEJANDRO               		4     	4        	3542    
 11251 	AROCA HUGO JAVIER                  		2     	2        	1246    
 21066 	AROS NEGRON CYNTHIA ALEJANDRA      		7     	1        	1428    
-9422  	ARPAJOU LINDOR                     		2     	2        	2917    
+422   	ARPAJOU LINDOR                     		2     	2        	2917    
 11039 	ARPIRES MERCEDES LUCRECIA          		1     	1        	5493    
 8381  	ARRATIA CELIA VERONICA             		1     	1        	680     
 11242 	ARRIAGADA JOSE ERNESTO             		1     	1        	307     
 12026 	ARRIAGADA ROSANA PAOLA             		6     	6        	1063    
 454   	ARRIAGADA RUBEN ANGEL              		3     	3        	1667    
 12344 	ARRIAGADA VIVANCO LUCIANA          		3     	2        	2655    
-9019  	ARRIOLA ESTEBAN                    		1     	1        	1469    
+19    	ARRIOLA ESTEBAN                    		1     	1        	1469    
 20063 	ARROYO ADRIAN A.                   		3     	3        	2611    
 843   	ARTEAGA CATALAN MIRTA ORIANA       		6     	5        	1667    
 12084 	ASCENCIO OBANDO JACQUELINE         		2     	2        	369     
@@ -77,7 +77,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 13247 	BAHAMONDE Olga Ester               		2     	1        	2067    
 14790 	BAHAMONDES , NATALI DEL CARMEN     		6     	6        	950     
 21557 	BALMACEDA ISABEL SARA              		5     	5        	2000    
-11411 	BAÃ‘ARES MANCILLA MARIA YOLAND     		2     	2        	736     
+11411 	BAÑARES MANCILLA MARIA YOLANDA     		2     	2        	736     
 11278 	BARBAGELATA KARINA                 		1     	1        	2040    
 12581 	BARGIELA FACUNDO NICOLAS           		1     	1        	2072    
 12558 	BARGIELA, ERMINDO RAFAEL           		5     	4        	704     
@@ -106,15 +106,15 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 14731 	BONNEFOY , ERNESTO ANDRES          		1     	1        	1917    
 11760 	BONNEFOY ERNESTO ORLANDO           		3     	2        	3341    
 184   	BORG JORGE LUIS                    		1     	1        	2106    
-21578 	BORQUEZ YAÃ‘EZ GLORIA DEL CARM     		1     	1        	2690    
-14415 	BRECA DIEGO EZEQUIEL               		2     	2        	3388    
+21578 	BORQUEZ YAÑEZ GLORIA DEL CARME     		1     	1        	2690    
+14415 	BRECA DIEGO                        		2     	2        	3388    
 295   	BURGOS HECTOR                      		6     	1        	1666    
 14578 	BUSTAMANTE ADRIAN                  		1     	1        	3719    
 11286 	CABRERA FRANCISCO ISMAEL           		3     	2        	1667    
 579   	CABRERA PILAR DEL CARMEN           		1     	1        	330     
 11547 	CAFRUNI JORGE HERNAN               		2     	2        	2642    
 11966 	CALDERON JOSE HUGO                 		7     	1        	1428    
-91452 	CALFIN CAROLINA VERONICA           		26    	6        	0       
+1452  	CALFIN CAROLINA VERONICA           		26    	6        	500     
 11349 	CALFIN VIVIANA                     		26    	6        	3688    
 12230 	CALFUNAO JORGE                     		6     	6        	5694    
 11804 	CALFUNAO JOSE OSVALDO              		5     	3        	1600    
@@ -127,9 +127,9 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 13867 	CANDIA LEANDRO GABRIEL             		1     	1        	1700    
 11366 	CANO ANABEL ALEJANDRA              		2     	2        	6080    
 8633  	CANUQUEU VIVIANA DEL CARMEN        		3     	1        	1999    
-11090 	CAÃ‘UMIL ELSA YOLANDA              		6     	4        	492     
-910   	CAÃ‘UMIL TRANSITO T.               		7     	1        	1928    
-11114 	CAÃ‘UPAL JUAN                      		7     	1        	1428    
+11090 	CAÑUMIL ELSA YOLANDA               		6     	4        	492     
+910   	CAÑUMIL TRANSITO T.                		7     	1        	1928    
+11114 	CAÑUPAL JUAN                       		7     	1        	1428    
 12209 	CAQUIS. RUBEN HUMBERTO             		7     	1        	1428    
 14129 	CARBALLO , JORGE ANTONIO           		1     	1        	915     
 8626  	CARCAMO AGUILAR, NERY MARISOL      		26    	6        	3832    
@@ -144,7 +144,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 783   	CARRIQUEO LUISA C.                 		1     	1        	257     
 165   	CARTES CECILIA ELIZABETH           		2     	2        	544     
 11766 	CASAS MARCELO HUGO                 		2     	2        	2098    
-11363 	CASTAÃ‘O ROQUE HECTOR              		1     	1        	874     
+11363 	CASTAÑO ROQUE HECTOR               		1     	1        	874     
 21491 	CASTILLO ARAUZ NERIDA JULEX        		4     	4        	7282    
 11758 	CASTILLO GLADYS DE LAS NIEVES      		2     	2        	965     
 11998 	CASTILLO JAVIER ISIDRO             		2     	2        	1353.5  
@@ -179,7 +179,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 21294 	COLITRIPAY NOEMI                   		5     	5        	906     
 8180  	CONTRERAS ALICIA CLARA             		1     	1        	587     
 11330 	CONTRERAS MARIA ALICIA             		2     	2        	4656    
-11332 	COÃ‘A JUANA FLORINDA               		2     	1        	379     
+11332 	COÑA JUANA FLORINDA                		2     	1        	379     
 1529  	CORNEJO SARA BEATRIZ               		1     	1        	183     
 13598 	CORNELIO MARINA DE LAS NIEVES      		1     	1        	70      
 12387 	CORONEL CARLOS ALBERTO             		2     	2        	3376    
@@ -216,9 +216,9 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11338 	FERNANDEZ YANINA VALERIA           		6     	1        	1666    
 11393 	FIGUEROA LIDIA ELENA               		1     	1        	3219    
 888   	FIGUEROA LIDIA ROSA                		30    	10       	2188    
-13784 	FIGUEROA LUCAS EMANUEL             		1     	1        	1110    
+13784 	FIGUEROA LUCAS                     		1     	1        	1110    
 21555 	FIGUEROA SUSANA                    		2     	2        	216     
-11145 	FLANDEZ  muÃ±oz , mario alonso     		12    	5        	1667    
+11145 	FLANDEZ  muñoz , mario alonso      		12    	5        	1667    
 12407 	FLORES. RAUL EMILIANO              		2     	2        	328.35  
 11161 	FONTE PABLO NICOLAS                		1     	1        	1339    
 11194 	FONTECILLA,RICARDO ENRIQUE         		3     	3        	1000    
@@ -258,7 +258,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 532   	GONZALEZ ALICIA                    		7     	1        	1428    
 8274  	GONZALEZ CANCINO MARIA ADELINA     		2     	1        	971     
 20506 	GONZALEZ FABIANA                   		2     	2        	1273    
-11129 	GONZALEZ FACUNDO NAZARENO          		5     	4        	910     
+11129 	GONZALEZ FACUNDO NAZARENO          		2     	2        	910     
 14152 	GONZALEZ GONZALEZ , NATHAL  RA     		2     	2        	406     
 12343 	GONZALEZ IGOR JOSE GABRIEL         		4     	3        	2500    
 11364 	GONZALEZ IRENE                     		6     	5        	2217    
@@ -284,7 +284,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 684   	HERMOSILLA BARRIENTOS JUAN EVA     		2     	2        	260     
 21739 	HERNANDEZ RICARDO ATILIO           		2     	2        	1079    
 8624  	HERRERA ROSA ALCIRA                		1     	1        	126     
-14612 	HORISZNYJ PABLO MIGUEL             		1     	1        	1566    
+14612 	HORISZNYJ PABLO                    		1     	1        	1566    
 10897 	HUAIQUIAN ASENCIO JULIA TERESA     		3     	3        	514     
 11043 	HUENCHUL GUILLERMINA DEL CARME     		1     	1        	2021    
 11044 	HUENCHULAO CARMEN DE LAS NIEVE     		2     	2        	5751    
@@ -296,7 +296,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11630 	HUENTENAO MIRYAN DANIELA           		2     	2        	4549    
 21426 	HUENTENAO TERESA                   		6     	6        	501     
 187   	HUIRCAIN MARIA DEL PILAR           		2     	2        	2766    
-815   	IBAÃ‘EZ OLGA GRACIELA              		1     	1        	475     
+815   	IBAÑEZ OLGA GRACIELA               		1     	1        	475     
 11788 	ICARE, VANESA                      		10    	4        	3388    
 11197 	IMILQUEO CARCAMO DANIELA ROCIO     		5     	5        	3457.5  
 12348 	INOSTROZA ABRAHAM ISAAC            		10    	5        	4324    
@@ -309,7 +309,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 12577 	JARA CARCAMO OSCAR SEBASTIAN       		1     	1        	395     
 461   	JARA ORLANDO                       		2     	2        	2318    
 12655 	JONES JUAN PABLO                   		2     	2        	1319    
-9116  	LAGOS IGNACIO                      		2     	2        	1559    
+116   	LAGOS IGNACIO                      		2     	2        	1559    
 11046 	LAGOS JUANA ESTHER                 		5     	4        	2623    
 11344 	LAGOS RAUL ROLANDO                 		1     	1        	895     
 13690 	LASTRA SALAS MARIA PAZ             		2     	2        	1690    
@@ -400,12 +400,12 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 21432 	MORAGA GEORGINA LAURA              		1     	1        	195     
 819   	MORAGA SERGIO E.                   		4     	2        	500     
 11868 	MUENA MARIO MARCELO                		2     	2        	1090    
-11333 	MUÃ‘OS ALICIA DEL CARMEN           		2     	2        	1946    
-11260 	MUÃ‘OZ ELIDORO                     		1     	1        	1367    
-1550  	MUÃ‘OZ MARIA ANGELICA              		3     	2        	600     
-21434 	MUÃ‘OZ ROSA BEATRIZ                		5     	4        	1335    
-21406 	MUÃ‘OZ SILVIA KARINA               		1     	1        	1600    
-12500 	MUÃ‘OZ WALTER MARIO                		1     	1        	5055    
+11333 	MUÑOS ALICIA DEL CARMEN            		2     	2        	1946    
+11260 	MUÑOZ ELIDORO                      		1     	1        	1367    
+1550  	MUÑOZ MARIA ANGELICA               		3     	2        	600     
+21434 	MUÑOZ ROSA BEATRIZ                 		5     	4        	1335    
+21406 	MUÑOZ SILVIA KARINA                		1     	1        	1600    
+12500 	MUÑOZ WALTER MARIO                 		1     	1        	5055    
 2     	NAHUEL ERNESTO                     		8     	6        	1578    
 14506 	NAHUEL EULOGIO DOMINGO             		1     	1        	2732    
 293   	NAHUELPAN FEDERICO                 		1     	1        	1193    
@@ -418,11 +418,11 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 414   	NAVARRO VICTOR OSMAR               		2     	2        	2664    
 908   	NICOLAS CLAUDIA DANIELA            		26    	6        	500     
 1048  	NICOLE ANDREA CAROLINA             		5     	1        	1999    
-21436 	NUÃ‘EZ ALTAMIRANO VANESA DEL P     		7     	1        	1928    
-21602 	Ã‘ANCO NELLI ROXANA                		4     	3        	3503    
-21563 	Ã‘ANCUCHEO  FLAVIO OMAR            		26    	6        	1334    
-622   	Ã‘ANCUCHEO RAUL                    		26    	6        	5510    
-13782 	Ã‘ANCUFIL ALDO GERONIMO            		2     	2        	1000    
+21436 	NUÑEZ ALTAMIRANO VANESA DEL PI     		7     	1        	1928    
+21602 	ÑANCO NELLI ROXANA                 		4     	3        	3503    
+21563 	ÑANCUCHEO  FLAVIO OMAR             		26    	6        	1334    
+622   	ÑANCUCHEO RAUL                     		26    	6        	5510    
+13782 	ÑANCUFIL ALDO GERONIMO             		2     	2        	1000    
 1280  	OBANDO JORGE ARIEL                 		4     	2        	1238    
 11658 	OBANDO RICARDO DAVID               		1     	1        	3202    
 13086 	OJEDA CATALAN. HUMBERTO MATIAS     		2     	2        	2479    
@@ -473,7 +473,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 21876 	PEREZ DORA DEL CARMEN              		2     	2        	8920    
 12326 	PEREZ LUCAS                        		3     	2        	3053    
 641   	PEREZ PEREZ JUAN NESTOR            		2     	2        	412     
-14111 	PICHIÃ‘ANCO VICTOR ANTONIO         		6     	4        	1404    
+14111 	PICHIÑANCO VICTOR ANTONIO          		6     	4        	1404    
 457   	PICHUNLEF RUBEN NORBERTO           		5     	3        	1430    
 610   	PICUNTUREO ROLANDO                 		2     	2        	549     
 1272  	PILQUIMAN AGUSTIN ARMANDO          		1     	1        	5359    
@@ -482,7 +482,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11313 	PILQUIMAN JORGE RAUL               		5     	4        	6224    
 467   	PINCHEIRA GLADYS DEL CARMEN        		4     	4        	4476    
 21662 	PINCHEIRA LUIS ALBERTO             		2     	2        	4340    
-11611 	PIÃ‘IÃ‘OR JULIO OMAR               		26    	6        	500     
+11611 	PIÑIÑOR JULIO OMAR                 		26    	6        	500     
 91    	POSAZ  SANDRA                      		2     	1        	505     
 820   	POZZI MIGUEL HECTOR                		1     	1        	2976    
 14237 	PRADO LORENA                       		1     	1        	2753    
@@ -499,20 +499,20 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11704 	QUINTERO MIRIAN NILDA              		2     	2        	2265    
 11612 	QUINTRIQUEO FELIX MAXIMILIANO      		2     	2        	12895   
 516   	QUINTRIQUEO RUBEN ADOLFO           		1     	1        	3390    
-561   	QUIÃ‘EHUAL MANUEL                  		2     	2        	468     
-1839  	QUIÃ‘EHUAL MARIA DEL CARMEN        		10    	5        	2182    
-228   	QUIÃ‘EHUAL SANDRA FELISA           		4     	4        	2280    
-12194 	QUIÃ‘ELEN ANDRES VICTORIANO        		15    	3        	4585    
-8443  	QUIÃ‘ELEN ISAIAS                   		3     	3        	4442    
-671   	QUIÃ‘ELEN J. BERNARDINO            		4     	3        	1500    
-21754 	QUIÃ‘ELEN JOSE MARIA               		6     	2        	1667    
-11312 	QUIÃ‘ENAO ANDRES IRENE             		3     	3        	2000    
+561   	QUIÑEHUAL MANUEL                   		2     	2        	468     
+1839  	QUIÑEHUAL MARIA DEL CARMEN         		10    	5        	2182    
+228   	QUIÑEHUAL SANDRA FELISA            		4     	4        	2280    
+12194 	QUIÑELEN ANDRES VICTORIANO         		15    	3        	4585    
+8443  	QUIÑELEN ISAIAS                    		3     	3        	4442    
+671   	QUIÑELEN J. BERNARDINO             		4     	3        	1500    
+21754 	QUIÑELEN JOSE MARIA                		6     	2        	1667    
+11312 	QUIÑENAO ANDRES IRENE              		3     	3        	2000    
 13684 	RAIMIL EMANUEL OMAR                		1     	1        	1439    
 29    	RAMOS MARISA IRIS                  		7     	1        	2506    
 13073 	RANQUEHUE. ANDREA                  		6     	1        	2166    
 287   	REO RAUL                           		2     	2        	500     
 11206 	REPOSSINI, CLAUDIA                 		2     	2        	1414    
-12686 	REYES DARDO ARGENTINO              		2     	2        	753     
+12686 	REYES DARDO ARGENTINO              		2     	2        	2681    
 11613 	REYES JOSE IVAN                    		5     	5        	2891    
 871   	REYES JULIA ALCIRA                 		2     	2        	1298    
 1126  	RICHARDS LUCAS MATIAS              		6     	4        	2914    
@@ -568,8 +568,8 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 11694 	SANDOVAL, CESAR FACUNDO            		7     	1        	1571    
 12185 	SANDOVAL, JORGE                    		2     	2        	2107    
 137   	SANTI JOSE ALBERTO                 		6     	5        	1167    
-12632 	SANTIBAÃ‘EZ EDGARDO ADAN           		3     	2        	3042    
-877   	SANTIBAÃ‘EZ ZULMA BEATRIZ          		6     	5        	1569    
+12632 	SANTIBAÑEZ EDGARDO ADAN            		3     	2        	3042    
+877   	SANTIBAÑEZ ZULMA BEATRIZ           		6     	5        	1569    
 12722 	SANTOS JOSE IGNACIO                		1     	1        	4482    
 308   	SANTOS ROSA EDGARDO                		7     	1        	1928    
 21071 	SCHWITZGABELE WALTER GUILLERMO     		1     	1        	633     
@@ -577,7 +577,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 12656 	SEGUEL JORGE ORLANDO               		2     	2        	2953    
 12780 	SEGUEL. JOSE MARTIN                		4     	3        	2854    
 359   	SEPULVEDA ENRIQUE OMAR             		1     	1        	502     
-20611 	SILVA FABIAN ABEL                  		3     	2        	5136    
+20611 	SILVA FABIAN ABEL                  		3     	2        	3092    
 21301 	SILVA LILIANA MABEL                		1     	1        	823     
 9     	SILVA MIGUEL ANGEL                 		6     	6        	2581    
 11922 	SILVA VICTOR HUGO                  		4     	3        	871     
@@ -585,13 +585,13 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 1014  	SLUPSKI CAROLINA                   		7     	1        	1428    
 494   	SOBARZO  BERNARDO ARIEL            		27    	6        	3417    
 13216 	SOSA , GIMENA AMANCAY              		2     	1        	1500    
-9755  	SOSA BENJAMIN G.                   		2     	2        	3799    
+755   	SOSA BENJAMIN G.                   		2     	2        	3799    
 21429 	SOTO MOLINA JAQUELINA              		2     	2        	285     
 11629 	SUAREZ ANA MARIA                   		4     	2        	1637.5  
 13190 	SUELDO. VIVIANA ROSA               		5     	4        	580     
 11235 	SUEZ GLORIA DANIELA                		6     	3        	5335    
-21302 	TALCADO MUÃ‘OZ VERONICA            		2     	2        	924     
-8627  	TARIFEÃ‘O TELMA IRIS               		5     	2        	4751.5  
+21302 	TALCADO MUÑOZ VERONICA             		2     	2        	924     
+8627  	TARIFEÑO TELMA IRIS                		5     	2        	4751.5  
 1123  	TAVELLA CINTIA VANESA              		2     	1        	453     
 211   	TOMASINI NILDA S.                  		4     	2        	2061    
 21776 	TOMASINI OMAR MIGUEL               		26    	6        	1817    
@@ -600,7 +600,7 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 1     	TORRES HECTOR OSCAR                		6     	2        	625     
 11627 	TRANAMIL MARIA DE LAS NIEVES       		3     	2        	4833    
 417   	TRONCOSO JOSE ROSA                 		2     	2        	261     
-11871 	UMAÃ‘A CRISTIAN GONZALO            		5     	5        	3008    
+11871 	UMAÑA CRISTIAN GONZALO             		5     	5        	3008    
 11873 	URRUTIA DIEGO NICOLAS              		1     	1        	3223    
 20615 	VALDEBENITO RODOLFO ALEJANDRO      		2     	2        	2930    
 11382 	VALENZUELA BORQUEZ CINTIA          		1     	1        	1512    
@@ -649,4 +649,4 @@ Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
 479   	ZAMBRANO MIRTA GRACIELA            		1     	1        	3553    
 300   	ZAPATA MIGUEL ANGEL                		2     	2        	3486    
 12551 	ZAPATA RAUL                        		5     	3        	2000    
-Total: 1365341.77
+Total: 1365725.77

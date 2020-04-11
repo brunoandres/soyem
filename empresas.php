@@ -13,7 +13,7 @@ $funcion_r=$_SESSION['funcion'];
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -33,15 +33,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:520});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -69,7 +69,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -79,7 +79,7 @@ include("menu.php");
   </a></div>
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-		
+
       <th>Nombre</th>
 	  <th>Tipo</th>
 	    <th>Localidad</th>
@@ -87,13 +87,13 @@ include("menu.php");
 	 <th>Teléfono</th>
 	 <th>Para<br />Prestamos</th>
 	 <th>Para<br />Salud</th>
-	 
+
       <th></th>
-      
+
     </tr>
 	<?php
-	
-	
+
+
 	$sq = "select * from empresas order by nombre asc";
 	$u=mysql_query($sq);
 	$d=0;
@@ -101,7 +101,7 @@ include("menu.php");
 	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
 	$au=mysql_fetch_array($u);
     echo'<tr>';
-      
+
 	    echo '<td><b>'.$au['nombre'].'</b></td>';
 		echo '<td>'.$au['tipo'].'</td>';
 		echo '<td>'.$au['localidad'].'</td>';
@@ -134,7 +134,7 @@ include("menu.php");
 		}
 		echo '<td><a href="nueva_empresa.php?clave_empresa='.$au['clave_empresa'].'" class="example6"><img src="iconos/modificar.png" title="modificar datos de la empresa" border="0" /></a></td>
     </tr>';
-	
+
 	}
 	?>
   </table>

@@ -21,7 +21,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_afiliado.php" title="Agregar un nuevo afiliado">Nuevo Afiliado</a> - <a href="listado_de_afiliados.php" title="armar listados de afiliados">Armar listados</a></b></div>
@@ -30,7 +30,7 @@ include("menu.php");
 if ($_POST['dat0']=="Afiliados"){
 $det .= " Afiliados ";
 $j= 0;
-$pq = "Select "; 
+$pq = "Select ";
 	if($_POST['legajo']=="si"){
 	$pq .= "legajo,";
 	$hh .='<th>Legajo</th>';
@@ -128,11 +128,11 @@ if ($_POST['dat2'] != "Todos" or $_POST['dat3'] != "Todos"){
 /* fin de afiliados*/
 
 
-/* todos 
+/* todos
 if ($_POST['dat0']=="Todos"){
 $det .= " Todos ";
 $j= 0;
-$pq = "Select "; 
+$pq = "Select ";
 	if($_POST['legajo']=="si"){
 	$pq .= "legajo,";
 	$hh .='<th>Legajo</th>';
@@ -234,7 +234,7 @@ fin de todos */
 if ($_POST['dat0']=="Familiares"){
 $det .= " Familiares ";
 $j= 0;
-$pq = "Select "; 
+$pq = "Select ";
 	if($_POST['tipo']=="si"){
 	$pq .= "tipo,";
 	$hh .='<th>Tipo</th>';

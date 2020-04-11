@@ -36,7 +36,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri">
@@ -114,7 +114,7 @@ include("menu.php");
 
 
 
- 
+
 </div>
 </div>
 </body>

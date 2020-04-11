@@ -1,5 +1,7 @@
 <?php
 include("conecta.php");
+include ("auditoria.php");
+
 $clave_prestamo = $_GET['clave_prestamo'];
 $data =  mysql_fetch_array(mysql_query("select * from prestamos_viviendas where clave_prestamo = '$clave_prestamo'"));
 ?>
@@ -78,10 +80,15 @@ function Validar(form)
  } else {
  $t1 = "update prestamos_viviendas set cuota = ".$_POST['cuota']." where clave_prestamo =".$_POST['clave_prestamo'];
  mysql_query($t1);
+ auditar($t1);
+
   $t2 = "update prestamos_viviendas set monto = ".$_POST['monto']." where clave_prestamo =".$_POST['clave_prestamo'];
  mysql_query($t2);
+  auditar($t2);
+
   $t3 = "update prestamos_viviendas set vencimiento = '".substr($_POST['vencimiento'],6,4)."/".substr($_POST['vencimiento'],3,2)."/".substr($_POST['vencimiento'],0,2)."' where clave_prestamo =".$_POST['clave_prestamo'];
  mysql_query($t3);
+ auditar($t3);
  
  
  ?>

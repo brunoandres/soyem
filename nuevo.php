@@ -20,7 +20,7 @@ $funcion_r=$_SESSION['funcion'];
   <!-- the following script defines the Calendar.setup helper function, which makes
        adding a calendar a matter of 1 or 2 lines of code. -->
   <script type="text/javascript" src="calendar-setup.js"></script>
- 
+
 <script LANGUAGE="JavaScript">
  function casado1(){
  if (document.getElementById("estado_civil").value == "casado"){
@@ -37,7 +37,7 @@ $funcion_r=$_SESSION['funcion'];
   document.getElementById("nom_os_esposa").disabled = true;
  }
  }
- 
+
   function casado3(){
  if (document.getElementById("coseguro").value == "no"){
  document.getElementById("motivo_coseguro").disabled = false;
@@ -45,7 +45,7 @@ $funcion_r=$_SESSION['funcion'];
   document.getElementById("motivo_coseguro").disabled = true;
  }
  }
- 
+
    function casado4(){
  if (document.getElementById("dona_sangre").value == "si"){
  document.getElementById("tipo_sangre").disabled = false;
@@ -56,11 +56,11 @@ $funcion_r=$_SESSION['funcion'];
  </script>
 
 
-<!-- LINKS NUEVOS PARA VALIDAR CON BOOTSTRAP 
+<!-- LINKS NUEVOS PARA VALIDAR CON BOOTSTRAP
 
 
 <link rel="stylesheet" href="css.css">
-<link type="text/css" rel="stylesheet" href="css/style.css">    
+<link type="text/css" rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 
@@ -71,7 +71,7 @@ $funcion_r=$_SESSION['funcion'];
 <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="js/jquery.min.js"></script>
 
 
@@ -88,12 +88,12 @@ $funcion_r=$_SESSION['funcion'];
 
      //Si el input de legajo es distinto de vacio, envio por metodo post mi valor ingresado.
      if (textoBusqueda != "") {
-        
+
         /*
-          
+
           buscar_legajo.php es mi archivo donde realizo la consulta a la base de datos, consultando
           por el valor ingresado, valorBusqueda es mi nueva variable que recibo por post en buscar_legajo.php. La variable 'mensaje' es la que me devuelve si hay coincidencias o no.
-  
+
         */
         $.post("buscar_legajo.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
             //Guardo el resultado de la busqueda en el input con id 'valor'
@@ -101,7 +101,7 @@ $funcion_r=$_SESSION['funcion'];
             $("#resultadoBusqueda").html(mensaje);
 
         });
-        
+
         //Condicion si encuentro un legajo duplicado ya existente en la base.
         if($("input#valor").val()==1){
           $('#insert').prop("disabled", false);
@@ -110,7 +110,7 @@ $funcion_r=$_SESSION['funcion'];
           $('#insert').prop("disabled", true);
 
         }
-        
+
 
     }
     else {
@@ -140,7 +140,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="listado_afiliados.php" title="Buscar un afiliado">Buscar Afiliado</a> - <a href="listado_de_afiliados.php" title="Armar listado de afiliados">Armar listados</a></b></div>
@@ -168,7 +168,7 @@ include("menu.php");
   </div>
   <div class="etiqueta">Fecha de Nacimiento:</div>
   <div class="form-group">
-   
+
     <input name="nacimiento" type="text" class="p_input" id="nacimiento" />
 
   </div>
@@ -185,7 +185,7 @@ include("menu.php");
     });
 </script>
 
- 
+
   <div class="etiqueta">Domicilio:</div>
   <div class="form-group">
     <input name="domicilio" type="text" class="p_input" id="domicilio" />
@@ -227,7 +227,7 @@ include("menu.php");
   <div class="form-group">
   <input name="correo" type="text" class="p_input" id="correo" />
   </div>
-  
+
   <div class="etiqueta">Sector donde trabaja:</div>
   <div class="form-group">
     <input name="sector" type="text" class="p_input" id="sector" value="<?php echo $dat['sector']; ?>" />
@@ -240,7 +240,7 @@ include("menu.php");
   <div class="form-group">
   <input name="antiquedad" type="text" class="p_input" id="antiquedad" value="<?php echo $dat['antiquedad']; ?>" />
 </div>
-  
+
    <div class="etiqueta">Afiliado al coseguro:</div>
    <div class="form-group">
   <select name="coseguro" class="p_input" id="coseguro" onchange="casado3()">
@@ -249,12 +249,12 @@ include("menu.php");
   <option value="no">no</option>
   </select>
 </div>
-  
+
   <div class="etiqueta">Porque no esta afiliado al coseguro?:</div>
   <div class="form-group">
   <textarea name="motivo_coseguro" rows="4" class="p_input" id="motivo_coseguro"><?php echo $dat['motivo_coseguro']; ?></textarea>
 </div>
- 
+
    <div class="etiqueta">Dona sangre?:</div>
    <div class="form-group">
   <select name="dona_sangre" class="p_input" id="dona_sangre" onchange="casado4()">
@@ -267,8 +267,8 @@ include("menu.php");
   <div class="form-group">
   <input name="tipo_sangre" type="text" class="p_input" id="tipo_sangre" value="<?php echo $dat['tipo_sangre']; ?>" />
 </div>
-  
-  
+
+
   <div class="etiqueta">Fecha de afiliacion:</div>
   <div class="form-group">
   <input name="afiliacion" type="text" class="p_input" id="afiliacion" />
@@ -350,7 +350,7 @@ include("menu.php");
 </script></div>
 <div>
   <label><br>
-	
+
     <input type="submit" name="insert" id="insert" value="Agregar" class="btn btn-default" />
 	</label>
 </div>
@@ -370,11 +370,11 @@ include("menu.php");
 
         <script src="js/index.js"></script>
 <script type="text/javascript">
- 
+
    $(document).ready(function() {
     $('#reg_form').bootstrapValidator({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-        
+
         fields: {
             legajo: {
                 validators: {
@@ -396,7 +396,7 @@ include("menu.php");
                     }
                 }
             },
-           
+
             cuil: {
                 validators: {
                         numeric: {
@@ -588,12 +588,12 @@ include("menu.php");
                     }
                 }
             },
-      
-            
+
+
             }
         })
-    
-  
+
+
         .on('success.form.bv', function(e) {
             $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
                 $('#reg_form').data('bootstrapValidator').resetForm();
@@ -615,11 +615,11 @@ include("menu.php");
 });
 
 
- 
+
  </script>
 
 
 <!-- -->
- 
+
 </body>
 </html>

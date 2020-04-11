@@ -73,7 +73,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_afiliado.php">Nuevo Afiliado</a> - <a href="listado_afiliados.php">Buscar Afiliado</a></b></div>
@@ -84,8 +84,8 @@ include("menu.php");
   <SELECT NAME="dat0" onChange="pagoOnChange(this)" class="p_input">
   				<OPTION></OPTION>
               <OPTION VALUE="Afiliados">Afiliados</OPTION>
-              <OPTION VALUE="Familiares">Familiares</OPTION> 
-			 
+              <OPTION VALUE="Familiares">Familiares</OPTION>
+
            </SELECT>
   </label>
    <div id="nFamiliares" style="display:none;">
@@ -93,20 +93,20 @@ include("menu.php");
            <SELECT NAME="dat1" onChange="pagoOnChange1(this)" class="p_input">
   				<OPTION></OPTION>
               <OPTION VALUE="Activos">Activos</OPTION>
-              <OPTION VALUE="No Activos">No Activos</OPTION> 
+              <OPTION VALUE="No Activos">No Activos</OPTION>
 			  <OPTION VALUE="Todos">Todos</OPTION>
            </SELECT>
 		   <div id="nFamiliares1" style="display:none;">
 		    <div class="etiqueta">Incluir los campos:</div>
-		   <input name="nombre" type="checkbox" value="si" checked="checked" />Nombre 
-		   <input name="documento" type="checkbox" value="si" checked="checked" />Documento 
-		   <input name="tipo" type="checkbox" value="si" />Tipo 
-		   <input name="nacimiento" type="checkbox" value="si" />Fecha de Nacimiento 
+		   <input name="nombre" type="checkbox" value="si" checked="checked" />Nombre
+		   <input name="documento" type="checkbox" value="si" checked="checked" />Documento
+		   <input name="tipo" type="checkbox" value="si" />Tipo
+		   <input name="nacimiento" type="checkbox" value="si" />Fecha de Nacimiento
 		   <div class="etiqueta">Ordenar por:</div>
 		   <SELECT NAME="orden1" class="p_input">
   				<OPTION></OPTION>
               <OPTION VALUE="nacimiento">Fecha de Nacimiento</OPTION>
-              <OPTION VALUE="nombre">Nombre</OPTION> 
+              <OPTION VALUE="nombre">Nombre</OPTION>
 			  <OPTION VALUE="documento">Documento</OPTION>
            </SELECT>
 		   <input type="submit" name="accion" value="Listar"/>
@@ -117,7 +117,7 @@ include("menu.php");
           <SELECT NAME="dat2" onChange="pagoOnChange2(this)" class="p_input">
   				<OPTION></OPTION>
               <OPTION VALUE="Activos">Activos</OPTION>
-              <OPTION VALUE="No Activos">No Activos</OPTION> 
+              <OPTION VALUE="No Activos">No Activos</OPTION>
 			  <OPTION VALUE="Todos">Todos</OPTION>
            </SELECT>
 		   <div id="nAfiliados1" style="display:none;">
@@ -125,41 +125,41 @@ include("menu.php");
 		   <SELECT NAME="dat3" onChange="pagoOnChange3(this)" class="p_input">
   				<OPTION></OPTION>
               <OPTION VALUE="Jubilados">Jubilados</OPTION>
-              <OPTION VALUE="No Jubilados">No Jubilados</OPTION> 
+              <OPTION VALUE="No Jubilados">No Jubilados</OPTION>
 			  <OPTION VALUE="Todos">Todos</OPTION>
            </SELECT>
 		   <div id="nAfiliados2" style="display:none;">
 		   <div class="etiqueta">Incluir los campos:</div>
-		   <input name="legajo" type="checkbox" value="si" checked="checked" />Legajo  
-		   <input name="nombre" type="checkbox" value="si" checked="checked" />Nombre 
-		   <input name="documento" type="checkbox" value="si" checked="checked" />Documento 
-		   <input name="domicilio" type="checkbox" value="si" />Domicilio 
-		   <input name="telefono" type="checkbox" value="si" />Tel�fono 
-		   <input name="correo" type="checkbox" value="si" />Correo 
-		   <input name="nacimiento" type="checkbox" value="si" />Fecha de Nacimiento 
-		   <input name="afiliacion" type="checkbox" value="si" />Fecha de Afiliaci�n 
-		   <input name="socioos" type="checkbox" value="si" />Socio de OS 
-		   <input name="ipross" type="checkbox" value="si" />Nro IPROSS 
-		   <input name="sector" type="checkbox" value="si" />Sector 
-		   <input name="vencimiento" type="checkbox" value="si" />Vencimiento del Carnet 
+		   <input name="legajo" type="checkbox" value="si" checked="checked" />Legajo
+		   <input name="nombre" type="checkbox" value="si" checked="checked" />Nombre
+		   <input name="documento" type="checkbox" value="si" checked="checked" />Documento
+		   <input name="domicilio" type="checkbox" value="si" />Domicilio
+		   <input name="telefono" type="checkbox" value="si" />Tel�fono
+		   <input name="correo" type="checkbox" value="si" />Correo
+		   <input name="nacimiento" type="checkbox" value="si" />Fecha de Nacimiento
+		   <input name="afiliacion" type="checkbox" value="si" />Fecha de Afiliaci�n
+		   <input name="socioos" type="checkbox" value="si" />Socio de OS
+		   <input name="ipross" type="checkbox" value="si" />Nro IPROSS
+		   <input name="sector" type="checkbox" value="si" />Sector
+		   <input name="vencimiento" type="checkbox" value="si" />Vencimiento del Carnet
 		   <div class="etiqueta">Ordenar por:</div>
 		   <SELECT NAME="orden" class="p_input">
   				<OPTION></OPTION>
               <OPTION VALUE="legajo">Legajo</OPTION>
-              <OPTION VALUE="nombre">Nombre</OPTION> 
+              <OPTION VALUE="nombre">Nombre</OPTION>
 			  <OPTION VALUE="documento">Documento</OPTION>
            </SELECT>
 		   <input type="submit" name="accion" value="Listar"/>
 		   </div>
 		   </div>
       </div>
-  
-  
-  
-  
+
+
+
+
   <div>
         <label>
-	
+
 	</label><input type="hidden" name="act" value="si" />
 	</div>
 </form>
@@ -172,7 +172,7 @@ if ($_POST['act']=="si" and (!empty($_POST['busc']) or !empty($_POST['leg']))){
 	$sql = "select * from afiliado where ".$filtro." order by nombre asc";
 	$que = mysql_query($sql);
 	$nn = mysql_num_rows($que);
-	echo "Se ebcontraron ".$nn." coicidencias con la busqueda <font color='ff0000'>".$busq."</font>"; 
+	echo "Se ebcontraron ".$nn." coicidencias con la busqueda <font color='ff0000'>".$busq."</font>";
  	} else {
 	$busq = $_POST['leg'];
 	$filtro = '(legajo = '.$busq.')';

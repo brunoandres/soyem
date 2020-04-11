@@ -36,7 +36,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -45,7 +45,7 @@ include("menu.php");
   echo 'Detalle de cuenta: '.$data['cuenta'];
   ?> </h1>
    <form action="<?php echo $PHP_SELF; ?>" method="post">
-   
+
 	<div class="etiqueta">Desde:</div>
     <input type="text" name="desde" class="p_input" id="desde" autocomplete="off">
 	<script type="text/javascript">
@@ -90,17 +90,17 @@ include("menu.php");
  }
  //echo $hasta;
  	$query_periodo = mysql_query("SELECT ejer_year FROM cont_ejercicios where ejer_estado = '0' order by ejer_year desc");
- 		
+
  		?>
 <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-		
+
       <th>Fecha</th>
 	  <th>Asiento</th>
 	  <th>Debe</th>
 	  <th>Haber</th>
       <th width="60%">Detalle</th>
-      
+
     </tr>
 	<?php
   $d=0;
@@ -157,7 +157,7 @@ include("menu.php");
   ?>
   </div>
   <div class = "resumen">
-    <a href="print_libro.php?id_cuentas=<?php echo $id_cuentas; ?>" target="_blank">Preparar este libro para imprimir</a>  </div> 
+    <a href="print_libro.php?id_cuentas=<?php echo $id_cuentas; ?>" target="_blank">Preparar este libro para imprimir</a>  </div>
 </div>
 
 </div>

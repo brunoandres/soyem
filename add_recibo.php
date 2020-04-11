@@ -1,5 +1,6 @@
 <?php
 include ("conecta.php");
+include ("auditoria.php");
 if (empty($_POST['rec_nro_01'])){
 	$rec_nro_01 = '0001';
 } else {
@@ -26,7 +27,10 @@ $rec_detalles = $_POST['rec_detalles'];
 $rec_banco = $_POST['rec_banco'];
 $rec_cheque_nro = $_POST['rec_cheque_nro'];
 
-mysql_query("insert into recibos (rec_nro, rec_fecha, rec_nombre, rec_legajo, rec_domicilio, rec_localidad, rec_cuit, rec_iva, rec_importe, rec_concepto, rec_detalles, rec_importe_efectivo, rec_importe_cheque, rec_cheque_nro, rec_banco) values ('$rec_nro', '$rec_fecha', '$rec_nombre', '$rec_legajo', '$rec_domicilio', '$rec_localidad', '$rec_cuit', '$rec_iva', '$rec_importe','$rec_concepto', '$rec_detalles', '$rec_importe_efectivo', '$rec_importe_cheque', '$rec_cheque_nro', '$rec_banco')");
+$query = "insert into recibos (rec_nro, rec_fecha, rec_nombre, rec_legajo, rec_domicilio, rec_localidad, rec_cuit, rec_iva, rec_importe, rec_concepto, rec_detalles, rec_importe_efectivo, rec_importe_cheque, rec_cheque_nro, rec_banco) values ('$rec_nro', '$rec_fecha', '$rec_nombre', '$rec_legajo', '$rec_domicilio', '$rec_localidad', '$rec_cuit', '$rec_iva', '$rec_importe','$rec_concepto', '$rec_detalles', '$rec_importe_efectivo', '$rec_importe_cheque', '$rec_cheque_nro', '$rec_banco')";
+
+mysql_query($query);
+auditar($query);
 
 $p_ult = mysql_fetch_array(mysql_query("select * from recibos order by rec_id desc"));
 $rec_id = $p_ult['rec_id'];

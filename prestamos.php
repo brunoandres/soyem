@@ -14,23 +14,23 @@ $funcion_r=$_SESSION['funcion'];
 		<script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript" language="javascript">
 		$(document).ready(function(){
-			
+
 
 				   $("#divbusc").on("keyup",Buscaloc);
-   					
-               
-            
+
+
+
    function Buscaloc (){
-   
+
         if($("#divbusc").val().length>2){
 						$("#ver_listado").show();
                   $.get("listado_prestamos.php",{busca: $("#divbusc").val()}, function(htmlexterno){
                       $("#ver_listado").html(htmlexterno);
-                  });	
+                  });
 					} else {
 						$("#ver_listado").hide();
-					}         
-         
+					}
+
       };
 
 			});
@@ -46,7 +46,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri">

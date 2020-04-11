@@ -1,7 +1,14 @@
 <?php
 include("conecta.php");
+include ("auditoria.php");
+
 $rec_id = $_GET['rec_id'];
-mysql_query("update recibos set rec_anulado = 'S' where rec_id= '$rec_id'");
+$query = "update recibos set rec_anulado = 'S' where rec_id= '$rec_id'";
+$exec = mysql_query($query);
+
+if ($exec) {
+	auditar($query);
+}
 
 $data_rec = mysql_fetch_array(mysql_query("select * from recibos INNER JOIN conceptos_recibos ON recibos.rec_concepto=conceptos_recibos.cr_id where recibos.rec_id = '$rec_id'"));
 

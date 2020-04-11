@@ -14,44 +14,44 @@ $data =  mysql_fetch_array(mysql_query("select * from pagos where id_pagos = '$i
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <script LANGUAGE="JavaScript">
 function Validar(form)
 {
   if (form.fecha.value == "")
   { alert("Por favor la fecha del pago"); form.fecha.focus(); return; }
-   
+
    if (form.empresa.value == "")
   { alert("Por favor ingrese el destinatario del pago"); form.empresa.focus(); return; }
-  
+
    if (form.importe.value == "")
   { alert("Por favor ingrese el importe del pago"); form.importe.focus(); return; }
-  
+
    if (form.factura.value == "")
   { alert("Por favor ingrese la factura a pagar"); form.factura.focus(); return; }
-  
+
   if (form.detalle.value == "")
   { alert("Por favor ingrese el detalle del pago"); form.detalle.focus(); return; }
-  
+
   if (form.forma.value == "")
   { alert("Por favor ingrese la froma de pago"); form.forma.focus(); return; }
-  
+
   if (form.forma.value == "cheque" & form.cuenta_banco.value == "")
   { alert("Por favor ingrese la cuenta bancaria"); form.cuenta_banco.focus(); return; }
-  
+
    if (form.forma.value == "cheque" & form.nro_cheque.value == "")
   { alert("Por favor ingrese el nro de cheque"); form.nro_cheque.focus(); return; }
-  
+
     if (form.cuenta_contable.value == "")
   { alert("Por favor ingrese la cuenta contable a asignar el pago"); form.cuenta_contable.focus(); return; }
-  
+
  form.submit();
 }
 function banco(form)
 {
   if (form.forma.value == "cheque")
-  { 
+  {
   form.cuenta_banco.disabled=false;
   form.nro_cheque.disabled=false;
    } else {
@@ -60,7 +60,7 @@ function banco(form)
 	 form.nro_cheque.disabled=true;
 	form.nro_cheque.value="";
    }
-   
+
 }
 </script>
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -87,14 +87,14 @@ function banco(form)
    echo 'Modificando Pago';
   }
   ?> </h1>
- <form action="modifica_pago.php" method="post">  
+ <form action="modifica_pago.php" method="post">
  <div class="etiqueta">Fecha:</div>
 <?php
 	if (!empty($data['fecha_pago'])){
 	$fe = substr($data['fecha_pago'],8,2).'/'.substr($data['fecha_pago'],5,2).'/'.substr($data['fecha_pago'],0,4);
 	}
 	?>
- <input name="fecha" type="text" class="p_input" id="fecha" value="<?php echo $fe; ?>" size="12" placeholder="Seleccione una fecha" autocomplete="off" readonly />	
+ <input name="fecha" type="text" class="p_input" id="fecha" value="<?php echo $fe; ?>" size="12" placeholder="Seleccione una fecha" autocomplete="off" readonly />
     <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha",      // id of the input field
@@ -105,7 +105,7 @@ function banco(form)
         step           :    1          ,
         singleClick    :" true"       // show all years in drop-down boxes (instead of every other year as default)
     });
-</script> 
+</script>
 <div class="etiqueta">Destinatario:</div>
 <select name="empresa" class="p_input select2" id="empresa">
 		<?php
@@ -150,7 +150,7 @@ function banco(form)
 	$cucu = mysql_fetch_array(mysql_query($t_cu));
 	}
 	?>
-	<select name="cuenta_contable"class="p_input"  id="cuenta_contable">
+	<select name="cuenta_contable" class="p_input select2"  id="cuenta_contable">
 	<option selected="selected" value="<?php echo $data['cuenta_contable_pago']; ?>"><?php echo $cucu['cuenta']; ?></option>
 	<?php
 	$q_sr = mysql_query("select * from con_rubros where titulo = 'Cuentas Negativas'");
@@ -163,13 +163,15 @@ function banco(form)
 	echo '<option value="'.$a_cue['id_cuentas'].'">'.$a_cue['cuenta'].'</option>';
 	}}
 	?>
-	</select>
+</select><br>
+<div class="etiqueta">Número transferencia:</div>
+ <input name="numero_transferencia" type="text" class="p_input" value="<?php echo $data['numero_transferencia']; ?>" /><br>
         <div><label>
 	<input type="button" name="Submit" value="Guardar Pago" onClick="Validar(this.form)"/>
 	</label></div>
 	    <input name="id_us" type="hidden" id="id_us" value="<?php echo $_SESSION['usuario']; ?>" />
 	    <input name="id_pagos" type="hidden" id="id_pagos" value="<?php echo $id_pagos; ?>" />
-		
+
 
   </form>
   </div>

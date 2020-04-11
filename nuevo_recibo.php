@@ -39,9 +39,9 @@ if (empty($_GET['p_afiliado'])){
   $afa = mysql_fetch_array($qfa);
   echo '"'.$afa['legajo'].' - '.$afa['nombre'].'",';
   }
-  
+
   ?>
-			
+
 		];
 		$( "#tags" ).autocomplete({
 			source: availableTags
@@ -55,7 +55,7 @@ if (empty($_GET['p_afiliado'])){
 
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
-		
+
 		<script language="JavaScript">
 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -74,35 +74,35 @@ function Validar(form)
 {
    if (form.rec_nro_02.value == "")
   { alert("Por favor ingrese el nro de recibo"); form.rec_nro_02.focus(); return; }
-  
+
   if (form.rec_nombre.value == "")
   { alert("Por favor ingrese el nombre"); form.rec_nombre.focus(); return; }
 
    if (form.rec_iva.value == "")
   { alert("Por favor ingrese el tipo de IVA"); form.rec_iva.focus(); return; }
- 
-  
+
+
    if (form.rec_importe_efectivo.value == "" && form.rec_importe_cheque.value == "")
   { alert("Por favor ingrese el importe"); form.rec_importe_efectivo.focus(); return; }
-  
+
    if (form.rec_concepto.value == "")
   { alert("Por favor ingrese el concepto asociado al recibo"); form.rec_concepto.focus(); return; }
- 
+
    if (form.rec_importe_cheque.value != "" && (form.rec_banco.value == "" || form.rec_cheque_nro.value == ""))
   { alert("Ingrese el nro de cheque y el Banco correspondiente"); form.rec_banco.focus(); return; }
    /*
   if (form.tipo.value == "Proveedor" && form.proveedor.value == "")
   { alert("Por favor ingrese el proveedor"); form.proveedor.focus(); return; }
- 
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "")
   { alert("Por favor ingrese el modo de pago"); form.m_pago.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Efectivo" && form.origen.value == "")
   { alert("Por favor ingrese el origen de los fondos del prestamo"); form.origen.focus(); return; }
-  
+
   if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.cuenta_banco.value=="")
   { alert("Por favor ingrese la cuenta bancaria del cheque"); form.cuenta_banco.focus(); return; }
-  
+
    if (form.tipo.value == "Soyem" && form.m_pago.value == "Cheque" && form.nro_cheque.value=="")
   { alert("Por favor ingrese el nro de cheque"); form.nro_cheque.focus(); return; }
   */
@@ -119,17 +119,17 @@ form.rec_legajo.value = form.p_afiliado.value.substring(0,pri_pos);
 function tipo_op(form)
 {
   if (form.rec_importe_cheque.value == "")
-  { 
+  {
 
   form.rec_banco.disabled=true;
   form.rec_cheque_nro.disabled=true;
-   } 
+   }
    if (form.rec_importe_cheque.value != "")
-  { 
+  {
  form.rec_banco.disabled=false;
   form.rec_cheque_nro.disabled=false;
-   } 
-   
+   }
+
 }
 
 </script>
@@ -146,7 +146,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="ingresos.php" title="Buscar un afiliado">Recibos</a> - <a href="cajas_diarias.php" title="Armar listado de afiliados">Caja Diaria</a></b></div>
@@ -185,10 +185,10 @@ include("menu.php");
 <input type="text" name="rec_cuit_01" class="p_input_corto" maxlength="2"/> - <input type="text" name="rec_cuit_02" class="p_input_corto" maxlength="8"/> - <input type="text" name="rec_cuit_03" class="p_input_corto" maxlength="1"/>
 <div class="etiqueta">IVA</div>
 
-Responsable Inscripto: <input type="radio" name="rec_iva" value="Responsable Inscripto" /> 
-| Responsable Monotributo: <input type="radio" name="rec_iva" value="Responsable Monotributo" /> 
-| No Responsable: <input type="radio" name="rec_iva" value="No Responsable" /> 
-| Exento: <input type="radio" name="rec_iva" value="Exento" /> 
+Responsable Inscripto: <input type="radio" name="rec_iva" value="Responsable Inscripto" />
+| Responsable Monotributo: <input type="radio" name="rec_iva" value="Responsable Monotributo" />
+| No Responsable: <input type="radio" name="rec_iva" value="No Responsable" />
+| Exento: <input type="radio" name="rec_iva" value="Exento" />
 | Consumidor Final: <input type="radio" name="rec_iva" value="Consumidor Final" />
 
 <div class="etiqueta">Importe en Efectivo:</div>

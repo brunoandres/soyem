@@ -35,7 +35,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_reintegro.php" title="Agregar un nuevo reintegro">Nuevo Reintegro </a> - <a href="#" title="armar listados de afiliados">Armar listados</a></b></div>
@@ -47,9 +47,9 @@ include("menu.php");
 	 <th>Fecha</th>
       <th>Nombre</th>
 	  <th>Legajo</th>
-     
+
 	  <th>Tipo</th>
-	  
+
 	   <th>Importe</th>
 	   <th>Pago</th>
       <th>Ver</th>
@@ -58,12 +58,12 @@ include("menu.php");
     </thead>
      <tbody>
 	<?php
-	$tam = 50; 
+	$tam = 50;
 
 
 
 	$sq = "select * from reintegros order by fecha_rei desc";
-	
+
 	$q = mysql_query($sq);
 	$nn = mysql_num_rows($q);
 	for ($i=0; $i<$nn; $i++){
@@ -77,15 +77,15 @@ include("menu.php");
 	  <td>'.$d_afiliado{'nombre'}.'</td>
       <td>'.$d_afiliado{'legajo'}.'</td>
 	  <td>'.$d_pres['descripcion'].'</td>';
-	 
-	 
+
+
 	   echo '<td align="right">$ '.$dat['importe_rei'].'</td>';
 	    echo '<td> '.$dat['m_pago'].'</td>';
 	  echo '<td><a href="detalle_reintegros.php?id_reintegro='.$dat{'id_reintegro'}.'" title="ver detalles de este reintegro">Ver</a></td>
 	  <td><a href="detalle_reintegros.php?id_reintegro='.$dat{'id_reintegro'}.'" title="Quitar este reintegro">Quitar</a></td>
     </tr>';
 	}
-	
+
 ?>
 </tbody>
 </table>

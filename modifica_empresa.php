@@ -10,6 +10,7 @@
 <div id="contanido">
 <?php
 include ("conecta.php");
+include ("auditoria.php");
 $id_us = $_POST['id_us'];
 $clave_empresa = $_POST['clave_empresa'];
 $nombre = ($_POST['nombre']);
@@ -19,17 +20,22 @@ $telefono = $_POST['telefono'];
 $cuit = $_POST['cuit'];
 $tipo = $_POST['tipo'];
 if (empty($clave_empresa)){
-	mysql_query("insert into empresas (nombre, domicilio, localidad, telefono, cuit, tipo ) values ('$nombre', '$domicilio', '$localidad', '$telefono', '$cuit', '$tipo')");
+	$query = "insert into empresas (nombre, domicilio, localidad, telefono, cuit, tipo ) values ('$nombre', '$domicilio', '$localidad', '$telefono', '$cuit', '$tipo')";
+	mysql_query($query);
+	auditar($query);
 	
 echo "<p>Se agrago la empresa forma correcto</p>";
 echo '<p><a href="nueva_empresa.php">Ingrasar una nueva empresa</a></p>';
 } else {
 
-mysql_query("update empresas set nombre='$nombre' where clave_empresa='$clave_empresa'");
+$query = "update empresas set nombre='$nombre', domicilio='$domicilio', localidad='$localidad', telefono='$telefono', tipo='$tipo' where clave_empresa='$clave_empresa'";
+mysql_query($query);
+auditar($query);
+/*mysql_query("update empresas set nombre='$nombre' where clave_empresa='$clave_empresa'");
 mysql_query("update empresas set domicilio='$domicilio' where clave_empresa='$clave_empresa'");
 mysql_query("update empresas set localidad='$localidad' where clave_empresa='$clave_empresa'");
 mysql_query("update empresas set telefono='$telefono' where clave_empresa='$clave_empresa'");
-mysql_query("update empresas set tipo='$tipo' where clave_empresa='$clave_empresa'");
+mysql_query("update empresas set tipo='$tipo' where clave_empresa='$clave_empresa'");*/
 
 echo "<p>Se modifico la empresa forma correcto</p>";
 echo '<p><a href="nueva_empresa.php">Ingrasar una nueva empresa</a></p>';

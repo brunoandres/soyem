@@ -18,7 +18,7 @@ mysql_query("delete from asientos where activo='no'");
 <script type="text/javascript" language="javascript" src="jquery/jquery.dataTables.js"></script>
 <script type="text/javascript" language="javascript" class="init">
   $(document).ready(function() {
-  
+
     $('#deuda_prestamos').DataTable({
       "language": {
           "url": "spanish.json"
@@ -30,7 +30,7 @@ mysql_query("delete from asientos where activo='no'");
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -44,19 +44,19 @@ return confirm( mensaje );
 </SCRIPT>';
   }
   ?>
- 
+
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:950, innerHeight:520});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -84,7 +84,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -119,7 +119,7 @@ include("menu.php");
   <table id="deuda_prestamos" class="display" cellspacing="0" width="100%">
   	<thead>
     <tr>
-	  <th>Fecha Prestamo</th>	
+	  <th>Fecha Prestamo</th>
       <th>Afiliado</th>
 	  <th>Vencimiento</th>
 	  <th>Importe</th>
@@ -134,7 +134,7 @@ include("menu.php");
 	while ($data = mysql_fetch_array($query)){
 		echo '<tr>';
 		echo '<td>'.$data['fecha_prestamo'].'</td>';
-		
+
 		echo '<td>'.$data['afiliado'].'</td>';
 		echo '<td>'.$data['vencimiento'].'</td>';
 		echo '<td align="right"> $ '.$data['monto'].'</td>';

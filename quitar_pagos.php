@@ -1,5 +1,7 @@
 <?php
 include ("conecta.php");
+include ("auditoria.php");
+
 $id_pagos = $_GET['id_pagos'];
 mysql_query("delete from pagos where id_pagos = '$id_pagos'");
 auditar($query);

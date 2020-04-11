@@ -19,7 +19,7 @@ include("top_bar.php");
 include("menu.php");
 ?>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 </div>
 <div id="contanido">
 

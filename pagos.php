@@ -14,7 +14,7 @@ $funcion_r=$_SESSION['funcion'];
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 
  <link type="text/css" media="screen" rel="stylesheet" href="colorbox.css" />
@@ -23,15 +23,15 @@ return confirm( mensaje );
   <script type="text/javascript">
       $(document).ready(function(){
         //Examples of how to assign the ColorBox event to elements
-        
+
         $(".example6").colorbox({iframe:true, innerWidth:750, innerHeight:700});
-        
-          $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-        
+
+          $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
         //Example of preserving a JavaScript event for inline calls.
-        $("#click").click(function(){ 
+        $("#click").click(function(){
           $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
           return false;
         });
@@ -59,7 +59,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -68,7 +68,7 @@ include("menu.php");
  Nuevo Pago
   </a></div>
   <form action="pagos.php" method="get">
-  
+
   <div id="filtros">
     <strong>  Filtrar por:</strong>
   <hr />
@@ -83,7 +83,7 @@ include("menu.php");
     <option value="pendiente">pendiente</option>
   <option value="">Todos</option>
   </select>
-  
+
    Empresa:
    <select name="empresa_pago" class="select2" onchange="submit()">
   <?php
@@ -99,10 +99,10 @@ include("menu.php");
   $afp = mysql_fetch_array($qfp);
   echo '<option value="'.$afp['clave_empresa'].'">'.$afp['nombre'].'</option>';
   }
-  
+
   ?>
   </select>
-  
+
 <br />Fecha Desde:  <?php
    if (!empty($_GET['fecha_desde'])){
    echo '<input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="'.$_GET['fecha_desde'].'" autocomplete="off" />';
@@ -120,8 +120,8 @@ include("menu.php");
         step           :    1     ,
         singleClick    :" true"             // show all years in drop-down boxes (instead of every other year as default)
     });
-</script> 
-   Hasta: 
+</script>
+   Hasta:
       <?php
    if ($_GET['fecha_hasta']>0){
    echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" autocomplete="off" />';
@@ -139,42 +139,42 @@ include("menu.php");
         step           :    1    ,
         singleClick    :" true"              // show all years in drop-down boxes (instead of every other year as default)
     });
-</script> 
+</script>
    <input name="aplicar" type="submit" class="apli" value="Aplicar" />
   </div>
-  
-  
+
+
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
-    <tr>   
+    <tr>
       <th>Fecha</th>
       <th>Empresa</th>
       <th>Importe</th>
       <th>Factura</th>
-      <th>Detalle</th>    
+      <th>Detalle</th>
       <th>Forma</th>
       <th>Modificar</th>
       <th>Quitar</th>
     </tr>
   <?php
-  
-$tam = 25; 
+
+$tam = 25;
 
 
-if (empty($_GET['pagina'])) { 
-$inicio = 0; 
-$pagina=1; 
-} 
-else { 
+if (empty($_GET['pagina'])) {
+$inicio = 0;
+$pagina=1;
+}
+else {
   $pagina=$_GET['pagina'];
-$inicio = ($pagina - 1) * $tam; 
+$inicio = ($pagina - 1) * $tam;
 }
 
   if (empty($_GET['forma_pago']) and empty($_GET['empresa_pago']) and empty($_GET['fecha_desde']) and empty($_GET['fecha_hasta'])){
-  
+
   $sq = "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa order by id_pagos desc limit " . $inicio . "," . $tam;
-  
+
   $sq1 = "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa order by id_pagos desc ";
-  
+
   } else {
   $sq .= "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa where ( ";
   $sq1 .= "select * from pagos INNER JOIN empresas on pagos.empresa_pago=empresas.clave_empresa where ( ";
@@ -203,7 +203,7 @@ $inicio = ($pagina - 1) * $tam;
   for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
   $au=mysql_fetch_array($u);
     echo'<tr>';
-      
+
       echo '<td>'.substr($au['fecha_pago'],8,2).'/'.substr($au['fecha_pago'],5,2).'/'.substr($au['fecha_pago'],0,4).'</td>';
     echo '<td>'.$au['nombre'].'</td>';
     echo '<td>$ '.$au['importe_pago'].'</td>';
@@ -224,19 +224,19 @@ $inicio = ($pagina - 1) * $tam;
      echo "'¿Está seguro que desea quitar este pago?'";
     echo ')" >Quitar</a></td>
     </tr>';
-  
+
   }
   ?>
   </table>
-  
+
   <div id="nave">
 <?php
 $top = (($pagina) * $tam );
 $nt = mysql_num_rows(mysql_query($sq1));
-$domain = $_SERVER['HTTP_HOST'];  
+$domain = $_SERVER['HTTP_HOST'];
 $url = "http://" . $domain . $_SERVER['REQUEST_URI'];
 if($pagina >1){
-$pagina = $_GET['pagina'] - 1; 
+$pagina = $_GET['pagina'] - 1;
 ?>
     <a href="<?php echo $url; ?>&pagina=<?php echo $pagina; ?>" class="ant">Anterior</a>
   <?php
@@ -247,12 +247,12 @@ if($nt >$top){
 if(empty($_GET['pagina'])){
 $pagina = 2;
 } else {
-$pagina = $_GET['pagina'] + 1; 
+$pagina = $_GET['pagina'] + 1;
 }
 ?>
- 
- 
-  
+
+
+
   <a href="<?php echo $url; ?>&pagina=<?php echo $pagina; ?>" class="sig">Siguiente</a>
   <?php
   }

@@ -18,15 +18,15 @@ $data = mysql_fetch_array(mysql_query("select * from afiliado where clave='$clav
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:620});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -35,7 +35,7 @@ $data = mysql_fetch_array(mysql_query("select * from afiliado where clave='$clav
 		<script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 </head>
 
@@ -48,7 +48,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_afiliado.php" title="Agregar un nuevo afiliado">Nuevo Afiliado</a> - <a href="listado_de_afiliados.php" title="armar listados de afiliados">Armar listados</a> - <a href="listado_afiliados.php" title="Buscar a un afiliado">Buscar un afiliado</a></b></div>
@@ -95,8 +95,8 @@ if ($data['estado_civil']=='casado'){
 echo 'Obra social de esposo/a: <b>'.$data['os_esposa'].'</b> ';
 	if ($data['os_esposa']=='si'){
 	echo ' <b>'.$data['nom_os_esposa'].'</b> ';
-	} 
-} 
+	}
+}
 echo '<br>';
 echo 'Teléfono: <b>'.$data['telefono'].'</b> Celular: <b>'.$data['celular'].'</b><br>';
 echo 'Correo: <b>'.$data['correo'].'</b><br>';
@@ -105,12 +105,12 @@ echo 'Categoria: <b>'.$data['categoria'].'</b> Antigüedad: <b>'.$data['antiqued
 echo 'Coseguro: <b>'.$data['coseguro'].'</b>  ';
 if ($data['coseguro']=='no'){
 echo 'Motivo: <b>'.$data['motivo_coseguro'].'</b> ';
-} 
+}
 echo '<br>';
 echo 'Dona Sangre: <b>'.$data['dona_sangre'].'</b>  ';
 if ($data['dona_sangre']=='si'){
 echo 'Grupo y Factor: <b>'.$data['tipo_sangre'].'</b> ';
-} 
+}
 echo '<br>';
 echo 'Fecha de Afiliacion: <b>'.substr($data['afiliacion'],8,2).'/'.substr($data['afiliacion'],5,2).'/'.substr($data['afiliacion'],0,4).'</b><br>';
 echo 'Es jubilado: <b>'.$data['jubilado'].'</b> - ';
@@ -128,7 +128,7 @@ echo 'Sugerencias: <br><font color="009900">'.$data['sugerencias'].'</font><br>'
 echo 'Observaciones: <br><font color="009900">'.$data['observaciones'].'</font><br>';
 echo '<b>Actualizado el '.substr($data['f_actualiza'],8,2).'/'.substr($data['f_actualiza'],5,2).'/'.substr($data['f_actualiza'],0,4).'</b><br>';
 ?>
-<p><a href="modifica_afiliado.php?clave=<?php echo $clave; ?>" class="example6" title="Modificar datos de este afiliado">Actualizar datos</a> - 
+<p><a href="modifica_afiliado.php?clave=<?php echo $clave; ?>" class="example6" title="Modificar datos de este afiliado">Actualizar datos</a> -
 
 <?php
 if ($data['activo']=='si'){
@@ -277,10 +277,10 @@ echo "<br>Cursando actualmente?: ";
 	}
 echo '</b><br>';
 	}
-	
+
 	if ($af['discapacitado']=='si'){
 	echo '<b>Con Capacidades Diferentes</b><br>';
-	
+
 	}
 	if ($af['activo'] =='si'){
 	echo '<p><a href="modifica_familiar.php?id_fam='.$af['id_fam'].'&clave='.$clave.'" class="example6" title="Modificar datos de este familiar">Modificar datos</a> - ';
@@ -289,7 +289,11 @@ echo '</b><br>';
 	  echo ')" >Dar de Baja a este familiar</a>';
 	echo '</p>';
 	} else {
-	echo '<b>No activo</b>';
+	echo '<b>No activo</b><br>';
+	echo '<a href="alta_familiar.php?id_fam='.$af['id_fam'].'&clave='.$clave.'" title="dar de alta e este familiar" onclick="return confirmar(';
+	echo "'¿Confirma el alta a este familiar?'";
+	  echo ')" >Dar de Alta a este familiar</a>';
+	echo '</p>';
 	}
 	echo '</div>';
 	}
@@ -312,7 +316,7 @@ echo $data['nombre'];
     </tr>
 	<?php
 	$sq = "select * from prestamos where (afiliado=".$clave." and cuota='1') order by fecha_prestamo desc ";
-	
+
 	$q = mysql_query($sq);
 	$nn = mysql_num_rows($q);
 	for ($i=0; $i<$nn; $i++){
@@ -346,11 +350,11 @@ echo $data['nombre'];
 	  echo '<td><a href="detalle_prestamos.php?clave_prestamo='.$dat{'clave_prestamo'}.'" title="ver mas datos de '.$dat{'nombre'}.'">Ver</a></td>
     </tr>';
 	}
-	
+
 ?>
 <?php
 	$sq = "select * from prestamos_old where (afiliado=".$clave.") group by fecha_prestamo,proveedor,num_cuotas order by vencimiento desc ";
-	
+
 	$q = mysql_query($sq);
 	$nn = mysql_num_rows($q);
 	for ($i=0; $i<$nn; $i++){
@@ -384,7 +388,7 @@ echo $data['nombre'];
 	  echo '<td></td>
     </tr>';
 	}
-	
+
 ?></table>
 </div>
 
@@ -413,7 +417,7 @@ El <?php echo $as['momento'].' - '.$as['usuario']; ?> escribio:<br />
 <b><?php echo $as['asunto']; ?></b><br />
 <?php echo $as['comentario']; ?>
 </div>
-	
+
 <?php
 	}
 }
@@ -421,7 +425,7 @@ El <?php echo $as['momento'].' - '.$as['usuario']; ?> escribio:<br />
 </div>
   </div>
   <?php
-  mysql_close($conn); 
+  mysql_close($conn);
   ?>
 
 </body>

@@ -22,10 +22,10 @@ include("menu.php");
 </div>
 </div>
 
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
-<div class="barri"><b><a href="nuevo_afiliado.php" title="Agregar un nuevo afiliado">Nuevo Afiliado</a> - <a href="listado_de_afiliados.php" title="armar listados de afiliados">Armar listados</a></b></div>
+<div class="barri"><b><a href="nuevo_afiliado.php" title="Agregar un nuevo afiliado">Nuevo Afiliado</a> - <a href="listado_de_afiliados.php" title="armar listados de afiliados">Armar listados</a> - <?php if($_SESSION["usuario"] == 'magui.galaz' or $_SESSION["usuario"] == 'sandra.quiñehual' or $_SESSION["usuario"] == 'miryam.espeche'){ ?> <a href="listado_utiles.php" title="utiles por afiliados">Listado utiles</a></b><?php } ?></div>
 <form method="post" action="<?php echo $PHP_SELF; ?>">
 <div class="subt"> Buscar afiliados: </div>
 <div class="etiqueta">Nombre o Apellido a buscar:</div>

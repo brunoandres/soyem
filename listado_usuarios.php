@@ -19,25 +19,25 @@ function Validar(form)
   /*
   if (form.correo.value == "")
   { alert("Por favor correo electronico"); form.correo.focus(); return; }
-  
+
   if (form.correo.value.indexOf('@', 0) == -1 ||
       form.correo.value.indexOf('.', 0) == -1)
   { alert("Direccion de e-mail invalida"); form.correo.focus(); return; }
   */
-  
+
    if (form.pass.value == "")
   { alert("Por favor ingrese la contrase�a"); form.pass.focus(); return; }
-  
- 
+
+
    if (form.pass1.value == "")
   { alert("Por favor ingrese la confirmaci�n de la contrase�a"); form.pass1.focus(); return; }
-  
+
    if (form.pass.value != form.pass1.value)
   { alert("Las contrase�as no coinciden"); form.pass1.focus(); return; }
-  
+
    if (form.funcion.value == "")
   { alert("Por favor defina la funcion del usuario"); form.funcion.focus(); return; }
-  
+
  form.submit();
 }
 
@@ -45,7 +45,7 @@ function Validar(form)
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -60,15 +60,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:440});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -85,7 +85,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -96,10 +96,10 @@ include("menu.php");
     <div class="subt"> Agregar Usuario: </div>
 	<div class="etiqueta">Usuario:</div>
     <input name="usuario" type="text" class="p_input" id="usuario" autocomplete="off" placeholder="recomendado apellido.nombre"/>
-	
+
 	<div class="etiqueta">Contrase&ntilde;a:</div>
     <input name="pass" type="password" class="p_input" id="pass" placeholder="minimo seis caracteres"/>
-    
+
 	<div class="etiqueta">Confirme Contrase&ntilde;a:</div>
     <input name="pass1" type="password" class="p_input" id="pass1" placeholder="minimo seis caracteres" />
     <div class="etiqueta">Tipo:</div>
@@ -111,7 +111,7 @@ include("menu.php");
       echo '<option value="'.$atu['tu_id'].'">'.$atu['tu_name'].'</option>';
     }
   ?>
-  
+
     </select>
 	<div class="etiqueta">Seccion:</div>
 	<select name="seccion" class="p_input" id="seccion">
@@ -121,7 +121,7 @@ $qseg=mysql_query("SELECT seccion FROM secciones");
 while($rseg=mysql_fetch_row($qseg))
 	{
 		echo "<option value='".$rseg[0]."'>".$rseg[0]."</option>";
-	}	
+	}
 	?>
     </select>
 	<div>

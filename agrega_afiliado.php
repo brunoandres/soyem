@@ -1,5 +1,7 @@
 <?php
 include("conecta.php");
+include ("auditoria.php");
+
 $legajo = $_POST['legajo'];
 $nombre = $_POST['nombre'];
 $documento = $_POST['documento'];
@@ -90,7 +92,11 @@ if ( mysql_num_rows(mysql_query("SHOW COLUMNS FROM afiliado LIKE 'f_actualiza' "
 mysql_query("ALTER TABLE afiliado ADD f_actualiza DATE ");
 }
 
-mysql_query("insert into afiliado (legajo, nombre, documento, domicilio, telefono, correo, nacimiento, afiliacion, vencimiento, ipross, sector, sueldo, jubilado, socioos, observaciones, cuil, estado_civil, os_esposa, nom_os_esposa, celular, categoria, coseguro, motivo_coseguro, dona_sangre, tipo_sangre, sugerencias, f_actualiza) values ('$legajo', '$nombre', '$documento', '$domicilio', '$telefono', '$correo', '$nacimiento', '$afiliacion', '$vencimiento', '$ipross', '$sector', '$sueldo', '$jubilado', '$socioos', '$observaciones', '$cuil', '$estado_civil', '$os_esposa', '$nom_os_esposa', '$celular', '$categoria', '$coseguro', '$motivo_coseguro', '$dona_sangre', '$tipo_sangre', '$sugerencias', '$f_actualiza')");
+$query = "insert into afiliado (legajo, nombre, documento, domicilio, telefono, correo, nacimiento, afiliacion, vencimiento, ipross, sector, sueldo, jubilado, socioos, observaciones, cuil, estado_civil, os_esposa, nom_os_esposa, celular, categoria, coseguro, motivo_coseguro, dona_sangre, tipo_sangre, sugerencias, f_actualiza) values ('$legajo', '$nombre', '$documento', '$domicilio', '$telefono', '$correo', '$nacimiento', '$afiliacion', '$vencimiento', '$ipross', '$sector', '$sueldo', '$jubilado', '$socioos', '$observaciones', '$cuil', '$estado_civil', '$os_esposa', '$nom_os_esposa', '$celular', '$categoria', '$coseguro', '$motivo_coseguro', '$dona_sangre', '$tipo_sangre', '$sugerencias', '$f_actualiza')";
+
+mysql_query($query);
+auditar($query);
+
 $ult = mysql_fetch_array(mysql_query("select * from afiliado where (nombre = '$nombre' and documento='$documento' and legajo='$legajo')"));
 header ("Location:datos_afiliado.php?clave=".$ult['clave']);
 exit();

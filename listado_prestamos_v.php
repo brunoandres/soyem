@@ -16,15 +16,15 @@ $funcion_r=$_SESSION['funcion'];
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:420});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -33,7 +33,7 @@ $funcion_r=$_SESSION['funcion'];
 		<script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 </head>
 
@@ -46,14 +46,14 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
   <div class="barri"><b><a href="nuevo_prestamo_v.php" title="Agregar un nuevo afiliado">Nuevo Prestamo </a> - <a href="#" title="armar listados de afiliados">Armar listados</a></b></div>
   <h1>Preparar listado  de Prestamos para Vivienda </h1>
   <div id="datos_af">
   <form action="expo.php" method="post">
-  Mes y A�o a listar: 
+  Mes y A�o a listar:
   <select name="mes">
   <option selected="selected" value="<?php echo date("m"); ?>"><?php echo date("m"); ?></option>
   <?php
@@ -73,7 +73,7 @@ include("menu.php");
   <?php
   $a=2013;
   while($a<2030){
-  	
+
   	echo '<option value="'.$a.'">'.$a.'</option>';
   $a++;
   }
@@ -81,11 +81,11 @@ include("menu.php");
   </select>
   <input type="submit" name="listar" value="Listar" />
   </form>
-  
+
   </div>
-  
-  
-  
+
+
+
   <p></p>
    <?php
   if($_GET['ex']=='1'){
@@ -98,7 +98,7 @@ include("menu.php");
 	 <th>Mes</th>
       <th>A�o</th>
 	  <th>Archivo</th>
-    
+
     </tr>
 <?php
 $txt = "select * from historial_expo order by id_ex desc";

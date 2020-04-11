@@ -1,5 +1,7 @@
 <?php
 include ("conecta.php");
+include ("auditoria.php");
+
 $clave_prestamo = $_GET['clave_prestamo'];
 $dat = mysql_fetch_array(mysql_query("select * from prestamos INNER JOIN afiliado ON prestamos.afiliado = afiliado.clave where prestamos.clave_prestamo = '$clave_prestamo' "));
 ?>
@@ -69,9 +71,9 @@ echo $preg;
 		$n1 = $clave_prestamo - $dat['cuota'];
 		$n2 = $n1 + ($dat['num_cuotas']);
 		
-		mysql_query ("delete from prestamos where (clave_prestamo <= '$n2' and clave_prestamo > '$n1')");
-		
-		
+		$query = "delete from prestamos where (clave_prestamo <= '$n2' and clave_prestamo > '$n1')";
+		mysql_query ($query);
+		auditar($query);	
 		
 		}
 	

@@ -1,5 +1,7 @@
 <?php
 include ("conecta.php");
+include ("auditoria.php");
+
 $clave_prestamo = $_GET['clave_prestamo'];
 $vuelve = $_GET['vuelve'];
 $dat = mysql_fetch_array(mysql_query("select * from prestamos_viviendas where clave_prestamo ='$clave_prestamo'"));
@@ -16,7 +18,10 @@ $q = mysql_query("select * from prestamos_viviendas where ()");
 
 }
 */
-mysql_query("delete from prestamos_viviendas where (clave_prestamo = '$clave_prestamo')");
+$query = "delete from prestamos_viviendas where (clave_prestamo = '$clave_prestamo')";
+mysql_query($query);
+auditar($query);
+
 header ("Location: detalle_prestamos_v.php?clave_prestamo=$vuelve");
 exit();
 ?>

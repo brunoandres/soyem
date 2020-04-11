@@ -28,7 +28,7 @@ $funcion_r=$_SESSION['funcion'];
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
 
@@ -52,7 +52,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_prestamo_v.php" title="Agregar un nuevo afiliado">Nuevo Prestamo </a> - <a href="listado_prestamos_v.php" title="armar listados de afiliados">Armar listados</a></b></div>
@@ -76,7 +76,7 @@ include("menu.php");
   $afa = mysql_fetch_array($qfa);
   echo '<option value="'.$afa['clave'].'">'.$afa['nombre'].'</option>';
   }
-  
+
   ?>
 </select><br>
 <?php
@@ -88,9 +88,9 @@ include("menu.php");
   ?>
 <br />
 
-Fecha Desde:  
+Fecha Desde:
 <input name="fecha_desde" id="fecha_desde" placeholder="Desde" value="<?php echo $fecha_desde; ?>" autocomplete="off" readonly />
-  
+
     <script type="text/javascript">
     Calendar.setup({
         inputField     :    "fecha_desde",      // id of the input field
@@ -101,8 +101,8 @@ Fecha Desde:
         step           :    1     ,
         singleClick    :    " true"           // show all years in drop-down boxes (instead of every other year as default)
     });
-</script> 
-   Hasta: 
+</script>
+   Hasta:
       <?php
    if ($_GET['fecha_hasta']>0){
    echo '<input name="fecha_hasta" id="fecha_hasta" placeholder="Hasta" value="'.$_GET['fecha_hasta'].'" />';
@@ -120,7 +120,7 @@ Fecha Desde:
         step           :    1     ,
         singleClick    :    " true"           // show all years in drop-down boxes (instead of every other year as default)
     });
-</script> 
+</script>
    <input name="aplicar" type="submit" class="apli" value="Aplicar" />
   </div>
 
@@ -142,16 +142,16 @@ Fecha Desde:
     </tr>
     </thead>
 	<?php
-	$tam = 50; 
+	$tam = 50;
 
 
-if (empty($_GET['pagina'])) { 
-$inicio = 0; 
-$pagina=1; 
-} 
-else { 
+if (empty($_GET['pagina'])) {
+$inicio = 0;
+$pagina=1;
+}
+else {
 	$pagina=$_GET['pagina'];
-$inicio = ($pagina - 1) * $tam; 
+$inicio = ($pagina - 1) * $tam;
 }
 	$desde = substr($fecha_desde,6,4).'-'.substr($fecha_desde,3,2).'-'.substr($fecha_desde,0,2);
 
@@ -162,7 +162,7 @@ $inicio = ($pagina - 1) * $tam;
 if (!empty($_GET['fecha_hasta'])){
 	$hasta = substr($_GET['fecha_hasta'],6,4).'-'.substr($_GET['fecha_hasta'],3,2).'-'.substr($_GET['fecha_hasta'],0,2);
 	$sq .= "and vencimiento <= '".$hasta."' ";
-	
+
 }
 
 
@@ -170,12 +170,12 @@ if (!empty($_GET['fecha_hasta'])){
 if (!empty($_GET['afiliado'])){
 	$afiliado = $_GET['afiliado'];
 	$sq .= "and afiliado = '".$afiliado."' ";
-	
+
 }
 
 	$sql = $sq.")";
 	$sq .=" ) order by vencimiento asc limit " . $inicio . "," . $tam;
-	
+
 	$q = mysql_query($sq);
 	$nn = mysql_num_rows($q);
 	for ($i=0; $i<$nn; $i++){
@@ -193,18 +193,18 @@ if (!empty($_GET['afiliado'])){
 	  <td><a href="quitar_prestamo_v.php?clave_prestamo='.$dat{'clave_prestamo'}.'" title="Quitar este prestamo"onclick="return confirmar(';
 	   echo "'¿Está seguro que desea quitar este prestamo?'";
 	  echo ')" >Quitar Prestamo</a></td>
-    </tr>'; 
+    </tr>';
 	}
-	
+
 ?></table>
 <div id="nave">
 <?php
 $top = (($pagina) * $tam );
 $nt = mysql_num_rows(mysql_query($sql));
-$domain = $_SERVER['HTTP_HOST'];  
+$domain = $_SERVER['HTTP_HOST'];
 $url = "http://" . $domain . $_SERVER['REQUEST_URI'];
 if($pagina >1){
-$pagina = $_GET['pagina'] - 1; 
+$pagina = $_GET['pagina'] - 1;
 ?>
     <a href="<?php echo $url; ?>&pagina=<?php echo $pagina; ?>" class="ant">Anterior</a>
   <?php
@@ -215,12 +215,12 @@ if($nt >$top){
 if(empty($_GET['pagina'])){
 $pagina = 2;
 } else {
-$pagina = $_GET['pagina'] + 1; 
+$pagina = $_GET['pagina'] + 1;
 }
 ?>
- 
- 
-  
+
+
+
   <a href="<?php echo $url; ?>&pagina=<?php echo $pagina; ?>" class="sig">Siguiente</a>
   <?php
   }

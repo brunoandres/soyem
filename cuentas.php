@@ -17,10 +17,10 @@ function Validar(form)
   if (form.rubro.value == "")
   { alert("Por favor ingrese al rubro"); form.rubro.focus(); return; }
 
-  
+
    if (form.titulo.value == "")
   { alert("Por favor ingrese el titulo"); form.titulo.focus(); return; }
-  
+
  form.submit();
 }
 
@@ -31,10 +31,10 @@ function Validar1(form)
   if (form.rubro.value == "")
   { alert("Por favor ingrese al rubro"); form.rubro.focus(); return; }
 
-  
+
    if (form.cuenta.value == "")
   { alert("Por favor ingrese la cuenta"); form.cuenta.focus(); return; }
-  
+
  form.submit();
 }
 
@@ -42,7 +42,7 @@ function Validar1(form)
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -62,15 +62,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:420});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -87,7 +87,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -98,7 +98,7 @@ include("menu.php");
     <div class="subt"> Agregar Rubros: </div>
 	<div class="etiqueta">Rubro:</div>
     <input name="rubro" type="text" class="p_input" id="rubro" />
-    
+
     <div class="etiqueta">Titulo:</div>
         <select name="titulo" class="p_input" id="titulo">
   <option selected="selected"></option>
@@ -136,14 +136,14 @@ include("menu.php");
 if($_SESSION["seccion"]=='administrador'){
   echo '
     <td><a href="modificar_rubro.php?id_rubro='.$au['id_rubro'].'" class="example6">Modificar</a></td>';
-    
+
       echo '<td><a href="quitar_rubro.php?id_rubro='.$au['id_rubro'].'" title="Quitar este usuario" onclick="return confirmar(';
 	   echo "'¿Está seguro que desea quitar este rubro?'";
 	  echo ')" >Quitar</a></td></tr>';
     }else{
       echo '<td>--</td></tr>';
-    } 
-     
+    }
+
 
 	}
 	?>
@@ -153,7 +153,7 @@ if($_SESSION["seccion"]=='administrador'){
     <div class="subt"> Agregar Cuentas: </div>
 	<div class="etiqueta">Cuenta:</div>
     <input name="cuenta" type="text" class="p_input" id="cuenta" />
-    
+
     <div class="etiqueta">Rubro:</div>
         <select name="rubro" class="p_input" id="rubro">
   <option selected="selected"></option>
@@ -190,7 +190,7 @@ if($_SESSION["seccion"]=='administrador'){
       if($_SESSION["seccion"]=='administrador'){
         echo '
     <td><a href="#">Modificar</a></td>';
-    
+
 
       echo '<td><a href="quitar_cuenta.php?id_cuentas='.$auu['id_cuentas'].'" title="Quitar esta cuenta" onclick="return confirmar(';
 	   echo "'¿Está seguro que desea quitar esta cuenta?'";
@@ -199,10 +199,10 @@ if($_SESSION["seccion"]=='administrador'){
     }else{
 
       echo '<td>--</td></tr>';
-      
+
 
     }
-     
+
 	}
 	?>
   </table>

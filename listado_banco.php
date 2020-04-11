@@ -22,13 +22,13 @@ $funcion_r=$_SESSION['funcion'];
   <!-- the following script defines the Calendar.setup helper function, which makes
        adding a calendar a matter of 1 or 2 lines of code. -->
   <script type="text/javascript" src="calendar-setup.js"></script>
-  
+
    <script LANGUAGE="JavaScript">
 function Validar(form)
 {
   if (form.fecha_deb.value == "")
   { alert("Por favor ingrese la fecha de debito"); form.fecha_deb.focus(); return; }
-  
+
   form.submit();
 }
 </script>
@@ -43,7 +43,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
   <div class="barri">
@@ -100,10 +100,10 @@ include("menu.php");
         step           :    1      ,
         singleClick    :" true"          // show all years in drop-down boxes (instead of every other year as default)
     });
-</script> 
-  
-  
-  
+</script>
+
+
+
 <div style="margin-top:10px; margin-bottom:10px">
         <label>
 	<input type="button" name="Submit" value="Generar txt" onClick="Validar(this.form)"/>
@@ -113,7 +113,7 @@ include("menu.php");
 <hr />
 <?php
 if ($_POST['act']=="si"){
-	
+
 	//Creamos el archivo datos.txt
 //ponemos tipo 'a' para a�adir lineas sin borrar
 $ruta = "archivos_txt/".$_POST['mes']."-".$_POST['ano']."-banco-soyem.txt";
@@ -129,9 +129,9 @@ $file=fopen($ruta,"a") or die("Problemas");
   } else {
 	  $meso = $_POST['mes'];
   }
-	  
+
   $fecha_ven = $_POST['ano'].'-'.$meso.'-01';
- /* 
+ /*
   $txt = "select *, SUM(prestamos.monto) as tot_monto from prestamos INNER JOIN afiliado ON prestamos.afiliado = afiliado.clave where (prestamos.vencimiento = '".$_POST['anio']."-".$_POST['mes']."-01' and prestamos.banc='si') group by prestamos.afiliado";
   $q = mysql_query ($txt);
   $n=1;
@@ -145,13 +145,13 @@ $file=fopen($ruta,"a") or die("Problemas");
 		$nn = $n;
 	}
   $string = substr($a['cbu_bd'],0,3).'51'.substr($_POST['fecha_deb'],8,2).substr($_POST['fecha_deb'],3,2).substr($_POST['fecha_deb'],0,2).'49400'.$a['cuil'].'           P'.$a['cbu_bd'].$monto.'33654587413DEBDIRECTO'.$ref;
-  
+
   fputs($file,$string);
   fputs($file, PHP_EOL);
   $n++;
   }
   */
-  
+
   $q = mysql_query ( "select *, SUM(monto) as tot_monto from prestamos where (vencimiento = '$fecha_ven' and banc='si' and pagado='I') group by afiliado");
   $n=1;
   while ($a = mysql_fetch_array($q)){
@@ -166,16 +166,16 @@ $file=fopen($ruta,"a") or die("Problemas");
 		$nn = $n;
 	}
   $string = substr($aa['cbu_bd'],0,3).'51'.substr($_POST['fecha_deb'],8,2).substr($_POST['fecha_deb'],3,2).substr($_POST['fecha_deb'],0,2).'49400'.$aa['cuil'].'           P'.$aa['cbu_bd'].$monto.'33654587413DEBDIRECTO'.$ref;
-  
+
   fputs($file,$string);
   fputs($file, PHP_EOL);
   $n++;
   }
-  
-  
-  
-  
-  
+
+
+
+
+
   fclose($file);
   echo '<a href="'.$ruta.'" target="blank">Ver TXT </a>';
 }

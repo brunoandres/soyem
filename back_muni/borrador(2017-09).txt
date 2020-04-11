@@ -1,0 +1,3 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+13081 	BRAVO SERGIO OSVALDO               		1     	1        	1500    
+Total: 1500

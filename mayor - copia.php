@@ -12,7 +12,7 @@ $funcion_r=$_SESSION['funcion'];
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -32,15 +32,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:850, innerHeight:600});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -68,7 +68,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -78,17 +78,17 @@ include("menu.php");
   <h1>Libro Mayor </h1>
   <table width="100%" border="0" cellpadding="5" cellspacing="0" id="usuarios">
     <tr>
-		
+
       <th>Cuenta</th>
 	  <th>Debe</th>
 	  <th>Haber</th>
 	 <th>Saldo</th>
       <th>Ver</th>
-      
+
     </tr>
 	<?php
-	
-	
+
+
 	$sq = "select * from cuentas order by cuenta asc";
 	$u=mysql_query($sq);
 	$d=0;
@@ -96,7 +96,7 @@ include("menu.php");
 	for ($i = 0; $i < mysql_num_rows($u); $i = $i +1){
 	$au=mysql_fetch_array($u);
     echo'<tr>';
-      
+
 	    echo '<td>'.$au['cuenta'].'</td>';
 		$id_cuentas = $au['id_cuentas'];
 		$debe_c = 0;
@@ -131,7 +131,7 @@ include("menu.php");
   ?>
   </div>
   </div>
- 
+
 </div>
 </body>
 </html>

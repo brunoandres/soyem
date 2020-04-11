@@ -16,7 +16,7 @@ $funcion_r=$_SESSION['funcion'];
 	<script src="jquery/jquery.ui.widget.js"></script>
 	<script src="jquery/jquery.ui.position.js"></script>
 	<script src="jquery/jquery.ui.autocomplete.js"></script>
-	
+
 	<script>
 	$(function() {
 		var availableTags = [
@@ -27,9 +27,9 @@ $funcion_r=$_SESSION['funcion'];
   $afa = mysql_fetch_array($qfa);
   echo '"'.$afa['nombre'].' ('.$afa['legajo'].') ('.$afa['documento'].') ['.$afa['clave'].']",';
   }
-  
+
   ?>
-			
+
 		];
 		$( "#tags" ).autocomplete({
 			source: availableTags
@@ -41,7 +41,7 @@ $funcion_r=$_SESSION['funcion'];
 
 
 <link href="estilos.css" rel="stylesheet" type="text/css" />
-		
+
 		<script language="JavaScript">
 
   <link rel="stylesheet" type="text/css" media="all" href="calendar-win2k-cold-1.css" title="win2k-cold-1" />
@@ -58,26 +58,26 @@ $funcion_r=$_SESSION['funcion'];
  <script LANGUAGE="JavaScript">
 function Validar(form)
 {
-  
+
    if (form.monto.value == "")
   { alert("Por favor ingrese el monto del reintegro"); form.monto.focus(); return; }
-   
+
    if (form.tipo.value == "")
   { alert("Por favor defina tipo de reintegro"); form.tipo.focus(); return; }
-  
+
     if (form.m_pago.value == "")
   { alert("Por favor ingrese el modo de pago"); form.m_pago.focus(); return; }
-  
+
    if (form.m_pago.value == "Efectivo" && form.origen.value == "")
   { alert("Por favor ingrese el origen de los fondos del prestamo"); form.origen.focus(); return; }
-  
+
   if (form.m_pago.value == "Cheque" && form.cuenta_banco.value=="")
   { alert("Por favor ingrese la cuenta bancaria del cheque"); form.cuenta_banco.focus(); return; }
-  
+
    if (form.m_pago.value == "Cheque" && form.nro_cheque.value=="")
   { alert("Por favor ingrese el nro de cheque"); form.nro_cheque.focus(); return; }
-  
-  
+
+
  form.submit();
 }
 function Calcula(form){
@@ -86,23 +86,23 @@ form.importe_cuota.value = form.monto.value / form.cuotas.value;
 function tipo_op(form)
 {
   if (form.m_pago.value == "Efectivo")
-  { 
+  {
   form.cuenta_banco.disabled=true;
   form.nro_cheque.disabled=true;
   form.origen.disabled=false;
-   } 
+   }
    if (form.m_pago.value == "Cheque")
-  { 
+  {
   form.cuenta_banco.disabled=false;
   form.nro_cheque.disabled=false;
   form.origen.disabled=true;
-   } 
+   }
     if (form.m_pago.value == "IPROSS")
-  { 
+  {
   form.cuenta_banco.disabled=true;
   form.nro_cheque.disabled=true;
   form.origen.disabled=true;
-   } 
+   }
 }
 
 </script>
@@ -119,7 +119,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="reintegros.php" title="Buscar un afiliado">Reintegros</a> - <a href="listado_de_afiliados.php" title="Armar listado de afiliados">Armar listados</a></b></div>
@@ -210,10 +210,10 @@ break;
   <option value=""></option>
   <option value="Cheque">Cheque</option>
   <option value="Efectivo">Efectivo</option>
- 
+
   </select>
-  
-  
+
+
 
   <div class="etiqueta">Origen:</div>
    <select name="origen" class="p_input" disabled="disabled">
@@ -221,14 +221,14 @@ break;
   <option value="1">Tesoreria</option>
 	<option value="2">Caja Chica</option>
   </select>
-  
+
    <div class="etiqueta">Cuenta Banco:</div>
    <select name="cuenta_banco" class="p_input" disabled="disabled">
   <option value=""></option>
   <option value="G">Banco Credicoop</option>
 	<option value="A">Banco Patagonia</option>
   </select>
-  
+
     <div class="etiqueta">Nro de cheque:</div>
   <input name="nro_cheque" type="text" class="p_input" id="nro_cheque" disabled="disabled" />
 

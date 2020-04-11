@@ -20,7 +20,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_afiliado.php" title="Agregar un nuevo afiliado">Nuevo Afiliado</a> - <a href="listado_de_afiliados.php" title="armar listados de afiliados">Armar listados</a></b></div>
@@ -45,7 +45,7 @@ if ($_POST['act']=="si" and (!empty($_POST['busc']) or !empty($_POST['leg']))){
 	$sql = "select * from afiliado where ".$filtro." order by nombre asc";
 	$que = mysql_query($sql);
 	$nn = mysql_num_rows($que);
-	echo "Se ebcontraron ".$nn." coicidencias con la busqueda <font color='ff0000'>".$busq."</font>"; 
+	echo "Se ebcontraron ".$nn." coicidencias con la busqueda <font color='ff0000'>".$busq."</font>";
  	} else {
 	$busq = $_POST['leg'];
 	$filtro = '(legajo = '.$busq.')';

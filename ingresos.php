@@ -15,7 +15,7 @@ $funcion_r=$_SESSION['funcion'];
 <script language="JavaScript" type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 
- <!-- datatable lib 
+ <!-- datatable lib
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>-->
@@ -32,15 +32,15 @@ $funcion_r=$_SESSION['funcion'];
 					type : 'iframe',
 					padding : 5
 				});
-			});	
+			});
 			  $(".fancybox").fancybox({
-        afterClose  : function() { 
+        afterClose  : function() {
             window.location.reload();
         }
     });
 });
 	</script>
-   
+
 <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 <script type="text/javascript" language="javascript" src="js/shCore.js"></script>
 <script type="text/javascript" language="javascript" src="js/demo.js"></script>
@@ -50,7 +50,7 @@ $funcion_r=$_SESSION['funcion'];
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 
 
@@ -66,7 +66,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri"><b><a href="nuevo_recibo.php" title="Agregar un nuevo afiliado">Nuevo Recibo </a> - <a href="cajas_diarias.php" title="Caja diaria">Caja Diaria</a></b></div>

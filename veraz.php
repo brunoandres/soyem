@@ -22,7 +22,7 @@ $funcion_r=$_SESSION['funcion'];
 	});
 } );
 	</script>
-    
+
 </head>
 
 <body>
@@ -34,7 +34,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri">
@@ -47,7 +47,7 @@ include("menu.php");
 <br clear="all" />
 </div>
 <h1>Veraz</h1>
-  
+
 
 
 
@@ -61,24 +61,24 @@ include("menu.php");
 	  <th>Sacar del Veraz</th>
     </tr>
     </thead>
-            
+
             <tbody>
 	<?php
-	
+
 	$sq = "select * from veraz INNER JOIN afiliado ON veraz.vz_af = afiliado.clave order by veraz.vz_date asc ";
-	
+
 	$q = mysql_query($sq);
 	$nn = mysql_num_rows($q);
 	for ($i=0; $i<$nn; $i++){
 	$dat=mysql_fetch_array($q);
 	echo '<td>'.$dat['vz_date'].'</td>';
 	echo '<td>'.$dat['nombre'].'</td>';
-	
+
 	  echo '<td><a href="detalle_prestamos.php?clave_prestamo='.$dat{'vz_pres'}.'" title="ver mas datos de '.$dat{'nombre'}.'">Ver</a></td>
 	  <td><a href="sacar_veraz.php?vz_id='.$dat{'vz_id'}.'" title="Sacar del veraz">Sacar del Veraz</a></td>
     </tr>';
 	}
-	
+
 ?></table>
 </div>
 </div>

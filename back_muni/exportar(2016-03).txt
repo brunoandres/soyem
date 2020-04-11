@@ -1,0 +1,6 @@
+Legajo	Nombre                             		Cuotas	Nro_Cuota	Importe
+24    	BARRERA RAUL HORACIO               		1     	1        	207     
+78    	HUENCHUAL BERNABE                  		3     	1        	440     
+23    	OYARZO VICTOR                      		1     	1        	450     
+22    	REYES HECTOR IVAN                  		1     	1        	180.5   
+1     	TORRES HECTOR                      		1     	1        	344     

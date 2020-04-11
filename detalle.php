@@ -21,7 +21,7 @@ if(!isset($_GET['fecha'])){
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 
 
@@ -33,15 +33,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:950, innerHeight:520});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -69,7 +69,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 
 <div id="cuerpo">
@@ -92,7 +92,7 @@ include("menu.php");
   </thead>
 
 </table>
-	
+
   </div>
 </div>
 
@@ -107,7 +107,7 @@ include("menu.php");
 
 	//Script server side processing
     $(document).ready(function(){
-      
+
     	var valor = $("#valor").val();
       $.fn.dataTable.moment( 'DD/MM/YYYY' );
         $.fn.dataTable.moment('L');
@@ -123,7 +123,7 @@ include("menu.php");
               }
             },
             "order": [[ 1, "asc" ]],
-            "ordering": true, 
+            "ordering": true,
             "language": {
             "url": "spanish.json"
         	}

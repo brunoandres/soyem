@@ -29,15 +29,15 @@ $clave = $data['afiliado'];
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:700, innerHeight:420});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -46,7 +46,7 @@ $clave = $data['afiliado'];
 		<script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 </head>
 
@@ -59,7 +59,7 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 <div id="cuerpo">
 <div class="barri">
@@ -81,9 +81,9 @@ if ($data['tipe_p'] == 'D'){
 ?>
   (descuento planilla)
  <?php
-} 
-?> 
-  
+}
+?>
+
   </h1>
 <div id="datos_af">
 <?php
@@ -115,7 +115,7 @@ if($provee == "Soyem" ){
 		} else {
 				echo 'Prestamo <b>Turismo</b><br>';
 		}
-		
+
 	}
 }
 echo 'Observaciones: <br><font color="009900">'.$data['observaciones'].'</font><br>';
@@ -144,7 +144,7 @@ if(EstaPlanilla($clave)==0){
 	 <th>Cuota</th>
       <th>Total Cuotas</th>
 	  <th>Vencimiento</th>
-  
+
 	   <th>Importe</th>
        <th>Cancelado</th>
        <th>Estado</th>
@@ -192,10 +192,10 @@ if ($a['pagado']=='P'){
     <?php
 if ($funcion_r == 1){
 	?>
-    <a href="change_pago.php?clave_prestamo=<?php echo $a['clave_prestamo']; ?>&change=I&cuota=<?php echo $a['cuota']; ?>" style="background:#F30; color:#FFF; font-style:normal; text-align:center; display:inline; padding-left:8px; padding-right:8px;  font-weight: bold; text-decoration:none; margin-right:5px" title="poner como impago">I</a> 
+    <a href="change_pago.php?clave_prestamo=<?php echo $a['clave_prestamo']; ?>&change=I&cuota=<?php echo $a['cuota']; ?>" style="background:#F30; color:#FFF; font-style:normal; text-align:center; display:inline; padding-left:8px; padding-right:8px;  font-weight: bold; text-decoration:none; margin-right:5px" title="poner como impago">I</a>
    <?php
 }
-	?> 
+	?>
 	</td>
     <?php
 }

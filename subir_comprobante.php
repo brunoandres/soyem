@@ -16,7 +16,7 @@ mysql_query("delete from asientos where activo='no'");
 <script language="JavaScript">
 function confirmar ( mensaje ) {
 return confirm( mensaje );
-} 
+}
 </script>
 <?php
   if ($_GET['mostrar']==1){
@@ -36,15 +36,15 @@ return confirm( mensaje );
 	<script type="text/javascript">
 			$(document).ready(function(){
 				//Examples of how to assign the ColorBox event to elements
-				
+
 				$(".example6").colorbox({iframe:true, innerWidth:950, innerHeight:520});
-				
-				  $().bind('cbox_closed',function() {  
-      location.reload(true); 
-   }); 
-				
+
+				  $().bind('cbox_closed',function() {
+      location.reload(true);
+   });
+
 				//Example of preserving a JavaScript event for inline calls.
-				$("#click").click(function(){ 
+				$("#click").click(function(){
 					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
 				});
@@ -72,13 +72,13 @@ include("menu.php");
 ?>
 </div>
 </div>
-<div id = "pos"><a href="../soyem_resoluciones/mis_proyectos.php" title="Ir a Resoluciones">ir a Resoluciones</a></div>
+<?php include 'footer.php'; ?>
 <div id="contanido">
 	<div id="cuerpo">
 		<?php include("recortes/menu_cont.php"); ?>
   		<form action="procesa_comprobante.php" method="POST" enctype="multipart/form-data">
     		<div class="subt">Cargar archivo de comprobantes</div>
-    		<?php 
+    		<?php
     		if (isset($_GET['estado'])) {
     			$estado = $_GET['estado'];
     			if ($estado == "ok") {
@@ -92,10 +92,10 @@ include("menu.php");
 	    		}
     		}
 		 ?>
-		
+
 				<div class="etiqueta"><strong>Descripción archivo comprobante</strong></div>
     				<input type="text" name="nombre_comprobante" class="p_input" id="fecha_comprobante" placeholder="Ingrese alguna descripción del archivo de comprobante" autocomplete="off">
-					
+
 				<div class="etiqueta"><strong>Fecha Comprobante</strong></div>
     				<input type="text" name="fecha_comprobante" class="p_input" id="fecha_comprobante" placeholder="Seleccione fecha comprobante" value="<?php echo date("d/m/Y"); ?>" autocomplete="off" readonly>
 						<!--<script type="text/javascript">
