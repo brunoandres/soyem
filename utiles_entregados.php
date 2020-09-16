@@ -4,7 +4,7 @@ include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
 
-if ($_SESSION["usuario"] != "magui.galaz" and $_SESSION["usuario"] != "miryam.espeche" and $_SESSION["usuario"] != "sandra.quiñehual") { 
+if ($_SESSION["usuario"] != "magui.galaz" and $_SESSION["usuario"] != "miryam.espeche" and $_SESSION["usuario"] != "sandra.quiñehual" and $_SESSION["usuario"] != "graciela.huen") { 
   header("Location:index.php?error=3"); 
   exit(); 
 }
@@ -55,7 +55,7 @@ include("menu.php");
 <div class="barri"><b><a href="listado_utiles.php" title="Agregar un nuevo reintegro">Listado Utiles </a></b></div>
 <h1 style="color:green;">Listado de Utiles entregados</h1>
 
-<form action="utiles_entregados.php.php" method="POST">
+<form action="utiles_entregados.php" method="POST">
 	<select name="nivel" id="">
 		<option value="">Todos los niveles</option>
 		<option value="JARDIN" selected>JARDIN</option>

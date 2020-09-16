@@ -1,5 +1,7 @@
 <?php
 include("conecta.php");
+include ("auditoria.php");
+
 $afiliado = $_POST['clave'];
 $empresa = $_POST['empresa'];
 $monto = $_POST['monto'];
@@ -41,7 +43,9 @@ if(!empty($afiliado) and !empty($empresa) and !empty($monto) and !empty($cuotas)
 	
 	for ($s=1; $s<=$num_cuotas ;$s++){
 	$clave_prestamo = $clave_prestamo + 1;
-	mysql_query("insert into prestamos (afiliado, fecha_prestamo, clave_prestamo, cuota, num_cuotas, vencimiento, monto, efectivo, banco, proveduria, lena, turismo, cuenta_banco, cheque_nro, vale_pro, proveedor, cuotas_pro, vale, cuenta_motivo, banc, tipe_p, observaciones) values ('$afiliado', '$fecha_prestamo', '$clave_prestamo', '$s', '$num_cuotas', '$vencimiento', '$monto', '$efectivo', '$banco', '$proveduria', '$lena', '$turismo', '$cuenta_banco', '$cheque_nro', '$vale_pro', '$proveedor','1', '$vale', '$cuenta_motivo', 'no','M', '$observaciones')");
+	$query = "insert into prestamos (afiliado, fecha_prestamo, clave_prestamo, cuota, num_cuotas, vencimiento, monto, efectivo, banco, proveduria, lena, turismo, cuenta_banco, cheque_nro, vale_pro, proveedor, cuotas_pro, vale, cuenta_motivo, banc, tipe_p, observaciones) values ('$afiliado', '$fecha_prestamo', '$clave_prestamo', '$s', '$num_cuotas', '$vencimiento', '$monto', '$efectivo', '$banco', '$proveduria', '$lena', '$turismo', '$cuenta_banco', '$cheque_nro', '$vale_pro', '$proveedor','1', '$vale', '$cuenta_motivo', 'no','M', '$observaciones')";
+	mysql_query($query);
+	auditar($query);
 	$mes = $mes + 1;
 	if ($mes > 12){
 	$mes = 1;
@@ -64,9 +68,15 @@ if(!empty($afiliado) and !empty($empresa) and !empty($monto) and !empty($cuotas)
 	
 	$dat_pro = mysql_fetch_array(mysql_query("select * from empresas where clave_empresa='$proveedor'"));
 	$detalle1 = "Prestamo al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto." del proveedor de salud ".$dat_pro['nombre'];
-		
-	mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')");
-	mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '36', '$montot', '$detalle1', '$id_us', 'si')");
+
+	$qry = "insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '$cc', '$montot', '$detalle1', '$id_us', 'si')";
+	mysql_query($qry);
+	auditar($qry);
+
+	$qry1 = "insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '36', '$montot', '$detalle1', '$id_us', 'si')";
+
+	mysql_query($qry1);
+	auditar($qry1);
 	//fin contabilidad
 	}
 header("Location: prestamos_rapidos.php?empre=$empresa");

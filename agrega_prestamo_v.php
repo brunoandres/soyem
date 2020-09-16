@@ -1,5 +1,7 @@
 <?php
 include("conecta.php");
+include ("auditoria.php");
+
 $afiliado = $_POST['afiliado'];
 $fecha_prestamo = date("Y-m-d");
 $p_clave = mysql_fetch_array(mysql_query("select * from prestamos_viviendas order by clave_prestamo desc"));
@@ -23,14 +25,22 @@ $importe_cv = $monto * $num_cuotas;
 $detalle1 = "Venta de lote al afiliado ".$dat_af ['nombre']." legajo ".$dat_af ['legajo']. " cuotas ".$num_cuotas." de $ ".$monto;
 $nnro = mysql_fetch_array(mysql_query("select * from asientos order by nro desc"));
 $nro = $nnro['nro'] + 1;
-mysql_query("insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '119', '$importe_cv', '$detalle1', '$id_us', 'si')");
-mysql_query("insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '120', '$importe_cv', '$detalle1', '$id_us', 'si')");
+
+$query = "insert into asientos (nro, fecha, cuenta, debe, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '119', '$importe_cv', '$detalle1', '$id_us', 'si')";
+mysql_query($query);
+auditar($query);
+
+$query1 = "insert into asientos (nro, fecha, cuenta, haber, detalle, id_us, activo) values ('$nro', '$fecha_prestamo', '120', '$importe_cv', '$detalle1', '$id_us', 'si')"; 
+mysql_query($query1);
+auditar($query1);
 
 /* fin a agregar contabilidad*/
 
 for ($s=1; $s<=$num_cuotas ;$s++){
 $clave_prestamo = $clave_prestamo + 1;
-mysql_query("insert into prestamos_viviendas (afiliado, fecha_prestamo, clave_prestamo, cuota, num_cuotas, vencimiento, monto, vale, observaciones) values ('$afiliado', '$fecha_prestamo', '$clave_prestamo', '$s', '$num_cuotas', '$vencimiento', '$monto', '$vale', '$observaciones')");
+$qry = "insert into prestamos_viviendas (afiliado, fecha_prestamo, clave_prestamo, cuota, num_cuotas, vencimiento, monto, vale, observaciones) values ('$afiliado', '$fecha_prestamo', '$clave_prestamo', '$s', '$num_cuotas', '$vencimiento', '$monto', '$vale', '$observaciones')";
+mysql_query($qry);
+auditar($qry);
 $mes = $mes + 1;
 if ($mes > 12){
 $mes = 1;

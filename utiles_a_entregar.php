@@ -4,7 +4,7 @@ include("secure.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
 
-if ($_SESSION["usuario"] != "magui.galaz" and $_SESSION["usuario"] != "miryam.espeche" and $_SESSION["usuario"] != "sandra.quiñehual") { 
+if ($_SESSION["usuario"] != "magui.galaz" and $_SESSION["usuario"] != "miryam.espeche" and $_SESSION["usuario"] != "sandra.quiñehual" and $_SESSION["usuario"] != "graciela.huen") { 
   header("Location:index.php?error=3"); 
   exit(); 
 }

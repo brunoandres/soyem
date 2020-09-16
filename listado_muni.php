@@ -3,6 +3,7 @@ $page = 'prestamos';
 include("secure1.php");
 include("conecta.php");
 $funcion_r=$_SESSION['funcion'];
+$seccion=$_SESSION['seccion'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,7 +52,9 @@ include("menu.php");
 <div id="cuerpo">
   <div class="barri">
 <div class="actual_buto"><a href="prestamos.php" title="Ver prestamos">Listado de Prestamos</a></div>
-
+<?php if ($seccion=='Tesoreria'): ?>
+  <div class="actual_buto"><a href="prestamos_filtro.php" title="listado de prestamos">Entre fechas</a></div>
+<?php endif ?>
 
 <div class="actual_buto"><a href="nuevo_prestamo.php" title="Agregar un nuevo afiliado">Nuevo Prestamo </a></div><div class="actual_buto"><a href="listado_banco.php" title="armar listados de prestamos debito">Armar listado Banco</a></div>
 <div class="actual_buto">Armar listado Muni</div>
